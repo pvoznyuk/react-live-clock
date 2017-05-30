@@ -1,12 +1,10 @@
 import React from 'react';
-import ReactComponentTemplate from '../../ReactComponentTemplate';
+import ReactLiveClock from '../../ReactLiveClock';
 import css from './App.css';
-
 
 const App = () =>
   <div className={css.app}>
-    <ReactComponentTemplate />
+    <ReactLiveClock format={'HH:mm:ss'} ticking={true} />
   </div>;
-
 
 export default App;

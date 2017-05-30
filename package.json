@@ -7,7 +7,7 @@
     "react-component-template": "cli.js"
   },
   "config": {
-    "component": "ReactComponentTemplate"
+    "component": "ReactLiveClock"
   },
   "scripts": {
     "start": "p-s",
@@ -32,7 +32,7 @@
     "url": "https://github.com/pvoznyuk/react-live-clock/issues"
   },
   "homepage": "https://github.com/pvoznyuk/react-live-clock",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "6.24.1",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
@@ -75,5 +75,11 @@
     "/package-scripts.js",
     "/README.md",
     "/webpack.config.js"
-  ]
+  ],
+  "dependencies": {
+    "moment": "2.18.1",
+    "moment-timezone": "0.5.13",
+    "prop-types": "15.5.10",
+    "react-moment": "0.2.2"
+  }
 }

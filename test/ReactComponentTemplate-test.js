@@ -1,8 +1,8 @@
 import test from 'tape';
-import ReactComponentTemplate from '../src/ReactComponentTemplate';
+import ReactLiveClock from '../src/ReactLiveClock';
 
 
-test('ReactComponentTemplate', t => {
-  t.ok(ReactComponentTemplate instanceof Function, 'should be function');
+test('ReactLiveClock', t => {
+  t.ok(ReactLiveClock instanceof Function, 'should be function');
   t.end();
 });

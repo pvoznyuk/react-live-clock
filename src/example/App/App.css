@@ -1,0 +1,8 @@
+.app {
+  padding: 2em;
+}
+
+.ukFormat {
+    text-transform: lowercase;
+    color: blue;
+}

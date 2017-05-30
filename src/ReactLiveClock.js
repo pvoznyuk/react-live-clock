@@ -5,48 +5,42 @@ import Moment from 'react-moment';
 let tickTimer;
 const getDate = date => date ? date : new Date().getTime();
 
-const ReactLiveClock = ({
-  ago,
-  children,
-  className,
-  date,
-  format,
-  from,
-  fromNow,
-  locale,
-  parse,
-  timezone,
-  to,
-  toNow,
-  unix
-  }) =>
-    <Moment
-      ago={ago}
-      className={className}
-      date={getDate(date || children)}
-      format={format}
-      from={from}
-      fromNow={fromNow}
-      locale={locale}
-      parse={parse}
-      to={to}
-      toNow={toNow}
-      tz={timezone}
-      unix={unix} />;
-
-ReactLiveClock.componentDidMount = ({ticking, interval}) => {
-  if (ticking) {
-    tickTimer = setInterval(() => {
-      ReactLiveClock.forceUpdate();
-    }, interval);
+export default class ReactLiveClock extends React.Component {
+  componentDidMount() {
+    if (this.props.ticking) {
+      tickTimer = setInterval(() => {
+        this.forceUpdate();
+      }, this.props.interval);
+    }
   }
-};
 
-ReactLiveClock.componentWillUnmount = () => {
-  if (tickTimer) {
-    clearInterval(tickTimer);
+  componentWillUnmount() {
+    if (tickTimer) {
+      clearInterval(tickTimer);
+    }
   }
-};
+
+  render() {
+    const {ago, children, className, date, format, from, fromNow,
+           locale, parse, timezone, to, toNow, unix} = this.props;
+
+    return (
+      <Moment
+        ago={ago}
+        className={className}
+        date={getDate(date || children)}
+        format={format}
+        from={from}
+        fromNow={fromNow}
+        locale={locale}
+        parse={parse}
+        to={to}
+        toNow={toNow}
+        tz={timezone}
+        unix={unix} />
+    );
+  }
+}
 
 ReactLiveClock.propTypes = {
   ago: PropTypes.bool,
@@ -85,5 +79,3 @@ ReactLiveClock.defaultProps = {
   ticking: false,
   timezone: null
 };
-
-export default ReactLiveClock;

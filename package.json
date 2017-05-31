@@ -1,10 +1,10 @@
 {
   "name": "react-live-clock",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Live Clock",
   "main": "build/react-live-clock.js",
   "bin": {
-    "react-component-template": "cli.js"
+    "react-live-clock": "cli.js"
   },
   "config": {
     "component": "ReactLiveClock"

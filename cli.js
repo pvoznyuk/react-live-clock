@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 
-const config = require.resolve('react-component-template/package-scripts');
+const config = require.resolve('react-live-clock/package-scripts');
 const ps = require.resolve('p-s/dist/bin/nps');
 
 

@@ -1,5 +1,6 @@
 # react-live-clock
-React clock with time-zones
+React clock with time-zones  
+[DEMO](https://pvoznyuk.github.io/react-live-clock/)
 
 ### Installing
 Use npm to install react-react-live-clock

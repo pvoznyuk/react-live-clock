@@ -1,32 +1,28 @@
 {
   "name": "react-live-clock",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "React Live Clock",
-  "main": "build/react-live-clock.js",
-  "bin": {
-    "react-live-clock": "cli.js"
-  },
+  "main": "lib/index.js",
   "config": {
     "component": "ReactLiveClock"
   },
   "scripts": {
-    "start": "p-s",
+    "start": "react-component-template",
     "test": "npm start test",
+    "template": "cf-react-component-template",
     "precommit": "npm start precommit",
     "prepush": "npm start prepush",
-    "postversion": "npm start postversion"
+    "postversion": "npm start postversion",
+    "prepublish": "npm start prepublish"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/pvoznyuk/react-live-clock.git"
   },
   "keywords": [
-    "clock",
-    "date",
-    "moment",
-    "react",
-    "time",
-    "timezones"
+    "component",
+    "react-component",
+    "react"
   ],
   "author": "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>",
   "license": "MIT",
@@ -34,54 +30,17 @@
     "url": "https://github.com/pvoznyuk/react-live-clock/issues"
   },
   "homepage": "https://github.com/pvoznyuk/react-live-clock",
-  "devDependencies": {
-    "babel-cli": "6.24.1",
-    "babel-core": "6.24.1",
-    "babel-eslint": "7.2.3",
-    "babel-istanbul": "0.12.2",
-    "babel-loader": "7.0.0",
-    "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "babel-plugin-transform-react-remove-prop-types": "0.4.1",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "codecov": "2.1.0",
-    "cross-env": "4.0.0",
-    "css-loader": "0.28.0",
-    "css-modules-require-hook": "4.0.6",
-    "eslint": "3.19.0",
-    "eslint-plugin-react": "6.10.3",
-    "gh-pages": "0.12.0",
-    "glob": "7.1.1",
-    "html-webpack-plugin": "2.28.0",
-    "husky": "0.13.3",
-    "nightwatch-autorun": "3.1.0",
-    "p-s": "3.1.0",
-    "react": "15.5.4",
-    "react-dom": "15.5.4",
-    "rimraf": "2.6.1",
-    "sinon": "2.1.0",
-    "style-loader": "0.16.1",
-    "tap-nyan": "1.1.0",
-    "tap-xunit": "1.7.0",
-    "tape": "4.6.3",
-    "webpack": "2.4.1",
-    "webpack-dev-server": "2.4.4"
+  "peerDependencies": {
+    "react": "^0.14 || ^15"
   },
-  "files": [
-    "/test/index.js",
-    "/test-e2e/Smoketest.js",
-    "/.eslintrc",
-    "/cli.js",
-    "/nightwatch.json",
-    "/package-scripts.js",
-    "/README.md",
-    "/webpack.config.js"
-  ],
+  "devDependencies": {
+    "react-component-template": "0.1.8",
+    "cf-react-component-template": "0.1.8"
+  },
   "dependencies": {
-    "moment": "2.18.1",
-    "moment-timezone": "0.5.13",
     "prop-types": "15.5.10",
-    "react-moment": "0.2.2"
+    "react-moment": "0.2.2",
+    "moment": "2.18.1",
+    "moment-timezone": "0.5.13"
   }
 }

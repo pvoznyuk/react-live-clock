@@ -1,14 +1,20 @@
+branches:
+  only:
+  - master
+
+environment:
+  nodejs_version: '5.2.0'
+
 install:
+  - ps: Install-Product node $env:nodejs_version
+  - set CI=true
+  - set PATH=%APPDATA%\npm;%PATH%
   - npm install
 
-cache:
- - "%LOCALAPPDATA%/Yarn"
- - node_modules -> package.json
-
 build: off
+version: '{build}'
 shallow_clone: true
 clone_depth: 1
-skip_branch_with_pr: true
 
 test_script:
   - node --version

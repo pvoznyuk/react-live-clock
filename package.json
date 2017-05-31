@@ -38,9 +38,8 @@
     "cf-react-component-template": "0.1.8"
   },
   "dependencies": {
+    "dateformat": "2.0.0",
     "prop-types": "15.5.10",
-    "react-moment": "0.2.2",
-    "moment": "2.18.1",
-    "moment-timezone": "0.5.13"
+    "timezone": "1.0.6"
   }
 }

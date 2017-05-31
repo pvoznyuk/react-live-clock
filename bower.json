@@ -1,12 +1,12 @@
 {
   "name": "react-live-clock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Live Clock",
   "main": [
-    "build/react-component-template.js",
-    "build/react-component-template.js.map",
-    "build/react-component-template.min.js",
-    "build/react-component-template.min.js.map"
+    "build/react-live-clock.js",
+    "build/react-live-clock.js.map",
+    "build/react-live-clock.min.js",
+    "build/react-live-clock.min.js.map"
   ],
   "repository": {
     "type": "git",

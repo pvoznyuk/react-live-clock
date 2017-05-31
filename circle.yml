@@ -1,11 +1,6 @@
 machine:
   node:
-    version: 7
-
-dependencies:
-  override:
-    - npm install
-    - node ./node_modules/selenium-standalone/bin/selenium-standalone install
+    version: v7.6.0
 
 test:
   override:

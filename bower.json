@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "React Live Clock",
   "main": [
     "build/react-live-clock.js",
@@ -13,9 +13,11 @@
     "url": "https://github.com/pvoznyuk/react-live-clock.git"
   },
   "keywords": [
-    "component",
-    "react-component",
-    "react"
+    "date",
+    "moment",
+    "react",
+    "time",
+    "timezone"
   ],
   "authors": [
     "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>"

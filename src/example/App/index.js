@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactLiveClock from '../../ReactLiveClock';
+import ReactLiveClock from '../..';
 import css from './App.css';
 
 const App = () =>

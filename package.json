@@ -20,9 +20,11 @@
     "url": "https://github.com/pvoznyuk/react-live-clock.git"
   },
   "keywords": [
-    "component",
-    "react-component",
-    "react"
+    "react",
+    "date",
+    "time",
+    "clock",
+    "timezones"
   ],
   "author": "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>",
   "license": "MIT",

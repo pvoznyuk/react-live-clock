@@ -75,7 +75,7 @@ Outputs:
  <time>1976/04/19</time>
  ```
 
- ** you can use any formatting from [moment](http://momentjs.com/) date library
+ ** you can use any formatting from [node-dateformat](https://github.com/felixge/node-dateformat) date library
 
 
 

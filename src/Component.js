@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'react-moment';
+import dateFormat from 'dateformat';
+import tz from 'timezone/loaded';
 
 let tickTimer;
-const getDate = date => date ? date : new Date().getTime();
+const getDate = date => date ? new Date(date).getTime() : new Date().getTime();
 
 export default class ReactLiveClock extends React.Component {
   componentDidMount() {
@@ -21,28 +22,19 @@ export default class ReactLiveClock extends React.Component {
   }
 
   render() {
-    const {ago, children, className, date, format, from, fromNow,
-           /*locale,*/ parse, timezone, to, toNow, unix} = this.props;
+    const {children, className, date, format, locale, timezone} = this.props;
+    const dateValue = getDate(date || children);
+    const utc = tz(dateValue);
+    const localizedTime = tz(utc, '%x %X', locale, timezone);
+    const formattedTime = dateFormat(new Date(localizedTime), format);
 
     return (
-      <Moment
-        ago={ago}
-        className={className}
-        date={getDate(date || children)}
-        format={format}
-        from={from}
-        fromNow={fromNow}
-        parse={parse}
-        to={to}
-        toNow={toNow}
-        tz={timezone}
-        unix={unix} />
+      <time className={className}>{ formattedTime }</time>
     );
   }
 }
 
 ReactLiveClock.propTypes = {
-  ago: PropTypes.bool,
   children: PropTypes.string,
   className: PropTypes.string,
   date: PropTypes.oneOfType([
@@ -50,31 +42,18 @@ ReactLiveClock.propTypes = {
     PropTypes.string
   ]),
   format: PropTypes.string,
-  from: PropTypes.string,
-  fromNow: PropTypes.bool,
   interval: PropTypes.number,
-  // locale: PropTypes.string,
-  parse: PropTypes.string,
-  to: PropTypes.string,
-  toNow: PropTypes.bool,
-  unix: PropTypes.bool,
+  locale: PropTypes.string,
   ticking: PropTypes.bool,
   timezone: PropTypes.string
 };
 
 ReactLiveClock.defaultProps = {
-  ago: false,
   className: null,
   date: null,
-  format: 'HH:mm',
-  from: null,
-  fromNow: false,
+  format: 'HH:MM',
   interval: 1000,
-  // locale: null,
-  parse: null,
-  to: null,
-  toNow: false,
-  unix: false,
+  locale: 'en_US',
   ticking: false,
   timezone: null
 };

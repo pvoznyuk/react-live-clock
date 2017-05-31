@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React Live Clock",
   "main": "lib/index.js",
   "config": {
@@ -20,9 +20,11 @@
     "url": "https://github.com/pvoznyuk/react-live-clock.git"
   },
   "keywords": [
-    "component",
-    "react-component",
-    "react"
+    "react",
+    "date",
+    "time",
+    "clock",
+    "timezones"
   ],
   "author": "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>",
   "license": "MIT",
@@ -38,9 +40,8 @@
     "cf-react-component-template": "0.1.8"
   },
   "dependencies": {
+    "dateformat": "2.0.0",
     "prop-types": "15.5.10",
-    "react-moment": "0.2.2",
-    "moment": "2.18.1",
-    "moment-timezone": "0.5.13"
+    "timezone": "1.0.6"
   }
 }

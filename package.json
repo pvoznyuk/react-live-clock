@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React Live Clock",
   "main": "build/react-live-clock.js",
   "bin": {
@@ -22,9 +22,11 @@
   },
   "keywords": [
     "clock",
+    "date",
     "moment",
-    "timezones",
-    "react"
+    "react",
+    "time",
+    "timezones"
   ],
   "author": "Pavlo Vozniuk <pavlo.vozniuk@gmail.com>",
   "license": "MIT",

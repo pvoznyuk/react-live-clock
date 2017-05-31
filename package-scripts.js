@@ -21,7 +21,7 @@ exports.scripts = {
     min: 'cross-env NODE_ENV=production BUILD=min webpack'
   },
 
-  lint: `eslint ${pathTo('.')}`,
+  lint: `eslint ${pathTo('.')} --fix`,
 
   test: {
     default: `cross-env NODE_ENV=test babel-node ${pathTo('test')}`,
@@ -34,15 +34,15 @@ exports.scripts = {
 
   // CircleCI scripts
   ci: {
-    lint: `eslint ${pathTo('.')}`,
-    test: `NODE_ENV=test babel-node ${pathTo('test')}`,
-    cov: 'NODE_ENV=test' +
-    '     babel-node node_modules/.bin/babel-istanbul cover' +
-    '     --report text --report lcov --verbose --dir ${CIRCLE_ARTIFACTS}/coverage' +
-    `     ${pathTo('test')}`,
-    e2e: 'REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS}' +
-    '     NODE_ENV=development nightwatch-autorun',
-    codecov: 'cat ${CIRCLE_ARTIFACTS}/coverage/lcov.info | codecov'
+    lint: `eslint ${pathTo('.')} --fix`,
+    test: `cross-env NODE_ENV=test babel-node ${pathTo('test')}`
+    // cov: 'cross-env NODE_ENV=test' +
+    // '     babel-node node_modules/.bin/babel-istanbul cover' +
+    // '     --report text --report lcov --verbose --dir ${CIRCLE_ARTIFACTS}/coverage' +
+    // `     ${pathTo('test')}`,
+    // e2e: 'cross-env REPORT_DIR=${CIRCLE_TEST_REPORTS} LOG_DIR=${CIRCLE_ARTIFACTS}' +
+    // '     cross-env NODE_ENV=development nightwatch-autorun',
+    // codecov: 'cat ${CIRCLE_ARTIFACTS}/coverage/lcov.info | codecov'
   },
 
   // GIT Hooks

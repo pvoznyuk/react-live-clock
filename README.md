@@ -20,20 +20,10 @@ npm install --save react react-live-clock
 
 Don't forget to manually install peer dependencies (`react`) if you use npm@3.
 
-### Bower:
-```sh
-bower install --save https://unpkg.com/react-live-clock/bower.zip
-```
-
 ## Demo
 
 [http://pvoznyuk.github.io/react-live-clock](http://pvoznyuk.github.io/react-live-clock)
 
-## Codepen demo
-
-```js
-// TODO
-```
 
 ## Usage
 ```js
@@ -42,7 +32,7 @@ import Clock from 'react-live-clock';
 
 exports default class MyComponent extends React.Component {
     render() {
-        <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+        <Clock format={'HH:MM:ss'} ticking={true} timezone={'US/Pacific'} />
     }
 }
 ```
@@ -56,27 +46,9 @@ Outputs:
  ** Shows current time for 'US/Pacific' timezine and updats every second
 
 
- ### Formatting
+### Formatting
 
- ```js
- import React  from 'react';
- import Clock from 'react-live-clock';
-
- exports default class MyComponent extends React.Component {
-     render() {
-         <Clock format="YYYY/MM/DD">1976-04-19T12:59-0500</Clock>
-     }
- }
- ```
-
- Outputs:
-
- ```html
- <time>1976/04/19</time>
- ```
-
- ** you can use any formatting from [node-dateformat](https://github.com/felixge/node-dateformat) date library
-
+you can use any formatting from [node-dateformat](https://github.com/felixge/node-dateformat) date library
 
 
 ## Development and testing

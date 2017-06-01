@@ -1,10 +1,6 @@
 # react-live-clock [![npm](https://img.shields.io/npm/v/react-live-clock.svg?style=flat-square)](https://www.npmjs.com/package/react-live-clock)
 
 [![Gitter](https://img.shields.io/gitter/room/pvoznyuk/help.svg?style=flat-square)](https://gitter.im/pvoznyuk/help)
-
-[![CircleCI](https://img.shields.io/circleci/project/pvoznyuk/react-live-clock.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/pvoznyuk/react-live-clock)
-[![AppVeyor](https://img.shields.io/appveyor/ci/pvoznyuk/react-live-clock.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/pvoznyuk/react-live-clock)
-[![Coverage](https://img.shields.io/codecov/c/github/pvoznyuk/react-live-clock.svg?style=flat-square)](https://codecov.io/github/pvoznyuk/react-live-clock?branch=master)
 [![Dependencies](https://img.shields.io/david/pvoznyuk/react-live-clock.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-live-clock)
 [![Dev Dependencies](https://img.shields.io/david/dev/pvoznyuk/react-live-clock.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-live-clock#info=devDependencies)
 

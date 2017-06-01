@@ -98,7 +98,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var tickTimer = void 0;
 	var getDate = function getDate(date) {
 	  return date ? new Date(date).getTime() : new Date().getTime();
 	};
@@ -118,7 +117,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var _this2 = this;
 	
 	      if (this.props.ticking) {
-	        tickTimer = setInterval(function () {
+	        this.tickTimer = setInterval(function () {
 	          _this2.forceUpdate();
 	        }, this.props.interval);
 	      }
@@ -126,8 +125,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'componentWillUnmount',
 	    value: function componentWillUnmount() {
-	      if (tickTimer) {
-	        clearInterval(tickTimer);
+	      if (this.tickTimer) {
+	        clearInterval(this.tickTimer);
 	      }
 	    }
 	  }, {
@@ -138,12 +137,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          className = _props.className,
 	          date = _props.date,
 	          format = _props.format,
-	          locale = _props.locale,
 	          timezone = _props.timezone;
 	
 	      var dateValue = getDate(date || children);
 	      var utc = (0, _loaded2.default)(dateValue);
-	      var localizedTime = (0, _loaded2.default)(utc, '%x %X', locale, timezone);
+	      var localizedTime = (0, _loaded2.default)(utc, '%x %X', 'en_US', timezone);
 	      var formattedTime = (0, _dateformat2.default)(new Date(localizedTime), format);
 	
 	      return _react2.default.createElement(
@@ -166,7 +164,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
 	  format: _propTypes2.default.string,
 	  interval: _propTypes2.default.number,
-	  locale: _propTypes2.default.string,
 	  ticking: _propTypes2.default.bool,
 	  timezone: _propTypes2.default.string
 	};
@@ -176,7 +173,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  date: null,
 	  format: 'HH:MM',
 	  interval: 1000,
-	  locale: 'en_US',
 	  ticking: false,
 	  timezone: null
 	};

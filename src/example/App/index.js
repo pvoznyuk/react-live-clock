@@ -21,7 +21,10 @@ const App = () =>
     <ReactLiveClock date={'1997-12-31T14:15:23+01:00'} format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />
 
     <h4>The same date in timezone US/Pacific</h4>
-    <ReactLiveClock date={'1997-12-31T14:15:23+01:00'} format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} timezone={'US/Pacific'} />
+    <ReactLiveClock
+      date={'1997-12-31T14:15:23+01:00'}
+      format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
+      timezone={'US/Pacific'} />
 
   </div>;
 

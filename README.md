@@ -43,7 +43,7 @@ Outputs:
 <time>10:15:34</time>
 ```
 
- ** Shows current time for 'US/Pacific' timezine and updats every second
+ ** Shows current time for 'US/Pacific' timezone and updats every second
 
 
 ### Formatting
@@ -56,7 +56,6 @@ you can use any formatting from [node-dateformat](https://github.com/felixge/nod
 |------------|---------------------|---------------|-------------|
 | `date`     | timestamp or string | currrent date | Date to output, If nothing is set then it take current date. |
 | `format`   | string              | 'HH:MM'       | Formatting from [node-dateformat](https://github.com/felixge/node-dateformat) library.
-| `locale`   | string              | 'en_US'       | Locale to translate formatted date to.
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
 | `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `inteval` seconds.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.

@@ -1,30 +1,87 @@
 import React from 'react';
-import ReactLiveClock from '../..';
+import Highlight from 'react-highlight.js'
+import Clock from '../..';
 import css from './App.css';
+
+const Panel = ({title, code, children}) =>
+  <div className="panel panel-default">
+    <div className="panel-heading">
+      <h4 className="panel-title" role="presentation">
+        { title }
+      </h4>
+    </div>
+    <div className="panel-body">
+      <h6>Code:</h6>
+      <Highlight language={'jsx'}>
+        {code}
+      </Highlight>
+      <h6>Output:</h6>
+      {children}
+    </div>
+  </div>
+;
 
 const App = () =>
   <div className={css.app}>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css" />
 
-    <h4>Default clock</h4>
-    <ReactLiveClock />
+    <h1>React Live Clock</h1>
+    <p>Show Date/time for any timezone</p>
+    <p><a href="https://github.com/pvoznyuk/react-live-clock">https://github.com/pvoznyuk/react-live-clock</a></p>
 
-    <h4>Default ticking clock in UK locale and custom class</h4>
-    <ReactLiveClock className={css.ukFormat} format={'h:MM:sstt'} ticking={true} />
+    <Panel
+      title="Default clock. Shows current time (hours and minutes) in user's timezone."
+      code="<Clock />">
+      <Clock />
+    </Panel>
 
-    <h4>Ticking clock with seconds</h4>
-    <ReactLiveClock format={'HH:MM:ss'} ticking={true} />
+    <Panel
+      title="Ticking clock in with custom format and custom class"
+      code={`<Clock
+      className={css.ukFormat}
+      format={'h:MM:sstt'}
+      ticking={true} />`}>
+      <Clock
+        className={css.ukFormat}
+        format={'h:MM:sstt'}
+        ticking={true} />
+    </Panel>
 
-    <h4>Ticking clock in timezone US/Pacific</h4>
-    <ReactLiveClock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+    <Panel
+      title="Ticking clock in timezone US/Pacific"
+      code={`<Clock
+        format={'HH:MM:ss'}
+        ticking={true}
+        timezone={'US/Pacific'} />`}>
+      <Clock
+        format={'HH:MM:ss'}
+        ticking={true}
+        timezone={'US/Pacific'} />
+    </Panel>
 
-    <h4>Specific date</h4>
-    <ReactLiveClock date={'1997-12-31T14:15:23+01:00'} format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />
+    <Panel
+      title="Output specific date"
+      code={`<Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />`}>
+      <Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />
+    </Panel>
 
-    <h4>The same date in timezone US/Pacific</h4>
-    <ReactLiveClock
-      date={'1997-12-31T14:15:23+01:00'}
-      format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
-      timezone={'US/Pacific'} />
+    <Panel
+      title="The same date in timezone Australia/Sydney"
+      code={`<Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
+        timezone={'Australia/Sydney'} />`}>
+      <Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
+        timezone={'Australia/Sydney'} />
+    </Panel>
 
   </div>;
 

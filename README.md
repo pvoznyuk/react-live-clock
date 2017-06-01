@@ -1,10 +1,6 @@
 # react-live-clock [![npm](https://img.shields.io/npm/v/react-live-clock.svg?style=flat-square)](https://www.npmjs.com/package/react-live-clock)
 
 [![Gitter](https://img.shields.io/gitter/room/pvoznyuk/help.svg?style=flat-square)](https://gitter.im/pvoznyuk/help)
-
-[![CircleCI](https://img.shields.io/circleci/project/pvoznyuk/react-live-clock.svg?style=flat-square&label=nix-build)](https://circleci.com/gh/pvoznyuk/react-live-clock)
-[![AppVeyor](https://img.shields.io/appveyor/ci/pvoznyuk/react-live-clock.svg?style=flat-square&label=win-build)](https://ci.appveyor.com/project/pvoznyuk/react-live-clock)
-[![Coverage](https://img.shields.io/codecov/c/github/pvoznyuk/react-live-clock.svg?style=flat-square)](https://codecov.io/github/pvoznyuk/react-live-clock?branch=master)
 [![Dependencies](https://img.shields.io/david/pvoznyuk/react-live-clock.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-live-clock)
 [![Dev Dependencies](https://img.shields.io/david/dev/pvoznyuk/react-live-clock.svg?style=flat-square)](https://david-dm.org/pvoznyuk/react-live-clock#info=devDependencies)
 
@@ -43,13 +39,24 @@ Outputs:
 <time>10:15:34</time>
 ```
 
- ** Shows current time for 'US/Pacific' timezine and updats every second
+ ** Shows current time for 'US/Pacific' timezone and updats every second
 
 
 ### Formatting
 
 you can use any formatting from [node-dateformat](https://github.com/felixge/node-dateformat) date library
 
+### Properties
+
+| Propertie  | Type                | Default Value | Description |
+|------------|---------------------|---------------|-------------|
+| `date`     | timestamp or string | currrent date | Date to output, If nothing is set then it take current date. |
+| `format`   | string              | 'HH:MM'       | Formatting from [node-dateformat](https://github.com/felixge/node-dateformat) library.
+| `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
+| `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `inteval` seconds.
+| `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.
+| `className`| string              | null          | Extra class.
+| `children` | string              | null          | `date` can be set as a children prop.
 
 ## Development and testing
 

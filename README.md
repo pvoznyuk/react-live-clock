@@ -28,7 +28,7 @@ import Clock from 'react-live-clock';
 
 exports default class MyComponent extends React.Component {
     render() {
-        <Clock format={'HH:MM:ss'} ticking={true} timezone={'US/Pacific'} />
+        <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
     }
 }
 ```
@@ -44,14 +44,14 @@ Outputs:
 
 ### Formatting
 
-you can use any formatting from [node-dateformat](https://github.com/felixge/node-dateformat) date library
+you can use any formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) date library
 
 ### Properties
 
 | Propertie  | Type                | Default Value | Description |
 |------------|---------------------|---------------|-------------|
 | `date`     | timestamp or string | currrent date | Date to output, If nothing is set then it take current date. |
-| `format`   | string              | 'HH:MM'       | Formatting from [node-dateformat](https://github.com/felixge/node-dateformat) library.
+| `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
 | `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `inteval` seconds.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.

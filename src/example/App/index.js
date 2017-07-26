@@ -1,5 +1,5 @@
 import React from 'react';
-import Highlight from 'react-highlight.js'
+import Highlight from 'react-highlight.js';
 import Clock from '../..';
 import css from './App.css';
 
@@ -41,22 +41,22 @@ const App = () =>
       title="Ticking clock in with custom format and custom class"
       code={`<Clock
       className={css.ukFormat}
-      format={'h:MM:sstt'}
+      format={'h:mm:ssa'}
       ticking={true} />`}>
       <Clock
         className={css.ukFormat}
-        format={'h:MM:sstt'}
+        format={'h:mm:ssa'}
         ticking={true} />
     </Panel>
 
     <Panel
       title="Ticking clock in timezone US/Pacific"
       code={`<Clock
-        format={'HH:MM:ss'}
+        format={'HH:mm:ss'}
         ticking={true}
         timezone={'US/Pacific'} />`}>
       <Clock
-        format={'HH:MM:ss'}
+        format={'HH:mm:ss'}
         ticking={true}
         timezone={'US/Pacific'} />
     </Panel>
@@ -65,21 +65,21 @@ const App = () =>
       title="Output specific date"
       code={`<Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />`}>
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />`}>
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'} />
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
     </Panel>
 
     <Panel
       title="The same date in timezone Australia/Sydney"
       code={`<Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
         timezone={'Australia/Sydney'} />`}>
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, mmmm dS, yyyy, h:MM:ss TT'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
         timezone={'Australia/Sydney'} />
     </Panel>
 

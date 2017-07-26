@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import dateFormat from 'dateformat';
-import tz from 'timezone/loaded';
+import moment from 'moment/moment';
+import 'moment-timezone';
 
 const getDate = date => date ? new Date(date).getTime() : new Date().getTime();
 
@@ -23,9 +23,13 @@ export default class ReactLiveClock extends React.Component {
   render() {
     const {children, className, date, format, timezone} = this.props;
     const dateValue = getDate(date || children);
-    const utc = tz(dateValue);
-    const localizedTime = tz(utc, '%x %X', 'en_US', timezone);
-    const formattedTime = dateFormat(new Date(localizedTime), format);
+    const localizedTime = moment(dateValue);
+
+    if (timezone) {
+      localizedTime.tz(timezone);
+    }
+
+    const formattedTime = localizedTime.format(format);
 
     return (
       <time className={className}>{ formattedTime }</time>
@@ -49,7 +53,7 @@ ReactLiveClock.propTypes = {
 ReactLiveClock.defaultProps = {
   className: null,
   date: null,
-  format: 'HH:MM',
+  format: 'HH:mm',
   interval: 1000,
   ticking: false,
   timezone: null

@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "React Live Clock",
   "main": "lib/index.js",
   "config": {
@@ -41,8 +41,8 @@
     "react-highlight.js": "1.0.5"
   },
   "dependencies": {
-    "dateformat": "2.0.0",
-    "prop-types": "15.5.10",
-    "timezone": "1.0.6"
+    "moment": "2.18.1",
+    "moment-timezone": "0.5.13",
+    "prop-types": "15.5.10"
   }
 }

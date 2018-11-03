@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "React Live Clock",
   "main": "lib/index.js",
   "config": {
@@ -38,6 +38,7 @@
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
     "react-component-template": "0.1.8",
+    "react-fittext": "1.0.0",
     "react-highlight.js": "1.0.5"
   },
   "dependencies": {

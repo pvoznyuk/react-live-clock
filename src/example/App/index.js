@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight from 'react-highlight.js';
+import ReactFitText from 'react-fittext';
 import Clock from '../..';
 import css from './App.css';
 
@@ -38,15 +39,32 @@ const App = () =>
     </Panel>
 
     <Panel
-      title="Ticking clock in with custom format and custom class"
+      title="Ticking clock in with custom format, custom class and styles"
       code={`<Clock
       className={css.ukFormat}
+      style={{fontSize: '1.5em'}}
       format={'h:mm:ssa'}
       ticking={true} />`}>
       <Clock
         className={css.ukFormat}
+        style={{fontSize: '1.5em'}}
         format={'h:mm:ssa'}
         ticking={true} />
+    </Panel>
+
+
+    <Panel
+      title="<Clock> inside <ReactFitText>"
+      code={`<ReactFitText compressor={0.4}>
+  <h1>
+    <Clock format="HH:mm:ss" ticking={true} interval={1000} />
+  </h1>
+</ReactFitText>`}>
+      <ReactFitText compressor={0.4}>
+        <h1>
+          <Clock format="HH:mm:ss" ticking={true} interval={1000} />
+        </h1>
+      </ReactFitText>
     </Panel>
 
     <Panel
@@ -80,6 +98,20 @@ const App = () =>
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
         format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        timezone={'Australia/Sydney'} />
+    </Panel>
+
+    <Panel
+      title="Date in the past that ticking"
+      code={`<Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        ticking={true}
+        timezone={'Australia/Sydney'} />`}>
+      <Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        ticking={true}
         timezone={'Australia/Sydney'} />
     </Panel>
 

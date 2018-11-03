@@ -65,8 +65,15 @@ export default class ReactLiveClock extends React.Component {
 
     const formattedTime = localizedTime.format(format);
 
+    const childProps = Object.keys(restProps)
+      .filter(key => !['date', 'interval', 'ticking'].includes(key))
+      .reduce((acc, key) => {
+        acc[key] = restProps[key];
+        return acc;
+      }, {});
+
     return (
-      <time {...restProps}>{ formattedTime }</time>
+      <time {...childProps}>{ formattedTime }</time>
     );
   }
 }

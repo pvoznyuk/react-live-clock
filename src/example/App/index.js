@@ -1,5 +1,6 @@
 import React from 'react';
 import Highlight from 'react-highlight.js';
+import ReactFitText from 'react-fittext';
 import Clock from '../..';
 import css from './App.css';
 
@@ -49,6 +50,21 @@ const App = () =>
         style={{fontSize: '1.5em'}}
         format={'h:mm:ssa'}
         ticking={true} />
+    </Panel>
+
+
+    <Panel
+      title="<Clock> inside <ReactFitText>"
+      code={`<ReactFitText compressor={0.4}>
+  <h1>
+    <Clock format="HH:mm:ss" ticking={true} interval={1000} />
+  </h1>
+</ReactFitText>`}>
+      <ReactFitText compressor={0.4}>
+        <h1>
+          <Clock format="HH:mm:ss" ticking={true} interval={1000} />
+        </h1>
+      </ReactFitText>
     </Panel>
 
     <Panel

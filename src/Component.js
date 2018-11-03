@@ -6,10 +6,12 @@ const getDate = date => date ? new Date(date).getTime() : new Date().getTime();
 
 export default class ReactLiveClock extends React.Component {
   componentDidMount() {
-    if (this.props.ticking) {
+    const {ticking, interval} = this.props;
+
+    if (ticking) {
       this.tickTimer = setInterval(() => {
         this.forceUpdate();
-      }, this.props.interval);
+      }, interval);
     }
   }
 
@@ -20,7 +22,7 @@ export default class ReactLiveClock extends React.Component {
   }
 
   render() {
-    const {children, className, date, format, timezone} = this.props;
+    const {children, date, format, timezone, ...restProps} = this.props;
     const dateValue = getDate(date || children);
     const localizedTime = moment(dateValue);
 
@@ -31,14 +33,13 @@ export default class ReactLiveClock extends React.Component {
     const formattedTime = localizedTime.format(format);
 
     return (
-      <time className={className}>{ formattedTime }</time>
+      <time {...restProps}>{ formattedTime }</time>
     );
   }
 }
 
 ReactLiveClock.propTypes = {
   children: PropTypes.string,
-  className: PropTypes.string,
   date: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
@@ -50,7 +51,6 @@ ReactLiveClock.propTypes = {
 };
 
 ReactLiveClock.defaultProps = {
-  className: null,
   date: null,
   format: 'HH:mm',
   interval: 1000,

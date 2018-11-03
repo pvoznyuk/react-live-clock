@@ -38,13 +38,15 @@ const App = () =>
     </Panel>
 
     <Panel
-      title="Ticking clock in with custom format and custom class"
+      title="Ticking clock in with custom format, custom class and styles"
       code={`<Clock
       className={css.ukFormat}
+      style={{fontSize: '1.5em'}}
       format={'h:mm:ssa'}
       ticking={true} />`}>
       <Clock
         className={css.ukFormat}
+        style={{fontSize: '1.5em'}}
         format={'h:mm:ssa'}
         ticking={true} />
     </Panel>

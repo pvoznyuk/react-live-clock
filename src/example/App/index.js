@@ -85,6 +85,20 @@ const App = () =>
         timezone={'Australia/Sydney'} />
     </Panel>
 
+    <Panel
+      title="Date in the past that ticking"
+      code={`<Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        ticking={true}
+        timezone={'Australia/Sydney'} />`}>
+      <Clock
+        date={'1997-12-31T14:15:23+01:00'}
+        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        ticking={true}
+        timezone={'Australia/Sydney'} />
+    </Panel>
+
   </div>;
 
 export default App;

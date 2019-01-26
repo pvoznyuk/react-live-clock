@@ -22,7 +22,7 @@ export default class ReactLiveClock extends React.Component {
 
   render() {
     const {ago, children, className, date, format, from, fromNow,
-           locale, parse, timezone, to, toNow, unix} = this.props;
+           locale, parse, timezone, to, toNow, unix, filter, onChange} = this.props;
 
     return (
       <Moment
@@ -36,6 +36,8 @@ export default class ReactLiveClock extends React.Component {
         parse={parse}
         to={to}
         toNow={toNow}
+        filter={filter}
+        onChange={onChange}
         tz={timezone}
         unix={unix} />
     );
@@ -60,7 +62,9 @@ ReactLiveClock.propTypes = {
   toNow: PropTypes.bool,
   unix: PropTypes.bool,
   ticking: PropTypes.bool,
-  timezone: PropTypes.string
+  timezone: PropTypes.string,
+  filter: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 ReactLiveClock.defaultProps = {
@@ -75,6 +79,8 @@ ReactLiveClock.defaultProps = {
   parse: null,
   to: null,
   toNow: false,
+  filter: (d) => { return d; },
+  onChange: () => {},
   unix: false,
   ticking: false,
   timezone: null

@@ -74,7 +74,7 @@ export default class ReactLiveClock extends React.Component {
       }, {});
 
     return (
-      <time {...childProps}>{ formattedTime }</time>
+      <time {...childProps}>{ filteredTime }</time>
     );
   }
 }

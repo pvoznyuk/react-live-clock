@@ -55,7 +55,7 @@ export default class ReactLiveClock extends React.Component {
   }
 
   render() {
-    const {format, timezone, ...restProps} = this.props;
+    const {filter, format, timezone, ...restProps} = this.props;
     const {now} = this.state;
     const localizedTime = now;
 
@@ -64,6 +64,7 @@ export default class ReactLiveClock extends React.Component {
     }
 
     const formattedTime = localizedTime.format(format);
+    const filteredTime = filter(formattedTime);
 
     const childProps = Object.keys(restProps)
       .filter(key => !['date', 'interval', 'ticking'].includes(key))
@@ -87,7 +88,8 @@ ReactLiveClock.propTypes = {
   format: PropTypes.string,
   interval: PropTypes.number,
   ticking: PropTypes.bool,
-  timezone: PropTypes.string
+  timezone: PropTypes.string,
+  filter: PropTypes.func,
 };
 
 ReactLiveClock.defaultProps = {
@@ -95,5 +97,6 @@ ReactLiveClock.defaultProps = {
   format: 'HH:mm',
   interval: 1000,
   ticking: false,
-  timezone: null
+  timezone: null,
+  filter: (d) => { return d; },
 };

@@ -16,7 +16,8 @@ export default class ReactLiveClock extends React.Component {
       realTime: !date,
       now: baseTime,
       baseTime,
-      startTime: timesatmp
+      startTime: timesatmp,
+      formattedString: ''
     };
   }
 
@@ -36,45 +37,62 @@ export default class ReactLiveClock extends React.Component {
     }
   }
 
+  formatTime(time) {
+    const {filter, format, timezone} = this.props;
+
+    if (timezone) {
+      time.tz(timezone);
+    }
+
+    const formattedTime = time.format(format);
+    const filteredTime = filter(formattedTime);
+
+    return filteredTime;
+  }
+
   updateClock() {
-    const {realTime} = this.state;
+    const {realTime, formattedString} = this.state;
+    const {onChange} = this.props;
+    let now;
 
     if (realTime) {
-      this.setState({
-        now: moment()
-      });
+      now = moment();
     } else {
       const {baseTime, startTime} = this.state;
       const newTime = moment();
       const diff = newTime.diff(startTime, BASE_UNIT);
 
-      this.setState({
-        now: baseTime.clone().add(diff, BASE_UNIT)
+      now = baseTime.clone().add(diff, BASE_UNIT);
+    }
+
+    const formattedTime = this.formatTime(now);
+
+    if (formattedTime !== formattedString) {
+      onChange({
+        moment: now,
+        output: formattedTime,
+        previousOutput: formattedString
       });
     }
+
+    this.setState({
+      now,
+      formattedString: formattedTime
+    });
   }
 
   render() {
-    const {filter, format, timezone, ...restProps} = this.props;
-    const {now} = this.state;
-    const localizedTime = now;
+    const {formattedString} = this.state;
 
-    if (timezone) {
-      localizedTime.tz(timezone);
-    }
-
-    const formattedTime = localizedTime.format(format);
-    const filteredTime = filter(formattedTime);
-
-    const childProps = Object.keys(restProps)
-      .filter(key => !['date', 'interval', 'ticking'].includes(key))
+    const childProps = Object.keys(this.props)
+      .filter(key => !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key))
       .reduce((acc, key) => {
-        acc[key] = restProps[key];
+        acc[key] = this.props[key];
         return acc;
       }, {});
 
     return (
-      <time {...childProps}>{ filteredTime }</time>
+      <time {...childProps}>{ formattedString }</time>
     );
   }
 }
@@ -90,6 +108,7 @@ ReactLiveClock.propTypes = {
   ticking: PropTypes.bool,
   timezone: PropTypes.string,
   filter: PropTypes.func,
+  onChange: PropTypes.func
 };
 
 ReactLiveClock.defaultProps = {
@@ -98,5 +117,6 @@ ReactLiveClock.defaultProps = {
   interval: 1000,
   ticking: false,
   timezone: null,
-  filter: (d) => { return d; },
+  filter: date => date,
+  onChange: date => date
 };

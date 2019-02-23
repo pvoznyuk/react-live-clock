@@ -115,6 +115,18 @@ const App = () =>
         timezone={'Australia/Sydney'} />
     </Panel>
 
+    <Panel
+      title="Filter the value before output."
+      code="<Clock format={'HH:mm:ss'} ticking={true} filter={date => date.replace('8', '7a')} />">
+      <Clock format={'HH:mm:ss'} ticking={true} filter={date => date.replace('8', '7a')} />
+    </Panel>
+
+    <Panel
+      title="onChange event"
+      code="<Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date)} />">
+      <Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date.output)} />
+    </Panel>
+
   </div>;
 
 export default App;

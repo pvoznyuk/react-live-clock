@@ -79,7 +79,7 @@ ReactLiveClock.defaultProps = {
   parse: null,
   to: null,
   toNow: false,
-  filter: (d) => { return d; },
+  filter: d => d,
   onChange: () => {},
   unix: false,
   ticking: false,

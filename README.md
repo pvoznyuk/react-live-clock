@@ -54,7 +54,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 | `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.
 | `filter`   | function            | (date: String) => date      | Filtering the value before the output .
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
-| `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `inteval` seconds.
+| `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `interval` seconds.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.
 | `className`| string              | null          | Extra class.
 | `children` | string              | null          | `date` can be set as a children prop.

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
 import ReactFitText from 'react-fittext';
 import Clock from '../..';
@@ -21,6 +22,12 @@ const Panel = ({title, code, children}) =>
     </div>
   </div>
 ;
+
+Panel.propTypes = {
+  title: PropTypes.string,
+  code: PropTypes.string,
+  children: PropTypes.node
+};
 
 const App = () =>
   <div className={css.app}>

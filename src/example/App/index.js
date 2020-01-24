@@ -31,55 +31,71 @@ Panel.propTypes = {
 
 const App = () =>
   <div className={css.app}>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css"
+      rel="stylesheet" />
 
     <h1>React Live Clock</h1>
     <p>Show Date/time for any timezone</p>
-    <p><a href="https://github.com/pvoznyuk/react-live-clock">https://github.com/pvoznyuk/react-live-clock</a></p>
+    <p>
+      <a href="https://github.com/pvoznyuk/react-live-clock">
+        https://github.com/pvoznyuk/react-live-clock
+      </a>
+    </p>
 
     <Panel
-      title="Default clock. Shows current time (hours and minutes) in user's timezone."
-      code="<Clock />">
+      code="<Clock />"
+      title="Default clock. Shows current time (hours and minutes) in user's timezone.">
       <Clock />
     </Panel>
 
     <Panel
-      title="Ticking clock in with custom format, custom class and styles"
-      code={`<Clock
-      className={css.ukFormat}
-      style={{fontSize: '1.5em'}}
-      format={'h:mm:ssa'}
-      ticking={true} />`}>
+      code={`
+        <Clock
+          className={css.ukFormat}
+          format={'h:mm:ssa'}
+          style={{fontSize: '1.5em'}}
+          ticking={true} />
+      `}
+      title="Ticking clock in with custom format, custom class and styles">
       <Clock
         className={css.ukFormat}
-        style={{fontSize: '1.5em'}}
         format={'h:mm:ssa'}
+        style={{fontSize: '1.5em'}}
         ticking={true} />
     </Panel>
 
 
     <Panel
-      title="<Clock> inside <ReactFitText>"
-      code={`<ReactFitText compressor={0.4}>
-  <h1>
-    <Clock format="HH:mm:ss" ticking={true} interval={1000} />
-  </h1>
-</ReactFitText>`}>
+      code={`
+        <ReactFitText compressor={0.4}>
+          <h1>
+            <Clock format="HH:mm:ss" interval={1000} ticking={true} />
+          </h1>
+        </ReactFitText>
+      `}
+      title="<Clock> inside <ReactFitText>">
       <ReactFitText compressor={0.4}>
         <h1>
-          <Clock format="HH:mm:ss" ticking={true} interval={1000} />
+          <Clock format="HH:mm:ss" interval={1000} ticking={true} />
         </h1>
       </ReactFitText>
     </Panel>
 
     <Panel
-      title="Ticking clock in timezone US/Pacific"
-      code={`<Clock
-        format={'HH:mm:ss'}
-        ticking={true}
-        timezone={'US/Pacific'} />`}>
+      code={`
+        <Clock
+          format={'HH:mm:ss'}
+          ticking={true}
+          timezone={'US/Pacific'} />
+      `}
+      title="Ticking clock in timezone US/Pacific">
       <Clock
         format={'HH:mm:ss'}
         ticking={true}
@@ -87,21 +103,25 @@ const App = () =>
     </Panel>
 
     <Panel
-      title="Output specific date"
-      code={`<Clock
-        date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />`}>
+      code={`
+        <Clock
+          date={'1997-12-31T14:15:23+01:00'}
+          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
+      `}
+      title="Output specific date">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
         format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
     </Panel>
 
     <Panel
-      title="The same date in timezone Australia/Sydney"
-      code={`<Clock
-        date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
-        timezone={'Australia/Sydney'} />`}>
+      code={`
+        <Clock
+          date={'1997-12-31T14:15:23+01:00'}
+          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          timezone={'Australia/Sydney'} />
+      `}
+      title="The same date in timezone Australia/Sydney">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
         format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
@@ -109,12 +129,14 @@ const App = () =>
     </Panel>
 
     <Panel
-      title="Date in the past that ticking"
-      code={`<Clock
-        date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
-        ticking={true}
-        timezone={'Australia/Sydney'} />`}>
+      code={`
+        <Clock
+          date={'1997-12-31T14:15:23+01:00'}
+          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          ticking={true}
+          timezone={'Australia/Sydney'} />
+      `}
+      title="Date in the past that ticking">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
         format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
@@ -123,15 +145,20 @@ const App = () =>
     </Panel>
 
     <Panel
-      title="Filter the value before output."
-      code="<Clock format={'HH:mm:ss'} ticking={true} filter={date => date.replace('8', '7a')} />">
-      <Clock format={'HH:mm:ss'} ticking={true} filter={date => date.replace('8', '7a')} />
+      code="<Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />"
+      title="Filter the value before output.">
+      <Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />
     </Panel>
 
     <Panel
-      title="onChange event"
-      code="<Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date)} />">
-      <Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date.output)} />
+      code="<Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date)} />"
+      title="onChange event">
+      <Clock
+        format={'HH:mm:ss'}
+        onChange={date =>
+          console.log(date.output) // eslint-disable-line no-console
+        }
+        ticking={true} />
     </Panel>
 
   </div>;

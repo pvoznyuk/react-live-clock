@@ -29,15 +29,15 @@ export default class ReactLiveClock extends React.Component {
         ago={ago}
         className={className}
         date={getDate(date || children)}
+        filter={filter}
         format={format}
         from={from}
         fromNow={fromNow}
         locale={locale}
+        onChange={onChange}
         parse={parse}
         to={to}
         toNow={toNow}
-        filter={filter}
-        onChange={onChange}
         tz={timezone}
         unix={unix} />
     );
@@ -80,7 +80,7 @@ ReactLiveClock.defaultProps = {
   to: null,
   toNow: false,
   filter: d => d,
-  onChange: () => {},
+  onChange: () => null,
   unix: false,
   ticking: false,
   timezone: null

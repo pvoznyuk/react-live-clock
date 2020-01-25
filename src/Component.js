@@ -9,14 +9,14 @@ export default class ReactLiveClock extends React.Component {
     super(props);
 
     const date = props.date || props.children || null;
-    const timesatmp = moment();
-    const baseTime = date ? moment(new Date(date).getTime()) : timesatmp;
+    const timestamp = moment();
+    const baseTime = date ? moment(new Date(date).getTime()) : timestamp;
 
     this.state = {
       realTime: !date,
       now: baseTime,
       baseTime,
-      startTime: timesatmp,
+      startTime: timestamp,
       formattedString: ''
     };
   }

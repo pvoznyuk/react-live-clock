@@ -5,7 +5,6 @@ import moment from 'moment-timezone';
 const BASE_UNIT = 'milliseconds';
 
 export default function ReactLiveClock(props) {
-
   const formatTime = time => {
     const {filter, format, timezone} = props;
 
@@ -24,10 +23,10 @@ export default function ReactLiveClock(props) {
   const timestamp = moment();
   const InitialBaseTime = date ? moment(new Date(date).getTime()) : timestamp;
 
-  const [realTime, SetRealTime] = useState(!date);
-  const [now, setNow] = useState(InitialBaseTime);
-  const [baseTime, setBaseTime] = useState(InitialBaseTime);
-  const [startTime, setStartTime] = useState(timestamp);
+  const realTime = !date;
+  let now = InitialBaseTime;
+  const baseTime = InitialBaseTime;
+  const startTime = timestamp;
   const [formattedString, setFormattedString] = useState(formatTime(now));
   const [tickTimer, setTickTimer] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -53,18 +52,19 @@ export default function ReactLiveClock(props) {
       newNow = baseTime.clone().add(diff, BASE_UNIT);
     }
 
-    const formattedTime = formatTime(newNow);
+    const newFormattedTime = formatTime(newNow);
+    const formattedTime = formatTime(now);
 
-    if (formattedTime !== formattedString) {
+    if (newFormattedTime !== formattedTime) {
       onChange({
         moment: newNow,
         output: formattedTime,
         previousOutput: formattedString
       });
+      setFormattedString(newFormattedTime);
     }
 
-    setNow(newNow);
-    setFormattedString(formattedTime);
+    now = newNow;
   };
 
 
@@ -80,7 +80,7 @@ export default function ReactLiveClock(props) {
       }
     }
     return () => tickTimer && clearInterval(tickTimer);
-  }, [useState]);
+  }, []);
 
   return (
     <time {...childProps} >

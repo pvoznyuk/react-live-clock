@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "pvoznyuk",
+    "lcov",
+    "pids",
+    "Pavlo",
+    "Vozniuk",
+    "codecov",
+    "unmount",
+    "nyan"
+  ],
+  "cSpell.ignorePaths": [
+    "**/package-lock.json",
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/objects/**",
+    ".vscode",
+    "**/lib/**",
+    "**/build/**"
+  ]
+}

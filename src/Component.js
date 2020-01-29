@@ -1,44 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment-timezone';
 
 const BASE_UNIT = 'milliseconds';
 
-export default class ReactLiveClock extends React.Component {
-  constructor(props) {
-    super(props);
+export default function ReactLiveClock(props) {
 
-    const date = props.date || props.children || null;
-    const timestamp = moment();
-    const baseTime = date ? moment(new Date(date).getTime()) : timestamp;
-
-    this.state = {
-      realTime: !date,
-      now: baseTime,
-      baseTime,
-      startTime: timestamp,
-      formattedString: ''
-    };
-  }
-
-  componentDidMount() {
-    const {ticking, interval} = this.props;
-
-    if (ticking && interval) {
-      this.tickTimer = setInterval(() => {
-        this.updateClock();
-      }, interval);
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.tickTimer) {
-      clearInterval(this.tickTimer);
-    }
-  }
-
-  formatTime(time) {
-    const {filter, format, timezone} = this.props;
+  const formatTime = time => {
+    const {filter, format, timezone} = props;
 
     if (timezone) {
       time.tz(timezone);
@@ -48,53 +17,76 @@ export default class ReactLiveClock extends React.Component {
     const filteredTime = filter(formattedTime);
 
     return filteredTime;
-  }
+  };
 
-  updateClock() {
-    const {realTime, formattedString} = this.state;
-    const {onChange} = this.props;
-    let now;
+
+  const date = props.date || props.children || null;
+  const timestamp = moment();
+  const InitialBaseTime = date ? moment(new Date(date).getTime()) : timestamp;
+
+  const [realTime, SetRealTime] = useState(!date);
+  const [now, setNow] = useState(InitialBaseTime);
+  const [baseTime, setBaseTime] = useState(InitialBaseTime);
+  const [startTime, setStartTime] = useState(timestamp);
+  const [formattedString, setFormattedString] = useState(formatTime(now));
+  const [tickTimer, setTickTimer] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const childProps = Object.keys(props)
+  .filter(key => !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key))
+  .reduce((acc, key) => {
+    acc[key] = props[key];
+    return acc;
+  }, {});
+
+
+  const updateClock = () => {
+    const {onChange} = props;
+    let newNow;
 
     if (realTime) {
-      now = moment();
+      newNow = moment();
     } else {
-      const {baseTime, startTime} = this.state;
       const newTime = moment();
       const diff = newTime.diff(startTime, BASE_UNIT);
 
-      now = baseTime.clone().add(diff, BASE_UNIT);
+      newNow = baseTime.clone().add(diff, BASE_UNIT);
     }
 
-    const formattedTime = this.formatTime(now);
+    const formattedTime = formatTime(newNow);
 
     if (formattedTime !== formattedString) {
       onChange({
-        moment: now,
+        moment: newNow,
         output: formattedTime,
         previousOutput: formattedString
       });
     }
 
-    this.setState({
-      now,
-      formattedString: formattedTime
-    });
-  }
+    setNow(newNow);
+    setFormattedString(formattedTime);
+  };
 
-  render() {
-    const {formattedString} = this.state;
 
-    const childProps = Object.keys(this.props)
-      .filter(key => !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key))
-      .reduce((acc, key) => {
-        acc[key] = this.props[key];
-        return acc;
-      }, {});
+  useEffect(() => {
+    const {ticking, interval} = props;
 
-    return (
-      <time {...childProps}>{ formattedString }</time>
-    );
-  }
+    if (ticking || interval) {
+      if (!mounted) {
+        const intervalId = setInterval(() => updateClock(), interval);
+
+        setTickTimer(intervalId);
+        setMounted(true);
+      }
+    }
+    return () => tickTimer && clearInterval(tickTimer);
+  }, [useState]);
+
+  return (
+    <time {...childProps} >
+      { formattedString }
+    </time>
+  );
 }
 
 ReactLiveClock.propTypes = {

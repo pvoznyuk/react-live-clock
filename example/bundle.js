@@ -20432,19 +20432,23 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactHighlight = __webpack_require__(164);
+	var _propTypes = __webpack_require__(164);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _reactHighlight = __webpack_require__(167);
 	
 	var _reactHighlight2 = _interopRequireDefault(_reactHighlight);
 	
-	var _reactFittext = __webpack_require__(343);
+	var _reactFittext = __webpack_require__(355);
 	
 	var _reactFittext2 = _interopRequireDefault(_reactFittext);
 	
-	var _ = __webpack_require__(349);
+	var _ = __webpack_require__(358);
 	
 	var _2 = _interopRequireDefault(_);
 	
-	var _App = __webpack_require__(475);
+	var _App = __webpack_require__(484);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -20489,13 +20493,25 @@
 	  );
 	};
 	
+	Panel.propTypes = {
+	  title: _propTypes2.default.string,
+	  code: _propTypes2.default.string,
+	  children: _propTypes2.default.node
+	};
+	
 	var App = function App() {
 	  return _react2.default.createElement(
 	    'div',
 	    { className: _App2.default.app },
-	    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css' }),
-	    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css' }),
-	    _react2.default.createElement('link', { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css' }),
+	    _react2.default.createElement('link', {
+	      href: 'https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css',
+	      rel: 'stylesheet' }),
+	    _react2.default.createElement('link', {
+	      href: 'https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css',
+	      rel: 'stylesheet' }),
+	    _react2.default.createElement('link', {
+	      href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/atom-one-dark.min.css',
+	      rel: 'stylesheet' }),
 	    _react2.default.createElement(
 	      'h1',
 	      null,
@@ -20518,41 +20534,41 @@
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'Default clock. Shows current time (hours and minutes) in user\'s timezone.',
-	        code: '<Clock />' },
+	        code: '<Clock />',
+	        title: 'Default clock. Shows current time (hours and minutes) in user\'s timezone.' },
 	      _react2.default.createElement(_2.default, null)
 	    ),
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'Ticking clock in with custom format, custom class and styles',
-	        code: '<Clock\n      className={css.ukFormat}\n      style={{fontSize: \'1.5em\'}}\n      format={\'h:mm:ssa\'}\n      ticking={true} />' },
+	        code: '\n        <Clock\n          className={css.ukFormat}\n          format={\'h:mm:ssa\'}\n          style={{fontSize: \'1.5em\'}}\n          ticking={true} />\n      ',
+	        title: 'Ticking clock in with custom format, custom class and styles' },
 	      _react2.default.createElement(_2.default, {
 	        className: _App2.default.ukFormat,
-	        style: { fontSize: '1.5em' },
 	        format: 'h:mm:ssa',
+	        style: { fontSize: '1.5em' },
 	        ticking: true })
 	    ),
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: '<Clock> inside <ReactFitText>',
-	        code: '<ReactFitText compressor={0.4}>\n  <h1>\n    <Clock format="HH:mm:ss" ticking={true} interval={1000} />\n  </h1>\n</ReactFitText>' },
+	        code: '\n        <ReactFitText compressor={0.4}>\n          <h1>\n            <Clock format="HH:mm:ss" interval={1000} ticking={true} />\n          </h1>\n        </ReactFitText>\n      ',
+	        title: '<Clock> inside <ReactFitText>' },
 	      _react2.default.createElement(
 	        _reactFittext2.default,
 	        { compressor: 0.4 },
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          _react2.default.createElement(_2.default, { format: 'HH:mm:ss', ticking: true, interval: 1000 })
+	          _react2.default.createElement(_2.default, { format: 'HH:mm:ss', interval: 1000, ticking: true })
 	        )
 	      )
 	    ),
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'Ticking clock in timezone US/Pacific',
-	        code: '<Clock\n        format={\'HH:mm:ss\'}\n        ticking={true}\n        timezone={\'US/Pacific\'} />' },
+	        code: '\n        <Clock\n          format={\'HH:mm:ss\'}\n          ticking={true}\n          timezone={\'US/Pacific\'} />\n      ',
+	        title: 'Ticking clock in timezone US/Pacific' },
 	      _react2.default.createElement(_2.default, {
 	        format: 'HH:mm:ss',
 	        ticking: true,
@@ -20561,8 +20577,8 @@
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'Output specific date',
-	        code: '<Clock\n        date={\'1997-12-31T14:15:23+01:00\'}\n        format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'} />' },
+	        code: '\n        <Clock\n          date={\'1997-12-31T14:15:23+01:00\'}\n          format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'} />\n      ',
+	        title: 'Output specific date' },
 	      _react2.default.createElement(_2.default, {
 	        date: '1997-12-31T14:15:23+01:00',
 	        format: 'dddd, MMMM Mo, YYYY, h:mm:ss A' })
@@ -20570,8 +20586,8 @@
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'The same date in timezone Australia/Sydney',
-	        code: '<Clock\n        date={\'1997-12-31T14:15:23+01:00\'}\n        format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'}\n        timezone={\'Australia/Sydney\'} />' },
+	        code: '\n        <Clock\n          date={\'1997-12-31T14:15:23+01:00\'}\n          format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'}\n          timezone={\'Australia/Sydney\'} />\n      ',
+	        title: 'The same date in timezone Australia/Sydney' },
 	      _react2.default.createElement(_2.default, {
 	        date: '1997-12-31T14:15:23+01:00',
 	        format: 'dddd, MMMM Mo, YYYY, h:mm:ss A',
@@ -20580,13 +20596,35 @@
 	    _react2.default.createElement(
 	      Panel,
 	      {
-	        title: 'Date in the past that ticking',
-	        code: '<Clock\n        date={\'1997-12-31T14:15:23+01:00\'}\n        format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'}\n        ticking={true}\n        timezone={\'Australia/Sydney\'} />' },
+	        code: '\n        <Clock\n          date={\'1997-12-31T14:15:23+01:00\'}\n          format={\'dddd, MMMM Mo, YYYY, h:mm:ss A\'}\n          ticking={true}\n          timezone={\'Australia/Sydney\'} />\n      ',
+	        title: 'Date in the past that ticking' },
 	      _react2.default.createElement(_2.default, {
 	        date: '1997-12-31T14:15:23+01:00',
 	        format: 'dddd, MMMM Mo, YYYY, h:mm:ss A',
 	        ticking: true,
 	        timezone: 'Australia/Sydney' })
+	    ),
+	    _react2.default.createElement(
+	      Panel,
+	      {
+	        code: '<Clock filter={date => date.replace(\'8\', \'7a\')} format={\'HH:mm:ss\'} ticking={true} />',
+	        title: 'Filter the value before output.' },
+	      _react2.default.createElement(_2.default, { filter: function filter(date) {
+	          return date.replace('8', '7a');
+	        }, format: 'HH:mm:ss', ticking: true })
+	    ),
+	    _react2.default.createElement(
+	      Panel,
+	      {
+	        code: '<Clock format={\'HH:mm:ss\'} ticking={true} onChange={date => console.log(date)} />',
+	        title: 'onChange event' },
+	      _react2.default.createElement(_2.default, {
+	        format: 'HH:mm:ss',
+	        onChange: function onChange(date) {
+	          return console.log(date.output);
+	        } // eslint-disable-line no-console
+	        ,
+	        ticking: true })
 	    )
 	  );
 	};
@@ -20595,6 +20633,127 @@
 
 /***/ },
 /* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	if (false) {
+	  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+	    Symbol.for &&
+	    Symbol.for('react.element')) ||
+	    0xeac7;
+	
+	  var isValidElement = function(object) {
+	    return typeof object === 'object' &&
+	      object !== null &&
+	      object.$$typeof === REACT_ELEMENT_TYPE;
+	  };
+	
+	  // By explicitly using `prop-types` you are opting into new development behavior.
+	  // http://fb.me/prop-types-in-prod
+	  var throwOnDirectAccess = true;
+	  module.exports = require('./factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
+	} else {
+	  // By explicitly using `prop-types` you are opting into new production behavior.
+	  // http://fb.me/prop-types-in-prod
+	  module.exports = __webpack_require__(165)();
+	}
+
+
+/***/ },
+/* 165 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	'use strict';
+	
+	var emptyFunction = __webpack_require__(11);
+	var invariant = __webpack_require__(7);
+	var ReactPropTypesSecret = __webpack_require__(166);
+	
+	module.exports = function() {
+	  function shim(props, propName, componentName, location, propFullName, secret) {
+	    if (secret === ReactPropTypesSecret) {
+	      // It is still safe when called from React.
+	      return;
+	    }
+	    invariant(
+	      false,
+	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+	      'Use PropTypes.checkPropTypes() to call them. ' +
+	      'Read more at http://fb.me/use-check-prop-types'
+	    );
+	  };
+	  shim.isRequired = shim;
+	  function getShim() {
+	    return shim;
+	  };
+	  // Important!
+	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+	  var ReactPropTypes = {
+	    array: shim,
+	    bool: shim,
+	    func: shim,
+	    number: shim,
+	    object: shim,
+	    string: shim,
+	    symbol: shim,
+	
+	    any: shim,
+	    arrayOf: getShim,
+	    element: shim,
+	    instanceOf: getShim,
+	    node: shim,
+	    objectOf: getShim,
+	    oneOf: getShim,
+	    oneOfType: getShim,
+	    shape: getShim
+	  };
+	
+	  ReactPropTypes.checkPropTypes = emptyFunction;
+	  ReactPropTypes.PropTypes = ReactPropTypes;
+	
+	  return ReactPropTypes;
+	};
+
+
+/***/ },
+/* 166 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-present, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 */
+	
+	'use strict';
+	
+	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+	
+	module.exports = ReactPropTypesSecret;
+
+
+/***/ },
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports =
@@ -20771,199 +20930,208 @@
 	/* 5 */
 	/***/ function(module, exports) {
 	
-		module.exports = __webpack_require__(165);
+		module.exports = __webpack_require__(168);
 	
 	/***/ }
 	/******/ ]);
 	//# sourceMappingURL=main.js.map
 
 /***/ },
-/* 165 */
+/* 168 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var hljs = __webpack_require__(166);
+	var hljs = __webpack_require__(169);
 	
-	hljs.registerLanguage('1c', __webpack_require__(167));
-	hljs.registerLanguage('abnf', __webpack_require__(168));
-	hljs.registerLanguage('accesslog', __webpack_require__(169));
-	hljs.registerLanguage('actionscript', __webpack_require__(170));
-	hljs.registerLanguage('ada', __webpack_require__(171));
-	hljs.registerLanguage('apache', __webpack_require__(172));
-	hljs.registerLanguage('applescript', __webpack_require__(173));
-	hljs.registerLanguage('cpp', __webpack_require__(174));
-	hljs.registerLanguage('arduino', __webpack_require__(175));
-	hljs.registerLanguage('armasm', __webpack_require__(176));
-	hljs.registerLanguage('xml', __webpack_require__(177));
-	hljs.registerLanguage('asciidoc', __webpack_require__(178));
-	hljs.registerLanguage('aspectj', __webpack_require__(179));
-	hljs.registerLanguage('autohotkey', __webpack_require__(180));
-	hljs.registerLanguage('autoit', __webpack_require__(181));
-	hljs.registerLanguage('avrasm', __webpack_require__(182));
-	hljs.registerLanguage('awk', __webpack_require__(183));
-	hljs.registerLanguage('axapta', __webpack_require__(184));
-	hljs.registerLanguage('bash', __webpack_require__(185));
-	hljs.registerLanguage('basic', __webpack_require__(186));
-	hljs.registerLanguage('bnf', __webpack_require__(187));
-	hljs.registerLanguage('brainfuck', __webpack_require__(188));
-	hljs.registerLanguage('cal', __webpack_require__(189));
-	hljs.registerLanguage('capnproto', __webpack_require__(190));
-	hljs.registerLanguage('ceylon', __webpack_require__(191));
-	hljs.registerLanguage('clean', __webpack_require__(192));
-	hljs.registerLanguage('clojure', __webpack_require__(193));
-	hljs.registerLanguage('clojure-repl', __webpack_require__(194));
-	hljs.registerLanguage('cmake', __webpack_require__(195));
-	hljs.registerLanguage('coffeescript', __webpack_require__(196));
-	hljs.registerLanguage('coq', __webpack_require__(197));
-	hljs.registerLanguage('cos', __webpack_require__(198));
-	hljs.registerLanguage('crmsh', __webpack_require__(199));
-	hljs.registerLanguage('crystal', __webpack_require__(200));
-	hljs.registerLanguage('cs', __webpack_require__(201));
-	hljs.registerLanguage('csp', __webpack_require__(202));
-	hljs.registerLanguage('css', __webpack_require__(203));
-	hljs.registerLanguage('d', __webpack_require__(204));
-	hljs.registerLanguage('markdown', __webpack_require__(205));
-	hljs.registerLanguage('dart', __webpack_require__(206));
-	hljs.registerLanguage('delphi', __webpack_require__(207));
-	hljs.registerLanguage('diff', __webpack_require__(208));
-	hljs.registerLanguage('django', __webpack_require__(209));
-	hljs.registerLanguage('dns', __webpack_require__(210));
-	hljs.registerLanguage('dockerfile', __webpack_require__(211));
-	hljs.registerLanguage('dos', __webpack_require__(212));
-	hljs.registerLanguage('dsconfig', __webpack_require__(213));
-	hljs.registerLanguage('dts', __webpack_require__(214));
-	hljs.registerLanguage('dust', __webpack_require__(215));
-	hljs.registerLanguage('ebnf', __webpack_require__(216));
-	hljs.registerLanguage('elixir', __webpack_require__(217));
-	hljs.registerLanguage('elm', __webpack_require__(218));
-	hljs.registerLanguage('ruby', __webpack_require__(219));
-	hljs.registerLanguage('erb', __webpack_require__(220));
-	hljs.registerLanguage('erlang-repl', __webpack_require__(221));
-	hljs.registerLanguage('erlang', __webpack_require__(222));
-	hljs.registerLanguage('excel', __webpack_require__(223));
-	hljs.registerLanguage('fix', __webpack_require__(224));
-	hljs.registerLanguage('flix', __webpack_require__(225));
-	hljs.registerLanguage('fortran', __webpack_require__(226));
-	hljs.registerLanguage('fsharp', __webpack_require__(227));
-	hljs.registerLanguage('gams', __webpack_require__(228));
-	hljs.registerLanguage('gauss', __webpack_require__(229));
-	hljs.registerLanguage('gcode', __webpack_require__(230));
-	hljs.registerLanguage('gherkin', __webpack_require__(231));
-	hljs.registerLanguage('glsl', __webpack_require__(232));
-	hljs.registerLanguage('go', __webpack_require__(233));
-	hljs.registerLanguage('golo', __webpack_require__(234));
-	hljs.registerLanguage('gradle', __webpack_require__(235));
-	hljs.registerLanguage('groovy', __webpack_require__(236));
-	hljs.registerLanguage('haml', __webpack_require__(237));
-	hljs.registerLanguage('handlebars', __webpack_require__(238));
-	hljs.registerLanguage('haskell', __webpack_require__(239));
-	hljs.registerLanguage('haxe', __webpack_require__(240));
-	hljs.registerLanguage('hsp', __webpack_require__(241));
-	hljs.registerLanguage('htmlbars', __webpack_require__(242));
-	hljs.registerLanguage('http', __webpack_require__(243));
-	hljs.registerLanguage('hy', __webpack_require__(244));
-	hljs.registerLanguage('inform7', __webpack_require__(245));
-	hljs.registerLanguage('ini', __webpack_require__(246));
-	hljs.registerLanguage('irpf90', __webpack_require__(247));
-	hljs.registerLanguage('java', __webpack_require__(248));
-	hljs.registerLanguage('javascript', __webpack_require__(249));
-	hljs.registerLanguage('jboss-cli', __webpack_require__(250));
-	hljs.registerLanguage('json', __webpack_require__(251));
-	hljs.registerLanguage('julia', __webpack_require__(252));
-	hljs.registerLanguage('julia-repl', __webpack_require__(253));
-	hljs.registerLanguage('kotlin', __webpack_require__(254));
-	hljs.registerLanguage('lasso', __webpack_require__(255));
-	hljs.registerLanguage('ldif', __webpack_require__(256));
-	hljs.registerLanguage('leaf', __webpack_require__(257));
-	hljs.registerLanguage('less', __webpack_require__(258));
-	hljs.registerLanguage('lisp', __webpack_require__(259));
-	hljs.registerLanguage('livecodeserver', __webpack_require__(260));
-	hljs.registerLanguage('livescript', __webpack_require__(261));
-	hljs.registerLanguage('llvm', __webpack_require__(262));
-	hljs.registerLanguage('lsl', __webpack_require__(263));
-	hljs.registerLanguage('lua', __webpack_require__(264));
-	hljs.registerLanguage('makefile', __webpack_require__(265));
-	hljs.registerLanguage('mathematica', __webpack_require__(266));
-	hljs.registerLanguage('matlab', __webpack_require__(267));
-	hljs.registerLanguage('maxima', __webpack_require__(268));
-	hljs.registerLanguage('mel', __webpack_require__(269));
-	hljs.registerLanguage('mercury', __webpack_require__(270));
-	hljs.registerLanguage('mipsasm', __webpack_require__(271));
-	hljs.registerLanguage('mizar', __webpack_require__(272));
-	hljs.registerLanguage('perl', __webpack_require__(273));
-	hljs.registerLanguage('mojolicious', __webpack_require__(274));
-	hljs.registerLanguage('monkey', __webpack_require__(275));
-	hljs.registerLanguage('moonscript', __webpack_require__(276));
-	hljs.registerLanguage('n1ql', __webpack_require__(277));
-	hljs.registerLanguage('nginx', __webpack_require__(278));
-	hljs.registerLanguage('nimrod', __webpack_require__(279));
-	hljs.registerLanguage('nix', __webpack_require__(280));
-	hljs.registerLanguage('nsis', __webpack_require__(281));
-	hljs.registerLanguage('objectivec', __webpack_require__(282));
-	hljs.registerLanguage('ocaml', __webpack_require__(283));
-	hljs.registerLanguage('openscad', __webpack_require__(284));
-	hljs.registerLanguage('oxygene', __webpack_require__(285));
-	hljs.registerLanguage('parser3', __webpack_require__(286));
-	hljs.registerLanguage('pf', __webpack_require__(287));
-	hljs.registerLanguage('php', __webpack_require__(288));
-	hljs.registerLanguage('pony', __webpack_require__(289));
-	hljs.registerLanguage('powershell', __webpack_require__(290));
-	hljs.registerLanguage('processing', __webpack_require__(291));
-	hljs.registerLanguage('profile', __webpack_require__(292));
-	hljs.registerLanguage('prolog', __webpack_require__(293));
-	hljs.registerLanguage('protobuf', __webpack_require__(294));
-	hljs.registerLanguage('puppet', __webpack_require__(295));
-	hljs.registerLanguage('purebasic', __webpack_require__(296));
-	hljs.registerLanguage('python', __webpack_require__(297));
-	hljs.registerLanguage('q', __webpack_require__(298));
-	hljs.registerLanguage('qml', __webpack_require__(299));
-	hljs.registerLanguage('r', __webpack_require__(300));
-	hljs.registerLanguage('rib', __webpack_require__(301));
-	hljs.registerLanguage('roboconf', __webpack_require__(302));
-	hljs.registerLanguage('routeros', __webpack_require__(303));
-	hljs.registerLanguage('rsl', __webpack_require__(304));
-	hljs.registerLanguage('ruleslanguage', __webpack_require__(305));
-	hljs.registerLanguage('rust', __webpack_require__(306));
-	hljs.registerLanguage('scala', __webpack_require__(307));
-	hljs.registerLanguage('scheme', __webpack_require__(308));
-	hljs.registerLanguage('scilab', __webpack_require__(309));
-	hljs.registerLanguage('scss', __webpack_require__(310));
-	hljs.registerLanguage('shell', __webpack_require__(311));
-	hljs.registerLanguage('smali', __webpack_require__(312));
-	hljs.registerLanguage('smalltalk', __webpack_require__(313));
-	hljs.registerLanguage('sml', __webpack_require__(314));
-	hljs.registerLanguage('sqf', __webpack_require__(315));
-	hljs.registerLanguage('sql', __webpack_require__(316));
-	hljs.registerLanguage('stan', __webpack_require__(317));
-	hljs.registerLanguage('stata', __webpack_require__(318));
-	hljs.registerLanguage('step21', __webpack_require__(319));
-	hljs.registerLanguage('stylus', __webpack_require__(320));
-	hljs.registerLanguage('subunit', __webpack_require__(321));
-	hljs.registerLanguage('swift', __webpack_require__(322));
-	hljs.registerLanguage('taggerscript', __webpack_require__(323));
-	hljs.registerLanguage('yaml', __webpack_require__(324));
-	hljs.registerLanguage('tap', __webpack_require__(325));
-	hljs.registerLanguage('tcl', __webpack_require__(326));
-	hljs.registerLanguage('tex', __webpack_require__(327));
-	hljs.registerLanguage('thrift', __webpack_require__(328));
-	hljs.registerLanguage('tp', __webpack_require__(329));
-	hljs.registerLanguage('twig', __webpack_require__(330));
-	hljs.registerLanguage('typescript', __webpack_require__(331));
-	hljs.registerLanguage('vala', __webpack_require__(332));
-	hljs.registerLanguage('vbnet', __webpack_require__(333));
-	hljs.registerLanguage('vbscript', __webpack_require__(334));
-	hljs.registerLanguage('vbscript-html', __webpack_require__(335));
-	hljs.registerLanguage('verilog', __webpack_require__(336));
-	hljs.registerLanguage('vhdl', __webpack_require__(337));
-	hljs.registerLanguage('vim', __webpack_require__(338));
-	hljs.registerLanguage('x86asm', __webpack_require__(339));
-	hljs.registerLanguage('xl', __webpack_require__(340));
-	hljs.registerLanguage('xquery', __webpack_require__(341));
-	hljs.registerLanguage('zephir', __webpack_require__(342));
+	hljs.registerLanguage('1c', __webpack_require__(170));
+	hljs.registerLanguage('abnf', __webpack_require__(171));
+	hljs.registerLanguage('accesslog', __webpack_require__(172));
+	hljs.registerLanguage('actionscript', __webpack_require__(173));
+	hljs.registerLanguage('ada', __webpack_require__(174));
+	hljs.registerLanguage('angelscript', __webpack_require__(175));
+	hljs.registerLanguage('apache', __webpack_require__(176));
+	hljs.registerLanguage('applescript', __webpack_require__(177));
+	hljs.registerLanguage('arcade', __webpack_require__(178));
+	hljs.registerLanguage('cpp', __webpack_require__(179));
+	hljs.registerLanguage('arduino', __webpack_require__(180));
+	hljs.registerLanguage('armasm', __webpack_require__(181));
+	hljs.registerLanguage('xml', __webpack_require__(182));
+	hljs.registerLanguage('asciidoc', __webpack_require__(183));
+	hljs.registerLanguage('aspectj', __webpack_require__(184));
+	hljs.registerLanguage('autohotkey', __webpack_require__(185));
+	hljs.registerLanguage('autoit', __webpack_require__(186));
+	hljs.registerLanguage('avrasm', __webpack_require__(187));
+	hljs.registerLanguage('awk', __webpack_require__(188));
+	hljs.registerLanguage('axapta', __webpack_require__(189));
+	hljs.registerLanguage('bash', __webpack_require__(190));
+	hljs.registerLanguage('basic', __webpack_require__(191));
+	hljs.registerLanguage('bnf', __webpack_require__(192));
+	hljs.registerLanguage('brainfuck', __webpack_require__(193));
+	hljs.registerLanguage('cal', __webpack_require__(194));
+	hljs.registerLanguage('capnproto', __webpack_require__(195));
+	hljs.registerLanguage('ceylon', __webpack_require__(196));
+	hljs.registerLanguage('clean', __webpack_require__(197));
+	hljs.registerLanguage('clojure', __webpack_require__(198));
+	hljs.registerLanguage('clojure-repl', __webpack_require__(199));
+	hljs.registerLanguage('cmake', __webpack_require__(200));
+	hljs.registerLanguage('coffeescript', __webpack_require__(201));
+	hljs.registerLanguage('coq', __webpack_require__(202));
+	hljs.registerLanguage('cos', __webpack_require__(203));
+	hljs.registerLanguage('crmsh', __webpack_require__(204));
+	hljs.registerLanguage('crystal', __webpack_require__(205));
+	hljs.registerLanguage('cs', __webpack_require__(206));
+	hljs.registerLanguage('csp', __webpack_require__(207));
+	hljs.registerLanguage('css', __webpack_require__(208));
+	hljs.registerLanguage('d', __webpack_require__(209));
+	hljs.registerLanguage('markdown', __webpack_require__(210));
+	hljs.registerLanguage('dart', __webpack_require__(211));
+	hljs.registerLanguage('delphi', __webpack_require__(212));
+	hljs.registerLanguage('diff', __webpack_require__(213));
+	hljs.registerLanguage('django', __webpack_require__(214));
+	hljs.registerLanguage('dns', __webpack_require__(215));
+	hljs.registerLanguage('dockerfile', __webpack_require__(216));
+	hljs.registerLanguage('dos', __webpack_require__(217));
+	hljs.registerLanguage('dsconfig', __webpack_require__(218));
+	hljs.registerLanguage('dts', __webpack_require__(219));
+	hljs.registerLanguage('dust', __webpack_require__(220));
+	hljs.registerLanguage('ebnf', __webpack_require__(221));
+	hljs.registerLanguage('elixir', __webpack_require__(222));
+	hljs.registerLanguage('elm', __webpack_require__(223));
+	hljs.registerLanguage('ruby', __webpack_require__(224));
+	hljs.registerLanguage('erb', __webpack_require__(225));
+	hljs.registerLanguage('erlang-repl', __webpack_require__(226));
+	hljs.registerLanguage('erlang', __webpack_require__(227));
+	hljs.registerLanguage('excel', __webpack_require__(228));
+	hljs.registerLanguage('fix', __webpack_require__(229));
+	hljs.registerLanguage('flix', __webpack_require__(230));
+	hljs.registerLanguage('fortran', __webpack_require__(231));
+	hljs.registerLanguage('fsharp', __webpack_require__(232));
+	hljs.registerLanguage('gams', __webpack_require__(233));
+	hljs.registerLanguage('gauss', __webpack_require__(234));
+	hljs.registerLanguage('gcode', __webpack_require__(235));
+	hljs.registerLanguage('gherkin', __webpack_require__(236));
+	hljs.registerLanguage('glsl', __webpack_require__(237));
+	hljs.registerLanguage('gml', __webpack_require__(238));
+	hljs.registerLanguage('go', __webpack_require__(239));
+	hljs.registerLanguage('golo', __webpack_require__(240));
+	hljs.registerLanguage('gradle', __webpack_require__(241));
+	hljs.registerLanguage('groovy', __webpack_require__(242));
+	hljs.registerLanguage('haml', __webpack_require__(243));
+	hljs.registerLanguage('handlebars', __webpack_require__(244));
+	hljs.registerLanguage('haskell', __webpack_require__(245));
+	hljs.registerLanguage('haxe', __webpack_require__(246));
+	hljs.registerLanguage('hsp', __webpack_require__(247));
+	hljs.registerLanguage('htmlbars', __webpack_require__(248));
+	hljs.registerLanguage('http', __webpack_require__(249));
+	hljs.registerLanguage('hy', __webpack_require__(250));
+	hljs.registerLanguage('inform7', __webpack_require__(251));
+	hljs.registerLanguage('ini', __webpack_require__(252));
+	hljs.registerLanguage('irpf90', __webpack_require__(253));
+	hljs.registerLanguage('isbl', __webpack_require__(254));
+	hljs.registerLanguage('java', __webpack_require__(255));
+	hljs.registerLanguage('javascript', __webpack_require__(256));
+	hljs.registerLanguage('jboss-cli', __webpack_require__(257));
+	hljs.registerLanguage('json', __webpack_require__(258));
+	hljs.registerLanguage('julia', __webpack_require__(259));
+	hljs.registerLanguage('julia-repl', __webpack_require__(260));
+	hljs.registerLanguage('kotlin', __webpack_require__(261));
+	hljs.registerLanguage('lasso', __webpack_require__(262));
+	hljs.registerLanguage('ldif', __webpack_require__(263));
+	hljs.registerLanguage('leaf', __webpack_require__(264));
+	hljs.registerLanguage('less', __webpack_require__(265));
+	hljs.registerLanguage('lisp', __webpack_require__(266));
+	hljs.registerLanguage('livecodeserver', __webpack_require__(267));
+	hljs.registerLanguage('livescript', __webpack_require__(268));
+	hljs.registerLanguage('llvm', __webpack_require__(269));
+	hljs.registerLanguage('lsl', __webpack_require__(270));
+	hljs.registerLanguage('lua', __webpack_require__(271));
+	hljs.registerLanguage('makefile', __webpack_require__(272));
+	hljs.registerLanguage('mathematica', __webpack_require__(273));
+	hljs.registerLanguage('matlab', __webpack_require__(274));
+	hljs.registerLanguage('maxima', __webpack_require__(275));
+	hljs.registerLanguage('mel', __webpack_require__(276));
+	hljs.registerLanguage('mercury', __webpack_require__(277));
+	hljs.registerLanguage('mipsasm', __webpack_require__(278));
+	hljs.registerLanguage('mizar', __webpack_require__(279));
+	hljs.registerLanguage('perl', __webpack_require__(280));
+	hljs.registerLanguage('mojolicious', __webpack_require__(281));
+	hljs.registerLanguage('monkey', __webpack_require__(282));
+	hljs.registerLanguage('moonscript', __webpack_require__(283));
+	hljs.registerLanguage('n1ql', __webpack_require__(284));
+	hljs.registerLanguage('nginx', __webpack_require__(285));
+	hljs.registerLanguage('nimrod', __webpack_require__(286));
+	hljs.registerLanguage('nix', __webpack_require__(287));
+	hljs.registerLanguage('nsis', __webpack_require__(288));
+	hljs.registerLanguage('objectivec', __webpack_require__(289));
+	hljs.registerLanguage('ocaml', __webpack_require__(290));
+	hljs.registerLanguage('openscad', __webpack_require__(291));
+	hljs.registerLanguage('oxygene', __webpack_require__(292));
+	hljs.registerLanguage('parser3', __webpack_require__(293));
+	hljs.registerLanguage('pf', __webpack_require__(294));
+	hljs.registerLanguage('pgsql', __webpack_require__(295));
+	hljs.registerLanguage('php', __webpack_require__(296));
+	hljs.registerLanguage('plaintext', __webpack_require__(297));
+	hljs.registerLanguage('pony', __webpack_require__(298));
+	hljs.registerLanguage('powershell', __webpack_require__(299));
+	hljs.registerLanguage('processing', __webpack_require__(300));
+	hljs.registerLanguage('profile', __webpack_require__(301));
+	hljs.registerLanguage('prolog', __webpack_require__(302));
+	hljs.registerLanguage('properties', __webpack_require__(303));
+	hljs.registerLanguage('protobuf', __webpack_require__(304));
+	hljs.registerLanguage('puppet', __webpack_require__(305));
+	hljs.registerLanguage('purebasic', __webpack_require__(306));
+	hljs.registerLanguage('python', __webpack_require__(307));
+	hljs.registerLanguage('q', __webpack_require__(308));
+	hljs.registerLanguage('qml', __webpack_require__(309));
+	hljs.registerLanguage('r', __webpack_require__(310));
+	hljs.registerLanguage('reasonml', __webpack_require__(311));
+	hljs.registerLanguage('rib', __webpack_require__(312));
+	hljs.registerLanguage('roboconf', __webpack_require__(313));
+	hljs.registerLanguage('routeros', __webpack_require__(314));
+	hljs.registerLanguage('rsl', __webpack_require__(315));
+	hljs.registerLanguage('ruleslanguage', __webpack_require__(316));
+	hljs.registerLanguage('rust', __webpack_require__(317));
+	hljs.registerLanguage('sas', __webpack_require__(318));
+	hljs.registerLanguage('scala', __webpack_require__(319));
+	hljs.registerLanguage('scheme', __webpack_require__(320));
+	hljs.registerLanguage('scilab', __webpack_require__(321));
+	hljs.registerLanguage('scss', __webpack_require__(322));
+	hljs.registerLanguage('shell', __webpack_require__(323));
+	hljs.registerLanguage('smali', __webpack_require__(324));
+	hljs.registerLanguage('smalltalk', __webpack_require__(325));
+	hljs.registerLanguage('sml', __webpack_require__(326));
+	hljs.registerLanguage('sqf', __webpack_require__(327));
+	hljs.registerLanguage('sql', __webpack_require__(328));
+	hljs.registerLanguage('stan', __webpack_require__(329));
+	hljs.registerLanguage('stata', __webpack_require__(330));
+	hljs.registerLanguage('step21', __webpack_require__(331));
+	hljs.registerLanguage('stylus', __webpack_require__(332));
+	hljs.registerLanguage('subunit', __webpack_require__(333));
+	hljs.registerLanguage('swift', __webpack_require__(334));
+	hljs.registerLanguage('taggerscript', __webpack_require__(335));
+	hljs.registerLanguage('yaml', __webpack_require__(336));
+	hljs.registerLanguage('tap', __webpack_require__(337));
+	hljs.registerLanguage('tcl', __webpack_require__(338));
+	hljs.registerLanguage('tex', __webpack_require__(339));
+	hljs.registerLanguage('thrift', __webpack_require__(340));
+	hljs.registerLanguage('tp', __webpack_require__(341));
+	hljs.registerLanguage('twig', __webpack_require__(342));
+	hljs.registerLanguage('typescript', __webpack_require__(343));
+	hljs.registerLanguage('vala', __webpack_require__(344));
+	hljs.registerLanguage('vbnet', __webpack_require__(345));
+	hljs.registerLanguage('vbscript', __webpack_require__(346));
+	hljs.registerLanguage('vbscript-html', __webpack_require__(347));
+	hljs.registerLanguage('verilog', __webpack_require__(348));
+	hljs.registerLanguage('vhdl', __webpack_require__(349));
+	hljs.registerLanguage('vim', __webpack_require__(350));
+	hljs.registerLanguage('x86asm', __webpack_require__(351));
+	hljs.registerLanguage('xl', __webpack_require__(352));
+	hljs.registerLanguage('xquery', __webpack_require__(353));
+	hljs.registerLanguage('zephir', __webpack_require__(354));
 	
 	module.exports = hljs;
 
 /***/ },
-/* 166 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -21054,7 +21222,7 @@
 	    classes = classes.split(/\s+/);
 	
 	    for (i = 0, length = classes.length; i < length; i++) {
-	      _class = classes[i]
+	      _class = classes[i];
 	
 	      if (isNotHighlighted(_class) || getLanguage(_class)) {
 	        return _class;
@@ -21242,6 +21410,8 @@
 	        if (!mode.begin)
 	          mode.begin = /\B|\b/;
 	        mode.beginRe = langRe(mode.begin);
+	        if (mode.endSameAsBegin)
+	          mode.end = mode.begin;
 	        if (!mode.end && !mode.endsWithParent)
 	          mode.end = /\B|\b/;
 	        if (mode.end)
@@ -21258,7 +21428,7 @@
 	        mode.contains = [];
 	      }
 	      mode.contains = Array.prototype.concat.apply([], mode.contains.map(function(c) {
-	        return expand_mode(c === 'self' ? mode : c)
+	        return expand_mode(c === 'self' ? mode : c);
 	      }));
 	      mode.contains.forEach(function(c) {compileMode(c, mode);});
 	
@@ -21290,11 +21460,18 @@
 	  */
 	  function highlight(name, value, ignore_illegals, continuation) {
 	
+	    function escapeRe(value) {
+	      return new RegExp(value.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'm');
+	    }
+	
 	    function subMode(lexeme, mode) {
 	      var i, length;
 	
 	      for (i = 0, length = mode.contains.length; i < length; i++) {
 	        if (testRe(mode.contains[i].beginRe, lexeme)) {
+	          if (mode.contains[i].endSameAsBegin) {
+	            mode.contains[i].endRe = escapeRe( mode.contains[i].beginRe.exec(lexeme)[0] );
+	          }
 	          return mode.contains[i];
 	        }
 	      }
@@ -21324,7 +21501,7 @@
 	    function buildSpan(classname, insideSpan, leaveOpen, noPrefix) {
 	      var classPrefix = noPrefix ? '' : options.classPrefix,
 	          openSpan    = '<span class="' + classPrefix,
-	          closeSpan   = leaveOpen ? '' : spanEndTag
+	          closeSpan   = leaveOpen ? '' : spanEndTag;
 	
 	      openSpan += classname + '">';
 	
@@ -21434,12 +21611,15 @@
 	          if (top.className) {
 	            result += spanEndTag;
 	          }
-	          if (!top.skip) {
+	          if (!top.skip && !top.subLanguage) {
 	            relevance += top.relevance;
 	          }
 	          top = top.parent;
 	        } while (top !== end_mode.parent);
 	        if (end_mode.starts) {
+	          if (end_mode.endSameAsBegin) {
+	            end_mode.starts.endRe = end_mode.endRe;
+	          }
 	          startNewMode(end_mode.starts, '');
 	        }
 	        return origin.returnEnd ? 0 : lexeme.length;
@@ -21525,7 +21705,7 @@
 	      value: escape(text)
 	    };
 	    var second_best = result;
-	    languageSubset.filter(getLanguage).forEach(function(name) {
+	    languageSubset.filter(getLanguage).filter(autoDetection).forEach(function(name) {
 	      var current = highlight(name, text, false);
 	      current.language = name;
 	      if (current.relevance > second_best.relevance) {
@@ -21662,6 +21842,11 @@
 	    return languages[name] || languages[aliases[name]];
 	  }
 	
+	  function autoDetection(name) {
+	    var lang = getLanguage(name);
+	    return lang && !lang.disableAutodetect;
+	  }
+	
 	  /* Interface definition */
 	
 	  hljs.highlight = highlight;
@@ -21674,6 +21859,7 @@
 	  hljs.registerLanguage = registerLanguage;
 	  hljs.listLanguages = listLanguages;
 	  hljs.getLanguage = getLanguage;
+	  hljs.autoDetection = autoDetection;
 	  hljs.inherit = inherit;
 	
 	  // Common regexps
@@ -21785,7 +21971,7 @@
 
 
 /***/ },
-/* 167 */
+/* 170 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs){
@@ -22299,7 +22485,7 @@
 	};
 
 /***/ },
-/* 168 */
+/* 171 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22374,7 +22560,7 @@
 	};
 
 /***/ },
-/* 169 */
+/* 172 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22416,7 +22602,7 @@
 	};
 
 /***/ },
-/* 170 */
+/* 173 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22494,7 +22680,7 @@
 	};
 
 /***/ },
-/* 171 */
+/* 174 */
 /***/ function(module, exports) {
 
 	module.exports = // We try to support full Ada2012
@@ -22671,7 +22857,118 @@
 	};
 
 /***/ },
-/* 172 */
+/* 175 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  var builtInTypeMode = {
+	    className: 'built_in',
+	    begin: '\\b(void|bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|string|ref|array|double|float|auto|dictionary)'
+	  };
+	
+	  var objectHandleMode = {
+	    className: 'symbol',
+	    begin: '[a-zA-Z0-9_]+@'
+	  };
+	
+	  var genericMode = {
+	    className: 'keyword',
+	    begin: '<', end: '>',
+	    contains: [ builtInTypeMode, objectHandleMode ]
+	  };
+	
+	  builtInTypeMode.contains = [ genericMode ];
+	  objectHandleMode.contains = [ genericMode ];
+	
+	  return {
+	    aliases: [ 'asc' ],
+	
+	    keywords:
+	      'for in|0 break continue while do|0 return if else case switch namespace is cast ' +
+	      'or and xor not get|0 in inout|10 out override set|0 private public const default|0 ' +
+	      'final shared external mixin|10 enum typedef funcdef this super import from interface ' +
+	      'abstract|0 try catch protected explicit',
+	
+	    // avoid close detection with C# and JS
+	    illegal: '(^using\\s+[A-Za-z0-9_\\.]+;$|\\bfunction\s*[^\\(])',
+	
+	    contains: [
+	      { // 'strings'
+	        className: 'string',
+	        begin: '\'', end: '\'',
+	        illegal: '\\n',
+	        contains: [ hljs.BACKSLASH_ESCAPE ],
+	        relevance: 0
+	      },
+	
+	      { // "strings"
+	        className: 'string',
+	        begin: '"', end: '"',
+	        illegal: '\\n',
+	        contains: [ hljs.BACKSLASH_ESCAPE ],
+	        relevance: 0
+	      },
+	
+	      // """heredoc strings"""
+	      {
+	        className: 'string',
+	        begin: '"""', end: '"""'
+	      },
+	
+	      hljs.C_LINE_COMMENT_MODE, // single-line comments
+	      hljs.C_BLOCK_COMMENT_MODE, // comment blocks
+	
+	      { // interface or namespace declaration
+	        beginKeywords: 'interface namespace', end: '{',
+	        illegal: '[;.\\-]',
+	        contains: [
+	          { // interface or namespace name
+	            className: 'symbol',
+	            begin: '[a-zA-Z0-9_]+'
+	          }
+	        ]
+	      },
+	
+	      { // class declaration
+	        beginKeywords: 'class', end: '{',
+	        illegal: '[;.\\-]',
+	        contains: [
+	          { // class name
+	            className: 'symbol',
+	            begin: '[a-zA-Z0-9_]+',
+	            contains: [
+	              {
+	                begin: '[:,]\\s*',
+	                contains: [
+	                  {
+	                    className: 'symbol',
+	                    begin: '[a-zA-Z0-9_]+'
+	                  }
+	                ]
+	              }
+	            ]
+	          }
+	        ]
+	      },
+	
+	      builtInTypeMode, // built-in types
+	      objectHandleMode, // object handles
+	
+	      { // literals
+	        className: 'literal',
+	        begin: '\\b(null|true|false)'
+	      },
+	
+	      { // numbers
+	        className: 'number',
+	        begin: '(-?)(\\b0[xX][a-fA-F0-9]+|(\\b\\d+(\\.\\d*)?f?|\\.\\d+f?)([eE][-+]?\\d+f?)?)'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 176 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22721,7 +23018,7 @@
 	};
 
 /***/ },
-/* 173 */
+/* 177 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22811,7 +23108,148 @@
 	};
 
 /***/ },
-/* 174 */
+/* 178 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  var IDENT_RE = '[A-Za-z_][0-9A-Za-z_]*';
+	  var KEYWORDS = {
+	    keyword:
+	      'if for while var new function do return void else break',
+	    literal:
+	      'true false null undefined NaN Infinity PI BackSlash DoubleQuote ForwardSlash NewLine SingleQuote Tab',
+	    built_in:
+	      'Abs Acos Area AreaGeodetic Asin Atan Atan2 Average Boolean Buffer BufferGeodetic ' +
+	      'Ceil Centroid Clip Console Constrain Contains Cos Count Crosses Cut Date DateAdd ' +
+	      'DateDiff Day Decode DefaultValue Dictionary Difference Disjoint Distance Distinct ' +
+	      'DomainCode DomainName Equals Exp Extent Feature FeatureSet FeatureSetById FeatureSetByTitle ' +
+	      'FeatureSetByUrl Filter First Floor Geometry Guid HasKey Hour IIf IndexOf Intersection ' +
+	      'Intersects IsEmpty Length LengthGeodetic Log Max Mean Millisecond Min Minute Month ' +
+	      'MultiPartToSinglePart Multipoint NextSequenceValue Now Number OrderBy Overlaps Point Polygon ' +
+	      'Polyline Pow Random Relate Reverse Round Second SetGeometry Sin Sort Sqrt Stdev Sum ' +
+	      'SymmetricDifference Tan Text Timestamp Today ToLocal Top Touches ToUTC TypeOf Union Variance ' +
+	      'Weekday When Within Year '
+	  };
+	  var EXPRESSIONS;
+	  var SYMBOL = {
+	    className: 'symbol',
+	    begin: '\\$[feature|layer|map|value|view]+'
+	  };
+	  var NUMBER = {
+	    className: 'number',
+	    variants: [
+	      { begin: '\\b(0[bB][01]+)' },
+	      { begin: '\\b(0[oO][0-7]+)' },
+	      { begin: hljs.C_NUMBER_RE }
+	    ],
+	    relevance: 0
+	  };
+	  var SUBST = {
+	    className: 'subst',
+	    begin: '\\$\\{', end: '\\}',
+	    keywords: KEYWORDS,
+	    contains: []  // defined later
+	  };
+	  var TEMPLATE_STRING = {
+	    className: 'string',
+	    begin: '`', end: '`',
+	    contains: [
+	      hljs.BACKSLASH_ESCAPE,
+	      SUBST
+	    ]
+	  };
+	  SUBST.contains = [
+	    hljs.APOS_STRING_MODE,
+	    hljs.QUOTE_STRING_MODE,
+	    TEMPLATE_STRING,
+	    NUMBER,
+	    hljs.REGEXP_MODE
+	  ];
+	  var PARAMS_CONTAINS = SUBST.contains.concat([
+	    hljs.C_BLOCK_COMMENT_MODE,
+	    hljs.C_LINE_COMMENT_MODE
+	  ]);
+	
+	  return {
+	    aliases: ['arcade'],
+	    keywords: KEYWORDS,
+	    contains: [
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      TEMPLATE_STRING,
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      SYMBOL,
+	      NUMBER,
+	      { // object attr container
+	        begin: /[{,]\s*/, relevance: 0,
+	        contains: [
+	          {
+	            begin: IDENT_RE + '\\s*:', returnBegin: true,
+	            relevance: 0,
+	            contains: [{className: 'attr', begin: IDENT_RE, relevance: 0}]
+	          }
+	        ]
+	      },
+	      { // "value" container
+	        begin: '(' + hljs.RE_STARTERS_RE + '|\\b(return)\\b)\\s*',
+	        keywords: 'return',
+	        contains: [
+	          hljs.C_LINE_COMMENT_MODE,
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          hljs.REGEXP_MODE,
+	          {
+	            className: 'function',
+	            begin: '(\\(.*?\\)|' + IDENT_RE + ')\\s*=>', returnBegin: true,
+	            end: '\\s*=>',
+	            contains: [
+	              {
+	                className: 'params',
+	                variants: [
+	                  {
+	                    begin: IDENT_RE
+	                  },
+	                  {
+	                    begin: /\(\s*\)/,
+	                  },
+	                  {
+	                    begin: /\(/, end: /\)/,
+	                    excludeBegin: true, excludeEnd: true,
+	                    keywords: KEYWORDS,
+	                    contains: PARAMS_CONTAINS
+	                  }
+	                ]
+	              }
+	            ]
+	          }
+	        ],
+	        relevance: 0
+	      },
+	      {
+	        className: 'function',
+	        beginKeywords: 'function', end: /\{/, excludeEnd: true,
+	        contains: [
+	          hljs.inherit(hljs.TITLE_MODE, {begin: IDENT_RE}),
+	          {
+	            className: 'params',
+	            begin: /\(/, end: /\)/,
+	            excludeBegin: true,
+	            excludeEnd: true,
+	            contains: PARAMS_CONTAINS
+	          }
+	        ],
+	        illegal: /\[|%/
+	      },
+	      {
+	        begin: /\$[(.]/
+	      }
+	    ],
+	    illegal: /#(?!!)/
+	  };
+	};
+
+/***/ },
+/* 179 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -22824,13 +23262,16 @@
 	    className: 'string',
 	    variants: [
 	      {
-	        begin: '(u8?|U)?L?"', end: '"',
+	        begin: '(u8?|U|L)?"', end: '"',
 	        illegal: '\\n',
 	        contains: [hljs.BACKSLASH_ESCAPE]
 	      },
 	      {
-	        begin: '(u8?|U)?R"', end: '"',
-	        contains: [hljs.BACKSLASH_ESCAPE]
+	        // TODO: This does not handle raw string literals with prefixes. Using
+	        // a single regex with backreferences would work (note to use *?
+	        // instead of * to make it non-greedy), but the mode.terminators
+	        // computation in highlight.js breaks the counting.
+	        begin: '(u8?|U|L)?R"\\(', end: '\\)"',
 	      },
 	      {
 	        begin: '\'\\\\?.', end: '\'',
@@ -22964,7 +23405,21 @@
 	              hljs.C_BLOCK_COMMENT_MODE,
 	              STRINGS,
 	              NUMBERS,
-	              CPP_PRIMITIVE_TYPES
+	              CPP_PRIMITIVE_TYPES,
+	              // Count matching parentheses.
+	              {
+	                begin: /\(/, end: /\)/,
+	                keywords: CPP_KEYWORDS,
+	                relevance: 0,
+	                contains: [
+	                  'self',
+	                  hljs.C_LINE_COMMENT_MODE,
+	                  hljs.C_BLOCK_COMMENT_MODE,
+	                  STRINGS,
+	                  NUMBERS,
+	                  CPP_PRIMITIVE_TYPES
+	                ]
+	              }
 	            ]
 	          },
 	          hljs.C_LINE_COMMENT_MODE,
@@ -22990,7 +23445,7 @@
 	};
 
 /***/ },
-/* 175 */
+/* 180 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23094,7 +23549,7 @@
 	};
 
 /***/ },
-/* 176 */
+/* 181 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23190,7 +23645,7 @@
 	};
 
 /***/ },
-/* 177 */
+/* 182 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23244,9 +23699,21 @@
 	        relevance: 10
 	      },
 	      {
+	        className: 'meta',
+	        begin: /<\?xml/, end: /\?>/, relevance: 10
+	      },
+	      {
 	        begin: /<\?(php)?/, end: /\?>/,
 	        subLanguage: 'php',
-	        contains: [{begin: '/\\*', end: '\\*/', skip: true}]
+	        contains: [
+	          // We don't want the php closing tag ?> to close the PHP block when
+	          // inside any of the following blocks:
+	          {begin: '/\\*', end: '\\*/', skip: true},
+	          {begin: 'b"', end: '"', skip: true},
+	          {begin: 'b\'', end: '\'', skip: true},
+	          hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null, className: null, contains: null, skip: true}),
+	          hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null, className: null, contains: null, skip: true})
+	        ]
 	      },
 	      {
 	        className: 'tag',
@@ -23276,13 +23743,6 @@
 	        }
 	      },
 	      {
-	        className: 'meta',
-	        variants: [
-	          {begin: /<\?xml/, end: /\?>/, relevance: 10},
-	          {begin: /<\?\w+/, end: /\?>/}
-	        ]
-	      },
-	      {
 	        className: 'tag',
 	        begin: '</?', end: '/?>',
 	        contains: [
@@ -23297,7 +23757,7 @@
 	};
 
 /***/ },
-/* 178 */
+/* 183 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23489,7 +23949,7 @@
 	};
 
 /***/ },
-/* 179 */
+/* 184 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -23638,7 +24098,7 @@
 	};
 
 /***/ },
-/* 180 */
+/* 185 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23701,7 +24161,7 @@
 	};
 
 /***/ },
-/* 181 */
+/* 186 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23841,7 +24301,7 @@
 	};
 
 /***/ },
-/* 182 */
+/* 187 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23907,7 +24367,7 @@
 	};
 
 /***/ },
-/* 183 */
+/* 188 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23964,7 +24424,7 @@
 	};
 
 /***/ },
-/* 184 */
+/* 189 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -23999,7 +24459,7 @@
 	};
 
 /***/ },
-/* 185 */
+/* 190 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24078,7 +24538,7 @@
 	};
 
 /***/ },
-/* 186 */
+/* 191 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24133,7 +24593,7 @@
 	};
 
 /***/ },
-/* 187 */
+/* 192 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs){
@@ -24166,7 +24626,7 @@
 	};
 
 /***/ },
-/* 188 */
+/* 193 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs){
@@ -24207,7 +24667,7 @@
 	};
 
 /***/ },
-/* 189 */
+/* 194 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24291,7 +24751,7 @@
 	};
 
 /***/ },
-/* 190 */
+/* 195 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24344,7 +24804,7 @@
 	};
 
 /***/ },
-/* 191 */
+/* 196 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24415,7 +24875,7 @@
 	};
 
 /***/ },
-/* 192 */
+/* 197 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24427,6 +24887,8 @@
 	        'implementation definition system module from import qualified as ' +
 	        'special code inline foreign export ccall stdcall generic derive ' +
 	        'infix infixl infixr',
+	      built_in:
+	        'Int Real Char Bool',
 	      literal:
 	        'True False'
 	    },
@@ -24438,13 +24900,13 @@
 	      hljs.QUOTE_STRING_MODE,
 	      hljs.C_NUMBER_MODE,
 	
-	      {begin: '->|<-[|:]?|::|#!?|>>=|\\{\\||\\|\\}|:==|=:|\\.\\.|<>|`'} // relevance booster
+	      {begin: '->|<-[|:]?|#!?|>>=|\\{\\||\\|\\}|:==|=:|<>'} // relevance booster
 	    ]
 	  };
 	};
 
 /***/ },
-/* 193 */
+/* 198 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24544,7 +25006,7 @@
 	};
 
 /***/ },
-/* 194 */
+/* 199 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24552,7 +25014,7 @@
 	    contains: [
 	      {
 	        className: 'meta',
-	        begin: /^([\w.-]+|\s*#_)=>/,
+	        begin: /^([\w.-]+|\s*#_)?=>/,
 	        starts: {
 	          end: /$/,
 	          subLanguage: 'clojure'
@@ -24563,7 +25025,7 @@
 	};
 
 /***/ },
-/* 195 */
+/* 200 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24572,25 +25034,40 @@
 	    case_insensitive: true,
 	    keywords: {
 	      keyword:
-	        'add_custom_command add_custom_target add_definitions add_dependencies ' +
-	        'add_executable add_library add_subdirectory add_test aux_source_directory ' +
-	        'break build_command cmake_minimum_required cmake_policy configure_file ' +
-	        'create_test_sourcelist define_property else elseif enable_language enable_testing ' +
-	        'endforeach endfunction endif endmacro endwhile execute_process export find_file ' +
-	        'find_library find_package find_path find_program fltk_wrap_ui foreach function ' +
-	        'get_cmake_property get_directory_property get_filename_component get_property ' +
-	        'get_source_file_property get_target_property get_test_property if include ' +
-	        'include_directories include_external_msproject include_regular_expression install ' +
-	        'link_directories load_cache load_command macro mark_as_advanced message option ' +
-	        'output_required_files project qt_wrap_cpp qt_wrap_ui remove_definitions return ' +
-	        'separate_arguments set set_directory_properties set_property ' +
-	        'set_source_files_properties set_target_properties set_tests_properties site_name ' +
-	        'source_group string target_link_libraries try_compile try_run unset variable_watch ' +
-	        'while build_name exec_program export_library_dependencies install_files ' +
-	        'install_programs install_targets link_libraries make_directory remove subdir_depends ' +
-	        'subdirs use_mangled_mesa utility_source variable_requires write_file ' +
-	        'qt5_use_modules qt5_use_package qt5_wrap_cpp on off true false and or ' +
-	        'equal less greater strless strgreater strequal matches'
+	        // scripting commands
+	        'break cmake_host_system_information cmake_minimum_required cmake_parse_arguments ' +
+	        'cmake_policy configure_file continue elseif else endforeach endfunction endif endmacro ' +
+	        'endwhile execute_process file find_file find_library find_package find_path ' +
+	        'find_program foreach function get_cmake_property get_directory_property ' +
+	        'get_filename_component get_property if include include_guard list macro ' +
+	        'mark_as_advanced math message option return separate_arguments ' +
+	        'set_directory_properties set_property set site_name string unset variable_watch while ' +
+	        // project commands
+	        'add_compile_definitions add_compile_options add_custom_command add_custom_target ' +
+	        'add_definitions add_dependencies add_executable add_library add_link_options ' +
+	        'add_subdirectory add_test aux_source_directory build_command create_test_sourcelist ' +
+	        'define_property enable_language enable_testing export fltk_wrap_ui ' +
+	        'get_source_file_property get_target_property get_test_property include_directories ' +
+	        'include_external_msproject include_regular_expression install link_directories ' +
+	        'link_libraries load_cache project qt_wrap_cpp qt_wrap_ui remove_definitions ' +
+	        'set_source_files_properties set_target_properties set_tests_properties source_group ' +
+	        'target_compile_definitions target_compile_features target_compile_options ' +
+	        'target_include_directories target_link_directories target_link_libraries ' +
+	        'target_link_options target_sources try_compile try_run ' +
+	        // CTest commands
+	        'ctest_build ctest_configure ctest_coverage ctest_empty_binary_directory ctest_memcheck ' +
+	        'ctest_read_custom_files ctest_run_script ctest_sleep ctest_start ctest_submit ' +
+	        'ctest_test ctest_update ctest_upload ' +
+	        // deprecated commands
+	        'build_name exec_program export_library_dependencies install_files install_programs ' +
+	        'install_targets load_command make_directory output_required_files remove ' +
+	        'subdir_depends subdirs use_mangled_mesa utility_source variable_requires write_file ' +
+	        'qt5_use_modules qt5_use_package qt5_wrap_cpp ' +
+	        // core keywords
+	        'on off true false and or not command policy target test exists is_newer_than ' +
+	        'is_directory is_symlink is_absolute matches less greater equal less_equal ' +
+	        'greater_equal strless strgreater strequal strless_equal strgreater_equal version_less ' +
+	        'version_greater version_equal version_less_equal version_greater_equal in_list defined'
 	    },
 	    contains: [
 	      {
@@ -24605,7 +25082,7 @@
 	};
 
 /***/ },
-/* 196 */
+/* 201 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24755,7 +25232,7 @@
 	};
 
 /***/ },
-/* 197 */
+/* 202 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -24826,7 +25303,7 @@
 	};
 
 /***/ },
-/* 198 */
+/* 203 */
 /***/ function(module, exports) {
 
 	module.exports = function cos (hljs) {
@@ -24954,7 +25431,7 @@
 	};
 
 /***/ },
-/* 199 */
+/* 204 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -25052,20 +25529,20 @@
 	};
 
 /***/ },
-/* 200 */
+/* 205 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
-	  var NUM_SUFFIX = '(_[uif](8|16|32|64))?';
+	  var INT_SUFFIX = '(_*[ui](8|16|32|64|128))?';
+	  var FLOAT_SUFFIX = '(_*f(32|64))?';
 	  var CRYSTAL_IDENT_RE = '[a-zA-Z_]\\w*[!?=]?';
-	  var RE_STARTER = '!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|-|-=|/=|/|:|;|<<|<<=|<=|<|===|==|=|>>>=|>>=|>=|>>>|' +
-	    '>>|>|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~';
-	  var CRYSTAL_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\][=?]?';
+	  var CRYSTAL_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~|]|//|//=|&[-+*]=?|&\\*\\*|\\[\\][=?]?';
+	  var CRYSTAL_PATH_RE = '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?';
 	  var CRYSTAL_KEYWORDS = {
 	    keyword:
-	      'abstract alias as as? asm begin break case class def do else elsif end ensure enum extend for fun if ' +
+	      'abstract alias annotation as as? asm begin break case class def do else elsif end ensure enum extend for fun if ' +
 	      'include instance_sizeof is_a? lib macro module next nil? of out pointerof private protected rescue responds_to? ' +
-	      'return require select self sizeof struct super then type typeof union uninitialized unless until when while with yield ' +
+	      'return require select self sizeof struct super then type typeof union uninitialized unless until verbatim when while with yield ' +
 	      '__DIR__ __END_LINE__ __FILE__ __LINE__',
 	    literal: 'false nil true'
 	  };
@@ -25096,14 +25573,11 @@
 	      {begin: /'/, end: /'/},
 	      {begin: /"/, end: /"/},
 	      {begin: /`/, end: /`/},
-	      {begin: '%w?\\(', end: '\\)', contains: recursiveParen('\\(', '\\)')},
-	      {begin: '%w?\\[', end: '\\]', contains: recursiveParen('\\[', '\\]')},
-	      {begin: '%w?{', end: '}', contains: recursiveParen('{', '}')},
-	      {begin: '%w?<', end: '>', contains: recursiveParen('<', '>')},
-	      {begin: '%w?/', end: '/'},
-	      {begin: '%w?%', end: '%'},
-	      {begin: '%w?-', end: '-'},
-	      {begin: '%w?\\|', end: '\\|'},
+	      {begin: '%[Qwi]?\\(', end: '\\)', contains: recursiveParen('\\(', '\\)')},
+	      {begin: '%[Qwi]?\\[', end: '\\]', contains: recursiveParen('\\[', '\\]')},
+	      {begin: '%[Qwi]?{', end: '}', contains: recursiveParen('{', '}')},
+	      {begin: '%[Qwi]?<', end: '>', contains: recursiveParen('<', '>')},
+	      {begin: '%[Qwi]?\\|', end: '\\|'},
 	      {begin: /<<-\w+$/, end: /^\s*\w+$/},
 	    ],
 	    relevance: 0,
@@ -25115,31 +25589,21 @@
 	      {begin: '%q\\[', end: '\\]', contains: recursiveParen('\\[', '\\]')},
 	      {begin: '%q{', end: '}', contains: recursiveParen('{', '}')},
 	      {begin: '%q<', end: '>', contains: recursiveParen('<', '>')},
-	      {begin: '%q/', end: '/'},
-	      {begin: '%q%', end: '%'},
-	      {begin: '%q-', end: '-'},
 	      {begin: '%q\\|', end: '\\|'},
 	      {begin: /<<-'\w+'$/, end: /^\s*\w+$/},
 	    ],
 	    relevance: 0,
 	  };
 	  var REGEXP = {
-	    begin: '(' + RE_STARTER + ')\\s*',
+	    begin: '(?!%})(' + hljs.RE_STARTERS_RE + '|\\n|\\b(case|if|select|unless|until|when|while)\\b)\\s*',
+	    keywords: 'case if select unless until when while',
 	    contains: [
 	      {
 	        className: 'regexp',
 	        contains: [hljs.BACKSLASH_ESCAPE, SUBST],
 	        variants: [
 	          {begin: '//[a-z]*', relevance: 0},
-	          {begin: '/', end: '/[a-z]*'},
-	          {begin: '%r\\(', end: '\\)', contains: recursiveParen('\\(', '\\)')},
-	          {begin: '%r\\[', end: '\\]', contains: recursiveParen('\\[', '\\]')},
-	          {begin: '%r{', end: '}', contains: recursiveParen('{', '}')},
-	          {begin: '%r<', end: '>', contains: recursiveParen('<', '>')},
-	          {begin: '%r/', end: '/'},
-	          {begin: '%r%', end: '%'},
-	          {begin: '%r-', end: '-'},
-	          {begin: '%r\\|', end: '\\|'},
+	          {begin: '/(?!\\/)', end: '/[a-z]*'},
 	        ]
 	      }
 	    ],
@@ -25153,9 +25617,6 @@
 	      {begin: '%r\\[', end: '\\]', contains: recursiveParen('\\[', '\\]')},
 	      {begin: '%r{', end: '}', contains: recursiveParen('{', '}')},
 	      {begin: '%r<', end: '>', contains: recursiveParen('<', '>')},
-	      {begin: '%r/', end: '/'},
-	      {begin: '%r%', end: '%'},
-	      {begin: '%r-', end: '-'},
 	      {begin: '%r\\|', end: '\\|'},
 	    ],
 	    relevance: 0
@@ -25171,8 +25632,8 @@
 	    EXPANSION,
 	    STRING,
 	    Q_STRING,
-	    REGEXP,
 	    REGEXP2,
+	    REGEXP,
 	    ATTRIBUTE,
 	    hljs.HASH_COMMENT_MODE,
 	    {
@@ -25181,7 +25642,7 @@
 	      illegal: /=/,
 	      contains: [
 	        hljs.HASH_COMMENT_MODE,
-	        hljs.inherit(hljs.TITLE_MODE, {begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?'}),
+	        hljs.inherit(hljs.TITLE_MODE, {begin: CRYSTAL_PATH_RE}),
 	        {begin: '<'} // relevance booster for inheritance
 	      ]
 	    },
@@ -25191,7 +25652,16 @@
 	      illegal: /=/,
 	      contains: [
 	        hljs.HASH_COMMENT_MODE,
-	        hljs.inherit(hljs.TITLE_MODE, {begin: '[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?'}),
+	        hljs.inherit(hljs.TITLE_MODE, {begin: CRYSTAL_PATH_RE}),
+	      ],
+	      relevance: 10
+	    },
+	    {
+	      beginKeywords: 'annotation', end: '$|;',
+	      illegal: /=/,
+	      contains: [
+	        hljs.HASH_COMMENT_MODE,
+	        hljs.inherit(hljs.TITLE_MODE, {begin: CRYSTAL_PATH_RE}),
 	      ],
 	      relevance: 10
 	    },
@@ -25230,10 +25700,11 @@
 	    {
 	      className: 'number',
 	      variants: [
-	        { begin: '\\b0b([01_]*[01])' + NUM_SUFFIX },
-	        { begin: '\\b0o([0-7_]*[0-7])' + NUM_SUFFIX },
-	        { begin: '\\b0x([A-Fa-f0-9_]*[A-Fa-f0-9])' + NUM_SUFFIX },
-	        { begin: '\\b(([0-9][0-9_]*[0-9]|[0-9])(\\.[0-9_]*[0-9])?([eE][+-]?[0-9_]*[0-9])?)' + NUM_SUFFIX}
+	        { begin: '\\b0b([01_]+)' + INT_SUFFIX },
+	        { begin: '\\b0o([0-7_]+)' + INT_SUFFIX },
+	        { begin: '\\b0x([A-Fa-f0-9_]+)' + INT_SUFFIX },
+	        { begin: '\\b([1-9][0-9_]*[0-9]|[0-9])(\\.[0-9][0-9_]*)?([eE]_*[-+]?[0-9_]*)?' + FLOAT_SUFFIX + '(?!_)' },
+	        { begin: '\\b([1-9][0-9_]*|0)' + INT_SUFFIX }
 	      ],
 	      relevance: 0
 	    }
@@ -25250,7 +25721,7 @@
 	};
 
 /***/ },
-/* 201 */
+/* 206 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -25269,7 +25740,15 @@
 	    literal:
 	      'null false true'
 	  };
-	
+	  var NUMBERS = {
+	    className: 'number',
+	    variants: [
+	      { begin: '\\b(0b[01\']+)' },
+	      { begin: '(-?)\\b([\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)(u|U|l|L|ul|UL|f|F|b|B)' },
+	      { begin: '(-?)(\\b0[xX][a-fA-F0-9\']+|(\\b[\\d\']+(\\.[\\d\']*)?|\\.[\\d\']+)([eE][-+]?[\\d\']+)?)' }
+	    ],
+	    relevance: 0
+	  };
 	  var VERBATIM_STRING = {
 	    className: 'string',
 	    begin: '@"', end: '"',
@@ -25303,7 +25782,7 @@
 	    VERBATIM_STRING,
 	    hljs.APOS_STRING_MODE,
 	    hljs.QUOTE_STRING_MODE,
-	    hljs.C_NUMBER_MODE,
+	    NUMBERS,
 	    hljs.C_BLOCK_COMMENT_MODE
 	  ];
 	  SUBST_NO_LF.contains = [
@@ -25312,7 +25791,7 @@
 	    VERBATIM_STRING_NO_LF,
 	    hljs.APOS_STRING_MODE,
 	    hljs.QUOTE_STRING_MODE,
-	    hljs.C_NUMBER_MODE,
+	    NUMBERS,
 	    hljs.inherit(hljs.C_BLOCK_COMMENT_MODE, {illegal: /\n/})
 	  ];
 	  var STRING = {
@@ -25328,7 +25807,7 @@
 	  var TYPE_IDENT_RE = hljs.IDENT_RE + '(<' + hljs.IDENT_RE + '(\\s*,\\s*' + hljs.IDENT_RE + ')*>)?(\\[\\])?';
 	
 	  return {
-	    aliases: ['csharp'],
+	    aliases: ['csharp', 'c#'],
 	    keywords: KEYWORDS,
 	    illegal: /::/,
 	    contains: [
@@ -25365,10 +25844,10 @@
 	        }
 	      },
 	      STRING,
-	      hljs.C_NUMBER_MODE,
+	      NUMBERS,
 	      {
 	        beginKeywords: 'class interface', end: /[{;=]/,
-	        illegal: /[^\s:]/,
+	        illegal: /[^\s:,]/,
 	        contains: [
 	          hljs.TITLE_MODE,
 	          hljs.C_LINE_COMMENT_MODE,
@@ -25401,7 +25880,7 @@
 	      {
 	        className: 'function',
 	        begin: '(' + TYPE_IDENT_RE + '\\s+)+' + hljs.IDENT_RE + '\\s*\\(', returnBegin: true,
-	        end: /[{;=]/, excludeEnd: true,
+	        end: /\s*[{;=]/, excludeEnd: true,
 	        keywords: KEYWORDS,
 	        contains: [
 	          {
@@ -25418,7 +25897,7 @@
 	            relevance: 0,
 	            contains: [
 	              STRING,
-	              hljs.C_NUMBER_MODE,
+	              NUMBERS,
 	              hljs.C_BLOCK_COMMENT_MODE
 	            ]
 	          },
@@ -25431,7 +25910,7 @@
 	};
 
 /***/ },
-/* 202 */
+/* 207 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -25457,7 +25936,7 @@
 	};
 
 /***/ },
-/* 203 */
+/* 208 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -25566,7 +26045,7 @@
 	};
 
 /***/ },
-/* 204 */
+/* 209 */
 /***/ function(module, exports) {
 
 	module.exports = /**
@@ -25828,7 +26307,7 @@
 	};
 
 /***/ },
-/* 205 */
+/* 210 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -25940,14 +26419,23 @@
 	};
 
 /***/ },
-/* 206 */
+/* 211 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
 	  var SUBST = {
 	    className: 'subst',
-	    begin: '\\$\\{', end: '}',
-	    keywords: 'true false null this is new super'
+	    variants: [
+	       {begin: '\\$[A-Za-z0-9_]+'}
+	    ],
+	  };
+	
+	  var BRACED_SUBST = {
+	    className: 'subst',
+	    variants: [
+	       {begin: '\\${', end: '}'},
+	    ],
+	    keywords: 'true false null this is new super',
 	  };
 	
 	  var STRING = {
@@ -25969,25 +26457,25 @@
 	      },
 	      {
 	        begin: '\'\'\'', end: '\'\'\'',
-	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST, BRACED_SUBST]
 	      },
 	      {
 	        begin: '"""', end: '"""',
-	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST, BRACED_SUBST]
 	      },
 	      {
 	        begin: '\'', end: '\'',
 	        illegal: '\\n',
-	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST, BRACED_SUBST]
 	      },
 	      {
 	        begin: '"', end: '"',
 	        illegal: '\\n',
-	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST, BRACED_SUBST]
 	      }
 	    ]
 	  };
-	  SUBST.contains = [
+	  BRACED_SUBST.contains = [
 	    hljs.C_NUMBER_MODE, STRING
 	  ];
 	
@@ -26045,7 +26533,7 @@
 	};
 
 /***/ },
-/* 207 */
+/* 212 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26118,7 +26606,7 @@
 	};
 
 /***/ },
-/* 208 */
+/* 213 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26162,7 +26650,7 @@
 	};
 
 /***/ },
-/* 209 */
+/* 214 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26230,7 +26718,7 @@
 	};
 
 /***/ },
-/* 210 */
+/* 215 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26263,7 +26751,7 @@
 	};
 
 /***/ },
-/* 211 */
+/* 216 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26279,7 +26767,7 @@
 	      {
 	        beginKeywords: 'run cmd entrypoint volume add copy workdir label healthcheck shell',
 	        starts: {
-	          end: /[^\\]\n/,
+	          end: /[^\\]$/,
 	          subLanguage: 'bash'
 	        }
 	      }
@@ -26289,7 +26777,7 @@
 	};
 
 /***/ },
-/* 212 */
+/* 217 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26345,7 +26833,7 @@
 	};
 
 /***/ },
-/* 213 */
+/* 218 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26396,7 +26884,7 @@
 	};
 
 /***/ },
-/* 214 */
+/* 219 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26524,7 +27012,7 @@
 	};
 
 /***/ },
-/* 215 */
+/* 220 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26560,7 +27048,7 @@
 	};
 
 /***/ },
-/* 216 */
+/* 221 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26597,16 +27085,16 @@
 	};
 
 /***/ },
-/* 217 */
+/* 222 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
-	  var ELIXIR_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?';
+	  var ELIXIR_IDENT_RE = '[a-zA-Z_][a-zA-Z0-9_.]*(\\!|\\?)?';
 	  var ELIXIR_METHOD_RE = '[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?';
 	  var ELIXIR_KEYWORDS =
 	    'and false then defined module in return redo retry end for true self when ' +
 	    'next until do begin unless nil break not case cond alias while ensure or ' +
-	    'include use alias fn quote';
+	    'include use alias fn quote require import with|0';
 	  var SUBST = {
 	    className: 'subst',
 	    begin: '#\\{', end: '}',
@@ -26645,14 +27133,17 @@
 	    CLASS,
 	    FUNCTION,
 	    {
+	      begin: '::'
+	    },
+	    {
 	      className: 'symbol',
-	      begin: ':(?!\\s)',
+	      begin: ':(?![\\s:])',
 	      contains: [STRING, {begin: ELIXIR_METHOD_RE}],
 	      relevance: 0
 	    },
 	    {
 	      className: 'symbol',
-	      begin: ELIXIR_IDENT_RE + ':',
+	      begin: ELIXIR_IDENT_RE + ':(?!:)',
 	      relevance: 0
 	    },
 	    {
@@ -26698,7 +27189,7 @@
 	};
 
 /***/ },
-/* 218 */
+/* 223 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26733,6 +27224,12 @@
 	  var RECORD = {
 	    begin: '{', end: '}',
 	    contains: LIST.contains
+	  };
+	
+	  var CHARACTER = {
+	    className: 'string',
+	    begin: '\'\\\\?.', end: '\'',
+	    illegal: '.'
 	  };
 	
 	  return {
@@ -26772,7 +27269,7 @@
 	
 	      // Literals and names.
 	
-	      // TODO: characters.
+	      CHARACTER,
 	      hljs.QUOTE_STRING_MODE,
 	      hljs.C_NUMBER_MODE,
 	      CONSTRUCTOR,
@@ -26786,7 +27283,7 @@
 	};
 
 /***/ },
-/* 219 */
+/* 224 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26967,7 +27464,7 @@
 	};
 
 /***/ },
-/* 220 */
+/* 225 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -26986,7 +27483,7 @@
 	};
 
 /***/ },
-/* 221 */
+/* 226 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27036,7 +27533,7 @@
 	};
 
 /***/ },
-/* 222 */
+/* 227 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27186,7 +27683,7 @@
 	};
 
 /***/ },
-/* 223 */
+/* 228 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27238,7 +27735,7 @@
 	};
 
 /***/ },
-/* 224 */
+/* 229 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27271,7 +27768,7 @@
 	};
 
 /***/ },
-/* 225 */
+/* 230 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -27320,7 +27817,7 @@
 	};
 
 /***/ },
-/* 226 */
+/* 231 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27395,7 +27892,7 @@
 	};
 
 /***/ },
-/* 227 */
+/* 232 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27458,7 +27955,7 @@
 	};
 
 /***/ },
-/* 228 */
+/* 233 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -27616,20 +28113,21 @@
 	};
 
 /***/ },
-/* 229 */
+/* 234 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
 	  var KEYWORDS = {
-	    keyword: 'and bool break call callexe checkinterrupt clear clearg closeall cls comlog compile ' +
+	    keyword:  'bool break call callexe checkinterrupt clear clearg closeall cls comlog compile ' +
 	              'continue create debug declare delete disable dlibrary dllcall do dos ed edit else ' +
 	              'elseif enable end endfor endif endp endo errorlog errorlogat expr external fn ' +
 	              'for format goto gosub graph if keyword let lib library line load loadarray loadexe ' +
 	              'loadf loadk loadm loadp loads loadx local locate loopnextindex lprint lpwidth lshow ' +
-	              'matrix msym ndpclex new not open or output outwidth plot plotsym pop prcsn print ' +
+	              'matrix msym ndpclex new open output outwidth plot plotsym pop prcsn print ' +
 	              'printdos proc push retp return rndcon rndmod rndmult rndseed run save saveall screen ' +
 	              'scroll setarray show sparse stop string struct system trace trap threadfor ' +
-	              'threadendfor threadbegin threadjoin threadstat threadend until use while winprint',
+	              'threadendfor threadbegin threadjoin threadstat threadend until use while winprint ' +
+	              'ne ge le gt lt and xor or not eq eqv',
 	    built_in: 'abs acf aconcat aeye amax amean AmericanBinomCall AmericanBinomCall_Greeks AmericanBinomCall_ImpVol ' +
 	              'AmericanBinomPut AmericanBinomPut_Greeks AmericanBinomPut_ImpVol AmericanBSCall AmericanBSCall_Greeks ' +
 	              'AmericanBSCall_ImpVol AmericanBSPut AmericanBSPut_Greeks AmericanBSPut_ImpVol amin amult annotationGetDefaults ' +
@@ -27705,21 +28203,25 @@
 	              'spTScalar spZeros sqpSolve sqpSolveMT sqpSolveMTControlCreate sqpSolveMTlagrangeCreate sqpSolveMToutCreate sqpSolveSet ' +
 	              'sqrt statements stdc stdsc stocv stof strcombine strindx strlen strput strrindx strsect strsplit strsplitPad strtodt ' +
 	              'strtof strtofcplx strtriml strtrimr strtrunc strtruncl strtruncpad strtruncr submat subscat substute subvec sumc sumr ' +
-	              'surface svd svd1 svd2 svdcusv svds svdusv sysstate tab tan tanh tempname threadBegin threadEnd threadEndFor threadFor ' +
-	              'threadJoin threadStat time timedt timestr timeutc title tkf2eps tkf2ps tocart todaydt toeplitz token topolar trapchk ' +
+	              'surface svd svd1 svd2 svdcusv svds svdusv sysstate tab tan tanh tempname ' +
+	              'time timedt timestr timeutc title tkf2eps tkf2ps tocart todaydt toeplitz token topolar trapchk ' +
 	              'trigamma trimr trunc type typecv typef union unionsa uniqindx uniqindxsa unique uniquesa upmat upmat1 upper utctodt ' +
 	              'utctodtv utrisol vals varCovMS varCovXS varget vargetl varmall varmares varput varputl vartypef vcm vcms vcx vcxs ' +
 	              'vec vech vecr vector vget view viewxyz vlist vnamecv volume vput vread vtypecv wait waitc walkindex where window ' +
 	              'writer xlabel xlsGetSheetCount xlsGetSheetSize xlsGetSheetTypes xlsMakeRange xlsReadM xlsReadSA xlsWrite xlsWriteM ' +
 	              'xlsWriteSA xpnd xtics xy xyz ylabel ytics zeros zeta zlabel ztics cdfEmpirical dot h5create h5open h5read h5readAttribute ' +
 	              'h5write h5writeAttribute ldl plotAddErrorBar plotAddSurface plotCDFEmpirical plotSetColormap plotSetContourLabels ' +
-	              'plotSetLegendFont plotSetTextInterpreter plotSetXTicCount plotSetYTicCount plotSetZLevels powerm strjoin strtrim sylvester',
+	              'plotSetLegendFont plotSetTextInterpreter plotSetXTicCount plotSetYTicCount plotSetZLevels powerm strjoin sylvester ' +
+	              'strtrim',
 	    literal: 'DB_AFTER_LAST_ROW DB_ALL_TABLES DB_BATCH_OPERATIONS DB_BEFORE_FIRST_ROW DB_BLOB DB_EVENT_NOTIFICATIONS ' +
 	             'DB_FINISH_QUERY DB_HIGH_PRECISION DB_LAST_INSERT_ID DB_LOW_PRECISION_DOUBLE DB_LOW_PRECISION_INT32 ' +
 	             'DB_LOW_PRECISION_INT64 DB_LOW_PRECISION_NUMBERS DB_MULTIPLE_RESULT_SETS DB_NAMED_PLACEHOLDERS ' +
 	             'DB_POSITIONAL_PLACEHOLDERS DB_PREPARED_QUERIES DB_QUERY_SIZE DB_SIMPLE_LOCKING DB_SYSTEM_TABLES DB_TABLES ' +
-	             'DB_TRANSACTIONS DB_UNICODE DB_VIEWS'
+	             'DB_TRANSACTIONS DB_UNICODE DB_VIEWS __STDIN __STDOUT __STDERR __FILE_DIR'
 	  };
+	
+	
+	  var AT_COMMENT_MODE = hljs.COMMENT('@', '@');
 	
 	  var PREPROCESSOR =
 	  {
@@ -27742,109 +28244,171 @@
 	        ]
 	      },
 	      hljs.C_LINE_COMMENT_MODE,
-	      hljs.C_BLOCK_COMMENT_MODE
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      AT_COMMENT_MODE,
 	    ]
 	  };
 	
-	  var FUNCTION_TITLE = hljs.UNDERSCORE_IDENT_RE + '\\s*\\(?';
+	  var STRUCT_TYPE =
+	  {
+	    begin: /\bstruct\s+/,
+	    end: /\s/,
+	    keywords: "struct",
+	    contains: [
+	      {
+	        className: "type",
+	        begin: hljs.UNDERSCORE_IDENT_RE,
+	        relevance: 0,
+	      },
+	    ],
+	  };
+	
+	  // only for definitions
 	  var PARSE_PARAMS = [
 	    {
 	      className: 'params',
 	      begin: /\(/, end: /\)/,
-	      keywords: KEYWORDS,
+	      excludeBegin: true,
+	      excludeEnd: true,
+	      endsWithParent: true,
 	      relevance: 0,
 	      contains: [
+	        { // dots
+	          className: 'literal',
+	          begin: /\.\.\./,
+	        },
 	        hljs.C_NUMBER_MODE,
-	        hljs.C_LINE_COMMENT_MODE,
-	        hljs.C_BLOCK_COMMENT_MODE
+	        hljs.C_BLOCK_COMMENT_MODE,
+	        AT_COMMENT_MODE,
+	        STRUCT_TYPE,
 	      ]
 	    }
 	  ];
+	
+	  var FUNCTION_DEF =
+	  {
+	    className: "title",
+	    begin: hljs.UNDERSCORE_IDENT_RE,
+	    relevance: 0,
+	  };
+	
+	  var DEFINITION = function (beginKeywords, end, inherits) {
+	    var mode = hljs.inherit(
+	      {
+	        className: "function",
+	        beginKeywords: beginKeywords,
+	        end: end,
+	        excludeEnd: true,
+	        contains: [].concat(PARSE_PARAMS),
+	      },
+	      inherits || {}
+	    );
+	    mode.contains.push(FUNCTION_DEF);
+	    mode.contains.push(hljs.C_NUMBER_MODE);
+	    mode.contains.push(hljs.C_BLOCK_COMMENT_MODE);
+	    mode.contains.push(AT_COMMENT_MODE);
+	    return mode;
+	  };
+	
+	  var BUILT_IN_REF =
+	  { // these are explicitly named internal function calls
+	    className: 'built_in',
+	    begin: '\\b(' + KEYWORDS.built_in.split(' ').join('|') + ')\\b',
+	  };
+	
+	  var STRING_REF =
+	  {
+	    className: 'string',
+	    begin: '"', end: '"',
+	    contains: [hljs.BACKSLASH_ESCAPE],
+	    relevance: 0,
+	  };
+	
+	  var FUNCTION_REF =
+	  {
+	    //className: "fn_ref",
+	    begin: hljs.UNDERSCORE_IDENT_RE + '\\s*\\(',
+	    returnBegin: true,
+	    keywords: KEYWORDS,
+	    relevance: 0,
+	    contains: [
+	      {
+	        beginKeywords: KEYWORDS.keyword,
+	      },
+	      BUILT_IN_REF,
+	      { // ambiguously named function calls get a relevance of 0
+	        className: 'built_in',
+	        begin: hljs.UNDERSCORE_IDENT_RE,
+	        relevance: 0,
+	      },
+	    ],
+	  };
+	
+	  var FUNCTION_REF_PARAMS =
+	  {
+	    //className: "fn_ref_params",
+	    begin: /\(/,
+	    end: /\)/,
+	    relevance: 0,
+	    keywords: { built_in: KEYWORDS.built_in, literal: KEYWORDS.literal },
+	    contains: [
+	      hljs.C_NUMBER_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      AT_COMMENT_MODE,
+	      BUILT_IN_REF,
+	      FUNCTION_REF,
+	      STRING_REF,
+	      'self',
+	    ],
+	  };
+	
+	  FUNCTION_REF.contains.push(FUNCTION_REF_PARAMS);
 	
 	  return {
 	    aliases: ['gss'],
 	    case_insensitive: true, // language is case-insensitive
 	    keywords: KEYWORDS,
-	    illegal: '(\\{[%#]|[%#]\\})',
+	    illegal: /(\{[%#]|[%#]\}| <- )/,
 	    contains: [
 	      hljs.C_NUMBER_MODE,
 	      hljs.C_LINE_COMMENT_MODE,
 	      hljs.C_BLOCK_COMMENT_MODE,
-	      hljs.COMMENT('@', '@'),
+	      AT_COMMENT_MODE,
+	      STRING_REF,
 	      PREPROCESSOR,
 	      {
-	        className: 'string',
-	        begin: '"', end: '"',
-	        contains: [hljs.BACKSLASH_ESCAPE]
+	        className: 'keyword',
+	        begin: /\bexternal (matrix|string|array|sparse matrix|struct|proc|keyword|fn)/,
 	      },
+	      DEFINITION('proc keyword', ';'),
+	      DEFINITION('fn', '='),
 	      {
-	        className: 'function',
-	        beginKeywords: 'proc keyword',
-	        end: ';',
-	        excludeEnd: true,
-	        keywords: KEYWORDS,
+	        beginKeywords: 'for threadfor',
+	        end: /;/,
+	        //end: /\(/,
+	        relevance: 0,
 	        contains: [
-	          {
-	            begin: FUNCTION_TITLE, returnBegin: true,
-	            contains: [hljs.UNDERSCORE_TITLE_MODE],
-	            relevance: 0
-	          },
-	          hljs.C_NUMBER_MODE,
-	          hljs.C_LINE_COMMENT_MODE,
 	          hljs.C_BLOCK_COMMENT_MODE,
-	          PREPROCESSOR
-	        ].concat(PARSE_PARAMS)
+	          AT_COMMENT_MODE,
+	          FUNCTION_REF_PARAMS,
+	        ],
 	      },
-	      {
-	        className: 'function',
-	        beginKeywords: 'fn',
-	        end: ';',
-	        excludeEnd: true,
-	        keywords: KEYWORDS,
-	        contains: [
-	          {
-	            begin: FUNCTION_TITLE + hljs.IDENT_RE + '\\)?\\s*\\=\\s*', returnBegin: true,
-	            contains: [hljs.UNDERSCORE_TITLE_MODE],
-	            relevance: 0
-	          },
-	          hljs.C_NUMBER_MODE,
-	          hljs.C_LINE_COMMENT_MODE,
-	          hljs.C_BLOCK_COMMENT_MODE
-	        ].concat(PARSE_PARAMS)
+	      { // custom method guard
+	        // excludes method names from keyword processing
+	        variants: [
+	          { begin: hljs.UNDERSCORE_IDENT_RE + '\\.' + hljs.UNDERSCORE_IDENT_RE, },
+	          { begin: hljs.UNDERSCORE_IDENT_RE + '\\s*=', },
+	        ],
+	        relevance: 0,
 	      },
-	      {
-	        className: 'function',
-	        begin: '\\bexternal (proc|keyword|fn)\\s+',
-	        end: ';',
-	        excludeEnd: true,
-	        keywords: KEYWORDS,
-	        contains: [
-	          {
-	            begin: FUNCTION_TITLE, returnBegin: true,
-	            contains: [hljs.UNDERSCORE_TITLE_MODE],
-	            relevance: 0
-	          },
-	          hljs.C_LINE_COMMENT_MODE,
-	          hljs.C_BLOCK_COMMENT_MODE
-	        ]
-	      },
-	      {
-	        className: 'function',
-	        begin: '\\bexternal (matrix|string|array|sparse matrix|struct ' + hljs.IDENT_RE + ')\\s+',
-	        end: ';',
-	        excludeEnd: true,
-	        keywords: KEYWORDS,
-	        contains: [
-	          hljs.C_LINE_COMMENT_MODE,
-	          hljs.C_BLOCK_COMMENT_MODE
-	        ]
-	      }
+	      FUNCTION_REF,
+	      STRUCT_TYPE,
 	    ]
 	  };
 	};
 
 /***/ },
-/* 230 */
+/* 235 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -27915,7 +28479,7 @@
 	};
 
 /***/ },
-/* 231 */
+/* 236 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -27956,7 +28520,7 @@
 	};
 
 /***/ },
-/* 232 */
+/* 237 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28077,7 +28641,884 @@
 	};
 
 /***/ },
-/* 233 */
+/* 238 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  var GML_KEYWORDS = {
+	    keywords: 'begin end if then else while do for break continue with until ' +
+	      'repeat exit and or xor not return mod div switch case default var ' +
+	      'globalvar enum #macro #region #endregion',
+	    built_in: 'is_real is_string is_array is_undefined is_int32 is_int64 ' +
+	      'is_ptr is_vec3 is_vec4 is_matrix is_bool typeof ' +
+	      'variable_global_exists variable_global_get variable_global_set ' +
+	      'variable_instance_exists variable_instance_get variable_instance_set ' +
+	      'variable_instance_get_names array_length_1d array_length_2d ' +
+	      'array_height_2d array_equals array_create array_copy random ' +
+	      'random_range irandom irandom_range random_set_seed random_get_seed ' +
+	      'randomize randomise choose abs round floor ceil sign frac sqrt sqr ' +
+	      'exp ln log2 log10 sin cos tan arcsin arccos arctan arctan2 dsin dcos ' +
+	      'dtan darcsin darccos darctan darctan2 degtorad radtodeg power logn ' +
+	      'min max mean median clamp lerp dot_product dot_product_3d ' +
+	      'dot_product_normalised dot_product_3d_normalised ' +
+	      'dot_product_normalized dot_product_3d_normalized math_set_epsilon ' +
+	      'math_get_epsilon angle_difference point_distance_3d point_distance ' +
+	      'point_direction lengthdir_x lengthdir_y real string int64 ptr ' +
+	      'string_format chr ansi_char ord string_length string_byte_length ' +
+	      'string_pos string_copy string_char_at string_ord_at string_byte_at ' +
+	      'string_set_byte_at string_delete string_insert string_lower ' +
+	      'string_upper string_repeat string_letters string_digits ' +
+	      'string_lettersdigits string_replace string_replace_all string_count ' +
+	      'string_hash_to_newline clipboard_has_text clipboard_set_text ' +
+	      'clipboard_get_text date_current_datetime date_create_datetime ' +
+	      'date_valid_datetime date_inc_year date_inc_month date_inc_week ' +
+	      'date_inc_day date_inc_hour date_inc_minute date_inc_second ' +
+	      'date_get_year date_get_month date_get_week date_get_day ' +
+	      'date_get_hour date_get_minute date_get_second date_get_weekday ' +
+	      'date_get_day_of_year date_get_hour_of_year date_get_minute_of_year ' +
+	      'date_get_second_of_year date_year_span date_month_span ' +
+	      'date_week_span date_day_span date_hour_span date_minute_span ' +
+	      'date_second_span date_compare_datetime date_compare_date ' +
+	      'date_compare_time date_date_of date_time_of date_datetime_string ' +
+	      'date_date_string date_time_string date_days_in_month ' +
+	      'date_days_in_year date_leap_year date_is_today date_set_timezone ' +
+	      'date_get_timezone game_set_speed game_get_speed motion_set ' +
+	      'motion_add place_free place_empty place_meeting place_snapped ' +
+	      'move_random move_snap move_towards_point move_contact_solid ' +
+	      'move_contact_all move_outside_solid move_outside_all ' +
+	      'move_bounce_solid move_bounce_all move_wrap distance_to_point ' +
+	      'distance_to_object position_empty position_meeting path_start ' +
+	      'path_end mp_linear_step mp_potential_step mp_linear_step_object ' +
+	      'mp_potential_step_object mp_potential_settings mp_linear_path ' +
+	      'mp_potential_path mp_linear_path_object mp_potential_path_object ' +
+	      'mp_grid_create mp_grid_destroy mp_grid_clear_all mp_grid_clear_cell ' +
+	      'mp_grid_clear_rectangle mp_grid_add_cell mp_grid_get_cell ' +
+	      'mp_grid_add_rectangle mp_grid_add_instances mp_grid_path ' +
+	      'mp_grid_draw mp_grid_to_ds_grid collision_point collision_rectangle ' +
+	      'collision_circle collision_ellipse collision_line ' +
+	      'collision_point_list collision_rectangle_list collision_circle_list ' +
+	      'collision_ellipse_list collision_line_list instance_position_list ' +
+	      'instance_place_list point_in_rectangle ' +
+	      'point_in_triangle point_in_circle rectangle_in_rectangle ' +
+	      'rectangle_in_triangle rectangle_in_circle instance_find ' +
+	      'instance_exists instance_number instance_position instance_nearest ' +
+	      'instance_furthest instance_place instance_create_depth ' +
+	      'instance_create_layer instance_copy instance_change instance_destroy ' +
+	      'position_destroy position_change instance_id_get ' +
+	      'instance_deactivate_all instance_deactivate_object ' +
+	      'instance_deactivate_region instance_activate_all ' +
+	      'instance_activate_object instance_activate_region room_goto ' +
+	      'room_goto_previous room_goto_next room_previous room_next ' +
+	      'room_restart game_end game_restart game_load game_save ' +
+	      'game_save_buffer game_load_buffer event_perform event_user ' +
+	      'event_perform_object event_inherited show_debug_message ' +
+	      'show_debug_overlay debug_event debug_get_callstack alarm_get ' +
+	      'alarm_set font_texture_page_size keyboard_set_map keyboard_get_map ' +
+	      'keyboard_unset_map keyboard_check keyboard_check_pressed ' +
+	      'keyboard_check_released keyboard_check_direct keyboard_get_numlock ' +
+	      'keyboard_set_numlock keyboard_key_press keyboard_key_release ' +
+	      'keyboard_clear io_clear mouse_check_button ' +
+	      'mouse_check_button_pressed mouse_check_button_released ' +
+	      'mouse_wheel_up mouse_wheel_down mouse_clear draw_self draw_sprite ' +
+	      'draw_sprite_pos draw_sprite_ext draw_sprite_stretched ' +
+	      'draw_sprite_stretched_ext draw_sprite_tiled draw_sprite_tiled_ext ' +
+	      'draw_sprite_part draw_sprite_part_ext draw_sprite_general draw_clear ' +
+	      'draw_clear_alpha draw_point draw_line draw_line_width draw_rectangle ' +
+	      'draw_roundrect draw_roundrect_ext draw_triangle draw_circle ' +
+	      'draw_ellipse draw_set_circle_precision draw_arrow draw_button ' +
+	      'draw_path draw_healthbar draw_getpixel draw_getpixel_ext ' +
+	      'draw_set_colour draw_set_color draw_set_alpha draw_get_colour ' +
+	      'draw_get_color draw_get_alpha merge_colour make_colour_rgb ' +
+	      'make_colour_hsv colour_get_red colour_get_green colour_get_blue ' +
+	      'colour_get_hue colour_get_saturation colour_get_value merge_color ' +
+	      'make_color_rgb make_color_hsv color_get_red color_get_green ' +
+	      'color_get_blue color_get_hue color_get_saturation color_get_value ' +
+	      'merge_color screen_save screen_save_part draw_set_font ' +
+	      'draw_set_halign draw_set_valign draw_text draw_text_ext string_width ' +
+	      'string_height string_width_ext string_height_ext ' +
+	      'draw_text_transformed draw_text_ext_transformed draw_text_colour ' +
+	      'draw_text_ext_colour draw_text_transformed_colour ' +
+	      'draw_text_ext_transformed_colour draw_text_color draw_text_ext_color ' +
+	      'draw_text_transformed_color draw_text_ext_transformed_color ' +
+	      'draw_point_colour draw_line_colour draw_line_width_colour ' +
+	      'draw_rectangle_colour draw_roundrect_colour ' +
+	      'draw_roundrect_colour_ext draw_triangle_colour draw_circle_colour ' +
+	      'draw_ellipse_colour draw_point_color draw_line_color ' +
+	      'draw_line_width_color draw_rectangle_color draw_roundrect_color ' +
+	      'draw_roundrect_color_ext draw_triangle_color draw_circle_color ' +
+	      'draw_ellipse_color draw_primitive_begin draw_vertex ' +
+	      'draw_vertex_colour draw_vertex_color draw_primitive_end ' +
+	      'sprite_get_uvs font_get_uvs sprite_get_texture font_get_texture ' +
+	      'texture_get_width texture_get_height texture_get_uvs ' +
+	      'draw_primitive_begin_texture draw_vertex_texture ' +
+	      'draw_vertex_texture_colour draw_vertex_texture_color ' +
+	      'texture_global_scale surface_create surface_create_ext ' +
+	      'surface_resize surface_free surface_exists surface_get_width ' +
+	      'surface_get_height surface_get_texture surface_set_target ' +
+	      'surface_set_target_ext surface_reset_target surface_depth_disable ' +
+	      'surface_get_depth_disable draw_surface draw_surface_stretched ' +
+	      'draw_surface_tiled draw_surface_part draw_surface_ext ' +
+	      'draw_surface_stretched_ext draw_surface_tiled_ext ' +
+	      'draw_surface_part_ext draw_surface_general surface_getpixel ' +
+	      'surface_getpixel_ext surface_save surface_save_part surface_copy ' +
+	      'surface_copy_part application_surface_draw_enable ' +
+	      'application_get_position application_surface_enable ' +
+	      'application_surface_is_enabled display_get_width display_get_height ' +
+	      'display_get_orientation display_get_gui_width display_get_gui_height ' +
+	      'display_reset display_mouse_get_x display_mouse_get_y ' +
+	      'display_mouse_set display_set_ui_visibility ' +
+	      'window_set_fullscreen window_get_fullscreen ' +
+	      'window_set_caption window_set_min_width window_set_max_width ' +
+	      'window_set_min_height window_set_max_height window_get_visible_rects ' +
+	      'window_get_caption window_set_cursor window_get_cursor ' +
+	      'window_set_colour window_get_colour window_set_color ' +
+	      'window_get_color window_set_position window_set_size ' +
+	      'window_set_rectangle window_center window_get_x window_get_y ' +
+	      'window_get_width window_get_height window_mouse_get_x ' +
+	      'window_mouse_get_y window_mouse_set window_view_mouse_get_x ' +
+	      'window_view_mouse_get_y window_views_mouse_get_x ' +
+	      'window_views_mouse_get_y audio_listener_position ' +
+	      'audio_listener_velocity audio_listener_orientation ' +
+	      'audio_emitter_position audio_emitter_create audio_emitter_free ' +
+	      'audio_emitter_exists audio_emitter_pitch audio_emitter_velocity ' +
+	      'audio_emitter_falloff audio_emitter_gain audio_play_sound ' +
+	      'audio_play_sound_on audio_play_sound_at audio_stop_sound ' +
+	      'audio_resume_music audio_music_is_playing audio_resume_sound ' +
+	      'audio_pause_sound audio_pause_music audio_channel_num ' +
+	      'audio_sound_length audio_get_type audio_falloff_set_model ' +
+	      'audio_play_music audio_stop_music audio_master_gain audio_music_gain ' +
+	      'audio_sound_gain audio_sound_pitch audio_stop_all audio_resume_all ' +
+	      'audio_pause_all audio_is_playing audio_is_paused audio_exists ' +
+	      'audio_sound_set_track_position audio_sound_get_track_position ' +
+	      'audio_emitter_get_gain audio_emitter_get_pitch audio_emitter_get_x ' +
+	      'audio_emitter_get_y audio_emitter_get_z audio_emitter_get_vx ' +
+	      'audio_emitter_get_vy audio_emitter_get_vz ' +
+	      'audio_listener_set_position audio_listener_set_velocity ' +
+	      'audio_listener_set_orientation audio_listener_get_data ' +
+	      'audio_set_master_gain audio_get_master_gain audio_sound_get_gain ' +
+	      'audio_sound_get_pitch audio_get_name audio_sound_set_track_position ' +
+	      'audio_sound_get_track_position audio_create_stream ' +
+	      'audio_destroy_stream audio_create_sync_group ' +
+	      'audio_destroy_sync_group audio_play_in_sync_group ' +
+	      'audio_start_sync_group audio_stop_sync_group audio_pause_sync_group ' +
+	      'audio_resume_sync_group audio_sync_group_get_track_pos ' +
+	      'audio_sync_group_debug audio_sync_group_is_playing audio_debug ' +
+	      'audio_group_load audio_group_unload audio_group_is_loaded ' +
+	      'audio_group_load_progress audio_group_name audio_group_stop_all ' +
+	      'audio_group_set_gain audio_create_buffer_sound ' +
+	      'audio_free_buffer_sound audio_create_play_queue ' +
+	      'audio_free_play_queue audio_queue_sound audio_get_recorder_count ' +
+	      'audio_get_recorder_info audio_start_recording audio_stop_recording ' +
+	      'audio_sound_get_listener_mask audio_emitter_get_listener_mask ' +
+	      'audio_get_listener_mask audio_sound_set_listener_mask ' +
+	      'audio_emitter_set_listener_mask audio_set_listener_mask ' +
+	      'audio_get_listener_count audio_get_listener_info audio_system ' +
+	      'show_message show_message_async clickable_add clickable_add_ext ' +
+	      'clickable_change clickable_change_ext clickable_delete ' +
+	      'clickable_exists clickable_set_style show_question ' +
+	      'show_question_async get_integer get_string get_integer_async ' +
+	      'get_string_async get_login_async get_open_filename get_save_filename ' +
+	      'get_open_filename_ext get_save_filename_ext show_error ' +
+	      'highscore_clear highscore_add highscore_value highscore_name ' +
+	      'draw_highscore sprite_exists sprite_get_name sprite_get_number ' +
+	      'sprite_get_width sprite_get_height sprite_get_xoffset ' +
+	      'sprite_get_yoffset sprite_get_bbox_left sprite_get_bbox_right ' +
+	      'sprite_get_bbox_top sprite_get_bbox_bottom sprite_save ' +
+	      'sprite_save_strip sprite_set_cache_size sprite_set_cache_size_ext ' +
+	      'sprite_get_tpe sprite_prefetch sprite_prefetch_multi sprite_flush ' +
+	      'sprite_flush_multi sprite_set_speed sprite_get_speed_type ' +
+	      'sprite_get_speed font_exists font_get_name font_get_fontname ' +
+	      'font_get_bold font_get_italic font_get_first font_get_last ' +
+	      'font_get_size font_set_cache_size path_exists path_get_name ' +
+	      'path_get_length path_get_time path_get_kind path_get_closed ' +
+	      'path_get_precision path_get_number path_get_point_x path_get_point_y ' +
+	      'path_get_point_speed path_get_x path_get_y path_get_speed ' +
+	      'script_exists script_get_name timeline_add timeline_delete ' +
+	      'timeline_clear timeline_exists timeline_get_name ' +
+	      'timeline_moment_clear timeline_moment_add_script timeline_size ' +
+	      'timeline_max_moment object_exists object_get_name object_get_sprite ' +
+	      'object_get_solid object_get_visible object_get_persistent ' +
+	      'object_get_mask object_get_parent object_get_physics ' +
+	      'object_is_ancestor room_exists room_get_name sprite_set_offset ' +
+	      'sprite_duplicate sprite_assign sprite_merge sprite_add ' +
+	      'sprite_replace sprite_create_from_surface sprite_add_from_surface ' +
+	      'sprite_delete sprite_set_alpha_from_sprite sprite_collision_mask ' +
+	      'font_add_enable_aa font_add_get_enable_aa font_add font_add_sprite ' +
+	      'font_add_sprite_ext font_replace font_replace_sprite ' +
+	      'font_replace_sprite_ext font_delete path_set_kind path_set_closed ' +
+	      'path_set_precision path_add path_assign path_duplicate path_append ' +
+	      'path_delete path_add_point path_insert_point path_change_point ' +
+	      'path_delete_point path_clear_points path_reverse path_mirror ' +
+	      'path_flip path_rotate path_rescale path_shift script_execute ' +
+	      'object_set_sprite object_set_solid object_set_visible ' +
+	      'object_set_persistent object_set_mask room_set_width room_set_height ' +
+	      'room_set_persistent room_set_background_colour ' +
+	      'room_set_background_color room_set_view room_set_viewport ' +
+	      'room_get_viewport room_set_view_enabled room_add room_duplicate ' +
+	      'room_assign room_instance_add room_instance_clear room_get_camera ' +
+	      'room_set_camera asset_get_index asset_get_type ' +
+	      'file_text_open_from_string file_text_open_read file_text_open_write ' +
+	      'file_text_open_append file_text_close file_text_write_string ' +
+	      'file_text_write_real file_text_writeln file_text_read_string ' +
+	      'file_text_read_real file_text_readln file_text_eof file_text_eoln ' +
+	      'file_exists file_delete file_rename file_copy directory_exists ' +
+	      'directory_create directory_destroy file_find_first file_find_next ' +
+	      'file_find_close file_attributes filename_name filename_path ' +
+	      'filename_dir filename_drive filename_ext filename_change_ext ' +
+	      'file_bin_open file_bin_rewrite file_bin_close file_bin_position ' +
+	      'file_bin_size file_bin_seek file_bin_write_byte file_bin_read_byte ' +
+	      'parameter_count parameter_string environment_get_variable ' +
+	      'ini_open_from_string ini_open ini_close ini_read_string ' +
+	      'ini_read_real ini_write_string ini_write_real ini_key_exists ' +
+	      'ini_section_exists ini_key_delete ini_section_delete ' +
+	      'ds_set_precision ds_exists ds_stack_create ds_stack_destroy ' +
+	      'ds_stack_clear ds_stack_copy ds_stack_size ds_stack_empty ' +
+	      'ds_stack_push ds_stack_pop ds_stack_top ds_stack_write ds_stack_read ' +
+	      'ds_queue_create ds_queue_destroy ds_queue_clear ds_queue_copy ' +
+	      'ds_queue_size ds_queue_empty ds_queue_enqueue ds_queue_dequeue ' +
+	      'ds_queue_head ds_queue_tail ds_queue_write ds_queue_read ' +
+	      'ds_list_create ds_list_destroy ds_list_clear ds_list_copy ' +
+	      'ds_list_size ds_list_empty ds_list_add ds_list_insert ' +
+	      'ds_list_replace ds_list_delete ds_list_find_index ds_list_find_value ' +
+	      'ds_list_mark_as_list ds_list_mark_as_map ds_list_sort ' +
+	      'ds_list_shuffle ds_list_write ds_list_read ds_list_set ds_map_create ' +
+	      'ds_map_destroy ds_map_clear ds_map_copy ds_map_size ds_map_empty ' +
+	      'ds_map_add ds_map_add_list ds_map_add_map ds_map_replace ' +
+	      'ds_map_replace_map ds_map_replace_list ds_map_delete ds_map_exists ' +
+	      'ds_map_find_value ds_map_find_previous ds_map_find_next ' +
+	      'ds_map_find_first ds_map_find_last ds_map_write ds_map_read ' +
+	      'ds_map_secure_save ds_map_secure_load ds_map_secure_load_buffer ' +
+	      'ds_map_secure_save_buffer ds_map_set ds_priority_create ' +
+	      'ds_priority_destroy ds_priority_clear ds_priority_copy ' +
+	      'ds_priority_size ds_priority_empty ds_priority_add ' +
+	      'ds_priority_change_priority ds_priority_find_priority ' +
+	      'ds_priority_delete_value ds_priority_delete_min ds_priority_find_min ' +
+	      'ds_priority_delete_max ds_priority_find_max ds_priority_write ' +
+	      'ds_priority_read ds_grid_create ds_grid_destroy ds_grid_copy ' +
+	      'ds_grid_resize ds_grid_width ds_grid_height ds_grid_clear ' +
+	      'ds_grid_set ds_grid_add ds_grid_multiply ds_grid_set_region ' +
+	      'ds_grid_add_region ds_grid_multiply_region ds_grid_set_disk ' +
+	      'ds_grid_add_disk ds_grid_multiply_disk ds_grid_set_grid_region ' +
+	      'ds_grid_add_grid_region ds_grid_multiply_grid_region ds_grid_get ' +
+	      'ds_grid_get_sum ds_grid_get_max ds_grid_get_min ds_grid_get_mean ' +
+	      'ds_grid_get_disk_sum ds_grid_get_disk_min ds_grid_get_disk_max ' +
+	      'ds_grid_get_disk_mean ds_grid_value_exists ds_grid_value_x ' +
+	      'ds_grid_value_y ds_grid_value_disk_exists ds_grid_value_disk_x ' +
+	      'ds_grid_value_disk_y ds_grid_shuffle ds_grid_write ds_grid_read ' +
+	      'ds_grid_sort ds_grid_set ds_grid_get effect_create_below ' +
+	      'effect_create_above effect_clear part_type_create part_type_destroy ' +
+	      'part_type_exists part_type_clear part_type_shape part_type_sprite ' +
+	      'part_type_size part_type_scale part_type_orientation part_type_life ' +
+	      'part_type_step part_type_death part_type_speed part_type_direction ' +
+	      'part_type_gravity part_type_colour1 part_type_colour2 ' +
+	      'part_type_colour3 part_type_colour_mix part_type_colour_rgb ' +
+	      'part_type_colour_hsv part_type_color1 part_type_color2 ' +
+	      'part_type_color3 part_type_color_mix part_type_color_rgb ' +
+	      'part_type_color_hsv part_type_alpha1 part_type_alpha2 ' +
+	      'part_type_alpha3 part_type_blend part_system_create ' +
+	      'part_system_create_layer part_system_destroy part_system_exists ' +
+	      'part_system_clear part_system_draw_order part_system_depth ' +
+	      'part_system_position part_system_automatic_update ' +
+	      'part_system_automatic_draw part_system_update part_system_drawit ' +
+	      'part_system_get_layer part_system_layer part_particles_create ' +
+	      'part_particles_create_colour part_particles_create_color ' +
+	      'part_particles_clear part_particles_count part_emitter_create ' +
+	      'part_emitter_destroy part_emitter_destroy_all part_emitter_exists ' +
+	      'part_emitter_clear part_emitter_region part_emitter_burst ' +
+	      'part_emitter_stream external_call external_define external_free ' +
+	      'window_handle window_device matrix_get matrix_set ' +
+	      'matrix_build_identity matrix_build matrix_build_lookat ' +
+	      'matrix_build_projection_ortho matrix_build_projection_perspective ' +
+	      'matrix_build_projection_perspective_fov matrix_multiply ' +
+	      'matrix_transform_vertex matrix_stack_push matrix_stack_pop ' +
+	      'matrix_stack_multiply matrix_stack_set matrix_stack_clear ' +
+	      'matrix_stack_top matrix_stack_is_empty browser_input_capture ' +
+	      'os_get_config os_get_info os_get_language os_get_region ' +
+	      'os_lock_orientation display_get_dpi_x display_get_dpi_y ' +
+	      'display_set_gui_size display_set_gui_maximise ' +
+	      'display_set_gui_maximize device_mouse_dbclick_enable ' +
+	      'display_set_timing_method display_get_timing_method ' +
+	      'display_set_sleep_margin display_get_sleep_margin virtual_key_add ' +
+	      'virtual_key_hide virtual_key_delete virtual_key_show ' +
+	      'draw_enable_drawevent draw_enable_swf_aa draw_set_swf_aa_level ' +
+	      'draw_get_swf_aa_level draw_texture_flush draw_flush ' +
+	      'gpu_set_blendenable gpu_set_ztestenable gpu_set_zfunc ' +
+	      'gpu_set_zwriteenable gpu_set_lightingenable gpu_set_fog ' +
+	      'gpu_set_cullmode gpu_set_blendmode gpu_set_blendmode_ext ' +
+	      'gpu_set_blendmode_ext_sepalpha gpu_set_colorwriteenable ' +
+	      'gpu_set_colourwriteenable gpu_set_alphatestenable ' +
+	      'gpu_set_alphatestref gpu_set_alphatestfunc gpu_set_texfilter ' +
+	      'gpu_set_texfilter_ext gpu_set_texrepeat gpu_set_texrepeat_ext ' +
+	      'gpu_set_tex_filter gpu_set_tex_filter_ext gpu_set_tex_repeat ' +
+	      'gpu_set_tex_repeat_ext gpu_set_tex_mip_filter ' +
+	      'gpu_set_tex_mip_filter_ext gpu_set_tex_mip_bias ' +
+	      'gpu_set_tex_mip_bias_ext gpu_set_tex_min_mip gpu_set_tex_min_mip_ext ' +
+	      'gpu_set_tex_max_mip gpu_set_tex_max_mip_ext gpu_set_tex_max_aniso ' +
+	      'gpu_set_tex_max_aniso_ext gpu_set_tex_mip_enable ' +
+	      'gpu_set_tex_mip_enable_ext gpu_get_blendenable gpu_get_ztestenable ' +
+	      'gpu_get_zfunc gpu_get_zwriteenable gpu_get_lightingenable ' +
+	      'gpu_get_fog gpu_get_cullmode gpu_get_blendmode gpu_get_blendmode_ext ' +
+	      'gpu_get_blendmode_ext_sepalpha gpu_get_blendmode_src ' +
+	      'gpu_get_blendmode_dest gpu_get_blendmode_srcalpha ' +
+	      'gpu_get_blendmode_destalpha gpu_get_colorwriteenable ' +
+	      'gpu_get_colourwriteenable gpu_get_alphatestenable ' +
+	      'gpu_get_alphatestref gpu_get_alphatestfunc gpu_get_texfilter ' +
+	      'gpu_get_texfilter_ext gpu_get_texrepeat gpu_get_texrepeat_ext ' +
+	      'gpu_get_tex_filter gpu_get_tex_filter_ext gpu_get_tex_repeat ' +
+	      'gpu_get_tex_repeat_ext gpu_get_tex_mip_filter ' +
+	      'gpu_get_tex_mip_filter_ext gpu_get_tex_mip_bias ' +
+	      'gpu_get_tex_mip_bias_ext gpu_get_tex_min_mip gpu_get_tex_min_mip_ext ' +
+	      'gpu_get_tex_max_mip gpu_get_tex_max_mip_ext gpu_get_tex_max_aniso ' +
+	      'gpu_get_tex_max_aniso_ext gpu_get_tex_mip_enable ' +
+	      'gpu_get_tex_mip_enable_ext gpu_push_state gpu_pop_state ' +
+	      'gpu_get_state gpu_set_state draw_light_define_ambient ' +
+	      'draw_light_define_direction draw_light_define_point ' +
+	      'draw_light_enable draw_set_lighting draw_light_get_ambient ' +
+	      'draw_light_get draw_get_lighting shop_leave_rating url_get_domain ' +
+	      'url_open url_open_ext url_open_full get_timer achievement_login ' +
+	      'achievement_logout achievement_post achievement_increment ' +
+	      'achievement_post_score achievement_available ' +
+	      'achievement_show_achievements achievement_show_leaderboards ' +
+	      'achievement_load_friends achievement_load_leaderboard ' +
+	      'achievement_send_challenge achievement_load_progress ' +
+	      'achievement_reset achievement_login_status achievement_get_pic ' +
+	      'achievement_show_challenge_notifications achievement_get_challenges ' +
+	      'achievement_event achievement_show achievement_get_info ' +
+	      'cloud_file_save cloud_string_save cloud_synchronise ads_enable ' +
+	      'ads_disable ads_setup ads_engagement_launch ads_engagement_available ' +
+	      'ads_engagement_active ads_event ads_event_preload ' +
+	      'ads_set_reward_callback ads_get_display_height ads_get_display_width ' +
+	      'ads_move ads_interstitial_available ads_interstitial_display ' +
+	      'device_get_tilt_x device_get_tilt_y device_get_tilt_z ' +
+	      'device_is_keypad_open device_mouse_check_button ' +
+	      'device_mouse_check_button_pressed device_mouse_check_button_released ' +
+	      'device_mouse_x device_mouse_y device_mouse_raw_x device_mouse_raw_y ' +
+	      'device_mouse_x_to_gui device_mouse_y_to_gui iap_activate iap_status ' +
+	      'iap_enumerate_products iap_restore_all iap_acquire iap_consume ' +
+	      'iap_product_details iap_purchase_details facebook_init ' +
+	      'facebook_login facebook_status facebook_graph_request ' +
+	      'facebook_dialog facebook_logout facebook_launch_offerwall ' +
+	      'facebook_post_message facebook_send_invite facebook_user_id ' +
+	      'facebook_accesstoken facebook_check_permission ' +
+	      'facebook_request_read_permissions ' +
+	      'facebook_request_publish_permissions gamepad_is_supported ' +
+	      'gamepad_get_device_count gamepad_is_connected ' +
+	      'gamepad_get_description gamepad_get_button_threshold ' +
+	      'gamepad_set_button_threshold gamepad_get_axis_deadzone ' +
+	      'gamepad_set_axis_deadzone gamepad_button_count gamepad_button_check ' +
+	      'gamepad_button_check_pressed gamepad_button_check_released ' +
+	      'gamepad_button_value gamepad_axis_count gamepad_axis_value ' +
+	      'gamepad_set_vibration gamepad_set_colour gamepad_set_color ' +
+	      'os_is_paused window_has_focus code_is_compiled http_get ' +
+	      'http_get_file http_post_string http_request json_encode json_decode ' +
+	      'zip_unzip load_csv base64_encode base64_decode md5_string_unicode ' +
+	      'md5_string_utf8 md5_file os_is_network_connected sha1_string_unicode ' +
+	      'sha1_string_utf8 sha1_file os_powersave_enable analytics_event ' +
+	      'analytics_event_ext win8_livetile_tile_notification ' +
+	      'win8_livetile_tile_clear win8_livetile_badge_notification ' +
+	      'win8_livetile_badge_clear win8_livetile_queue_enable ' +
+	      'win8_secondarytile_pin win8_secondarytile_badge_notification ' +
+	      'win8_secondarytile_delete win8_livetile_notification_begin ' +
+	      'win8_livetile_notification_secondary_begin ' +
+	      'win8_livetile_notification_expiry win8_livetile_notification_tag ' +
+	      'win8_livetile_notification_text_add ' +
+	      'win8_livetile_notification_image_add win8_livetile_notification_end ' +
+	      'win8_appbar_enable win8_appbar_add_element ' +
+	      'win8_appbar_remove_element win8_settingscharm_add_entry ' +
+	      'win8_settingscharm_add_html_entry win8_settingscharm_add_xaml_entry ' +
+	      'win8_settingscharm_set_xaml_property ' +
+	      'win8_settingscharm_get_xaml_property win8_settingscharm_remove_entry ' +
+	      'win8_share_image win8_share_screenshot win8_share_file ' +
+	      'win8_share_url win8_share_text win8_search_enable ' +
+	      'win8_search_disable win8_search_add_suggestions ' +
+	      'win8_device_touchscreen_available win8_license_initialize_sandbox ' +
+	      'win8_license_trial_version winphone_license_trial_version ' +
+	      'winphone_tile_title winphone_tile_count winphone_tile_back_title ' +
+	      'winphone_tile_back_content winphone_tile_back_content_wide ' +
+	      'winphone_tile_front_image winphone_tile_front_image_small ' +
+	      'winphone_tile_front_image_wide winphone_tile_back_image ' +
+	      'winphone_tile_back_image_wide winphone_tile_background_colour ' +
+	      'winphone_tile_background_color winphone_tile_icon_image ' +
+	      'winphone_tile_small_icon_image winphone_tile_wide_content ' +
+	      'winphone_tile_cycle_images winphone_tile_small_background_image ' +
+	      'physics_world_create physics_world_gravity ' +
+	      'physics_world_update_speed physics_world_update_iterations ' +
+	      'physics_world_draw_debug physics_pause_enable physics_fixture_create ' +
+	      'physics_fixture_set_kinematic physics_fixture_set_density ' +
+	      'physics_fixture_set_awake physics_fixture_set_restitution ' +
+	      'physics_fixture_set_friction physics_fixture_set_collision_group ' +
+	      'physics_fixture_set_sensor physics_fixture_set_linear_damping ' +
+	      'physics_fixture_set_angular_damping physics_fixture_set_circle_shape ' +
+	      'physics_fixture_set_box_shape physics_fixture_set_edge_shape ' +
+	      'physics_fixture_set_polygon_shape physics_fixture_set_chain_shape ' +
+	      'physics_fixture_add_point physics_fixture_bind ' +
+	      'physics_fixture_bind_ext physics_fixture_delete physics_apply_force ' +
+	      'physics_apply_impulse physics_apply_angular_impulse ' +
+	      'physics_apply_local_force physics_apply_local_impulse ' +
+	      'physics_apply_torque physics_mass_properties physics_draw_debug ' +
+	      'physics_test_overlap physics_remove_fixture physics_set_friction ' +
+	      'physics_set_density physics_set_restitution physics_get_friction ' +
+	      'physics_get_density physics_get_restitution ' +
+	      'physics_joint_distance_create physics_joint_rope_create ' +
+	      'physics_joint_revolute_create physics_joint_prismatic_create ' +
+	      'physics_joint_pulley_create physics_joint_wheel_create ' +
+	      'physics_joint_weld_create physics_joint_friction_create ' +
+	      'physics_joint_gear_create physics_joint_enable_motor ' +
+	      'physics_joint_get_value physics_joint_set_value physics_joint_delete ' +
+	      'physics_particle_create physics_particle_delete ' +
+	      'physics_particle_delete_region_circle ' +
+	      'physics_particle_delete_region_box ' +
+	      'physics_particle_delete_region_poly physics_particle_set_flags ' +
+	      'physics_particle_set_category_flags physics_particle_draw ' +
+	      'physics_particle_draw_ext physics_particle_count ' +
+	      'physics_particle_get_data physics_particle_get_data_particle ' +
+	      'physics_particle_group_begin physics_particle_group_circle ' +
+	      'physics_particle_group_box physics_particle_group_polygon ' +
+	      'physics_particle_group_add_point physics_particle_group_end ' +
+	      'physics_particle_group_join physics_particle_group_delete ' +
+	      'physics_particle_group_count physics_particle_group_get_data ' +
+	      'physics_particle_group_get_mass physics_particle_group_get_inertia ' +
+	      'physics_particle_group_get_centre_x ' +
+	      'physics_particle_group_get_centre_y physics_particle_group_get_vel_x ' +
+	      'physics_particle_group_get_vel_y physics_particle_group_get_ang_vel ' +
+	      'physics_particle_group_get_x physics_particle_group_get_y ' +
+	      'physics_particle_group_get_angle physics_particle_set_group_flags ' +
+	      'physics_particle_get_group_flags physics_particle_get_max_count ' +
+	      'physics_particle_get_radius physics_particle_get_density ' +
+	      'physics_particle_get_damping physics_particle_get_gravity_scale ' +
+	      'physics_particle_set_max_count physics_particle_set_radius ' +
+	      'physics_particle_set_density physics_particle_set_damping ' +
+	      'physics_particle_set_gravity_scale network_create_socket ' +
+	      'network_create_socket_ext network_create_server ' +
+	      'network_create_server_raw network_connect network_connect_raw ' +
+	      'network_send_packet network_send_raw network_send_broadcast ' +
+	      'network_send_udp network_send_udp_raw network_set_timeout ' +
+	      'network_set_config network_resolve network_destroy buffer_create ' +
+	      'buffer_write buffer_read buffer_seek buffer_get_surface ' +
+	      'buffer_set_surface buffer_delete buffer_exists buffer_get_type ' +
+	      'buffer_get_alignment buffer_poke buffer_peek buffer_save ' +
+	      'buffer_save_ext buffer_load buffer_load_ext buffer_load_partial ' +
+	      'buffer_copy buffer_fill buffer_get_size buffer_tell buffer_resize ' +
+	      'buffer_md5 buffer_sha1 buffer_base64_encode buffer_base64_decode ' +
+	      'buffer_base64_decode_ext buffer_sizeof buffer_get_address ' +
+	      'buffer_create_from_vertex_buffer ' +
+	      'buffer_create_from_vertex_buffer_ext buffer_copy_from_vertex_buffer ' +
+	      'buffer_async_group_begin buffer_async_group_option ' +
+	      'buffer_async_group_end buffer_load_async buffer_save_async ' +
+	      'gml_release_mode gml_pragma steam_activate_overlay ' +
+	      'steam_is_overlay_enabled steam_is_overlay_activated ' +
+	      'steam_get_persona_name steam_initialised ' +
+	      'steam_is_cloud_enabled_for_app steam_is_cloud_enabled_for_account ' +
+	      'steam_file_persisted steam_get_quota_total steam_get_quota_free ' +
+	      'steam_file_write steam_file_write_file steam_file_read ' +
+	      'steam_file_delete steam_file_exists steam_file_size steam_file_share ' +
+	      'steam_is_screenshot_requested steam_send_screenshot ' +
+	      'steam_is_user_logged_on steam_get_user_steam_id steam_user_owns_dlc ' +
+	      'steam_user_installed_dlc steam_set_achievement steam_get_achievement ' +
+	      'steam_clear_achievement steam_set_stat_int steam_set_stat_float ' +
+	      'steam_set_stat_avg_rate steam_get_stat_int steam_get_stat_float ' +
+	      'steam_get_stat_avg_rate steam_reset_all_stats ' +
+	      'steam_reset_all_stats_achievements steam_stats_ready ' +
+	      'steam_create_leaderboard steam_upload_score steam_upload_score_ext ' +
+	      'steam_download_scores_around_user steam_download_scores ' +
+	      'steam_download_friends_scores steam_upload_score_buffer ' +
+	      'steam_upload_score_buffer_ext steam_current_game_language ' +
+	      'steam_available_languages steam_activate_overlay_browser ' +
+	      'steam_activate_overlay_user steam_activate_overlay_store ' +
+	      'steam_get_user_persona_name steam_get_app_id ' +
+	      'steam_get_user_account_id steam_ugc_download steam_ugc_create_item ' +
+	      'steam_ugc_start_item_update steam_ugc_set_item_title ' +
+	      'steam_ugc_set_item_description steam_ugc_set_item_visibility ' +
+	      'steam_ugc_set_item_tags steam_ugc_set_item_content ' +
+	      'steam_ugc_set_item_preview steam_ugc_submit_item_update ' +
+	      'steam_ugc_get_item_update_progress steam_ugc_subscribe_item ' +
+	      'steam_ugc_unsubscribe_item steam_ugc_num_subscribed_items ' +
+	      'steam_ugc_get_subscribed_items steam_ugc_get_item_install_info ' +
+	      'steam_ugc_get_item_update_info steam_ugc_request_item_details ' +
+	      'steam_ugc_create_query_user steam_ugc_create_query_user_ex ' +
+	      'steam_ugc_create_query_all steam_ugc_create_query_all_ex ' +
+	      'steam_ugc_query_set_cloud_filename_filter ' +
+	      'steam_ugc_query_set_match_any_tag steam_ugc_query_set_search_text ' +
+	      'steam_ugc_query_set_ranked_by_trend_days ' +
+	      'steam_ugc_query_add_required_tag steam_ugc_query_add_excluded_tag ' +
+	      'steam_ugc_query_set_return_long_description ' +
+	      'steam_ugc_query_set_return_total_only ' +
+	      'steam_ugc_query_set_allow_cached_response steam_ugc_send_query ' +
+	      'shader_set shader_get_name shader_reset shader_current ' +
+	      'shader_is_compiled shader_get_sampler_index shader_get_uniform ' +
+	      'shader_set_uniform_i shader_set_uniform_i_array shader_set_uniform_f ' +
+	      'shader_set_uniform_f_array shader_set_uniform_matrix ' +
+	      'shader_set_uniform_matrix_array shader_enable_corner_id ' +
+	      'texture_set_stage texture_get_texel_width texture_get_texel_height ' +
+	      'shaders_are_supported vertex_format_begin vertex_format_end ' +
+	      'vertex_format_delete vertex_format_add_position ' +
+	      'vertex_format_add_position_3d vertex_format_add_colour ' +
+	      'vertex_format_add_color vertex_format_add_normal ' +
+	      'vertex_format_add_texcoord vertex_format_add_textcoord ' +
+	      'vertex_format_add_custom vertex_create_buffer ' +
+	      'vertex_create_buffer_ext vertex_delete_buffer vertex_begin ' +
+	      'vertex_end vertex_position vertex_position_3d vertex_colour ' +
+	      'vertex_color vertex_argb vertex_texcoord vertex_normal vertex_float1 ' +
+	      'vertex_float2 vertex_float3 vertex_float4 vertex_ubyte4 ' +
+	      'vertex_submit vertex_freeze vertex_get_number vertex_get_buffer_size ' +
+	      'vertex_create_buffer_from_buffer ' +
+	      'vertex_create_buffer_from_buffer_ext push_local_notification ' +
+	      'push_get_first_local_notification push_get_next_local_notification ' +
+	      'push_cancel_local_notification skeleton_animation_set ' +
+	      'skeleton_animation_get skeleton_animation_mix ' +
+	      'skeleton_animation_set_ext skeleton_animation_get_ext ' +
+	      'skeleton_animation_get_duration skeleton_animation_get_frames ' +
+	      'skeleton_animation_clear skeleton_skin_set skeleton_skin_get ' +
+	      'skeleton_attachment_set skeleton_attachment_get ' +
+	      'skeleton_attachment_create skeleton_collision_draw_set ' +
+	      'skeleton_bone_data_get skeleton_bone_data_set ' +
+	      'skeleton_bone_state_get skeleton_bone_state_set skeleton_get_minmax ' +
+	      'skeleton_get_num_bounds skeleton_get_bounds ' +
+	      'skeleton_animation_get_frame skeleton_animation_set_frame ' +
+	      'draw_skeleton draw_skeleton_time draw_skeleton_instance ' +
+	      'draw_skeleton_collision skeleton_animation_list skeleton_skin_list ' +
+	      'skeleton_slot_data layer_get_id layer_get_id_at_depth ' +
+	      'layer_get_depth layer_create layer_destroy layer_destroy_instances ' +
+	      'layer_add_instance layer_has_instance layer_set_visible ' +
+	      'layer_get_visible layer_exists layer_x layer_y layer_get_x ' +
+	      'layer_get_y layer_hspeed layer_vspeed layer_get_hspeed ' +
+	      'layer_get_vspeed layer_script_begin layer_script_end layer_shader ' +
+	      'layer_get_script_begin layer_get_script_end layer_get_shader ' +
+	      'layer_set_target_room layer_get_target_room layer_reset_target_room ' +
+	      'layer_get_all layer_get_all_elements layer_get_name layer_depth ' +
+	      'layer_get_element_layer layer_get_element_type layer_element_move ' +
+	      'layer_force_draw_depth layer_is_draw_depth_forced ' +
+	      'layer_get_forced_depth layer_background_get_id ' +
+	      'layer_background_exists layer_background_create ' +
+	      'layer_background_destroy layer_background_visible ' +
+	      'layer_background_change layer_background_sprite ' +
+	      'layer_background_htiled layer_background_vtiled ' +
+	      'layer_background_stretch layer_background_yscale ' +
+	      'layer_background_xscale layer_background_blend ' +
+	      'layer_background_alpha layer_background_index layer_background_speed ' +
+	      'layer_background_get_visible layer_background_get_sprite ' +
+	      'layer_background_get_htiled layer_background_get_vtiled ' +
+	      'layer_background_get_stretch layer_background_get_yscale ' +
+	      'layer_background_get_xscale layer_background_get_blend ' +
+	      'layer_background_get_alpha layer_background_get_index ' +
+	      'layer_background_get_speed layer_sprite_get_id layer_sprite_exists ' +
+	      'layer_sprite_create layer_sprite_destroy layer_sprite_change ' +
+	      'layer_sprite_index layer_sprite_speed layer_sprite_xscale ' +
+	      'layer_sprite_yscale layer_sprite_angle layer_sprite_blend ' +
+	      'layer_sprite_alpha layer_sprite_x layer_sprite_y ' +
+	      'layer_sprite_get_sprite layer_sprite_get_index ' +
+	      'layer_sprite_get_speed layer_sprite_get_xscale ' +
+	      'layer_sprite_get_yscale layer_sprite_get_angle ' +
+	      'layer_sprite_get_blend layer_sprite_get_alpha layer_sprite_get_x ' +
+	      'layer_sprite_get_y layer_tilemap_get_id layer_tilemap_exists ' +
+	      'layer_tilemap_create layer_tilemap_destroy tilemap_tileset tilemap_x ' +
+	      'tilemap_y tilemap_set tilemap_set_at_pixel tilemap_get_tileset ' +
+	      'tilemap_get_tile_width tilemap_get_tile_height tilemap_get_width ' +
+	      'tilemap_get_height tilemap_get_x tilemap_get_y tilemap_get ' +
+	      'tilemap_get_at_pixel tilemap_get_cell_x_at_pixel ' +
+	      'tilemap_get_cell_y_at_pixel tilemap_clear draw_tilemap draw_tile ' +
+	      'tilemap_set_global_mask tilemap_get_global_mask tilemap_set_mask ' +
+	      'tilemap_get_mask tilemap_get_frame tile_set_empty tile_set_index ' +
+	      'tile_set_flip tile_set_mirror tile_set_rotate tile_get_empty ' +
+	      'tile_get_index tile_get_flip tile_get_mirror tile_get_rotate ' +
+	      'layer_tile_exists layer_tile_create layer_tile_destroy ' +
+	      'layer_tile_change layer_tile_xscale layer_tile_yscale ' +
+	      'layer_tile_blend layer_tile_alpha layer_tile_x layer_tile_y ' +
+	      'layer_tile_region layer_tile_visible layer_tile_get_sprite ' +
+	      'layer_tile_get_xscale layer_tile_get_yscale layer_tile_get_blend ' +
+	      'layer_tile_get_alpha layer_tile_get_x layer_tile_get_y ' +
+	      'layer_tile_get_region layer_tile_get_visible ' +
+	      'layer_instance_get_instance instance_activate_layer ' +
+	      'instance_deactivate_layer camera_create camera_create_view ' +
+	      'camera_destroy camera_apply camera_get_active camera_get_default ' +
+	      'camera_set_default camera_set_view_mat camera_set_proj_mat ' +
+	      'camera_set_update_script camera_set_begin_script ' +
+	      'camera_set_end_script camera_set_view_pos camera_set_view_size ' +
+	      'camera_set_view_speed camera_set_view_border camera_set_view_angle ' +
+	      'camera_set_view_target camera_get_view_mat camera_get_proj_mat ' +
+	      'camera_get_update_script camera_get_begin_script ' +
+	      'camera_get_end_script camera_get_view_x camera_get_view_y ' +
+	      'camera_get_view_width camera_get_view_height camera_get_view_speed_x ' +
+	      'camera_get_view_speed_y camera_get_view_border_x ' +
+	      'camera_get_view_border_y camera_get_view_angle ' +
+	      'camera_get_view_target view_get_camera view_get_visible ' +
+	      'view_get_xport view_get_yport view_get_wport view_get_hport ' +
+	      'view_get_surface_id view_set_camera view_set_visible view_set_xport ' +
+	      'view_set_yport view_set_wport view_set_hport view_set_surface_id ' +
+	      'gesture_drag_time gesture_drag_distance gesture_flick_speed ' +
+	      'gesture_double_tap_time gesture_double_tap_distance ' +
+	      'gesture_pinch_distance gesture_pinch_angle_towards ' +
+	      'gesture_pinch_angle_away gesture_rotate_time gesture_rotate_angle ' +
+	      'gesture_tap_count gesture_get_drag_time gesture_get_drag_distance ' +
+	      'gesture_get_flick_speed gesture_get_double_tap_time ' +
+	      'gesture_get_double_tap_distance gesture_get_pinch_distance ' +
+	      'gesture_get_pinch_angle_towards gesture_get_pinch_angle_away ' +
+	      'gesture_get_rotate_time gesture_get_rotate_angle ' +
+	      'gesture_get_tap_count keyboard_virtual_show keyboard_virtual_hide ' +
+	      'keyboard_virtual_status keyboard_virtual_height',
+	    literal: 'self other all noone global local undefined pointer_invalid ' +
+	      'pointer_null path_action_stop path_action_restart ' +
+	      'path_action_continue path_action_reverse true false pi GM_build_date ' +
+	      'GM_version GM_runtime_version  timezone_local timezone_utc ' +
+	      'gamespeed_fps gamespeed_microseconds  ev_create ev_destroy ev_step ' +
+	      'ev_alarm ev_keyboard ev_mouse ev_collision ev_other ev_draw ' +
+	      'ev_draw_begin ev_draw_end ev_draw_pre ev_draw_post ev_keypress ' +
+	      'ev_keyrelease ev_trigger ev_left_button ev_right_button ' +
+	      'ev_middle_button ev_no_button ev_left_press ev_right_press ' +
+	      'ev_middle_press ev_left_release ev_right_release ev_middle_release ' +
+	      'ev_mouse_enter ev_mouse_leave ev_mouse_wheel_up ev_mouse_wheel_down ' +
+	      'ev_global_left_button ev_global_right_button ev_global_middle_button ' +
+	      'ev_global_left_press ev_global_right_press ev_global_middle_press ' +
+	      'ev_global_left_release ev_global_right_release ' +
+	      'ev_global_middle_release ev_joystick1_left ev_joystick1_right ' +
+	      'ev_joystick1_up ev_joystick1_down ev_joystick1_button1 ' +
+	      'ev_joystick1_button2 ev_joystick1_button3 ev_joystick1_button4 ' +
+	      'ev_joystick1_button5 ev_joystick1_button6 ev_joystick1_button7 ' +
+	      'ev_joystick1_button8 ev_joystick2_left ev_joystick2_right ' +
+	      'ev_joystick2_up ev_joystick2_down ev_joystick2_button1 ' +
+	      'ev_joystick2_button2 ev_joystick2_button3 ev_joystick2_button4 ' +
+	      'ev_joystick2_button5 ev_joystick2_button6 ev_joystick2_button7 ' +
+	      'ev_joystick2_button8 ev_outside ev_boundary ev_game_start ' +
+	      'ev_game_end ev_room_start ev_room_end ev_no_more_lives ' +
+	      'ev_animation_end ev_end_of_path ev_no_more_health ev_close_button ' +
+	      'ev_user0 ev_user1 ev_user2 ev_user3 ev_user4 ev_user5 ev_user6 ' +
+	      'ev_user7 ev_user8 ev_user9 ev_user10 ev_user11 ev_user12 ev_user13 ' +
+	      'ev_user14 ev_user15 ev_step_normal ev_step_begin ev_step_end ev_gui ' +
+	      'ev_gui_begin ev_gui_end ev_cleanup ev_gesture ev_gesture_tap ' +
+	      'ev_gesture_double_tap ev_gesture_drag_start ev_gesture_dragging ' +
+	      'ev_gesture_drag_end ev_gesture_flick ev_gesture_pinch_start ' +
+	      'ev_gesture_pinch_in ev_gesture_pinch_out ev_gesture_pinch_end ' +
+	      'ev_gesture_rotate_start ev_gesture_rotating ev_gesture_rotate_end ' +
+	      'ev_global_gesture_tap ev_global_gesture_double_tap ' +
+	      'ev_global_gesture_drag_start ev_global_gesture_dragging ' +
+	      'ev_global_gesture_drag_end ev_global_gesture_flick ' +
+	      'ev_global_gesture_pinch_start ev_global_gesture_pinch_in ' +
+	      'ev_global_gesture_pinch_out ev_global_gesture_pinch_end ' +
+	      'ev_global_gesture_rotate_start ev_global_gesture_rotating ' +
+	      'ev_global_gesture_rotate_end vk_nokey vk_anykey vk_enter vk_return ' +
+	      'vk_shift vk_control vk_alt vk_escape vk_space vk_backspace vk_tab ' +
+	      'vk_pause vk_printscreen vk_left vk_right vk_up vk_down vk_home ' +
+	      'vk_end vk_delete vk_insert vk_pageup vk_pagedown vk_f1 vk_f2 vk_f3 ' +
+	      'vk_f4 vk_f5 vk_f6 vk_f7 vk_f8 vk_f9 vk_f10 vk_f11 vk_f12 vk_numpad0 ' +
+	      'vk_numpad1 vk_numpad2 vk_numpad3 vk_numpad4 vk_numpad5 vk_numpad6 ' +
+	      'vk_numpad7 vk_numpad8 vk_numpad9 vk_divide vk_multiply vk_subtract ' +
+	      'vk_add vk_decimal vk_lshift vk_lcontrol vk_lalt vk_rshift ' +
+	      'vk_rcontrol vk_ralt  mb_any mb_none mb_left mb_right mb_middle ' +
+	      'c_aqua c_black c_blue c_dkgray c_fuchsia c_gray c_green c_lime ' +
+	      'c_ltgray c_maroon c_navy c_olive c_purple c_red c_silver c_teal ' +
+	      'c_white c_yellow c_orange fa_left fa_center fa_right fa_top ' +
+	      'fa_middle fa_bottom pr_pointlist pr_linelist pr_linestrip ' +
+	      'pr_trianglelist pr_trianglestrip pr_trianglefan bm_complex bm_normal ' +
+	      'bm_add bm_max bm_subtract bm_zero bm_one bm_src_colour ' +
+	      'bm_inv_src_colour bm_src_color bm_inv_src_color bm_src_alpha ' +
+	      'bm_inv_src_alpha bm_dest_alpha bm_inv_dest_alpha bm_dest_colour ' +
+	      'bm_inv_dest_colour bm_dest_color bm_inv_dest_color bm_src_alpha_sat ' +
+	      'tf_point tf_linear tf_anisotropic mip_off mip_on mip_markedonly ' +
+	      'audio_falloff_none audio_falloff_inverse_distance ' +
+	      'audio_falloff_inverse_distance_clamped audio_falloff_linear_distance ' +
+	      'audio_falloff_linear_distance_clamped ' +
+	      'audio_falloff_exponent_distance ' +
+	      'audio_falloff_exponent_distance_clamped audio_old_system ' +
+	      'audio_new_system audio_mono audio_stereo audio_3d cr_default cr_none ' +
+	      'cr_arrow cr_cross cr_beam cr_size_nesw cr_size_ns cr_size_nwse ' +
+	      'cr_size_we cr_uparrow cr_hourglass cr_drag cr_appstart cr_handpoint ' +
+	      'cr_size_all spritespeed_framespersecond ' +
+	      'spritespeed_framespergameframe asset_object asset_unknown ' +
+	      'asset_sprite asset_sound asset_room asset_path asset_script ' +
+	      'asset_font asset_timeline asset_tiles asset_shader fa_readonly ' +
+	      'fa_hidden fa_sysfile fa_volumeid fa_directory fa_archive  ' +
+	      'ds_type_map ds_type_list ds_type_stack ds_type_queue ds_type_grid ' +
+	      'ds_type_priority ef_explosion ef_ring ef_ellipse ef_firework ' +
+	      'ef_smoke ef_smokeup ef_star ef_spark ef_flare ef_cloud ef_rain ' +
+	      'ef_snow pt_shape_pixel pt_shape_disk pt_shape_square pt_shape_line ' +
+	      'pt_shape_star pt_shape_circle pt_shape_ring pt_shape_sphere ' +
+	      'pt_shape_flare pt_shape_spark pt_shape_explosion pt_shape_cloud ' +
+	      'pt_shape_smoke pt_shape_snow ps_distr_linear ps_distr_gaussian ' +
+	      'ps_distr_invgaussian ps_shape_rectangle ps_shape_ellipse ' +
+	      'ps_shape_diamond ps_shape_line ty_real ty_string dll_cdecl ' +
+	      'dll_stdcall matrix_view matrix_projection matrix_world os_win32 ' +
+	      'os_windows os_macosx os_ios os_android os_symbian os_linux ' +
+	      'os_unknown os_winphone os_tizen os_win8native ' +
+	      'os_wiiu os_3ds  os_psvita os_bb10 os_ps4 os_xboxone ' +
+	      'os_ps3 os_xbox360 os_uwp os_tvos os_switch ' +
+	      'browser_not_a_browser browser_unknown browser_ie browser_firefox ' +
+	      'browser_chrome browser_safari browser_safari_mobile browser_opera ' +
+	      'browser_tizen browser_edge browser_windows_store browser_ie_mobile  ' +
+	      'device_ios_unknown device_ios_iphone device_ios_iphone_retina ' +
+	      'device_ios_ipad device_ios_ipad_retina device_ios_iphone5 ' +
+	      'device_ios_iphone6 device_ios_iphone6plus device_emulator ' +
+	      'device_tablet display_landscape display_landscape_flipped ' +
+	      'display_portrait display_portrait_flipped tm_sleep tm_countvsyncs ' +
+	      'of_challenge_win of_challen ge_lose of_challenge_tie ' +
+	      'leaderboard_type_number leaderboard_type_time_mins_secs ' +
+	      'cmpfunc_never cmpfunc_less cmpfunc_equal cmpfunc_lessequal ' +
+	      'cmpfunc_greater cmpfunc_notequal cmpfunc_greaterequal cmpfunc_always ' +
+	      'cull_noculling cull_clockwise cull_counterclockwise lighttype_dir ' +
+	      'lighttype_point iap_ev_storeload iap_ev_product iap_ev_purchase ' +
+	      'iap_ev_consume iap_ev_restore iap_storeload_ok iap_storeload_failed ' +
+	      'iap_status_uninitialised iap_status_unavailable iap_status_loading ' +
+	      'iap_status_available iap_status_processing iap_status_restoring ' +
+	      'iap_failed iap_unavailable iap_available iap_purchased iap_canceled ' +
+	      'iap_refunded fb_login_default fb_login_fallback_to_webview ' +
+	      'fb_login_no_fallback_to_webview fb_login_forcing_webview ' +
+	      'fb_login_use_system_account fb_login_forcing_safari  ' +
+	      'phy_joint_anchor_1_x phy_joint_anchor_1_y phy_joint_anchor_2_x ' +
+	      'phy_joint_anchor_2_y phy_joint_reaction_force_x ' +
+	      'phy_joint_reaction_force_y phy_joint_reaction_torque ' +
+	      'phy_joint_motor_speed phy_joint_angle phy_joint_motor_torque ' +
+	      'phy_joint_max_motor_torque phy_joint_translation phy_joint_speed ' +
+	      'phy_joint_motor_force phy_joint_max_motor_force phy_joint_length_1 ' +
+	      'phy_joint_length_2 phy_joint_damping_ratio phy_joint_frequency ' +
+	      'phy_joint_lower_angle_limit phy_joint_upper_angle_limit ' +
+	      'phy_joint_angle_limits phy_joint_max_length phy_joint_max_torque ' +
+	      'phy_joint_max_force phy_debug_render_aabb ' +
+	      'phy_debug_render_collision_pairs phy_debug_render_coms ' +
+	      'phy_debug_render_core_shapes phy_debug_render_joints ' +
+	      'phy_debug_render_obb phy_debug_render_shapes  ' +
+	      'phy_particle_flag_water phy_particle_flag_zombie ' +
+	      'phy_particle_flag_wall phy_particle_flag_spring ' +
+	      'phy_particle_flag_elastic phy_particle_flag_viscous ' +
+	      'phy_particle_flag_powder phy_particle_flag_tensile ' +
+	      'phy_particle_flag_colourmixing phy_particle_flag_colormixing ' +
+	      'phy_particle_group_flag_solid phy_particle_group_flag_rigid ' +
+	      'phy_particle_data_flag_typeflags phy_particle_data_flag_position ' +
+	      'phy_particle_data_flag_velocity phy_particle_data_flag_colour ' +
+	      'phy_particle_data_flag_color phy_particle_data_flag_category  ' +
+	      'achievement_our_info achievement_friends_info ' +
+	      'achievement_leaderboard_info achievement_achievement_info ' +
+	      'achievement_filter_all_players achievement_filter_friends_only ' +
+	      'achievement_filter_favorites_only ' +
+	      'achievement_type_achievement_challenge ' +
+	      'achievement_type_score_challenge achievement_pic_loaded  ' +
+	      'achievement_show_ui achievement_show_profile ' +
+	      'achievement_show_leaderboard achievement_show_achievement ' +
+	      'achievement_show_bank achievement_show_friend_picker ' +
+	      'achievement_show_purchase_prompt network_socket_tcp ' +
+	      'network_socket_udp network_socket_bluetooth network_type_connect ' +
+	      'network_type_disconnect network_type_data ' +
+	      'network_type_non_blocking_connect network_config_connect_timeout ' +
+	      'network_config_use_non_blocking_socket ' +
+	      'network_config_enable_reliable_udp ' +
+	      'network_config_disable_reliable_udp buffer_fixed buffer_grow ' +
+	      'buffer_wrap buffer_fast buffer_vbuffer buffer_network buffer_u8 ' +
+	      'buffer_s8 buffer_u16 buffer_s16 buffer_u32 buffer_s32 buffer_u64 ' +
+	      'buffer_f16 buffer_f32 buffer_f64 buffer_bool buffer_text ' +
+	      'buffer_string buffer_surface_copy buffer_seek_start ' +
+	      'buffer_seek_relative buffer_seek_end ' +
+	      'buffer_generalerror buffer_outofspace buffer_outofbounds ' +
+	      'buffer_invalidtype  text_type button_type input_type ANSI_CHARSET ' +
+	      'DEFAULT_CHARSET EASTEUROPE_CHARSET RUSSIAN_CHARSET SYMBOL_CHARSET ' +
+	      'SHIFTJIS_CHARSET HANGEUL_CHARSET GB2312_CHARSET CHINESEBIG5_CHARSET ' +
+	      'JOHAB_CHARSET HEBREW_CHARSET ARABIC_CHARSET GREEK_CHARSET ' +
+	      'TURKISH_CHARSET VIETNAMESE_CHARSET THAI_CHARSET MAC_CHARSET ' +
+	      'BALTIC_CHARSET OEM_CHARSET  gp_face1 gp_face2 gp_face3 gp_face4 ' +
+	      'gp_shoulderl gp_shoulderr gp_shoulderlb gp_shoulderrb gp_select ' +
+	      'gp_start gp_stickl gp_stickr gp_padu gp_padd gp_padl gp_padr ' +
+	      'gp_axislh gp_axislv gp_axisrh gp_axisrv ov_friends ov_community ' +
+	      'ov_players ov_settings ov_gamegroup ov_achievements lb_sort_none ' +
+	      'lb_sort_ascending lb_sort_descending lb_disp_none lb_disp_numeric ' +
+	      'lb_disp_time_sec lb_disp_time_ms ugc_result_success ' +
+	      'ugc_filetype_community ugc_filetype_microtrans ugc_visibility_public ' +
+	      'ugc_visibility_friends_only ugc_visibility_private ' +
+	      'ugc_query_RankedByVote ugc_query_RankedByPublicationDate ' +
+	      'ugc_query_AcceptedForGameRankedByAcceptanceDate ' +
+	      'ugc_query_RankedByTrend ' +
+	      'ugc_query_FavoritedByFriendsRankedByPublicationDate ' +
+	      'ugc_query_CreatedByFriendsRankedByPublicationDate ' +
+	      'ugc_query_RankedByNumTimesReported ' +
+	      'ugc_query_CreatedByFollowedUsersRankedByPublicationDate ' +
+	      'ugc_query_NotYetRated ugc_query_RankedByTotalVotesAsc ' +
+	      'ugc_query_RankedByVotesUp ugc_query_RankedByTextSearch ' +
+	      'ugc_sortorder_CreationOrderDesc ugc_sortorder_CreationOrderAsc ' +
+	      'ugc_sortorder_TitleAsc ugc_sortorder_LastUpdatedDesc ' +
+	      'ugc_sortorder_SubscriptionDateDesc ugc_sortorder_VoteScoreDesc ' +
+	      'ugc_sortorder_ForModeration ugc_list_Published ugc_list_VotedOn ' +
+	      'ugc_list_VotedUp ugc_list_VotedDown ugc_list_WillVoteLater ' +
+	      'ugc_list_Favorited ugc_list_Subscribed ugc_list_UsedOrPlayed ' +
+	      'ugc_list_Followed ugc_match_Items ugc_match_Items_Mtx ' +
+	      'ugc_match_Items_ReadyToUse ugc_match_Collections ugc_match_Artwork ' +
+	      'ugc_match_Videos ugc_match_Screenshots ugc_match_AllGuides ' +
+	      'ugc_match_WebGuides ugc_match_IntegratedGuides ' +
+	      'ugc_match_UsableInGame ugc_match_ControllerBindings  ' +
+	      'vertex_usage_position vertex_usage_colour vertex_usage_color ' +
+	      'vertex_usage_normal vertex_usage_texcoord vertex_usage_textcoord ' +
+	      'vertex_usage_blendweight vertex_usage_blendindices ' +
+	      'vertex_usage_psize vertex_usage_tangent vertex_usage_binormal ' +
+	      'vertex_usage_fog vertex_usage_depth vertex_usage_sample ' +
+	      'vertex_type_float1 vertex_type_float2 vertex_type_float3 ' +
+	      'vertex_type_float4 vertex_type_colour vertex_type_color ' +
+	      'vertex_type_ubyte4 layerelementtype_undefined ' +
+	      'layerelementtype_background layerelementtype_instance ' +
+	      'layerelementtype_oldtilemap layerelementtype_sprite ' +
+	      'layerelementtype_tilemap layerelementtype_particlesystem ' +
+	      'layerelementtype_tile tile_rotate tile_flip tile_mirror ' +
+	      'tile_index_mask kbv_type_default kbv_type_ascii kbv_type_url ' +
+	      'kbv_type_email kbv_type_numbers kbv_type_phone kbv_type_phone_name ' +
+	      'kbv_returnkey_default kbv_returnkey_go kbv_returnkey_google ' +
+	      'kbv_returnkey_join kbv_returnkey_next kbv_returnkey_route ' +
+	      'kbv_returnkey_search kbv_returnkey_send kbv_returnkey_yahoo ' +
+	      'kbv_returnkey_done kbv_returnkey_continue kbv_returnkey_emergency ' +
+	      'kbv_autocapitalize_none kbv_autocapitalize_words ' +
+	      'kbv_autocapitalize_sentences kbv_autocapitalize_characters',
+	    symbol: 'argument_relative argument argument0 argument1 argument2 ' +
+	      'argument3 argument4 argument5 argument6 argument7 argument8 ' +
+	      'argument9 argument10 argument11 argument12 argument13 argument14 ' +
+	      'argument15 argument_count x y xprevious yprevious xstart ystart ' +
+	      'hspeed vspeed direction speed friction gravity gravity_direction ' +
+	      'path_index path_position path_positionprevious path_speed ' +
+	      'path_scale path_orientation path_endaction object_index id solid ' +
+	      'persistent mask_index instance_count instance_id room_speed fps ' +
+	      'fps_real current_time current_year current_month current_day ' +
+	      'current_weekday current_hour current_minute current_second alarm ' +
+	      'timeline_index timeline_position timeline_speed timeline_running ' +
+	      'timeline_loop room room_first room_last room_width room_height ' +
+	      'room_caption room_persistent score lives health show_score ' +
+	      'show_lives show_health caption_score caption_lives caption_health ' +
+	      'event_type event_number event_object event_action ' +
+	      'application_surface gamemaker_pro gamemaker_registered ' +
+	      'gamemaker_version error_occurred error_last debug_mode ' +
+	      'keyboard_key keyboard_lastkey keyboard_lastchar keyboard_string ' +
+	      'mouse_x mouse_y mouse_button mouse_lastbutton cursor_sprite ' +
+	      'visible sprite_index sprite_width sprite_height sprite_xoffset ' +
+	      'sprite_yoffset image_number image_index image_speed depth ' +
+	      'image_xscale image_yscale image_angle image_alpha image_blend ' +
+	      'bbox_left bbox_right bbox_top bbox_bottom layer background_colour  ' +
+	      'background_showcolour background_color background_showcolor ' +
+	      'view_enabled view_current view_visible view_xview view_yview ' +
+	      'view_wview view_hview view_xport view_yport view_wport view_hport ' +
+	      'view_angle view_hborder view_vborder view_hspeed view_vspeed ' +
+	      'view_object view_surface_id view_camera game_id game_display_name ' +
+	      'game_project_name game_save_id working_directory temp_directory ' +
+	      'program_directory browser_width browser_height os_type os_device ' +
+	      'os_browser os_version display_aa async_load delta_time ' +
+	      'webgl_enabled event_data iap_data phy_rotation phy_position_x ' +
+	      'phy_position_y phy_angular_velocity phy_linear_velocity_x ' +
+	      'phy_linear_velocity_y phy_speed_x phy_speed_y phy_speed ' +
+	      'phy_angular_damping phy_linear_damping phy_bullet ' +
+	      'phy_fixed_rotation phy_active phy_mass phy_inertia phy_com_x ' +
+	      'phy_com_y phy_dynamic phy_kinematic phy_sleeping ' +
+	      'phy_collision_points phy_collision_x phy_collision_y ' +
+	      'phy_col_normal_x phy_col_normal_y phy_position_xprevious ' +
+	      'phy_position_yprevious'
+	  };
+	
+	  return {
+	    aliases: ['gml', 'GML'],
+	    case_insensitive: false, // language is case-insensitive
+	    keywords: GML_KEYWORDS,
+	
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.C_NUMBER_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 239 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28135,7 +29576,7 @@
 	};
 
 /***/ },
-/* 234 */
+/* 240 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28162,7 +29603,7 @@
 	};
 
 /***/ },
-/* 235 */
+/* 241 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28201,7 +29642,7 @@
 	};
 
 /***/ },
-/* 236 */
+/* 242 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28299,7 +29740,7 @@
 	};
 
 /***/ },
-/* 237 */
+/* 243 */
 /***/ function(module, exports) {
 
 	module.exports = // TODO support filter tags like :javascript, support inline HTML
@@ -28410,7 +29851,7 @@
 	};
 
 /***/ },
-/* 238 */
+/* 244 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28448,7 +29889,7 @@
 	};
 
 /***/ },
-/* 239 */
+/* 245 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28574,7 +30015,7 @@
 	};
 
 /***/ },
-/* 240 */
+/* 246 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28690,7 +30131,7 @@
 	};
 
 /***/ },
-/* 241 */
+/* 247 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28740,7 +30181,7 @@
 	};
 
 /***/ },
-/* 242 */
+/* 248 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28815,7 +30256,7 @@
 	};
 
 /***/ },
-/* 243 */
+/* 249 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28860,7 +30301,7 @@
 	};
 
 /***/ },
-/* 244 */
+/* 250 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -28966,7 +30407,7 @@
 	};
 
 /***/ },
-/* 245 */
+/* 251 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29027,7 +30468,7 @@
 	};
 
 /***/ },
-/* 246 */
+/* 252 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29097,7 +30538,7 @@
 	};
 
 /***/ },
-/* 247 */
+/* 253 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29177,14 +30618,3191 @@
 	};
 
 /***/ },
-/* 248 */
+/* 254 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  // Определение идентификаторов
+	  var UNDERSCORE_IDENT_RE = "[A-Za-zА-Яа-яёЁ_!][A-Za-zА-Яа-яёЁ_0-9]*";
+	
+	  // Определение имен функций
+	  var FUNCTION_NAME_IDENT_RE = "[A-Za-zА-Яа-яёЁ_][A-Za-zА-Яа-яёЁ_0-9]*";
+	
+	  // keyword : ключевые слова
+	  var KEYWORD =
+	    "and и else иначе endexcept endfinally endforeach конецвсе endif конецесли endwhile конецпока " +
+	    "except exitfor finally foreach все if если in в not не or или try while пока ";
+	
+	  // SYSRES Constants
+	  var sysres_constants =
+	    "SYSRES_CONST_ACCES_RIGHT_TYPE_EDIT " +
+	    "SYSRES_CONST_ACCES_RIGHT_TYPE_FULL " +
+	    "SYSRES_CONST_ACCES_RIGHT_TYPE_VIEW " +
+	    "SYSRES_CONST_ACCESS_MODE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_NO_ACCESS_VIEW " +
+	    "SYSRES_CONST_ACCESS_NO_ACCESS_VIEW_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_ADD_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_ADD_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_CHANGE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_CHANGE_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_DELETE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_DELETE_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_EXECUTE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_EXECUTE_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_NO_ACCESS_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_NO_ACCESS_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_RATIFY_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_RATIFY_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_VIEW " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_VIEW_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_VIEW_REQUISITE_CODE " +
+	    "SYSRES_CONST_ACCESS_RIGHTS_VIEW_REQUISITE_YES_CODE " +
+	    "SYSRES_CONST_ACCESS_TYPE_CHANGE " +
+	    "SYSRES_CONST_ACCESS_TYPE_CHANGE_CODE " +
+	    "SYSRES_CONST_ACCESS_TYPE_EXISTS " +
+	    "SYSRES_CONST_ACCESS_TYPE_EXISTS_CODE " +
+	    "SYSRES_CONST_ACCESS_TYPE_FULL " +
+	    "SYSRES_CONST_ACCESS_TYPE_FULL_CODE " +
+	    "SYSRES_CONST_ACCESS_TYPE_VIEW " +
+	    "SYSRES_CONST_ACCESS_TYPE_VIEW_CODE " +
+	    "SYSRES_CONST_ACTION_TYPE_ABORT " +
+	    "SYSRES_CONST_ACTION_TYPE_ACCEPT " +
+	    "SYSRES_CONST_ACTION_TYPE_ACCESS_RIGHTS " +
+	    "SYSRES_CONST_ACTION_TYPE_ADD_ATTACHMENT " +
+	    "SYSRES_CONST_ACTION_TYPE_CHANGE_CARD " +
+	    "SYSRES_CONST_ACTION_TYPE_CHANGE_KIND " +
+	    "SYSRES_CONST_ACTION_TYPE_CHANGE_STORAGE " +
+	    "SYSRES_CONST_ACTION_TYPE_CONTINUE " +
+	    "SYSRES_CONST_ACTION_TYPE_COPY " +
+	    "SYSRES_CONST_ACTION_TYPE_CREATE " +
+	    "SYSRES_CONST_ACTION_TYPE_CREATE_VERSION " +
+	    "SYSRES_CONST_ACTION_TYPE_DELETE " +
+	    "SYSRES_CONST_ACTION_TYPE_DELETE_ATTACHMENT " +
+	    "SYSRES_CONST_ACTION_TYPE_DELETE_VERSION " +
+	    "SYSRES_CONST_ACTION_TYPE_DISABLE_DELEGATE_ACCESS_RIGHTS " +
+	    "SYSRES_CONST_ACTION_TYPE_ENABLE_DELEGATE_ACCESS_RIGHTS " +
+	    "SYSRES_CONST_ACTION_TYPE_ENCRYPTION_BY_CERTIFICATE " +
+	    "SYSRES_CONST_ACTION_TYPE_ENCRYPTION_BY_CERTIFICATE_AND_PASSWORD " +
+	    "SYSRES_CONST_ACTION_TYPE_ENCRYPTION_BY_PASSWORD " +
+	    "SYSRES_CONST_ACTION_TYPE_EXPORT_WITH_LOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_EXPORT_WITHOUT_LOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_IMPORT_WITH_UNLOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_IMPORT_WITHOUT_UNLOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_LIFE_CYCLE_STAGE " +
+	    "SYSRES_CONST_ACTION_TYPE_LOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_LOCK_FOR_SERVER " +
+	    "SYSRES_CONST_ACTION_TYPE_LOCK_MODIFY " +
+	    "SYSRES_CONST_ACTION_TYPE_MARK_AS_READED " +
+	    "SYSRES_CONST_ACTION_TYPE_MARK_AS_UNREADED " +
+	    "SYSRES_CONST_ACTION_TYPE_MODIFY " +
+	    "SYSRES_CONST_ACTION_TYPE_MODIFY_CARD " +
+	    "SYSRES_CONST_ACTION_TYPE_MOVE_TO_ARCHIVE " +
+	    "SYSRES_CONST_ACTION_TYPE_OFF_ENCRYPTION " +
+	    "SYSRES_CONST_ACTION_TYPE_PASSWORD_CHANGE " +
+	    "SYSRES_CONST_ACTION_TYPE_PERFORM " +
+	    "SYSRES_CONST_ACTION_TYPE_RECOVER_FROM_LOCAL_COPY " +
+	    "SYSRES_CONST_ACTION_TYPE_RESTART " +
+	    "SYSRES_CONST_ACTION_TYPE_RESTORE_FROM_ARCHIVE " +
+	    "SYSRES_CONST_ACTION_TYPE_REVISION " +
+	    "SYSRES_CONST_ACTION_TYPE_SEND_BY_MAIL " +
+	    "SYSRES_CONST_ACTION_TYPE_SIGN " +
+	    "SYSRES_CONST_ACTION_TYPE_START " +
+	    "SYSRES_CONST_ACTION_TYPE_UNLOCK " +
+	    "SYSRES_CONST_ACTION_TYPE_UNLOCK_FROM_SERVER " +
+	    "SYSRES_CONST_ACTION_TYPE_VERSION_STATE " +
+	    "SYSRES_CONST_ACTION_TYPE_VERSION_VISIBILITY " +
+	    "SYSRES_CONST_ACTION_TYPE_VIEW " +
+	    "SYSRES_CONST_ACTION_TYPE_VIEW_SHADOW_COPY " +
+	    "SYSRES_CONST_ACTION_TYPE_WORKFLOW_DESCRIPTION_MODIFY " +
+	    "SYSRES_CONST_ACTION_TYPE_WRITE_HISTORY " +
+	    "SYSRES_CONST_ACTIVE_VERSION_STATE_PICK_VALUE " +
+	    "SYSRES_CONST_ADD_REFERENCE_MODE_NAME " +
+	    "SYSRES_CONST_ADDITION_REQUISITE_CODE " +
+	    "SYSRES_CONST_ADDITIONAL_PARAMS_REQUISITE_CODE " +
+	    "SYSRES_CONST_ADITIONAL_JOB_END_DATE_REQUISITE_NAME " +
+	    "SYSRES_CONST_ADITIONAL_JOB_READ_REQUISITE_NAME " +
+	    "SYSRES_CONST_ADITIONAL_JOB_START_DATE_REQUISITE_NAME " +
+	    "SYSRES_CONST_ADITIONAL_JOB_STATE_REQUISITE_NAME " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_ADDING_USER_TO_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_ADDING_USER_TO_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_COMP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_COMP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_USER_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_CREATION_USER_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DATABASE_USER_CREATION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DATABASE_USER_CREATION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DATABASE_USER_DELETION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DATABASE_USER_DELETION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_COMP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_COMP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_USER_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_USER_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_USER_FROM_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_DELETION_USER_FROM_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_FILTERER_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_FILTERER_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_FILTERER_RESTRICTION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_FILTERER_RESTRICTION_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_PRIVILEGE_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_PRIVILEGE_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_RIGHTS_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_GRANTING_RIGHTS_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_IS_MAIN_SERVER_CHANGED_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_IS_MAIN_SERVER_CHANGED_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_IS_PUBLIC_CHANGED_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_IS_PUBLIC_CHANGED_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_FILTERER_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_FILTERER_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_FILTERER_RESTRICTION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_FILTERER_RESTRICTION_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_PRIVILEGE_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_PRIVILEGE_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_RIGHTS_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_REMOVING_RIGHTS_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_SERVER_LOGIN_CREATION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_SERVER_LOGIN_CREATION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_SERVER_LOGIN_DELETION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_SERVER_LOGIN_DELETION_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_CATEGORY_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_CATEGORY_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_COMP_TITLE_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_COMP_TITLE_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_FULL_NAME_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_FULL_NAME_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_PARENT_GROUP_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_PARENT_GROUP_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_AUTH_TYPE_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_AUTH_TYPE_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_LOGIN_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_LOGIN_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_STATUS_ACTION " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_UPDATING_USER_STATUS_ACTION_CODE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_USER_PASSWORD_CHANGE " +
+	    "SYSRES_CONST_ADMINISTRATION_HISTORY_USER_PASSWORD_CHANGE_ACTION " +
+	    "SYSRES_CONST_ALL_ACCEPT_CONDITION_RUS " +
+	    "SYSRES_CONST_ALL_USERS_GROUP " +
+	    "SYSRES_CONST_ALL_USERS_GROUP_NAME " +
+	    "SYSRES_CONST_ALL_USERS_SERVER_GROUP_NAME " +
+	    "SYSRES_CONST_ALLOWED_ACCESS_TYPE_CODE " +
+	    "SYSRES_CONST_ALLOWED_ACCESS_TYPE_NAME " +
+	    "SYSRES_CONST_APP_VIEWER_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_APPROVING_SIGNATURE_NAME " +
+	    "SYSRES_CONST_APPROVING_SIGNATURE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ASSISTANT_SUBSTITUE_TYPE " +
+	    "SYSRES_CONST_ASSISTANT_SUBSTITUE_TYPE_CODE " +
+	    "SYSRES_CONST_ATTACH_TYPE_COMPONENT_TOKEN " +
+	    "SYSRES_CONST_ATTACH_TYPE_DOC " +
+	    "SYSRES_CONST_ATTACH_TYPE_EDOC " +
+	    "SYSRES_CONST_ATTACH_TYPE_FOLDER " +
+	    "SYSRES_CONST_ATTACH_TYPE_JOB " +
+	    "SYSRES_CONST_ATTACH_TYPE_REFERENCE " +
+	    "SYSRES_CONST_ATTACH_TYPE_TASK " +
+	    "SYSRES_CONST_AUTH_ENCODED_PASSWORD " +
+	    "SYSRES_CONST_AUTH_ENCODED_PASSWORD_CODE " +
+	    "SYSRES_CONST_AUTH_NOVELL " +
+	    "SYSRES_CONST_AUTH_PASSWORD " +
+	    "SYSRES_CONST_AUTH_PASSWORD_CODE " +
+	    "SYSRES_CONST_AUTH_WINDOWS " +
+	    "SYSRES_CONST_AUTHENTICATING_SIGNATURE_NAME " +
+	    "SYSRES_CONST_AUTHENTICATING_SIGNATURE_REQUISITE_CODE " +
+	    "SYSRES_CONST_AUTO_ENUM_METHOD_FLAG " +
+	    "SYSRES_CONST_AUTO_NUMERATION_CODE " +
+	    "SYSRES_CONST_AUTO_STRONG_ENUM_METHOD_FLAG " +
+	    "SYSRES_CONST_AUTOTEXT_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_TEXT_REQUISITE_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_ALL " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_ALL_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_SIGN " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_SIGN_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_WORK " +
+	    "SYSRES_CONST_AUTOTEXT_USAGE_WORK_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USE_ANYWHERE_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USE_ON_SIGNING_CODE " +
+	    "SYSRES_CONST_AUTOTEXT_USE_ON_WORK_CODE " +
+	    "SYSRES_CONST_BEGIN_DATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_BLACK_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_BLUE_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_BTN_PART " +
+	    "SYSRES_CONST_CALCULATED_ROLE_TYPE_CODE " +
+	    "SYSRES_CONST_CALL_TYPE_VARIABLE_BUTTON_VALUE " +
+	    "SYSRES_CONST_CALL_TYPE_VARIABLE_PROGRAM_VALUE " +
+	    "SYSRES_CONST_CANCEL_MESSAGE_FUNCTION_RESULT " +
+	    "SYSRES_CONST_CARD_PART " +
+	    "SYSRES_CONST_CARD_REFERENCE_MODE_NAME " +
+	    "SYSRES_CONST_CERTIFICATE_TYPE_REQUISITE_ENCRYPT_VALUE " +
+	    "SYSRES_CONST_CERTIFICATE_TYPE_REQUISITE_SIGN_AND_ENCRYPT_VALUE " +
+	    "SYSRES_CONST_CERTIFICATE_TYPE_REQUISITE_SIGN_VALUE " +
+	    "SYSRES_CONST_CHECK_PARAM_VALUE_DATE_PARAM_TYPE " +
+	    "SYSRES_CONST_CHECK_PARAM_VALUE_FLOAT_PARAM_TYPE " +
+	    "SYSRES_CONST_CHECK_PARAM_VALUE_INTEGER_PARAM_TYPE " +
+	    "SYSRES_CONST_CHECK_PARAM_VALUE_PICK_PARAM_TYPE " +
+	    "SYSRES_CONST_CHECK_PARAM_VALUE_REEFRENCE_PARAM_TYPE " +
+	    "SYSRES_CONST_CLOSED_RECORD_FLAG_VALUE_FEMININE " +
+	    "SYSRES_CONST_CLOSED_RECORD_FLAG_VALUE_MASCULINE " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_ADMIN " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_DEVELOPER " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_DOCS " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_EDOC_CARDS " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_EXTERNAL_EXECUTABLE " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_OTHER " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_REFERENCE " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_REPORT " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_SCRIPT " +
+	    "SYSRES_CONST_CODE_COMPONENT_TYPE_URL " +
+	    "SYSRES_CONST_CODE_REQUISITE_ACCESS " +
+	    "SYSRES_CONST_CODE_REQUISITE_CODE " +
+	    "SYSRES_CONST_CODE_REQUISITE_COMPONENT " +
+	    "SYSRES_CONST_CODE_REQUISITE_DESCRIPTION " +
+	    "SYSRES_CONST_CODE_REQUISITE_EXCLUDE_COMPONENT " +
+	    "SYSRES_CONST_CODE_REQUISITE_RECORD " +
+	    "SYSRES_CONST_COMMENT_REQ_CODE " +
+	    "SYSRES_CONST_COMMON_SETTINGS_REQUISITE_CODE " +
+	    "SYSRES_CONST_COMP_CODE_GRD " +
+	    "SYSRES_CONST_COMPONENT_GROUP_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_COMPONENT_TYPE_ADMIN_COMPONENTS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_DEVELOPER_COMPONENTS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_DOCS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_EDOC_CARDS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_EDOCS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_EXTERNAL_EXECUTABLE " +
+	    "SYSRES_CONST_COMPONENT_TYPE_OTHER " +
+	    "SYSRES_CONST_COMPONENT_TYPE_REFERENCE_TYPES " +
+	    "SYSRES_CONST_COMPONENT_TYPE_REFERENCES " +
+	    "SYSRES_CONST_COMPONENT_TYPE_REPORTS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_SCRIPTS " +
+	    "SYSRES_CONST_COMPONENT_TYPE_URL " +
+	    "SYSRES_CONST_COMPONENTS_REMOTE_SERVERS_VIEW_CODE " +
+	    "SYSRES_CONST_CONDITION_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_CONST_FIRM_STATUS_COMMON " +
+	    "SYSRES_CONST_CONST_FIRM_STATUS_INDIVIDUAL " +
+	    "SYSRES_CONST_CONST_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_CONST_POSITIVE_VALUE " +
+	    "SYSRES_CONST_CONST_SERVER_STATUS_DONT_REPLICATE " +
+	    "SYSRES_CONST_CONST_SERVER_STATUS_REPLICATE " +
+	    "SYSRES_CONST_CONTENTS_REQUISITE_CODE " +
+	    "SYSRES_CONST_DATA_TYPE_BOOLEAN " +
+	    "SYSRES_CONST_DATA_TYPE_DATE " +
+	    "SYSRES_CONST_DATA_TYPE_FLOAT " +
+	    "SYSRES_CONST_DATA_TYPE_INTEGER " +
+	    "SYSRES_CONST_DATA_TYPE_PICK " +
+	    "SYSRES_CONST_DATA_TYPE_REFERENCE " +
+	    "SYSRES_CONST_DATA_TYPE_STRING " +
+	    "SYSRES_CONST_DATA_TYPE_TEXT " +
+	    "SYSRES_CONST_DATA_TYPE_VARIANT " +
+	    "SYSRES_CONST_DATE_CLOSE_REQ_CODE " +
+	    "SYSRES_CONST_DATE_FORMAT_DATE_ONLY_CHAR " +
+	    "SYSRES_CONST_DATE_OPEN_REQ_CODE " +
+	    "SYSRES_CONST_DATE_REQUISITE " +
+	    "SYSRES_CONST_DATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_DATE_REQUISITE_NAME " +
+	    "SYSRES_CONST_DATE_REQUISITE_TYPE " +
+	    "SYSRES_CONST_DATE_TYPE_CHAR " +
+	    "SYSRES_CONST_DATETIME_FORMAT_VALUE " +
+	    "SYSRES_CONST_DEA_ACCESS_RIGHTS_ACTION_CODE " +
+	    "SYSRES_CONST_DESCRIPTION_LOCALIZE_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_DESCRIPTION_REQUISITE_CODE " +
+	    "SYSRES_CONST_DET1_PART " +
+	    "SYSRES_CONST_DET2_PART " +
+	    "SYSRES_CONST_DET3_PART " +
+	    "SYSRES_CONST_DET4_PART " +
+	    "SYSRES_CONST_DET5_PART " +
+	    "SYSRES_CONST_DET6_PART " +
+	    "SYSRES_CONST_DETAIL_DATASET_KEY_REQUISITE_CODE " +
+	    "SYSRES_CONST_DETAIL_PICK_REQUISITE_CODE " +
+	    "SYSRES_CONST_DETAIL_REQ_CODE " +
+	    "SYSRES_CONST_DO_NOT_USE_ACCESS_TYPE_CODE " +
+	    "SYSRES_CONST_DO_NOT_USE_ACCESS_TYPE_NAME " +
+	    "SYSRES_CONST_DO_NOT_USE_ON_VIEW_ACCESS_TYPE_CODE " +
+	    "SYSRES_CONST_DO_NOT_USE_ON_VIEW_ACCESS_TYPE_NAME " +
+	    "SYSRES_CONST_DOCUMENT_STORAGES_CODE " +
+	    "SYSRES_CONST_DOCUMENT_TEMPLATES_TYPE_NAME " +
+	    "SYSRES_CONST_DOUBLE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITOR_CLOSE_FILE_OBSERV_TYPE_CODE " +
+	    "SYSRES_CONST_EDITOR_CLOSE_PROCESS_OBSERV_TYPE_CODE " +
+	    "SYSRES_CONST_EDITOR_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_APPLICATION_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_CREATE_SEVERAL_PROCESSES_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_EXTENSION_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_OBSERVER_BY_PROCESS_TYPE " +
+	    "SYSRES_CONST_EDITORS_REFERENCE_CODE " +
+	    "SYSRES_CONST_EDITORS_REPLACE_SPEC_CHARS_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_USE_PLUGINS_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDITORS_VIEW_DOCUMENT_OPENED_TO_EDIT_CODE " +
+	    "SYSRES_CONST_EDOC_CARD_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_CARD_TYPES_LINK_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_CERTIFICATE_AND_PASSWORD_ENCODE_CODE " +
+	    "SYSRES_CONST_EDOC_CERTIFICATE_ENCODE_CODE " +
+	    "SYSRES_CONST_EDOC_DATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_KIND_REFERENCE_CODE " +
+	    "SYSRES_CONST_EDOC_KINDS_BY_TEMPLATE_ACTION_CODE " +
+	    "SYSRES_CONST_EDOC_MANAGE_ACCESS_CODE " +
+	    "SYSRES_CONST_EDOC_NONE_ENCODE_CODE " +
+	    "SYSRES_CONST_EDOC_NUMBER_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_PASSWORD_ENCODE_CODE " +
+	    "SYSRES_CONST_EDOC_READONLY_ACCESS_CODE " +
+	    "SYSRES_CONST_EDOC_SHELL_LIFE_TYPE_VIEW_VALUE " +
+	    "SYSRES_CONST_EDOC_SIZE_RESTRICTION_PRIORITY_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_CHECK_ACCESS_RIGHTS_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_COMPUTER_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_DATABASE_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_EDIT_IN_STORAGE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_LOCAL_PATH_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_STORAGE_SHARED_SOURCE_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_TEMPLATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EDOC_TYPES_REFERENCE_CODE " +
+	    "SYSRES_CONST_EDOC_VERSION_ACTIVE_STAGE_CODE " +
+	    "SYSRES_CONST_EDOC_VERSION_DESIGN_STAGE_CODE " +
+	    "SYSRES_CONST_EDOC_VERSION_OBSOLETE_STAGE_CODE " +
+	    "SYSRES_CONST_EDOC_WRITE_ACCES_CODE " +
+	    "SYSRES_CONST_EDOCUMENT_CARD_REQUISITES_REFERENCE_CODE_SELECTED_REQUISITE " +
+	    "SYSRES_CONST_ENCODE_CERTIFICATE_TYPE_CODE " +
+	    "SYSRES_CONST_END_DATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_ENUMERATION_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_EXECUTE_ACCESS_RIGHTS_TYPE_CODE " +
+	    "SYSRES_CONST_EXECUTIVE_FILE_STORAGE_TYPE " +
+	    "SYSRES_CONST_EXIST_CONST " +
+	    "SYSRES_CONST_EXIST_VALUE " +
+	    "SYSRES_CONST_EXPORT_LOCK_TYPE_ASK " +
+	    "SYSRES_CONST_EXPORT_LOCK_TYPE_WITH_LOCK " +
+	    "SYSRES_CONST_EXPORT_LOCK_TYPE_WITHOUT_LOCK " +
+	    "SYSRES_CONST_EXPORT_VERSION_TYPE_ASK " +
+	    "SYSRES_CONST_EXPORT_VERSION_TYPE_LAST " +
+	    "SYSRES_CONST_EXPORT_VERSION_TYPE_LAST_ACTIVE " +
+	    "SYSRES_CONST_EXTENSION_REQUISITE_CODE " +
+	    "SYSRES_CONST_FILTER_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_FILTER_REQUISITE_CODE " +
+	    "SYSRES_CONST_FILTER_TYPE_COMMON_CODE " +
+	    "SYSRES_CONST_FILTER_TYPE_COMMON_NAME " +
+	    "SYSRES_CONST_FILTER_TYPE_USER_CODE " +
+	    "SYSRES_CONST_FILTER_TYPE_USER_NAME " +
+	    "SYSRES_CONST_FILTER_VALUE_REQUISITE_NAME " +
+	    "SYSRES_CONST_FLOAT_NUMBER_FORMAT_CHAR " +
+	    "SYSRES_CONST_FLOAT_REQUISITE_TYPE " +
+	    "SYSRES_CONST_FOLDER_AUTHOR_VALUE " +
+	    "SYSRES_CONST_FOLDER_KIND_ANY_OBJECTS " +
+	    "SYSRES_CONST_FOLDER_KIND_COMPONENTS " +
+	    "SYSRES_CONST_FOLDER_KIND_EDOCS " +
+	    "SYSRES_CONST_FOLDER_KIND_JOBS " +
+	    "SYSRES_CONST_FOLDER_KIND_TASKS " +
+	    "SYSRES_CONST_FOLDER_TYPE_COMMON " +
+	    "SYSRES_CONST_FOLDER_TYPE_COMPONENT " +
+	    "SYSRES_CONST_FOLDER_TYPE_FAVORITES " +
+	    "SYSRES_CONST_FOLDER_TYPE_INBOX " +
+	    "SYSRES_CONST_FOLDER_TYPE_OUTBOX " +
+	    "SYSRES_CONST_FOLDER_TYPE_QUICK_LAUNCH " +
+	    "SYSRES_CONST_FOLDER_TYPE_SEARCH " +
+	    "SYSRES_CONST_FOLDER_TYPE_SHORTCUTS " +
+	    "SYSRES_CONST_FOLDER_TYPE_USER " +
+	    "SYSRES_CONST_FROM_DICTIONARY_ENUM_METHOD_FLAG " +
+	    "SYSRES_CONST_FULL_SUBSTITUTE_TYPE " +
+	    "SYSRES_CONST_FULL_SUBSTITUTE_TYPE_CODE " +
+	    "SYSRES_CONST_FUNCTION_CANCEL_RESULT " +
+	    "SYSRES_CONST_FUNCTION_CATEGORY_SYSTEM " +
+	    "SYSRES_CONST_FUNCTION_CATEGORY_USER " +
+	    "SYSRES_CONST_FUNCTION_FAILURE_RESULT " +
+	    "SYSRES_CONST_FUNCTION_SAVE_RESULT " +
+	    "SYSRES_CONST_GENERATED_REQUISITE " +
+	    "SYSRES_CONST_GREEN_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_GROUP_ACCOUNT_TYPE_VALUE_CODE " +
+	    "SYSRES_CONST_GROUP_CATEGORY_NORMAL_CODE " +
+	    "SYSRES_CONST_GROUP_CATEGORY_NORMAL_NAME " +
+	    "SYSRES_CONST_GROUP_CATEGORY_SERVICE_CODE " +
+	    "SYSRES_CONST_GROUP_CATEGORY_SERVICE_NAME " +
+	    "SYSRES_CONST_GROUP_COMMON_CATEGORY_FIELD_VALUE " +
+	    "SYSRES_CONST_GROUP_FULL_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUP_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUP_RIGHTS_T_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUP_SERVER_CODES_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUP_SERVER_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUP_SERVICE_CATEGORY_FIELD_VALUE " +
+	    "SYSRES_CONST_GROUP_USER_REQUISITE_CODE " +
+	    "SYSRES_CONST_GROUPS_REFERENCE_CODE " +
+	    "SYSRES_CONST_GROUPS_REQUISITE_CODE " +
+	    "SYSRES_CONST_HIDDEN_MODE_NAME " +
+	    "SYSRES_CONST_HIGH_LVL_REQUISITE_CODE " +
+	    "SYSRES_CONST_HISTORY_ACTION_CREATE_CODE " +
+	    "SYSRES_CONST_HISTORY_ACTION_DELETE_CODE " +
+	    "SYSRES_CONST_HISTORY_ACTION_EDIT_CODE " +
+	    "SYSRES_CONST_HOUR_CHAR " +
+	    "SYSRES_CONST_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_IDSPS_REQUISITE_CODE " +
+	    "SYSRES_CONST_IMAGE_MODE_COLOR " +
+	    "SYSRES_CONST_IMAGE_MODE_GREYSCALE " +
+	    "SYSRES_CONST_IMAGE_MODE_MONOCHROME " +
+	    "SYSRES_CONST_IMPORTANCE_HIGH " +
+	    "SYSRES_CONST_IMPORTANCE_LOW " +
+	    "SYSRES_CONST_IMPORTANCE_NORMAL " +
+	    "SYSRES_CONST_IN_DESIGN_VERSION_STATE_PICK_VALUE " +
+	    "SYSRES_CONST_INCOMING_WORK_RULE_TYPE_CODE " +
+	    "SYSRES_CONST_INT_REQUISITE " +
+	    "SYSRES_CONST_INT_REQUISITE_TYPE " +
+	    "SYSRES_CONST_INTEGER_NUMBER_FORMAT_CHAR " +
+	    "SYSRES_CONST_INTEGER_TYPE_CHAR " +
+	    "SYSRES_CONST_IS_GENERATED_REQUISITE_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_IS_PUBLIC_ROLE_REQUISITE_CODE " +
+	    "SYSRES_CONST_IS_REMOTE_USER_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_IS_REMOTE_USER_POSITIVE_VALUE " +
+	    "SYSRES_CONST_IS_STORED_REQUISITE_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_IS_STORED_REQUISITE_STORED_VALUE " +
+	    "SYSRES_CONST_ITALIC_LIFE_CYCLE_STAGE_DRAW_STYLE " +
+	    "SYSRES_CONST_JOB_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_JOB_KIND_CONTROL_JOB " +
+	    "SYSRES_CONST_JOB_KIND_JOB " +
+	    "SYSRES_CONST_JOB_KIND_NOTICE " +
+	    "SYSRES_CONST_JOB_STATE_ABORTED " +
+	    "SYSRES_CONST_JOB_STATE_COMPLETE " +
+	    "SYSRES_CONST_JOB_STATE_WORKING " +
+	    "SYSRES_CONST_KIND_REQUISITE_CODE " +
+	    "SYSRES_CONST_KIND_REQUISITE_NAME " +
+	    "SYSRES_CONST_KINDS_CREATE_SHADOW_COPIES_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_DEFAULT_EDOC_LIFE_STAGE_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_ALL_TEPLATES_ALLOWED_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_ALLOW_LIFE_CYCLE_STAGE_CHANGING_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_ALLOW_MULTIPLE_ACTIVE_VERSIONS_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_SHARE_ACCES_RIGHTS_BY_DEFAULT_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_TEMPLATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_EDOC_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_KINDS_SIGNERS_REQUISITES_CODE " +
+	    "SYSRES_CONST_KOD_INPUT_TYPE " +
+	    "SYSRES_CONST_LAST_UPDATE_DATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_LIFE_CYCLE_START_STAGE_REQUISITE_CODE " +
+	    "SYSRES_CONST_LILAC_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_COMPONENT " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_DOCUMENT " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_EDOC " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_FOLDER " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_JOB " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_REFERENCE " +
+	    "SYSRES_CONST_LINK_OBJECT_KIND_TASK " +
+	    "SYSRES_CONST_LINK_REF_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_LIST_REFERENCE_MODE_NAME " +
+	    "SYSRES_CONST_LOCALIZATION_DICTIONARY_MAIN_VIEW_CODE " +
+	    "SYSRES_CONST_MAIN_VIEW_CODE " +
+	    "SYSRES_CONST_MANUAL_ENUM_METHOD_FLAG " +
+	    "SYSRES_CONST_MASTER_COMP_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_MASTER_TABLE_REC_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_MAXIMIZED_MODE_NAME " +
+	    "SYSRES_CONST_ME_VALUE " +
+	    "SYSRES_CONST_MESSAGE_ATTENTION_CAPTION " +
+	    "SYSRES_CONST_MESSAGE_CONFIRMATION_CAPTION " +
+	    "SYSRES_CONST_MESSAGE_ERROR_CAPTION " +
+	    "SYSRES_CONST_MESSAGE_INFORMATION_CAPTION " +
+	    "SYSRES_CONST_MINIMIZED_MODE_NAME " +
+	    "SYSRES_CONST_MINUTE_CHAR " +
+	    "SYSRES_CONST_MODULE_REQUISITE_CODE " +
+	    "SYSRES_CONST_MONITORING_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_MONTH_FORMAT_VALUE " +
+	    "SYSRES_CONST_NAME_LOCALIZE_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_NAME_SINGULAR_REQUISITE_CODE " +
+	    "SYSRES_CONST_NAMEAN_INPUT_TYPE " +
+	    "SYSRES_CONST_NEGATIVE_PICK_VALUE " +
+	    "SYSRES_CONST_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_NO " +
+	    "SYSRES_CONST_NO_PICK_VALUE " +
+	    "SYSRES_CONST_NO_SIGNATURE_REQUISITE_CODE " +
+	    "SYSRES_CONST_NO_VALUE " +
+	    "SYSRES_CONST_NONE_ACCESS_RIGHTS_TYPE_CODE " +
+	    "SYSRES_CONST_NONOPERATING_RECORD_FLAG_VALUE " +
+	    "SYSRES_CONST_NONOPERATING_RECORD_FLAG_VALUE_MASCULINE " +
+	    "SYSRES_CONST_NORMAL_ACCESS_RIGHTS_TYPE_CODE " +
+	    "SYSRES_CONST_NORMAL_LIFE_CYCLE_STAGE_DRAW_STYLE " +
+	    "SYSRES_CONST_NORMAL_MODE_NAME " +
+	    "SYSRES_CONST_NOT_ALLOWED_ACCESS_TYPE_CODE " +
+	    "SYSRES_CONST_NOT_ALLOWED_ACCESS_TYPE_NAME " +
+	    "SYSRES_CONST_NOTE_REQUISITE_CODE " +
+	    "SYSRES_CONST_NOTICE_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_NUM_REQUISITE " +
+	    "SYSRES_CONST_NUM_STR_REQUISITE_CODE " +
+	    "SYSRES_CONST_NUMERATION_AUTO_NOT_STRONG " +
+	    "SYSRES_CONST_NUMERATION_AUTO_STRONG " +
+	    "SYSRES_CONST_NUMERATION_FROM_DICTONARY " +
+	    "SYSRES_CONST_NUMERATION_MANUAL " +
+	    "SYSRES_CONST_NUMERIC_TYPE_CHAR " +
+	    "SYSRES_CONST_NUMREQ_REQUISITE_CODE " +
+	    "SYSRES_CONST_OBSOLETE_VERSION_STATE_PICK_VALUE " +
+	    "SYSRES_CONST_OPERATING_RECORD_FLAG_VALUE " +
+	    "SYSRES_CONST_OPERATING_RECORD_FLAG_VALUE_CODE " +
+	    "SYSRES_CONST_OPERATING_RECORD_FLAG_VALUE_FEMININE " +
+	    "SYSRES_CONST_OPERATING_RECORD_FLAG_VALUE_MASCULINE " +
+	    "SYSRES_CONST_OPTIONAL_FORM_COMP_REQCODE_PREFIX " +
+	    "SYSRES_CONST_ORANGE_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_ORIGINALREF_REQUISITE_CODE " +
+	    "SYSRES_CONST_OURFIRM_REF_CODE " +
+	    "SYSRES_CONST_OURFIRM_REQUISITE_CODE " +
+	    "SYSRES_CONST_OURFIRM_VAR " +
+	    "SYSRES_CONST_OUTGOING_WORK_RULE_TYPE_CODE " +
+	    "SYSRES_CONST_PICK_NEGATIVE_RESULT " +
+	    "SYSRES_CONST_PICK_POSITIVE_RESULT " +
+	    "SYSRES_CONST_PICK_REQUISITE " +
+	    "SYSRES_CONST_PICK_REQUISITE_TYPE " +
+	    "SYSRES_CONST_PICK_TYPE_CHAR " +
+	    "SYSRES_CONST_PLAN_STATUS_REQUISITE_CODE " +
+	    "SYSRES_CONST_PLATFORM_VERSION_COMMENT " +
+	    "SYSRES_CONST_PLUGINS_SETTINGS_DESCRIPTION_REQUISITE_CODE " +
+	    "SYSRES_CONST_POSITIVE_PICK_VALUE " +
+	    "SYSRES_CONST_POWER_TO_CREATE_ACTION_CODE " +
+	    "SYSRES_CONST_POWER_TO_SIGN_ACTION_CODE " +
+	    "SYSRES_CONST_PRIORITY_REQUISITE_CODE " +
+	    "SYSRES_CONST_QUALIFIED_TASK_TYPE " +
+	    "SYSRES_CONST_QUALIFIED_TASK_TYPE_CODE " +
+	    "SYSRES_CONST_RECSTAT_REQUISITE_CODE " +
+	    "SYSRES_CONST_RED_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_REF_ID_T_REF_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_REF_REQUISITE " +
+	    "SYSRES_CONST_REF_REQUISITE_TYPE " +
+	    "SYSRES_CONST_REF_REQUISITES_REFERENCE_CODE_SELECTED_REQUISITE " +
+	    "SYSRES_CONST_REFERENCE_RECORD_HISTORY_CREATE_ACTION_CODE " +
+	    "SYSRES_CONST_REFERENCE_RECORD_HISTORY_DELETE_ACTION_CODE " +
+	    "SYSRES_CONST_REFERENCE_RECORD_HISTORY_MODIFY_ACTION_CODE " +
+	    "SYSRES_CONST_REFERENCE_TYPE_CHAR " +
+	    "SYSRES_CONST_REFERENCE_TYPE_REQUISITE_NAME " +
+	    "SYSRES_CONST_REFERENCES_ADD_PARAMS_REQUISITE_CODE " +
+	    "SYSRES_CONST_REFERENCES_DISPLAY_REQUISITE_REQUISITE_CODE " +
+	    "SYSRES_CONST_REMOTE_SERVER_STATUS_WORKING " +
+	    "SYSRES_CONST_REMOTE_SERVER_TYPE_MAIN " +
+	    "SYSRES_CONST_REMOTE_SERVER_TYPE_SECONDARY " +
+	    "SYSRES_CONST_REMOTE_USER_FLAG_VALUE_CODE " +
+	    "SYSRES_CONST_REPORT_APP_EDITOR_INTERNAL " +
+	    "SYSRES_CONST_REPORT_BASE_REPORT_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_REPORT_BASE_REPORT_REQUISITE_CODE " +
+	    "SYSRES_CONST_REPORT_SCRIPT_REQUISITE_CODE " +
+	    "SYSRES_CONST_REPORT_TEMPLATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_REPORT_VIEWER_CODE_REQUISITE_CODE " +
+	    "SYSRES_CONST_REQ_ALLOW_COMPONENT_DEFAULT_VALUE " +
+	    "SYSRES_CONST_REQ_ALLOW_RECORD_DEFAULT_VALUE " +
+	    "SYSRES_CONST_REQ_ALLOW_SERVER_COMPONENT_DEFAULT_VALUE " +
+	    "SYSRES_CONST_REQ_MODE_AVAILABLE_CODE " +
+	    "SYSRES_CONST_REQ_MODE_EDIT_CODE " +
+	    "SYSRES_CONST_REQ_MODE_HIDDEN_CODE " +
+	    "SYSRES_CONST_REQ_MODE_NOT_AVAILABLE_CODE " +
+	    "SYSRES_CONST_REQ_MODE_VIEW_CODE " +
+	    "SYSRES_CONST_REQ_NUMBER_REQUISITE_CODE " +
+	    "SYSRES_CONST_REQ_SECTION_VALUE " +
+	    "SYSRES_CONST_REQ_TYPE_VALUE " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_BY_UNIT " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_DATE_FULL " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_DATE_TIME " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_LEFT " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_RIGHT " +
+	    "SYSRES_CONST_REQUISITE_FORMAT_WITHOUT_UNIT " +
+	    "SYSRES_CONST_REQUISITE_NUMBER_REQUISITE_CODE " +
+	    "SYSRES_CONST_REQUISITE_SECTION_ACTIONS " +
+	    "SYSRES_CONST_REQUISITE_SECTION_BUTTON " +
+	    "SYSRES_CONST_REQUISITE_SECTION_BUTTONS " +
+	    "SYSRES_CONST_REQUISITE_SECTION_CARD " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE10 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE11 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE12 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE13 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE14 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE15 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE16 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE17 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE18 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE19 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE2 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE20 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE21 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE22 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE23 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE24 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE3 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE4 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE5 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE6 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE7 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE8 " +
+	    "SYSRES_CONST_REQUISITE_SECTION_TABLE9 " +
+	    "SYSRES_CONST_REQUISITES_PSEUDOREFERENCE_REQUISITE_NUMBER_REQUISITE_CODE " +
+	    "SYSRES_CONST_RIGHT_ALIGNMENT_CODE " +
+	    "SYSRES_CONST_ROLES_REFERENCE_CODE " +
+	    "SYSRES_CONST_ROUTE_STEP_AFTER_RUS " +
+	    "SYSRES_CONST_ROUTE_STEP_AND_CONDITION_RUS " +
+	    "SYSRES_CONST_ROUTE_STEP_OR_CONDITION_RUS " +
+	    "SYSRES_CONST_ROUTE_TYPE_COMPLEX " +
+	    "SYSRES_CONST_ROUTE_TYPE_PARALLEL " +
+	    "SYSRES_CONST_ROUTE_TYPE_SERIAL " +
+	    "SYSRES_CONST_SBDATASETDESC_NEGATIVE_VALUE " +
+	    "SYSRES_CONST_SBDATASETDESC_POSITIVE_VALUE " +
+	    "SYSRES_CONST_SBVIEWSDESC_POSITIVE_VALUE " +
+	    "SYSRES_CONST_SCRIPT_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_SEARCH_BY_TEXT_REQUISITE_CODE " +
+	    "SYSRES_CONST_SEARCHES_COMPONENT_CONTENT " +
+	    "SYSRES_CONST_SEARCHES_CRITERIA_ACTION_NAME " +
+	    "SYSRES_CONST_SEARCHES_EDOC_CONTENT " +
+	    "SYSRES_CONST_SEARCHES_FOLDER_CONTENT " +
+	    "SYSRES_CONST_SEARCHES_JOB_CONTENT " +
+	    "SYSRES_CONST_SEARCHES_REFERENCE_CODE " +
+	    "SYSRES_CONST_SEARCHES_TASK_CONTENT " +
+	    "SYSRES_CONST_SECOND_CHAR " +
+	    "SYSRES_CONST_SECTION_REQUISITE_ACTIONS_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_CARD_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_CODE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_1_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_2_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_3_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_4_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_5_VALUE " +
+	    "SYSRES_CONST_SECTION_REQUISITE_DETAIL_6_VALUE " +
+	    "SYSRES_CONST_SELECT_REFERENCE_MODE_NAME " +
+	    "SYSRES_CONST_SELECT_TYPE_SELECTABLE " +
+	    "SYSRES_CONST_SELECT_TYPE_SELECTABLE_ONLY_CHILD " +
+	    "SYSRES_CONST_SELECT_TYPE_SELECTABLE_WITH_CHILD " +
+	    "SYSRES_CONST_SELECT_TYPE_UNSLECTABLE " +
+	    "SYSRES_CONST_SERVER_TYPE_MAIN " +
+	    "SYSRES_CONST_SERVICE_USER_CATEGORY_FIELD_VALUE " +
+	    "SYSRES_CONST_SETTINGS_USER_REQUISITE_CODE " +
+	    "SYSRES_CONST_SIGNATURE_AND_ENCODE_CERTIFICATE_TYPE_CODE " +
+	    "SYSRES_CONST_SIGNATURE_CERTIFICATE_TYPE_CODE " +
+	    "SYSRES_CONST_SINGULAR_TITLE_REQUISITE_CODE " +
+	    "SYSRES_CONST_SQL_SERVER_AUTHENTIFICATION_FLAG_VALUE_CODE " +
+	    "SYSRES_CONST_SQL_SERVER_ENCODE_AUTHENTIFICATION_FLAG_VALUE_CODE " +
+	    "SYSRES_CONST_STANDART_ROUTE_REFERENCE_CODE " +
+	    "SYSRES_CONST_STANDART_ROUTE_REFERENCE_COMMENT_REQUISITE_CODE " +
+	    "SYSRES_CONST_STANDART_ROUTES_GROUPS_REFERENCE_CODE " +
+	    "SYSRES_CONST_STATE_REQ_NAME " +
+	    "SYSRES_CONST_STATE_REQUISITE_ACTIVE_VALUE " +
+	    "SYSRES_CONST_STATE_REQUISITE_CLOSED_VALUE " +
+	    "SYSRES_CONST_STATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_STATIC_ROLE_TYPE_CODE " +
+	    "SYSRES_CONST_STATUS_PLAN_DEFAULT_VALUE " +
+	    "SYSRES_CONST_STATUS_VALUE_AUTOCLEANING " +
+	    "SYSRES_CONST_STATUS_VALUE_BLUE_SQUARE " +
+	    "SYSRES_CONST_STATUS_VALUE_COMPLETE " +
+	    "SYSRES_CONST_STATUS_VALUE_GREEN_SQUARE " +
+	    "SYSRES_CONST_STATUS_VALUE_ORANGE_SQUARE " +
+	    "SYSRES_CONST_STATUS_VALUE_PURPLE_SQUARE " +
+	    "SYSRES_CONST_STATUS_VALUE_RED_SQUARE " +
+	    "SYSRES_CONST_STATUS_VALUE_SUSPEND " +
+	    "SYSRES_CONST_STATUS_VALUE_YELLOW_SQUARE " +
+	    "SYSRES_CONST_STDROUTE_SHOW_TO_USERS_REQUISITE_CODE " +
+	    "SYSRES_CONST_STORAGE_TYPE_FILE " +
+	    "SYSRES_CONST_STORAGE_TYPE_SQL_SERVER " +
+	    "SYSRES_CONST_STR_REQUISITE " +
+	    "SYSRES_CONST_STRIKEOUT_LIFE_CYCLE_STAGE_DRAW_STYLE " +
+	    "SYSRES_CONST_STRING_FORMAT_LEFT_ALIGN_CHAR " +
+	    "SYSRES_CONST_STRING_FORMAT_RIGHT_ALIGN_CHAR " +
+	    "SYSRES_CONST_STRING_REQUISITE_CODE " +
+	    "SYSRES_CONST_STRING_REQUISITE_TYPE " +
+	    "SYSRES_CONST_STRING_TYPE_CHAR " +
+	    "SYSRES_CONST_SUBSTITUTES_PSEUDOREFERENCE_CODE " +
+	    "SYSRES_CONST_SUBTASK_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_SYSTEM_SETTING_CURRENT_USER_PARAM_VALUE " +
+	    "SYSRES_CONST_SYSTEM_SETTING_EMPTY_VALUE_PARAM_VALUE " +
+	    "SYSRES_CONST_SYSTEM_VERSION_COMMENT " +
+	    "SYSRES_CONST_TASK_ACCESS_TYPE_ALL " +
+	    "SYSRES_CONST_TASK_ACCESS_TYPE_ALL_MEMBERS " +
+	    "SYSRES_CONST_TASK_ACCESS_TYPE_MANUAL " +
+	    "SYSRES_CONST_TASK_ENCODE_TYPE_CERTIFICATION " +
+	    "SYSRES_CONST_TASK_ENCODE_TYPE_CERTIFICATION_AND_PASSWORD " +
+	    "SYSRES_CONST_TASK_ENCODE_TYPE_NONE " +
+	    "SYSRES_CONST_TASK_ENCODE_TYPE_PASSWORD " +
+	    "SYSRES_CONST_TASK_ROUTE_ALL_CONDITION " +
+	    "SYSRES_CONST_TASK_ROUTE_AND_CONDITION " +
+	    "SYSRES_CONST_TASK_ROUTE_OR_CONDITION " +
+	    "SYSRES_CONST_TASK_STATE_ABORTED " +
+	    "SYSRES_CONST_TASK_STATE_COMPLETE " +
+	    "SYSRES_CONST_TASK_STATE_CONTINUED " +
+	    "SYSRES_CONST_TASK_STATE_CONTROL " +
+	    "SYSRES_CONST_TASK_STATE_INIT " +
+	    "SYSRES_CONST_TASK_STATE_WORKING " +
+	    "SYSRES_CONST_TASK_TITLE " +
+	    "SYSRES_CONST_TASK_TYPES_GROUPS_REFERENCE_CODE " +
+	    "SYSRES_CONST_TASK_TYPES_REFERENCE_CODE " +
+	    "SYSRES_CONST_TEMPLATES_REFERENCE_CODE " +
+	    "SYSRES_CONST_TEST_DATE_REQUISITE_NAME " +
+	    "SYSRES_CONST_TEST_DEV_DATABASE_NAME " +
+	    "SYSRES_CONST_TEST_DEV_SYSTEM_CODE " +
+	    "SYSRES_CONST_TEST_EDMS_DATABASE_NAME " +
+	    "SYSRES_CONST_TEST_EDMS_MAIN_CODE " +
+	    "SYSRES_CONST_TEST_EDMS_MAIN_DB_NAME " +
+	    "SYSRES_CONST_TEST_EDMS_SECOND_CODE " +
+	    "SYSRES_CONST_TEST_EDMS_SECOND_DB_NAME " +
+	    "SYSRES_CONST_TEST_EDMS_SYSTEM_CODE " +
+	    "SYSRES_CONST_TEST_NUMERIC_REQUISITE_NAME " +
+	    "SYSRES_CONST_TEXT_REQUISITE " +
+	    "SYSRES_CONST_TEXT_REQUISITE_CODE " +
+	    "SYSRES_CONST_TEXT_REQUISITE_TYPE " +
+	    "SYSRES_CONST_TEXT_TYPE_CHAR " +
+	    "SYSRES_CONST_TYPE_CODE_REQUISITE_CODE " +
+	    "SYSRES_CONST_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_UNDEFINED_LIFE_CYCLE_STAGE_FONT_COLOR " +
+	    "SYSRES_CONST_UNITS_SECTION_ID_REQUISITE_CODE " +
+	    "SYSRES_CONST_UNITS_SECTION_REQUISITE_CODE " +
+	    "SYSRES_CONST_UNOPERATING_RECORD_FLAG_VALUE_CODE " +
+	    "SYSRES_CONST_UNSTORED_DATA_REQUISITE_CODE " +
+	    "SYSRES_CONST_UNSTORED_DATA_REQUISITE_NAME " +
+	    "SYSRES_CONST_USE_ACCESS_TYPE_CODE " +
+	    "SYSRES_CONST_USE_ACCESS_TYPE_NAME " +
+	    "SYSRES_CONST_USER_ACCOUNT_TYPE_VALUE_CODE " +
+	    "SYSRES_CONST_USER_ADDITIONAL_INFORMATION_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_AND_GROUP_ID_FROM_PSEUDOREFERENCE_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_CATEGORY_NORMAL " +
+	    "SYSRES_CONST_USER_CERTIFICATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_CERTIFICATE_STATE_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_CERTIFICATE_SUBJECT_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_CERTIFICATE_THUMBPRINT_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_COMMON_CATEGORY " +
+	    "SYSRES_CONST_USER_COMMON_CATEGORY_CODE " +
+	    "SYSRES_CONST_USER_FULL_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_GROUP_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_LOGIN_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_REMOTE_CONTROLLER_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_REMOTE_SYSTEM_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_RIGHTS_T_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_SERVER_NAME_REQUISITE_CODE " +
+	    "SYSRES_CONST_USER_SERVICE_CATEGORY " +
+	    "SYSRES_CONST_USER_SERVICE_CATEGORY_CODE " +
+	    "SYSRES_CONST_USER_STATUS_ADMINISTRATOR_CODE " +
+	    "SYSRES_CONST_USER_STATUS_ADMINISTRATOR_NAME " +
+	    "SYSRES_CONST_USER_STATUS_DEVELOPER_CODE " +
+	    "SYSRES_CONST_USER_STATUS_DEVELOPER_NAME " +
+	    "SYSRES_CONST_USER_STATUS_DISABLED_CODE " +
+	    "SYSRES_CONST_USER_STATUS_DISABLED_NAME " +
+	    "SYSRES_CONST_USER_STATUS_SYSTEM_DEVELOPER_CODE " +
+	    "SYSRES_CONST_USER_STATUS_USER_CODE " +
+	    "SYSRES_CONST_USER_STATUS_USER_NAME " +
+	    "SYSRES_CONST_USER_STATUS_USER_NAME_DEPRECATED " +
+	    "SYSRES_CONST_USER_TYPE_FIELD_VALUE_USER " +
+	    "SYSRES_CONST_USER_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_CONTROLLER_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_IS_MAIN_SERVER_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_REFERENCE_CODE " +
+	    "SYSRES_CONST_USERS_REGISTRATION_CERTIFICATES_ACTION_NAME " +
+	    "SYSRES_CONST_USERS_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_SYSTEM_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_USER_ACCESS_RIGHTS_TYPR_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_USER_AUTHENTICATION_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_USER_COMPONENT_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_USER_GROUP_REQUISITE_CODE " +
+	    "SYSRES_CONST_USERS_VIEW_CERTIFICATES_ACTION_NAME " +
+	    "SYSRES_CONST_VIEW_DEFAULT_CODE " +
+	    "SYSRES_CONST_VIEW_DEFAULT_NAME " +
+	    "SYSRES_CONST_VIEWER_REQUISITE_CODE " +
+	    "SYSRES_CONST_WAITING_BLOCK_DESCRIPTION " +
+	    "SYSRES_CONST_WIZARD_FORM_LABEL_TEST_STRING  " +
+	    "SYSRES_CONST_WIZARD_QUERY_PARAM_HEIGHT_ETALON_STRING " +
+	    "SYSRES_CONST_WIZARD_REFERENCE_COMMENT_REQUISITE_CODE " +
+	    "SYSRES_CONST_WORK_RULES_DESCRIPTION_REQUISITE_CODE " +
+	    "SYSRES_CONST_WORK_TIME_CALENDAR_REFERENCE_CODE " +
+	    "SYSRES_CONST_WORK_WORKFLOW_HARD_ROUTE_TYPE_VALUE " +
+	    "SYSRES_CONST_WORK_WORKFLOW_HARD_ROUTE_TYPE_VALUE_CODE " +
+	    "SYSRES_CONST_WORK_WORKFLOW_HARD_ROUTE_TYPE_VALUE_CODE_RUS " +
+	    "SYSRES_CONST_WORK_WORKFLOW_SOFT_ROUTE_TYPE_VALUE_CODE_RUS " +
+	    "SYSRES_CONST_WORKFLOW_ROUTE_TYPR_HARD " +
+	    "SYSRES_CONST_WORKFLOW_ROUTE_TYPR_SOFT " +
+	    "SYSRES_CONST_XML_ENCODING " +
+	    "SYSRES_CONST_XREC_STAT_REQUISITE_CODE " +
+	    "SYSRES_CONST_XRECID_FIELD_NAME " +
+	    "SYSRES_CONST_YES " +
+	    "SYSRES_CONST_YES_NO_2_REQUISITE_CODE " +
+	    "SYSRES_CONST_YES_NO_REQUISITE_CODE " +
+	    "SYSRES_CONST_YES_NO_T_REF_TYPE_REQUISITE_CODE " +
+	    "SYSRES_CONST_YES_PICK_VALUE " +
+	    "SYSRES_CONST_YES_VALUE ";
+	
+	  // Base constant
+	  var base_constants = "CR FALSE nil NO_VALUE NULL TAB TRUE YES_VALUE ";
+	
+	  // Base group name
+	  var base_group_name_constants =
+	    "ADMINISTRATORS_GROUP_NAME CUSTOMIZERS_GROUP_NAME DEVELOPERS_GROUP_NAME SERVICE_USERS_GROUP_NAME ";
+	
+	  // Decision block properties
+	  var decision_block_properties_constants =
+	    "DECISION_BLOCK_FIRST_OPERAND_PROPERTY DECISION_BLOCK_NAME_PROPERTY DECISION_BLOCK_OPERATION_PROPERTY " +
+	    "DECISION_BLOCK_RESULT_TYPE_PROPERTY DECISION_BLOCK_SECOND_OPERAND_PROPERTY ";
+	
+	  // File extension
+	  var file_extension_constants =
+	    "ANY_FILE_EXTENTION COMPRESSED_DOCUMENT_EXTENSION EXTENDED_DOCUMENT_EXTENSION " +
+	    "SHORT_COMPRESSED_DOCUMENT_EXTENSION SHORT_EXTENDED_DOCUMENT_EXTENSION ";
+	
+	  // Job block properties
+	  var job_block_properties_constants =
+	    "JOB_BLOCK_ABORT_DEADLINE_PROPERTY " +
+	    "JOB_BLOCK_AFTER_FINISH_EVENT " +
+	    "JOB_BLOCK_AFTER_QUERY_PARAMETERS_EVENT " +
+	    "JOB_BLOCK_ATTACHMENT_PROPERTY " +
+	    "JOB_BLOCK_ATTACHMENTS_RIGHTS_GROUP_PROPERTY " +
+	    "JOB_BLOCK_ATTACHMENTS_RIGHTS_TYPE_PROPERTY " +
+	    "JOB_BLOCK_BEFORE_QUERY_PARAMETERS_EVENT " +
+	    "JOB_BLOCK_BEFORE_START_EVENT " +
+	    "JOB_BLOCK_CREATED_JOBS_PROPERTY " +
+	    "JOB_BLOCK_DEADLINE_PROPERTY " +
+	    "JOB_BLOCK_EXECUTION_RESULTS_PROPERTY " +
+	    "JOB_BLOCK_IS_PARALLEL_PROPERTY " +
+	    "JOB_BLOCK_IS_RELATIVE_ABORT_DEADLINE_PROPERTY " +
+	    "JOB_BLOCK_IS_RELATIVE_DEADLINE_PROPERTY " +
+	    "JOB_BLOCK_JOB_TEXT_PROPERTY " +
+	    "JOB_BLOCK_NAME_PROPERTY " +
+	    "JOB_BLOCK_NEED_SIGN_ON_PERFORM_PROPERTY " +
+	    "JOB_BLOCK_PERFORMER_PROPERTY " +
+	    "JOB_BLOCK_RELATIVE_ABORT_DEADLINE_TYPE_PROPERTY " +
+	    "JOB_BLOCK_RELATIVE_DEADLINE_TYPE_PROPERTY " +
+	    "JOB_BLOCK_SUBJECT_PROPERTY ";
+	
+	  // Language code
+	  var language_code_constants = "ENGLISH_LANGUAGE_CODE RUSSIAN_LANGUAGE_CODE ";
+	
+	  // Launching external applications
+	  var launching_external_applications_constants =
+	    "smHidden smMaximized smMinimized smNormal wmNo wmYes ";
+	
+	  // Link kind
+	  var link_kind_constants =
+	    "COMPONENT_TOKEN_LINK_KIND " +
+	    "DOCUMENT_LINK_KIND " +
+	    "EDOCUMENT_LINK_KIND " +
+	    "FOLDER_LINK_KIND " +
+	    "JOB_LINK_KIND " +
+	    "REFERENCE_LINK_KIND " +
+	    "TASK_LINK_KIND ";
+	
+	  // Lock type
+	  var lock_type_constants =
+	    "COMPONENT_TOKEN_LOCK_TYPE EDOCUMENT_VERSION_LOCK_TYPE ";
+	
+	  // Monitor block properties
+	  var monitor_block_properties_constants =
+	    "MONITOR_BLOCK_AFTER_FINISH_EVENT " +
+	    "MONITOR_BLOCK_BEFORE_START_EVENT " +
+	    "MONITOR_BLOCK_DEADLINE_PROPERTY " +
+	    "MONITOR_BLOCK_INTERVAL_PROPERTY " +
+	    "MONITOR_BLOCK_INTERVAL_TYPE_PROPERTY " +
+	    "MONITOR_BLOCK_IS_RELATIVE_DEADLINE_PROPERTY " +
+	    "MONITOR_BLOCK_NAME_PROPERTY " +
+	    "MONITOR_BLOCK_RELATIVE_DEADLINE_TYPE_PROPERTY " +
+	    "MONITOR_BLOCK_SEARCH_SCRIPT_PROPERTY ";
+	
+	  // Notice block properties
+	  var notice_block_properties_constants =
+	    "NOTICE_BLOCK_AFTER_FINISH_EVENT " +
+	    "NOTICE_BLOCK_ATTACHMENT_PROPERTY " +
+	    "NOTICE_BLOCK_ATTACHMENTS_RIGHTS_GROUP_PROPERTY " +
+	    "NOTICE_BLOCK_ATTACHMENTS_RIGHTS_TYPE_PROPERTY " +
+	    "NOTICE_BLOCK_BEFORE_START_EVENT " +
+	    "NOTICE_BLOCK_CREATED_NOTICES_PROPERTY " +
+	    "NOTICE_BLOCK_DEADLINE_PROPERTY " +
+	    "NOTICE_BLOCK_IS_RELATIVE_DEADLINE_PROPERTY " +
+	    "NOTICE_BLOCK_NAME_PROPERTY " +
+	    "NOTICE_BLOCK_NOTICE_TEXT_PROPERTY " +
+	    "NOTICE_BLOCK_PERFORMER_PROPERTY " +
+	    "NOTICE_BLOCK_RELATIVE_DEADLINE_TYPE_PROPERTY " +
+	    "NOTICE_BLOCK_SUBJECT_PROPERTY ";
+	
+	  // Object events
+	  var object_events_constants =
+	    "dseAfterCancel " +
+	    "dseAfterClose " +
+	    "dseAfterDelete " +
+	    "dseAfterDeleteOutOfTransaction " +
+	    "dseAfterInsert " +
+	    "dseAfterOpen " +
+	    "dseAfterScroll " +
+	    "dseAfterUpdate " +
+	    "dseAfterUpdateOutOfTransaction " +
+	    "dseBeforeCancel " +
+	    "dseBeforeClose " +
+	    "dseBeforeDelete " +
+	    "dseBeforeDetailUpdate " +
+	    "dseBeforeInsert " +
+	    "dseBeforeOpen " +
+	    "dseBeforeUpdate " +
+	    "dseOnAnyRequisiteChange " +
+	    "dseOnCloseRecord " +
+	    "dseOnDeleteError " +
+	    "dseOnOpenRecord " +
+	    "dseOnPrepareUpdate " +
+	    "dseOnUpdateError " +
+	    "dseOnUpdateRatifiedRecord " +
+	    "dseOnValidDelete " +
+	    "dseOnValidUpdate " +
+	    "reOnChange " +
+	    "reOnChangeValues " +
+	    "SELECTION_BEGIN_ROUTE_EVENT " +
+	    "SELECTION_END_ROUTE_EVENT ";
+	
+	  // Object params
+	  var object_params_constants =
+	    "CURRENT_PERIOD_IS_REQUIRED " +
+	    "PREVIOUS_CARD_TYPE_NAME " +
+	    "SHOW_RECORD_PROPERTIES_FORM ";
+	
+	  // Other
+	  var other_constants =
+	    "ACCESS_RIGHTS_SETTING_DIALOG_CODE " +
+	    "ADMINISTRATOR_USER_CODE " +
+	    "ANALYTIC_REPORT_TYPE " +
+	    "asrtHideLocal " +
+	    "asrtHideRemote " +
+	    "CALCULATED_ROLE_TYPE_CODE " +
+	    "COMPONENTS_REFERENCE_DEVELOPER_VIEW_CODE " +
+	    "DCTS_TEST_PROTOCOLS_FOLDER_PATH " +
+	    "E_EDOC_VERSION_ALREADY_APPROVINGLY_SIGNED " +
+	    "E_EDOC_VERSION_ALREADY_APPROVINGLY_SIGNED_BY_USER " +
+	    "E_EDOC_VERSION_ALREDY_SIGNED " +
+	    "E_EDOC_VERSION_ALREDY_SIGNED_BY_USER " +
+	    "EDOC_TYPES_CODE_REQUISITE_FIELD_NAME " +
+	    "EDOCUMENTS_ALIAS_NAME " +
+	    "FILES_FOLDER_PATH " +
+	    "FILTER_OPERANDS_DELIMITER " +
+	    "FILTER_OPERATIONS_DELIMITER " +
+	    "FORMCARD_NAME " +
+	    "FORMLIST_NAME " +
+	    "GET_EXTENDED_DOCUMENT_EXTENSION_CREATION_MODE " +
+	    "GET_EXTENDED_DOCUMENT_EXTENSION_IMPORT_MODE " +
+	    "INTEGRATED_REPORT_TYPE " +
+	    "IS_BUILDER_APPLICATION_ROLE " +
+	    "IS_BUILDER_APPLICATION_ROLE2 " +
+	    "IS_BUILDER_USERS " +
+	    "ISBSYSDEV " +
+	    "LOG_FOLDER_PATH " +
+	    "mbCancel " +
+	    "mbNo " +
+	    "mbNoToAll " +
+	    "mbOK " +
+	    "mbYes " +
+	    "mbYesToAll " +
+	    "MEMORY_DATASET_DESRIPTIONS_FILENAME " +
+	    "mrNo " +
+	    "mrNoToAll " +
+	    "mrYes " +
+	    "mrYesToAll " +
+	    "MULTIPLE_SELECT_DIALOG_CODE " +
+	    "NONOPERATING_RECORD_FLAG_FEMININE " +
+	    "NONOPERATING_RECORD_FLAG_MASCULINE " +
+	    "OPERATING_RECORD_FLAG_FEMININE " +
+	    "OPERATING_RECORD_FLAG_MASCULINE " +
+	    "PROFILING_SETTINGS_COMMON_SETTINGS_CODE_VALUE " +
+	    "PROGRAM_INITIATED_LOOKUP_ACTION " +
+	    "ratDelete " +
+	    "ratEdit " +
+	    "ratInsert " +
+	    "REPORT_TYPE " +
+	    "REQUIRED_PICK_VALUES_VARIABLE " +
+	    "rmCard " +
+	    "rmList " +
+	    "SBRTE_PROGID_DEV " +
+	    "SBRTE_PROGID_RELEASE " +
+	    "STATIC_ROLE_TYPE_CODE " +
+	    "SUPPRESS_EMPTY_TEMPLATE_CREATION " +
+	    "SYSTEM_USER_CODE " +
+	    "UPDATE_DIALOG_DATASET " +
+	    "USED_IN_OBJECT_HINT_PARAM " +
+	    "USER_INITIATED_LOOKUP_ACTION " +
+	    "USER_NAME_FORMAT " +
+	    "USER_SELECTION_RESTRICTIONS " +
+	    "WORKFLOW_TEST_PROTOCOLS_FOLDER_PATH " +
+	    "ELS_SUBTYPE_CONTROL_NAME " +
+	    "ELS_FOLDER_KIND_CONTROL_NAME " +
+	    "REPEAT_PROCESS_CURRENT_OBJECT_EXCEPTION_NAME ";
+	
+	  // Privileges
+	  var privileges_constants =
+	    "PRIVILEGE_COMPONENT_FULL_ACCESS " +
+	    "PRIVILEGE_DEVELOPMENT_EXPORT " +
+	    "PRIVILEGE_DEVELOPMENT_IMPORT " +
+	    "PRIVILEGE_DOCUMENT_DELETE " +
+	    "PRIVILEGE_ESD " +
+	    "PRIVILEGE_FOLDER_DELETE " +
+	    "PRIVILEGE_MANAGE_ACCESS_RIGHTS " +
+	    "PRIVILEGE_MANAGE_REPLICATION " +
+	    "PRIVILEGE_MANAGE_SESSION_SERVER " +
+	    "PRIVILEGE_OBJECT_FULL_ACCESS " +
+	    "PRIVILEGE_OBJECT_VIEW " +
+	    "PRIVILEGE_RESERVE_LICENSE " +
+	    "PRIVILEGE_SYSTEM_CUSTOMIZE " +
+	    "PRIVILEGE_SYSTEM_DEVELOP " +
+	    "PRIVILEGE_SYSTEM_INSTALL " +
+	    "PRIVILEGE_TASK_DELETE " +
+	    "PRIVILEGE_USER_PLUGIN_SETTINGS_CUSTOMIZE " +
+	    "PRIVILEGES_PSEUDOREFERENCE_CODE ";
+	
+	  // Pseudoreference code
+	  var pseudoreference_code_constants =
+	    "ACCESS_TYPES_PSEUDOREFERENCE_CODE " +
+	    "ALL_AVAILABLE_COMPONENTS_PSEUDOREFERENCE_CODE " +
+	    "ALL_AVAILABLE_PRIVILEGES_PSEUDOREFERENCE_CODE " +
+	    "ALL_REPLICATE_COMPONENTS_PSEUDOREFERENCE_CODE " +
+	    "AVAILABLE_DEVELOPERS_COMPONENTS_PSEUDOREFERENCE_CODE " +
+	    "COMPONENTS_PSEUDOREFERENCE_CODE " +
+	    "FILTRATER_SETTINGS_CONFLICTS_PSEUDOREFERENCE_CODE " +
+	    "GROUPS_PSEUDOREFERENCE_CODE " +
+	    "RECEIVE_PROTOCOL_PSEUDOREFERENCE_CODE " +
+	    "REFERENCE_REQUISITE_PSEUDOREFERENCE_CODE " +
+	    "REFERENCE_REQUISITES_PSEUDOREFERENCE_CODE " +
+	    "REFTYPES_PSEUDOREFERENCE_CODE " +
+	    "REPLICATION_SEANCES_DIARY_PSEUDOREFERENCE_CODE " +
+	    "SEND_PROTOCOL_PSEUDOREFERENCE_CODE " +
+	    "SUBSTITUTES_PSEUDOREFERENCE_CODE " +
+	    "SYSTEM_SETTINGS_PSEUDOREFERENCE_CODE " +
+	    "UNITS_PSEUDOREFERENCE_CODE " +
+	    "USERS_PSEUDOREFERENCE_CODE " +
+	    "VIEWERS_PSEUDOREFERENCE_CODE ";
+	
+	  // Requisite ISBCertificateType values
+	  var requisite_ISBCertificateType_values_constants =
+	    "CERTIFICATE_TYPE_ENCRYPT " +
+	    "CERTIFICATE_TYPE_SIGN " +
+	    "CERTIFICATE_TYPE_SIGN_AND_ENCRYPT ";
+	
+	  // Requisite ISBEDocStorageType values
+	  var requisite_ISBEDocStorageType_values_constants =
+	    "STORAGE_TYPE_FILE " +
+	    "STORAGE_TYPE_NAS_CIFS " +
+	    "STORAGE_TYPE_SAPERION " +
+	    "STORAGE_TYPE_SQL_SERVER ";
+	
+	  // Requisite CompType2 values
+	  var requisite_compType2_values_constants =
+	    "COMPTYPE2_REQUISITE_DOCUMENTS_VALUE " +
+	    "COMPTYPE2_REQUISITE_TASKS_VALUE " +
+	    "COMPTYPE2_REQUISITE_FOLDERS_VALUE " +
+	    "COMPTYPE2_REQUISITE_REFERENCES_VALUE ";
+	
+	  // Requisite name
+	  var requisite_name_constants =
+	    "SYSREQ_CODE " +
+	    "SYSREQ_COMPTYPE2 " +
+	    "SYSREQ_CONST_AVAILABLE_FOR_WEB " +
+	    "SYSREQ_CONST_COMMON_CODE " +
+	    "SYSREQ_CONST_COMMON_VALUE " +
+	    "SYSREQ_CONST_FIRM_CODE " +
+	    "SYSREQ_CONST_FIRM_STATUS " +
+	    "SYSREQ_CONST_FIRM_VALUE " +
+	    "SYSREQ_CONST_SERVER_STATUS " +
+	    "SYSREQ_CONTENTS " +
+	    "SYSREQ_DATE_OPEN " +
+	    "SYSREQ_DATE_CLOSE " +
+	    "SYSREQ_DESCRIPTION " +
+	    "SYSREQ_DESCRIPTION_LOCALIZE_ID " +
+	    "SYSREQ_DOUBLE " +
+	    "SYSREQ_EDOC_ACCESS_TYPE " +
+	    "SYSREQ_EDOC_AUTHOR " +
+	    "SYSREQ_EDOC_CREATED " +
+	    "SYSREQ_EDOC_DELEGATE_RIGHTS_REQUISITE_CODE " +
+	    "SYSREQ_EDOC_EDITOR " +
+	    "SYSREQ_EDOC_ENCODE_TYPE " +
+	    "SYSREQ_EDOC_ENCRYPTION_PLUGIN_NAME " +
+	    "SYSREQ_EDOC_ENCRYPTION_PLUGIN_VERSION " +
+	    "SYSREQ_EDOC_EXPORT_DATE " +
+	    "SYSREQ_EDOC_EXPORTER " +
+	    "SYSREQ_EDOC_KIND " +
+	    "SYSREQ_EDOC_LIFE_STAGE_NAME " +
+	    "SYSREQ_EDOC_LOCKED_FOR_SERVER_CODE " +
+	    "SYSREQ_EDOC_MODIFIED " +
+	    "SYSREQ_EDOC_NAME " +
+	    "SYSREQ_EDOC_NOTE " +
+	    "SYSREQ_EDOC_QUALIFIED_ID " +
+	    "SYSREQ_EDOC_SESSION_KEY " +
+	    "SYSREQ_EDOC_SESSION_KEY_ENCRYPTION_PLUGIN_NAME " +
+	    "SYSREQ_EDOC_SESSION_KEY_ENCRYPTION_PLUGIN_VERSION " +
+	    "SYSREQ_EDOC_SIGNATURE_TYPE " +
+	    "SYSREQ_EDOC_SIGNED " +
+	    "SYSREQ_EDOC_STORAGE " +
+	    "SYSREQ_EDOC_STORAGES_ARCHIVE_STORAGE " +
+	    "SYSREQ_EDOC_STORAGES_CHECK_RIGHTS " +
+	    "SYSREQ_EDOC_STORAGES_COMPUTER_NAME " +
+	    "SYSREQ_EDOC_STORAGES_EDIT_IN_STORAGE " +
+	    "SYSREQ_EDOC_STORAGES_EXECUTIVE_STORAGE " +
+	    "SYSREQ_EDOC_STORAGES_FUNCTION " +
+	    "SYSREQ_EDOC_STORAGES_INITIALIZED " +
+	    "SYSREQ_EDOC_STORAGES_LOCAL_PATH " +
+	    "SYSREQ_EDOC_STORAGES_SAPERION_DATABASE_NAME " +
+	    "SYSREQ_EDOC_STORAGES_SEARCH_BY_TEXT " +
+	    "SYSREQ_EDOC_STORAGES_SERVER_NAME " +
+	    "SYSREQ_EDOC_STORAGES_SHARED_SOURCE_NAME " +
+	    "SYSREQ_EDOC_STORAGES_TYPE " +
+	    "SYSREQ_EDOC_TEXT_MODIFIED " +
+	    "SYSREQ_EDOC_TYPE_ACT_CODE " +
+	    "SYSREQ_EDOC_TYPE_ACT_DESCRIPTION " +
+	    "SYSREQ_EDOC_TYPE_ACT_DESCRIPTION_LOCALIZE_ID " +
+	    "SYSREQ_EDOC_TYPE_ACT_ON_EXECUTE " +
+	    "SYSREQ_EDOC_TYPE_ACT_ON_EXECUTE_EXISTS " +
+	    "SYSREQ_EDOC_TYPE_ACT_SECTION " +
+	    "SYSREQ_EDOC_TYPE_ADD_PARAMS " +
+	    "SYSREQ_EDOC_TYPE_COMMENT " +
+	    "SYSREQ_EDOC_TYPE_EVENT_TEXT " +
+	    "SYSREQ_EDOC_TYPE_NAME_IN_SINGULAR " +
+	    "SYSREQ_EDOC_TYPE_NAME_IN_SINGULAR_LOCALIZE_ID " +
+	    "SYSREQ_EDOC_TYPE_NAME_LOCALIZE_ID " +
+	    "SYSREQ_EDOC_TYPE_NUMERATION_METHOD " +
+	    "SYSREQ_EDOC_TYPE_PSEUDO_REQUISITE_CODE " +
+	    "SYSREQ_EDOC_TYPE_REQ_CODE " +
+	    "SYSREQ_EDOC_TYPE_REQ_DESCRIPTION " +
+	    "SYSREQ_EDOC_TYPE_REQ_DESCRIPTION_LOCALIZE_ID " +
+	    "SYSREQ_EDOC_TYPE_REQ_IS_LEADING " +
+	    "SYSREQ_EDOC_TYPE_REQ_IS_REQUIRED " +
+	    "SYSREQ_EDOC_TYPE_REQ_NUMBER " +
+	    "SYSREQ_EDOC_TYPE_REQ_ON_CHANGE " +
+	    "SYSREQ_EDOC_TYPE_REQ_ON_CHANGE_EXISTS " +
+	    "SYSREQ_EDOC_TYPE_REQ_ON_SELECT " +
+	    "SYSREQ_EDOC_TYPE_REQ_ON_SELECT_KIND " +
+	    "SYSREQ_EDOC_TYPE_REQ_SECTION " +
+	    "SYSREQ_EDOC_TYPE_VIEW_CARD " +
+	    "SYSREQ_EDOC_TYPE_VIEW_CODE " +
+	    "SYSREQ_EDOC_TYPE_VIEW_COMMENT " +
+	    "SYSREQ_EDOC_TYPE_VIEW_IS_MAIN " +
+	    "SYSREQ_EDOC_TYPE_VIEW_NAME " +
+	    "SYSREQ_EDOC_TYPE_VIEW_NAME_LOCALIZE_ID " +
+	    "SYSREQ_EDOC_VERSION_AUTHOR " +
+	    "SYSREQ_EDOC_VERSION_CRC " +
+	    "SYSREQ_EDOC_VERSION_DATA " +
+	    "SYSREQ_EDOC_VERSION_EDITOR " +
+	    "SYSREQ_EDOC_VERSION_EXPORT_DATE " +
+	    "SYSREQ_EDOC_VERSION_EXPORTER " +
+	    "SYSREQ_EDOC_VERSION_HIDDEN " +
+	    "SYSREQ_EDOC_VERSION_LIFE_STAGE " +
+	    "SYSREQ_EDOC_VERSION_MODIFIED " +
+	    "SYSREQ_EDOC_VERSION_NOTE " +
+	    "SYSREQ_EDOC_VERSION_SIGNATURE_TYPE " +
+	    "SYSREQ_EDOC_VERSION_SIGNED " +
+	    "SYSREQ_EDOC_VERSION_SIZE " +
+	    "SYSREQ_EDOC_VERSION_SOURCE " +
+	    "SYSREQ_EDOC_VERSION_TEXT_MODIFIED " +
+	    "SYSREQ_EDOCKIND_DEFAULT_VERSION_STATE_CODE " +
+	    "SYSREQ_FOLDER_KIND " +
+	    "SYSREQ_FUNC_CATEGORY " +
+	    "SYSREQ_FUNC_COMMENT " +
+	    "SYSREQ_FUNC_GROUP " +
+	    "SYSREQ_FUNC_GROUP_COMMENT " +
+	    "SYSREQ_FUNC_GROUP_NUMBER " +
+	    "SYSREQ_FUNC_HELP " +
+	    "SYSREQ_FUNC_PARAM_DEF_VALUE " +
+	    "SYSREQ_FUNC_PARAM_IDENT " +
+	    "SYSREQ_FUNC_PARAM_NUMBER " +
+	    "SYSREQ_FUNC_PARAM_TYPE " +
+	    "SYSREQ_FUNC_TEXT " +
+	    "SYSREQ_GROUP_CATEGORY " +
+	    "SYSREQ_ID " +
+	    "SYSREQ_LAST_UPDATE " +
+	    "SYSREQ_LEADER_REFERENCE " +
+	    "SYSREQ_LINE_NUMBER " +
+	    "SYSREQ_MAIN_RECORD_ID " +
+	    "SYSREQ_NAME " +
+	    "SYSREQ_NAME_LOCALIZE_ID " +
+	    "SYSREQ_NOTE " +
+	    "SYSREQ_ORIGINAL_RECORD " +
+	    "SYSREQ_OUR_FIRM " +
+	    "SYSREQ_PROFILING_SETTINGS_BATCH_LOGING " +
+	    "SYSREQ_PROFILING_SETTINGS_BATCH_SIZE " +
+	    "SYSREQ_PROFILING_SETTINGS_PROFILING_ENABLED " +
+	    "SYSREQ_PROFILING_SETTINGS_SQL_PROFILING_ENABLED " +
+	    "SYSREQ_PROFILING_SETTINGS_START_LOGGED " +
+	    "SYSREQ_RECORD_STATUS " +
+	    "SYSREQ_REF_REQ_FIELD_NAME " +
+	    "SYSREQ_REF_REQ_FORMAT " +
+	    "SYSREQ_REF_REQ_GENERATED " +
+	    "SYSREQ_REF_REQ_LENGTH " +
+	    "SYSREQ_REF_REQ_PRECISION " +
+	    "SYSREQ_REF_REQ_REFERENCE " +
+	    "SYSREQ_REF_REQ_SECTION " +
+	    "SYSREQ_REF_REQ_STORED " +
+	    "SYSREQ_REF_REQ_TOKENS " +
+	    "SYSREQ_REF_REQ_TYPE " +
+	    "SYSREQ_REF_REQ_VIEW " +
+	    "SYSREQ_REF_TYPE_ACT_CODE " +
+	    "SYSREQ_REF_TYPE_ACT_DESCRIPTION " +
+	    "SYSREQ_REF_TYPE_ACT_DESCRIPTION_LOCALIZE_ID " +
+	    "SYSREQ_REF_TYPE_ACT_ON_EXECUTE " +
+	    "SYSREQ_REF_TYPE_ACT_ON_EXECUTE_EXISTS " +
+	    "SYSREQ_REF_TYPE_ACT_SECTION " +
+	    "SYSREQ_REF_TYPE_ADD_PARAMS " +
+	    "SYSREQ_REF_TYPE_COMMENT " +
+	    "SYSREQ_REF_TYPE_COMMON_SETTINGS " +
+	    "SYSREQ_REF_TYPE_DISPLAY_REQUISITE_NAME " +
+	    "SYSREQ_REF_TYPE_EVENT_TEXT " +
+	    "SYSREQ_REF_TYPE_MAIN_LEADING_REF " +
+	    "SYSREQ_REF_TYPE_NAME_IN_SINGULAR " +
+	    "SYSREQ_REF_TYPE_NAME_IN_SINGULAR_LOCALIZE_ID " +
+	    "SYSREQ_REF_TYPE_NAME_LOCALIZE_ID " +
+	    "SYSREQ_REF_TYPE_NUMERATION_METHOD " +
+	    "SYSREQ_REF_TYPE_REQ_CODE " +
+	    "SYSREQ_REF_TYPE_REQ_DESCRIPTION " +
+	    "SYSREQ_REF_TYPE_REQ_DESCRIPTION_LOCALIZE_ID " +
+	    "SYSREQ_REF_TYPE_REQ_IS_CONTROL " +
+	    "SYSREQ_REF_TYPE_REQ_IS_FILTER " +
+	    "SYSREQ_REF_TYPE_REQ_IS_LEADING " +
+	    "SYSREQ_REF_TYPE_REQ_IS_REQUIRED " +
+	    "SYSREQ_REF_TYPE_REQ_NUMBER " +
+	    "SYSREQ_REF_TYPE_REQ_ON_CHANGE " +
+	    "SYSREQ_REF_TYPE_REQ_ON_CHANGE_EXISTS " +
+	    "SYSREQ_REF_TYPE_REQ_ON_SELECT " +
+	    "SYSREQ_REF_TYPE_REQ_ON_SELECT_KIND " +
+	    "SYSREQ_REF_TYPE_REQ_SECTION " +
+	    "SYSREQ_REF_TYPE_VIEW_CARD " +
+	    "SYSREQ_REF_TYPE_VIEW_CODE " +
+	    "SYSREQ_REF_TYPE_VIEW_COMMENT " +
+	    "SYSREQ_REF_TYPE_VIEW_IS_MAIN " +
+	    "SYSREQ_REF_TYPE_VIEW_NAME " +
+	    "SYSREQ_REF_TYPE_VIEW_NAME_LOCALIZE_ID " +
+	    "SYSREQ_REFERENCE_TYPE_ID " +
+	    "SYSREQ_STATE " +
+	    "SYSREQ_STATЕ " +
+	    "SYSREQ_SYSTEM_SETTINGS_VALUE " +
+	    "SYSREQ_TYPE " +
+	    "SYSREQ_UNIT " +
+	    "SYSREQ_UNIT_ID " +
+	    "SYSREQ_USER_GROUPS_GROUP_FULL_NAME " +
+	    "SYSREQ_USER_GROUPS_GROUP_NAME " +
+	    "SYSREQ_USER_GROUPS_GROUP_SERVER_NAME " +
+	    "SYSREQ_USERS_ACCESS_RIGHTS " +
+	    "SYSREQ_USERS_AUTHENTICATION " +
+	    "SYSREQ_USERS_CATEGORY " +
+	    "SYSREQ_USERS_COMPONENT " +
+	    "SYSREQ_USERS_COMPONENT_USER_IS_PUBLIC " +
+	    "SYSREQ_USERS_DOMAIN " +
+	    "SYSREQ_USERS_FULL_USER_NAME " +
+	    "SYSREQ_USERS_GROUP " +
+	    "SYSREQ_USERS_IS_MAIN_SERVER " +
+	    "SYSREQ_USERS_LOGIN " +
+	    "SYSREQ_USERS_REFERENCE_USER_IS_PUBLIC " +
+	    "SYSREQ_USERS_STATUS " +
+	    "SYSREQ_USERS_USER_CERTIFICATE " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_INFO " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_PLUGIN_NAME " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_PLUGIN_VERSION " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_STATE " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_SUBJECT_NAME " +
+	    "SYSREQ_USERS_USER_CERTIFICATE_THUMBPRINT " +
+	    "SYSREQ_USERS_USER_DEFAULT_CERTIFICATE " +
+	    "SYSREQ_USERS_USER_DESCRIPTION " +
+	    "SYSREQ_USERS_USER_GLOBAL_NAME " +
+	    "SYSREQ_USERS_USER_LOGIN " +
+	    "SYSREQ_USERS_USER_MAIN_SERVER " +
+	    "SYSREQ_USERS_USER_TYPE " +
+	    "SYSREQ_WORK_RULES_FOLDER_ID ";
+	
+	  // Result
+	  var result_constants = "RESULT_VAR_NAME RESULT_VAR_NAME_ENG ";
+	
+	  // Rule identification
+	  var rule_identification_constants =
+	    "AUTO_NUMERATION_RULE_ID " +
+	    "CANT_CHANGE_ID_REQUISITE_RULE_ID " +
+	    "CANT_CHANGE_OURFIRM_REQUISITE_RULE_ID " +
+	    "CHECK_CHANGING_REFERENCE_RECORD_USE_RULE_ID " +
+	    "CHECK_CODE_REQUISITE_RULE_ID " +
+	    "CHECK_DELETING_REFERENCE_RECORD_USE_RULE_ID " +
+	    "CHECK_FILTRATER_CHANGES_RULE_ID " +
+	    "CHECK_RECORD_INTERVAL_RULE_ID " +
+	    "CHECK_REFERENCE_INTERVAL_RULE_ID " +
+	    "CHECK_REQUIRED_DATA_FULLNESS_RULE_ID " +
+	    "CHECK_REQUIRED_REQUISITES_FULLNESS_RULE_ID " +
+	    "MAKE_RECORD_UNRATIFIED_RULE_ID " +
+	    "RESTORE_AUTO_NUMERATION_RULE_ID " +
+	    "SET_FIRM_CONTEXT_FROM_RECORD_RULE_ID " +
+	    "SET_FIRST_RECORD_IN_LIST_FORM_RULE_ID " +
+	    "SET_IDSPS_VALUE_RULE_ID " +
+	    "SET_NEXT_CODE_VALUE_RULE_ID " +
+	    "SET_OURFIRM_BOUNDS_RULE_ID " +
+	    "SET_OURFIRM_REQUISITE_RULE_ID ";
+	
+	  // Script block properties
+	  var script_block_properties_constants =
+	    "SCRIPT_BLOCK_AFTER_FINISH_EVENT " +
+	    "SCRIPT_BLOCK_BEFORE_START_EVENT " +
+	    "SCRIPT_BLOCK_EXECUTION_RESULTS_PROPERTY " +
+	    "SCRIPT_BLOCK_NAME_PROPERTY " +
+	    "SCRIPT_BLOCK_SCRIPT_PROPERTY ";
+	
+	  // Subtask block properties
+	  var subtask_block_properties_constants =
+	    "SUBTASK_BLOCK_ABORT_DEADLINE_PROPERTY " +
+	    "SUBTASK_BLOCK_AFTER_FINISH_EVENT " +
+	    "SUBTASK_BLOCK_ASSIGN_PARAMS_EVENT " +
+	    "SUBTASK_BLOCK_ATTACHMENTS_PROPERTY " +
+	    "SUBTASK_BLOCK_ATTACHMENTS_RIGHTS_GROUP_PROPERTY " +
+	    "SUBTASK_BLOCK_ATTACHMENTS_RIGHTS_TYPE_PROPERTY " +
+	    "SUBTASK_BLOCK_BEFORE_START_EVENT " +
+	    "SUBTASK_BLOCK_CREATED_TASK_PROPERTY " +
+	    "SUBTASK_BLOCK_CREATION_EVENT " +
+	    "SUBTASK_BLOCK_DEADLINE_PROPERTY " +
+	    "SUBTASK_BLOCK_IMPORTANCE_PROPERTY " +
+	    "SUBTASK_BLOCK_INITIATOR_PROPERTY " +
+	    "SUBTASK_BLOCK_IS_RELATIVE_ABORT_DEADLINE_PROPERTY " +
+	    "SUBTASK_BLOCK_IS_RELATIVE_DEADLINE_PROPERTY " +
+	    "SUBTASK_BLOCK_JOBS_TYPE_PROPERTY " +
+	    "SUBTASK_BLOCK_NAME_PROPERTY " +
+	    "SUBTASK_BLOCK_PARALLEL_ROUTE_PROPERTY " +
+	    "SUBTASK_BLOCK_PERFORMERS_PROPERTY " +
+	    "SUBTASK_BLOCK_RELATIVE_ABORT_DEADLINE_TYPE_PROPERTY " +
+	    "SUBTASK_BLOCK_RELATIVE_DEADLINE_TYPE_PROPERTY " +
+	    "SUBTASK_BLOCK_REQUIRE_SIGN_PROPERTY " +
+	    "SUBTASK_BLOCK_STANDARD_ROUTE_PROPERTY " +
+	    "SUBTASK_BLOCK_START_EVENT " +
+	    "SUBTASK_BLOCK_STEP_CONTROL_PROPERTY " +
+	    "SUBTASK_BLOCK_SUBJECT_PROPERTY " +
+	    "SUBTASK_BLOCK_TASK_CONTROL_PROPERTY " +
+	    "SUBTASK_BLOCK_TEXT_PROPERTY " +
+	    "SUBTASK_BLOCK_UNLOCK_ATTACHMENTS_ON_STOP_PROPERTY " +
+	    "SUBTASK_BLOCK_USE_STANDARD_ROUTE_PROPERTY " +
+	    "SUBTASK_BLOCK_WAIT_FOR_TASK_COMPLETE_PROPERTY ";
+	
+	  // System component
+	  var system_component_constants =
+	    "SYSCOMP_CONTROL_JOBS " +
+	    "SYSCOMP_FOLDERS " +
+	    "SYSCOMP_JOBS " +
+	    "SYSCOMP_NOTICES " +
+	    "SYSCOMP_TASKS ";
+	
+	  // System dialogs
+	  var system_dialogs_constants =
+	    "SYSDLG_CREATE_EDOCUMENT " +
+	    "SYSDLG_CREATE_EDOCUMENT_VERSION " +
+	    "SYSDLG_CURRENT_PERIOD " +
+	    "SYSDLG_EDIT_FUNCTION_HELP " +
+	    "SYSDLG_EDOCUMENT_KINDS_FOR_TEMPLATE " +
+	    "SYSDLG_EXPORT_MULTIPLE_EDOCUMENTS " +
+	    "SYSDLG_EXPORT_SINGLE_EDOCUMENT " +
+	    "SYSDLG_IMPORT_EDOCUMENT " +
+	    "SYSDLG_MULTIPLE_SELECT " +
+	    "SYSDLG_SETUP_ACCESS_RIGHTS " +
+	    "SYSDLG_SETUP_DEFAULT_RIGHTS " +
+	    "SYSDLG_SETUP_FILTER_CONDITION " +
+	    "SYSDLG_SETUP_SIGN_RIGHTS " +
+	    "SYSDLG_SETUP_TASK_OBSERVERS " +
+	    "SYSDLG_SETUP_TASK_ROUTE " +
+	    "SYSDLG_SETUP_USERS_LIST " +
+	    "SYSDLG_SIGN_EDOCUMENT " +
+	    "SYSDLG_SIGN_MULTIPLE_EDOCUMENTS ";
+	
+	  // System reference names
+	  var system_reference_names_constants =
+	    "SYSREF_ACCESS_RIGHTS_TYPES " +
+	    "SYSREF_ADMINISTRATION_HISTORY " +
+	    "SYSREF_ALL_AVAILABLE_COMPONENTS " +
+	    "SYSREF_ALL_AVAILABLE_PRIVILEGES " +
+	    "SYSREF_ALL_REPLICATING_COMPONENTS " +
+	    "SYSREF_AVAILABLE_DEVELOPERS_COMPONENTS " +
+	    "SYSREF_CALENDAR_EVENTS " +
+	    "SYSREF_COMPONENT_TOKEN_HISTORY " +
+	    "SYSREF_COMPONENT_TOKENS " +
+	    "SYSREF_COMPONENTS " +
+	    "SYSREF_CONSTANTS " +
+	    "SYSREF_DATA_RECEIVE_PROTOCOL " +
+	    "SYSREF_DATA_SEND_PROTOCOL " +
+	    "SYSREF_DIALOGS " +
+	    "SYSREF_DIALOGS_REQUISITES " +
+	    "SYSREF_EDITORS " +
+	    "SYSREF_EDOC_CARDS " +
+	    "SYSREF_EDOC_TYPES " +
+	    "SYSREF_EDOCUMENT_CARD_REQUISITES " +
+	    "SYSREF_EDOCUMENT_CARD_TYPES " +
+	    "SYSREF_EDOCUMENT_CARD_TYPES_REFERENCE " +
+	    "SYSREF_EDOCUMENT_CARDS " +
+	    "SYSREF_EDOCUMENT_HISTORY " +
+	    "SYSREF_EDOCUMENT_KINDS " +
+	    "SYSREF_EDOCUMENT_REQUISITES " +
+	    "SYSREF_EDOCUMENT_SIGNATURES " +
+	    "SYSREF_EDOCUMENT_TEMPLATES " +
+	    "SYSREF_EDOCUMENT_TEXT_STORAGES " +
+	    "SYSREF_EDOCUMENT_VIEWS " +
+	    "SYSREF_FILTERER_SETUP_CONFLICTS " +
+	    "SYSREF_FILTRATER_SETTING_CONFLICTS " +
+	    "SYSREF_FOLDER_HISTORY " +
+	    "SYSREF_FOLDERS " +
+	    "SYSREF_FUNCTION_GROUPS " +
+	    "SYSREF_FUNCTION_PARAMS " +
+	    "SYSREF_FUNCTIONS " +
+	    "SYSREF_JOB_HISTORY " +
+	    "SYSREF_LINKS " +
+	    "SYSREF_LOCALIZATION_DICTIONARY " +
+	    "SYSREF_LOCALIZATION_LANGUAGES " +
+	    "SYSREF_MODULES " +
+	    "SYSREF_PRIVILEGES " +
+	    "SYSREF_RECORD_HISTORY " +
+	    "SYSREF_REFERENCE_REQUISITES " +
+	    "SYSREF_REFERENCE_TYPE_VIEWS " +
+	    "SYSREF_REFERENCE_TYPES " +
+	    "SYSREF_REFERENCES " +
+	    "SYSREF_REFERENCES_REQUISITES " +
+	    "SYSREF_REMOTE_SERVERS " +
+	    "SYSREF_REPLICATION_SESSIONS_LOG " +
+	    "SYSREF_REPLICATION_SESSIONS_PROTOCOL " +
+	    "SYSREF_REPORTS " +
+	    "SYSREF_ROLES " +
+	    "SYSREF_ROUTE_BLOCK_GROUPS " +
+	    "SYSREF_ROUTE_BLOCKS " +
+	    "SYSREF_SCRIPTS " +
+	    "SYSREF_SEARCHES " +
+	    "SYSREF_SERVER_EVENTS " +
+	    "SYSREF_SERVER_EVENTS_HISTORY " +
+	    "SYSREF_STANDARD_ROUTE_GROUPS " +
+	    "SYSREF_STANDARD_ROUTES " +
+	    "SYSREF_STATUSES " +
+	    "SYSREF_SYSTEM_SETTINGS " +
+	    "SYSREF_TASK_HISTORY " +
+	    "SYSREF_TASK_KIND_GROUPS " +
+	    "SYSREF_TASK_KINDS " +
+	    "SYSREF_TASK_RIGHTS " +
+	    "SYSREF_TASK_SIGNATURES " +
+	    "SYSREF_TASKS " +
+	    "SYSREF_UNITS " +
+	    "SYSREF_USER_GROUPS " +
+	    "SYSREF_USER_GROUPS_REFERENCE " +
+	    "SYSREF_USER_SUBSTITUTION " +
+	    "SYSREF_USERS " +
+	    "SYSREF_USERS_REFERENCE " +
+	    "SYSREF_VIEWERS " +
+	    "SYSREF_WORKING_TIME_CALENDARS ";
+	
+	  // Table name
+	  var table_name_constants =
+	    "ACCESS_RIGHTS_TABLE_NAME " +
+	    "EDMS_ACCESS_TABLE_NAME " +
+	    "EDOC_TYPES_TABLE_NAME ";
+	
+	  // Test
+	  var test_constants =
+	    "TEST_DEV_DB_NAME " +
+	    "TEST_DEV_SYSTEM_CODE " +
+	    "TEST_EDMS_DB_NAME " +
+	    "TEST_EDMS_MAIN_CODE " +
+	    "TEST_EDMS_MAIN_DB_NAME " +
+	    "TEST_EDMS_SECOND_CODE " +
+	    "TEST_EDMS_SECOND_DB_NAME " +
+	    "TEST_EDMS_SYSTEM_CODE " +
+	    "TEST_ISB5_MAIN_CODE " +
+	    "TEST_ISB5_SECOND_CODE " +
+	    "TEST_SQL_SERVER_2005_NAME " +
+	    "TEST_SQL_SERVER_NAME ";
+	
+	  // Using the dialog windows
+	  var using_the_dialog_windows_constants =
+	    "ATTENTION_CAPTION " +
+	    "cbsCommandLinks " +
+	    "cbsDefault " +
+	    "CONFIRMATION_CAPTION " +
+	    "ERROR_CAPTION " +
+	    "INFORMATION_CAPTION " +
+	    "mrCancel " +
+	    "mrOk ";
+	
+	  // Using the document
+	  var using_the_document_constants =
+	    "EDOC_VERSION_ACTIVE_STAGE_CODE " +
+	    "EDOC_VERSION_DESIGN_STAGE_CODE " +
+	    "EDOC_VERSION_OBSOLETE_STAGE_CODE ";
+	
+	  // Using the EA and encryption
+	  var using_the_EA_and_encryption_constants =
+	    "cpDataEnciphermentEnabled " +
+	    "cpDigitalSignatureEnabled " +
+	    "cpID " +
+	    "cpIssuer " +
+	    "cpPluginVersion " +
+	    "cpSerial " +
+	    "cpSubjectName " +
+	    "cpSubjSimpleName " +
+	    "cpValidFromDate " +
+	    "cpValidToDate ";
+	
+	  // Using the ISBL-editor
+	  var using_the_ISBL_editor_constants =
+	    "ISBL_SYNTAX " + "NO_SYNTAX " + "XML_SYNTAX ";
+	
+	  // Wait block properties
+	  var wait_block_properties_constants =
+	    "WAIT_BLOCK_AFTER_FINISH_EVENT " +
+	    "WAIT_BLOCK_BEFORE_START_EVENT " +
+	    "WAIT_BLOCK_DEADLINE_PROPERTY " +
+	    "WAIT_BLOCK_IS_RELATIVE_DEADLINE_PROPERTY " +
+	    "WAIT_BLOCK_NAME_PROPERTY " +
+	    "WAIT_BLOCK_RELATIVE_DEADLINE_TYPE_PROPERTY ";
+	
+	  // SYSRES Common
+	  var sysres_common_constants =
+	    "SYSRES_COMMON " +
+	    "SYSRES_CONST " +
+	    "SYSRES_MBFUNC " +
+	    "SYSRES_SBDATA " +
+	    "SYSRES_SBGUI " +
+	    "SYSRES_SBINTF " +
+	    "SYSRES_SBREFDSC " +
+	    "SYSRES_SQLERRORS " +
+	    "SYSRES_SYSCOMP ";
+	
+	  // Константы ==> built_in
+	  var CONSTANTS =
+	    sysres_constants +
+	    base_constants +
+	    base_group_name_constants +
+	    decision_block_properties_constants +
+	    file_extension_constants +
+	    job_block_properties_constants +
+	    language_code_constants +
+	    launching_external_applications_constants +
+	    link_kind_constants +
+	    lock_type_constants +
+	    monitor_block_properties_constants +
+	    notice_block_properties_constants +
+	    object_events_constants +
+	    object_params_constants +
+	    other_constants +
+	    privileges_constants +
+	    pseudoreference_code_constants +
+	    requisite_ISBCertificateType_values_constants +
+	    requisite_ISBEDocStorageType_values_constants +
+	    requisite_compType2_values_constants +
+	    requisite_name_constants +
+	    result_constants +
+	    rule_identification_constants +
+	    script_block_properties_constants +
+	    subtask_block_properties_constants +
+	    system_component_constants +
+	    system_dialogs_constants +
+	    system_reference_names_constants +
+	    table_name_constants +
+	    test_constants +
+	    using_the_dialog_windows_constants +
+	    using_the_document_constants +
+	    using_the_EA_and_encryption_constants +
+	    using_the_ISBL_editor_constants +
+	    wait_block_properties_constants +
+	    sysres_common_constants;
+	
+	  // enum TAccountType
+	  var TAccountType = "atUser atGroup atRole ";
+	
+	  // enum TActionEnabledMode
+	  var TActionEnabledMode =
+	    "aemEnabledAlways " +
+	    "aemDisabledAlways " +
+	    "aemEnabledOnBrowse " +
+	    "aemEnabledOnEdit " +
+	    "aemDisabledOnBrowseEmpty ";
+	
+	  // enum TAddPosition
+	  var TAddPosition = "apBegin apEnd ";
+	
+	  // enum TAlignment
+	  var TAlignment = "alLeft alRight ";
+	
+	  // enum TAreaShowMode
+	  var TAreaShowMode =
+	    "asmNever " +
+	    "asmNoButCustomize " +
+	    "asmAsLastTime " +
+	    "asmYesButCustomize " +
+	    "asmAlways ";
+	
+	  // enum TCertificateInvalidationReason
+	  var TCertificateInvalidationReason = "cirCommon cirRevoked ";
+	
+	  // enum TCertificateType
+	  var TCertificateType = "ctSignature ctEncode ctSignatureEncode ";
+	
+	  // enum TCheckListBoxItemState
+	  var TCheckListBoxItemState = "clbUnchecked clbChecked clbGrayed ";
+	
+	  // enum TCloseOnEsc
+	  var TCloseOnEsc = "ceISB ceAlways ceNever ";
+	
+	  // enum TCompType
+	  var TCompType =
+	    "ctDocument " +
+	    "ctReference " +
+	    "ctScript " +
+	    "ctUnknown " +
+	    "ctReport " +
+	    "ctDialog " +
+	    "ctFunction " +
+	    "ctFolder " +
+	    "ctEDocument " +
+	    "ctTask " +
+	    "ctJob " +
+	    "ctNotice " +
+	    "ctControlJob ";
+	
+	  // enum TConditionFormat
+	  var TConditionFormat = "cfInternal cfDisplay ";
+	
+	  // enum TConnectionIntent
+	  var TConnectionIntent = "ciUnspecified ciWrite ciRead ";
+	
+	  // enum TContentKind
+	  var TContentKind =
+	    "ckFolder " +
+	    "ckEDocument " +
+	    "ckTask " +
+	    "ckJob " +
+	    "ckComponentToken " +
+	    "ckAny " +
+	    "ckReference " +
+	    "ckScript " +
+	    "ckReport " +
+	    "ckDialog ";
+	
+	  // enum TControlType
+	  var TControlType =
+	    "ctISBLEditor " +
+	    "ctBevel " +
+	    "ctButton " +
+	    "ctCheckListBox " +
+	    "ctComboBox " +
+	    "ctComboEdit " +
+	    "ctGrid " +
+	    "ctDBCheckBox " +
+	    "ctDBComboBox " +
+	    "ctDBEdit " +
+	    "ctDBEllipsis " +
+	    "ctDBMemo " +
+	    "ctDBNavigator " +
+	    "ctDBRadioGroup " +
+	    "ctDBStatusLabel " +
+	    "ctEdit " +
+	    "ctGroupBox " +
+	    "ctInplaceHint " +
+	    "ctMemo " +
+	    "ctPanel " +
+	    "ctListBox " +
+	    "ctRadioButton " +
+	    "ctRichEdit " +
+	    "ctTabSheet " +
+	    "ctWebBrowser " +
+	    "ctImage " +
+	    "ctHyperLink " +
+	    "ctLabel " +
+	    "ctDBMultiEllipsis " +
+	    "ctRibbon " +
+	    "ctRichView " +
+	    "ctInnerPanel " +
+	    "ctPanelGroup " +
+	    "ctBitButton ";
+	
+	  // enum TCriterionContentType
+	  var TCriterionContentType =
+	    "cctDate " +
+	    "cctInteger " +
+	    "cctNumeric " +
+	    "cctPick " +
+	    "cctReference " +
+	    "cctString " +
+	    "cctText ";
+	
+	  // enum TCultureType
+	  var TCultureType = "cltInternal cltPrimary cltGUI ";
+	
+	  // enum TDataSetEventType
+	  var TDataSetEventType =
+	    "dseBeforeOpen " +
+	    "dseAfterOpen " +
+	    "dseBeforeClose " +
+	    "dseAfterClose " +
+	    "dseOnValidDelete " +
+	    "dseBeforeDelete " +
+	    "dseAfterDelete " +
+	    "dseAfterDeleteOutOfTransaction " +
+	    "dseOnDeleteError " +
+	    "dseBeforeInsert " +
+	    "dseAfterInsert " +
+	    "dseOnValidUpdate " +
+	    "dseBeforeUpdate " +
+	    "dseOnUpdateRatifiedRecord " +
+	    "dseAfterUpdate " +
+	    "dseAfterUpdateOutOfTransaction " +
+	    "dseOnUpdateError " +
+	    "dseAfterScroll " +
+	    "dseOnOpenRecord " +
+	    "dseOnCloseRecord " +
+	    "dseBeforeCancel " +
+	    "dseAfterCancel " +
+	    "dseOnUpdateDeadlockError " +
+	    "dseBeforeDetailUpdate " +
+	    "dseOnPrepareUpdate " +
+	    "dseOnAnyRequisiteChange ";
+	
+	  // enum TDataSetState
+	  var TDataSetState = "dssEdit dssInsert dssBrowse dssInActive ";
+	
+	  // enum TDateFormatType
+	  var TDateFormatType = "dftDate dftShortDate dftDateTime dftTimeStamp ";
+	
+	  // enum TDateOffsetType
+	  var TDateOffsetType = "dotDays dotHours dotMinutes dotSeconds ";
+	
+	  // enum TDateTimeKind
+	  var TDateTimeKind = "dtkndLocal dtkndUTC ";
+	
+	  // enum TDeaAccessRights
+	  var TDeaAccessRights = "arNone arView arEdit arFull ";
+	
+	  // enum TDocumentDefaultAction
+	  var TDocumentDefaultAction = "ddaView ddaEdit ";
+	
+	  // enum TEditMode
+	  var TEditMode =
+	    "emLock " +
+	    "emEdit " +
+	    "emSign " +
+	    "emExportWithLock " +
+	    "emImportWithUnlock " +
+	    "emChangeVersionNote " +
+	    "emOpenForModify " +
+	    "emChangeLifeStage " +
+	    "emDelete " +
+	    "emCreateVersion " +
+	    "emImport " +
+	    "emUnlockExportedWithLock " +
+	    "emStart " +
+	    "emAbort " +
+	    "emReInit " +
+	    "emMarkAsReaded " +
+	    "emMarkAsUnreaded " +
+	    "emPerform " +
+	    "emAccept " +
+	    "emResume " +
+	    "emChangeRights " +
+	    "emEditRoute " +
+	    "emEditObserver " +
+	    "emRecoveryFromLocalCopy " +
+	    "emChangeWorkAccessType " +
+	    "emChangeEncodeTypeToCertificate " +
+	    "emChangeEncodeTypeToPassword " +
+	    "emChangeEncodeTypeToNone " +
+	    "emChangeEncodeTypeToCertificatePassword " +
+	    "emChangeStandardRoute " +
+	    "emGetText " +
+	    "emOpenForView " +
+	    "emMoveToStorage " +
+	    "emCreateObject " +
+	    "emChangeVersionHidden " +
+	    "emDeleteVersion " +
+	    "emChangeLifeCycleStage " +
+	    "emApprovingSign " +
+	    "emExport " +
+	    "emContinue " +
+	    "emLockFromEdit " +
+	    "emUnLockForEdit " +
+	    "emLockForServer " +
+	    "emUnlockFromServer " +
+	    "emDelegateAccessRights " +
+	    "emReEncode ";
+	
+	  // enum TEditorCloseObservType
+	  var TEditorCloseObservType = "ecotFile ecotProcess ";
+	
+	  // enum TEdmsApplicationAction
+	  var TEdmsApplicationAction = "eaGet eaCopy eaCreate eaCreateStandardRoute ";
+	
+	  // enum TEDocumentLockType
+	  var TEDocumentLockType = "edltAll edltNothing edltQuery ";
+	
+	  // enum TEDocumentStepShowMode
+	  var TEDocumentStepShowMode = "essmText essmCard ";
+	
+	  // enum TEDocumentStepVersionType
+	  var TEDocumentStepVersionType = "esvtLast esvtLastActive esvtSpecified ";
+	
+	  // enum TEDocumentStorageFunction
+	  var TEDocumentStorageFunction = "edsfExecutive edsfArchive ";
+	
+	  // enum TEDocumentStorageType
+	  var TEDocumentStorageType = "edstSQLServer edstFile ";
+	
+	  // enum TEDocumentVersionSourceType
+	  var TEDocumentVersionSourceType =
+	    "edvstNone edvstEDocumentVersionCopy edvstFile edvstTemplate edvstScannedFile ";
+	
+	  // enum TEDocumentVersionState
+	  var TEDocumentVersionState = "vsDefault vsDesign vsActive vsObsolete ";
+	
+	  // enum TEncodeType
+	  var TEncodeType = "etNone etCertificate etPassword etCertificatePassword ";
+	
+	  // enum TExceptionCategory
+	  var TExceptionCategory = "ecException ecWarning ecInformation ";
+	
+	  // enum TExportedSignaturesType
+	  var TExportedSignaturesType = "estAll estApprovingOnly ";
+	
+	  // enum TExportedVersionType
+	  var TExportedVersionType = "evtLast evtLastActive evtQuery ";
+	
+	  // enum TFieldDataType
+	  var TFieldDataType =
+	    "fdtString " +
+	    "fdtNumeric " +
+	    "fdtInteger " +
+	    "fdtDate " +
+	    "fdtText " +
+	    "fdtUnknown " +
+	    "fdtWideString " +
+	    "fdtLargeInteger ";
+	
+	  // enum TFolderType
+	  var TFolderType =
+	    "ftInbox " +
+	    "ftOutbox " +
+	    "ftFavorites " +
+	    "ftCommonFolder " +
+	    "ftUserFolder " +
+	    "ftComponents " +
+	    "ftQuickLaunch " +
+	    "ftShortcuts " +
+	    "ftSearch ";
+	
+	  // enum TGridRowHeight
+	  var TGridRowHeight = "grhAuto " + "grhX1 " + "grhX2 " + "grhX3 ";
+	
+	  // enum THyperlinkType
+	  var THyperlinkType = "hltText " + "hltRTF " + "hltHTML ";
+	
+	  // enum TImageFileFormat
+	  var TImageFileFormat =
+	    "iffBMP " +
+	    "iffJPEG " +
+	    "iffMultiPageTIFF " +
+	    "iffSinglePageTIFF " +
+	    "iffTIFF " +
+	    "iffPNG ";
+	
+	  // enum TImageMode
+	  var TImageMode = "im8bGrayscale " + "im24bRGB " + "im1bMonochrome ";
+	
+	  // enum TImageType
+	  var TImageType = "itBMP " + "itJPEG " + "itWMF " + "itPNG ";
+	
+	  // enum TInplaceHintKind
+	  var TInplaceHintKind =
+	    "ikhInformation " + "ikhWarning " + "ikhError " + "ikhNoIcon ";
+	
+	  // enum TISBLContext
+	  var TISBLContext =
+	    "icUnknown " +
+	    "icScript " +
+	    "icFunction " +
+	    "icIntegratedReport " +
+	    "icAnalyticReport " +
+	    "icDataSetEventHandler " +
+	    "icActionHandler " +
+	    "icFormEventHandler " +
+	    "icLookUpEventHandler " +
+	    "icRequisiteChangeEventHandler " +
+	    "icBeforeSearchEventHandler " +
+	    "icRoleCalculation " +
+	    "icSelectRouteEventHandler " +
+	    "icBlockPropertyCalculation " +
+	    "icBlockQueryParamsEventHandler " +
+	    "icChangeSearchResultEventHandler " +
+	    "icBlockEventHandler " +
+	    "icSubTaskInitEventHandler " +
+	    "icEDocDataSetEventHandler " +
+	    "icEDocLookUpEventHandler " +
+	    "icEDocActionHandler " +
+	    "icEDocFormEventHandler " +
+	    "icEDocRequisiteChangeEventHandler " +
+	    "icStructuredConversionRule " +
+	    "icStructuredConversionEventBefore " +
+	    "icStructuredConversionEventAfter " +
+	    "icWizardEventHandler " +
+	    "icWizardFinishEventHandler " +
+	    "icWizardStepEventHandler " +
+	    "icWizardStepFinishEventHandler " +
+	    "icWizardActionEnableEventHandler " +
+	    "icWizardActionExecuteEventHandler " +
+	    "icCreateJobsHandler " +
+	    "icCreateNoticesHandler " +
+	    "icBeforeLookUpEventHandler " +
+	    "icAfterLookUpEventHandler " +
+	    "icTaskAbortEventHandler " +
+	    "icWorkflowBlockActionHandler " +
+	    "icDialogDataSetEventHandler " +
+	    "icDialogActionHandler " +
+	    "icDialogLookUpEventHandler " +
+	    "icDialogRequisiteChangeEventHandler " +
+	    "icDialogFormEventHandler " +
+	    "icDialogValidCloseEventHandler " +
+	    "icBlockFormEventHandler " +
+	    "icTaskFormEventHandler " +
+	    "icReferenceMethod " +
+	    "icEDocMethod " +
+	    "icDialogMethod " +
+	    "icProcessMessageHandler ";
+	
+	  // enum TItemShow
+	  var TItemShow = "isShow " + "isHide " + "isByUserSettings ";
+	
+	  // enum TJobKind
+	  var TJobKind = "jkJob " + "jkNotice " + "jkControlJob ";
+	
+	  // enum TJoinType
+	  var TJoinType = "jtInner " + "jtLeft " + "jtRight " + "jtFull " + "jtCross ";
+	
+	  // enum TLabelPos
+	  var TLabelPos = "lbpAbove " + "lbpBelow " + "lbpLeft " + "lbpRight ";
+	
+	  // enum TLicensingType
+	  var TLicensingType = "eltPerConnection " + "eltPerUser ";
+	
+	  // enum TLifeCycleStageFontColor
+	  var TLifeCycleStageFontColor =
+	    "sfcUndefined " +
+	    "sfcBlack " +
+	    "sfcGreen " +
+	    "sfcRed " +
+	    "sfcBlue " +
+	    "sfcOrange " +
+	    "sfcLilac ";
+	
+	  // enum TLifeCycleStageFontStyle
+	  var TLifeCycleStageFontStyle = "sfsItalic " + "sfsStrikeout " + "sfsNormal ";
+	
+	  // enum TLockableDevelopmentComponentType
+	  var TLockableDevelopmentComponentType =
+	    "ldctStandardRoute " +
+	    "ldctWizard " +
+	    "ldctScript " +
+	    "ldctFunction " +
+	    "ldctRouteBlock " +
+	    "ldctIntegratedReport " +
+	    "ldctAnalyticReport " +
+	    "ldctReferenceType " +
+	    "ldctEDocumentType " +
+	    "ldctDialog " +
+	    "ldctServerEvents ";
+	
+	  // enum TMaxRecordCountRestrictionType
+	  var TMaxRecordCountRestrictionType =
+	    "mrcrtNone " + "mrcrtUser " + "mrcrtMaximal " + "mrcrtCustom ";
+	
+	  // enum TRangeValueType
+	  var TRangeValueType =
+	    "vtEqual " + "vtGreaterOrEqual " + "vtLessOrEqual " + "vtRange ";
+	
+	  // enum TRelativeDate
+	  var TRelativeDate =
+	    "rdYesterday " +
+	    "rdToday " +
+	    "rdTomorrow " +
+	    "rdThisWeek " +
+	    "rdThisMonth " +
+	    "rdThisYear " +
+	    "rdNextMonth " +
+	    "rdNextWeek " +
+	    "rdLastWeek " +
+	    "rdLastMonth ";
+	
+	  // enum TReportDestination
+	  var TReportDestination = "rdWindow " + "rdFile " + "rdPrinter ";
+	
+	  // enum TReqDataType
+	  var TReqDataType =
+	    "rdtString " +
+	    "rdtNumeric " +
+	    "rdtInteger " +
+	    "rdtDate " +
+	    "rdtReference " +
+	    "rdtAccount " +
+	    "rdtText " +
+	    "rdtPick " +
+	    "rdtUnknown " +
+	    "rdtLargeInteger " +
+	    "rdtDocument ";
+	
+	  // enum TRequisiteEventType
+	  var TRequisiteEventType = "reOnChange " + "reOnChangeValues ";
+	
+	  // enum TSBTimeType
+	  var TSBTimeType = "ttGlobal " + "ttLocal " + "ttUser " + "ttSystem ";
+	
+	  // enum TSearchShowMode
+	  var TSearchShowMode =
+	    "ssmBrowse " + "ssmSelect " + "ssmMultiSelect " + "ssmBrowseModal ";
+	
+	  // enum TSelectMode
+	  var TSelectMode = "smSelect " + "smLike " + "smCard ";
+	
+	  // enum TSignatureType
+	  var TSignatureType = "stNone " + "stAuthenticating " + "stApproving ";
+	
+	  // enum TSignerContentType
+	  var TSignerContentType = "sctString " + "sctStream ";
+	
+	  // enum TStringsSortType
+	  var TStringsSortType = "sstAnsiSort " + "sstNaturalSort ";
+	
+	  // enum TStringValueType
+	  var TStringValueType = "svtEqual " + "svtContain ";
+	
+	  // enum TStructuredObjectAttributeType
+	  var TStructuredObjectAttributeType =
+	    "soatString " +
+	    "soatNumeric " +
+	    "soatInteger " +
+	    "soatDatetime " +
+	    "soatReferenceRecord " +
+	    "soatText " +
+	    "soatPick " +
+	    "soatBoolean " +
+	    "soatEDocument " +
+	    "soatAccount " +
+	    "soatIntegerCollection " +
+	    "soatNumericCollection " +
+	    "soatStringCollection " +
+	    "soatPickCollection " +
+	    "soatDatetimeCollection " +
+	    "soatBooleanCollection " +
+	    "soatReferenceRecordCollection " +
+	    "soatEDocumentCollection " +
+	    "soatAccountCollection " +
+	    "soatContents " +
+	    "soatUnknown ";
+	
+	  // enum TTaskAbortReason
+	  var TTaskAbortReason = "tarAbortByUser " + "tarAbortByWorkflowException ";
+	
+	  // enum TTextValueType
+	  var TTextValueType = "tvtAllWords " + "tvtExactPhrase " + "tvtAnyWord ";
+	
+	  // enum TUserObjectStatus
+	  var TUserObjectStatus =
+	    "usNone " +
+	    "usCompleted " +
+	    "usRedSquare " +
+	    "usBlueSquare " +
+	    "usYellowSquare " +
+	    "usGreenSquare " +
+	    "usOrangeSquare " +
+	    "usPurpleSquare " +
+	    "usFollowUp ";
+	
+	  // enum TUserType
+	  var TUserType =
+	    "utUnknown " +
+	    "utUser " +
+	    "utDeveloper " +
+	    "utAdministrator " +
+	    "utSystemDeveloper " +
+	    "utDisconnected ";
+	
+	  // enum TValuesBuildType
+	  var TValuesBuildType =
+	    "btAnd " + "btDetailAnd " + "btOr " + "btNotOr " + "btOnly ";
+	
+	  // enum TViewMode
+	  var TViewMode = "vmView " + "vmSelect " + "vmNavigation ";
+	
+	  // enum TViewSelectionMode
+	  var TViewSelectionMode =
+	    "vsmSingle " + "vsmMultiple " + "vsmMultipleCheck " + "vsmNoSelection ";
+	
+	  // enum TWizardActionType
+	  var TWizardActionType =
+	    "wfatPrevious " + "wfatNext " + "wfatCancel " + "wfatFinish ";
+	
+	  // enum TWizardFormElementProperty
+	  var TWizardFormElementProperty =
+	    "wfepUndefined " +
+	    "wfepText3 " +
+	    "wfepText6 " +
+	    "wfepText9 " +
+	    "wfepSpinEdit " +
+	    "wfepDropDown " +
+	    "wfepRadioGroup " +
+	    "wfepFlag " +
+	    "wfepText12 " +
+	    "wfepText15 " +
+	    "wfepText18 " +
+	    "wfepText21 " +
+	    "wfepText24 " +
+	    "wfepText27 " +
+	    "wfepText30 " +
+	    "wfepRadioGroupColumn1 " +
+	    "wfepRadioGroupColumn2 " +
+	    "wfepRadioGroupColumn3 ";
+	
+	  // enum TWizardFormElementType
+	  var TWizardFormElementType =
+	    "wfetQueryParameter " + "wfetText " + "wfetDelimiter " + "wfetLabel ";
+	
+	  // enum TWizardParamType
+	  var TWizardParamType =
+	    "wptString " +
+	    "wptInteger " +
+	    "wptNumeric " +
+	    "wptBoolean " +
+	    "wptDateTime " +
+	    "wptPick " +
+	    "wptText " +
+	    "wptUser " +
+	    "wptUserList " +
+	    "wptEDocumentInfo " +
+	    "wptEDocumentInfoList " +
+	    "wptReferenceRecordInfo " +
+	    "wptReferenceRecordInfoList " +
+	    "wptFolderInfo " +
+	    "wptTaskInfo " +
+	    "wptContents " +
+	    "wptFileName " +
+	    "wptDate ";
+	
+	  // enum TWizardStepResult
+	  var TWizardStepResult =
+	    "wsrComplete " +
+	    "wsrGoNext " +
+	    "wsrGoPrevious " +
+	    "wsrCustom " +
+	    "wsrCancel " +
+	    "wsrGoFinal ";
+	
+	  // enum TWizardStepType
+	  var TWizardStepType =
+	    "wstForm " +
+	    "wstEDocument " +
+	    "wstTaskCard " +
+	    "wstReferenceRecordCard " +
+	    "wstFinal ";
+	
+	  // enum TWorkAccessType
+	  var TWorkAccessType = "waAll " + "waPerformers " + "waManual ";
+	
+	  // enum TWorkflowBlockType
+	  var TWorkflowBlockType =
+	    "wsbStart " +
+	    "wsbFinish " +
+	    "wsbNotice " +
+	    "wsbStep " +
+	    "wsbDecision " +
+	    "wsbWait " +
+	    "wsbMonitor " +
+	    "wsbScript " +
+	    "wsbConnector " +
+	    "wsbSubTask " +
+	    "wsbLifeCycleStage " +
+	    "wsbPause ";
+	
+	  // enum TWorkflowDataType
+	  var TWorkflowDataType =
+	    "wdtInteger " +
+	    "wdtFloat " +
+	    "wdtString " +
+	    "wdtPick " +
+	    "wdtDateTime " +
+	    "wdtBoolean " +
+	    "wdtTask " +
+	    "wdtJob " +
+	    "wdtFolder " +
+	    "wdtEDocument " +
+	    "wdtReferenceRecord " +
+	    "wdtUser " +
+	    "wdtGroup " +
+	    "wdtRole " +
+	    "wdtIntegerCollection " +
+	    "wdtFloatCollection " +
+	    "wdtStringCollection " +
+	    "wdtPickCollection " +
+	    "wdtDateTimeCollection " +
+	    "wdtBooleanCollection " +
+	    "wdtTaskCollection " +
+	    "wdtJobCollection " +
+	    "wdtFolderCollection " +
+	    "wdtEDocumentCollection " +
+	    "wdtReferenceRecordCollection " +
+	    "wdtUserCollection " +
+	    "wdtGroupCollection " +
+	    "wdtRoleCollection " +
+	    "wdtContents " +
+	    "wdtUserList " +
+	    "wdtSearchDescription " +
+	    "wdtDeadLine " +
+	    "wdtPickSet " +
+	    "wdtAccountCollection ";
+	
+	  // enum TWorkImportance
+	  var TWorkImportance = "wiLow " + "wiNormal " + "wiHigh ";
+	
+	  // enum TWorkRouteType
+	  var TWorkRouteType = "wrtSoft " + "wrtHard ";
+	
+	  // enum TWorkState
+	  var TWorkState =
+	    "wsInit " +
+	    "wsRunning " +
+	    "wsDone " +
+	    "wsControlled " +
+	    "wsAborted " +
+	    "wsContinued ";
+	
+	  // enum TWorkTextBuildingMode
+	  var TWorkTextBuildingMode =
+	    "wtmFull " + "wtmFromCurrent " + "wtmOnlyCurrent ";
+	
+	  // Перечисления
+	  var ENUMS =
+	    TAccountType +
+	    TActionEnabledMode +
+	    TAddPosition +
+	    TAlignment +
+	    TAreaShowMode +
+	    TCertificateInvalidationReason +
+	    TCertificateType +
+	    TCheckListBoxItemState +
+	    TCloseOnEsc +
+	    TCompType +
+	    TConditionFormat +
+	    TConnectionIntent +
+	    TContentKind +
+	    TControlType +
+	    TCriterionContentType +
+	    TCultureType +
+	    TDataSetEventType +
+	    TDataSetState +
+	    TDateFormatType +
+	    TDateOffsetType +
+	    TDateTimeKind +
+	    TDeaAccessRights +
+	    TDocumentDefaultAction +
+	    TEditMode +
+	    TEditorCloseObservType +
+	    TEdmsApplicationAction +
+	    TEDocumentLockType +
+	    TEDocumentStepShowMode +
+	    TEDocumentStepVersionType +
+	    TEDocumentStorageFunction +
+	    TEDocumentStorageType +
+	    TEDocumentVersionSourceType +
+	    TEDocumentVersionState +
+	    TEncodeType +
+	    TExceptionCategory +
+	    TExportedSignaturesType +
+	    TExportedVersionType +
+	    TFieldDataType +
+	    TFolderType +
+	    TGridRowHeight +
+	    THyperlinkType +
+	    TImageFileFormat +
+	    TImageMode +
+	    TImageType +
+	    TInplaceHintKind +
+	    TISBLContext +
+	    TItemShow +
+	    TJobKind +
+	    TJoinType +
+	    TLabelPos +
+	    TLicensingType +
+	    TLifeCycleStageFontColor +
+	    TLifeCycleStageFontStyle +
+	    TLockableDevelopmentComponentType +
+	    TMaxRecordCountRestrictionType +
+	    TRangeValueType +
+	    TRelativeDate +
+	    TReportDestination +
+	    TReqDataType +
+	    TRequisiteEventType +
+	    TSBTimeType +
+	    TSearchShowMode +
+	    TSelectMode +
+	    TSignatureType +
+	    TSignerContentType +
+	    TStringsSortType +
+	    TStringValueType +
+	    TStructuredObjectAttributeType +
+	    TTaskAbortReason +
+	    TTextValueType +
+	    TUserObjectStatus +
+	    TUserType +
+	    TValuesBuildType +
+	    TViewMode +
+	    TViewSelectionMode +
+	    TWizardActionType +
+	    TWizardFormElementProperty +
+	    TWizardFormElementType +
+	    TWizardParamType +
+	    TWizardStepResult +
+	    TWizardStepType +
+	    TWorkAccessType +
+	    TWorkflowBlockType +
+	    TWorkflowDataType +
+	    TWorkImportance +
+	    TWorkRouteType +
+	    TWorkState +
+	    TWorkTextBuildingMode;
+	
+	  // Системные функции ==> SYSFUNCTIONS
+	  var system_functions =
+	    "AddSubString " +
+	    "AdjustLineBreaks " +
+	    "AmountInWords " +
+	    "Analysis " +
+	    "ArrayDimCount " +
+	    "ArrayHighBound " +
+	    "ArrayLowBound " +
+	    "ArrayOf " +
+	    "ArrayReDim " +
+	    "Assert " +
+	    "Assigned " +
+	    "BeginOfMonth " +
+	    "BeginOfPeriod " +
+	    "BuildProfilingOperationAnalysis " +
+	    "CallProcedure " +
+	    "CanReadFile " +
+	    "CArrayElement " +
+	    "CDataSetRequisite " +
+	    "ChangeDate " +
+	    "ChangeReferenceDataset " +
+	    "Char " +
+	    "CharPos " +
+	    "CheckParam " +
+	    "CheckParamValue " +
+	    "CompareStrings " +
+	    "ConstantExists " +
+	    "ControlState " +
+	    "ConvertDateStr " +
+	    "Copy " +
+	    "CopyFile " +
+	    "CreateArray " +
+	    "CreateCachedReference " +
+	    "CreateConnection " +
+	    "CreateDialog " +
+	    "CreateDualListDialog " +
+	    "CreateEditor " +
+	    "CreateException " +
+	    "CreateFile " +
+	    "CreateFolderDialog " +
+	    "CreateInputDialog " +
+	    "CreateLinkFile " +
+	    "CreateList " +
+	    "CreateLock " +
+	    "CreateMemoryDataSet " +
+	    "CreateObject " +
+	    "CreateOpenDialog " +
+	    "CreateProgress " +
+	    "CreateQuery " +
+	    "CreateReference " +
+	    "CreateReport " +
+	    "CreateSaveDialog " +
+	    "CreateScript " +
+	    "CreateSQLPivotFunction " +
+	    "CreateStringList " +
+	    "CreateTreeListSelectDialog " +
+	    "CSelectSQL " +
+	    "CSQL " +
+	    "CSubString " +
+	    "CurrentUserID " +
+	    "CurrentUserName " +
+	    "CurrentVersion " +
+	    "DataSetLocateEx " +
+	    "DateDiff " +
+	    "DateTimeDiff " +
+	    "DateToStr " +
+	    "DayOfWeek " +
+	    "DeleteFile " +
+	    "DirectoryExists " +
+	    "DisableCheckAccessRights " +
+	    "DisableCheckFullShowingRestriction " +
+	    "DisableMassTaskSendingRestrictions " +
+	    "DropTable " +
+	    "DupeString " +
+	    "EditText " +
+	    "EnableCheckAccessRights " +
+	    "EnableCheckFullShowingRestriction " +
+	    "EnableMassTaskSendingRestrictions " +
+	    "EndOfMonth " +
+	    "EndOfPeriod " +
+	    "ExceptionExists " +
+	    "ExceptionsOff " +
+	    "ExceptionsOn " +
+	    "Execute " +
+	    "ExecuteProcess " +
+	    "Exit " +
+	    "ExpandEnvironmentVariables " +
+	    "ExtractFileDrive " +
+	    "ExtractFileExt " +
+	    "ExtractFileName " +
+	    "ExtractFilePath " +
+	    "ExtractParams " +
+	    "FileExists " +
+	    "FileSize " +
+	    "FindFile " +
+	    "FindSubString " +
+	    "FirmContext " +
+	    "ForceDirectories " +
+	    "Format " +
+	    "FormatDate " +
+	    "FormatNumeric " +
+	    "FormatSQLDate " +
+	    "FormatString " +
+	    "FreeException " +
+	    "GetComponent " +
+	    "GetComponentLaunchParam " +
+	    "GetConstant " +
+	    "GetLastException " +
+	    "GetReferenceRecord " +
+	    "GetRefTypeByRefID " +
+	    "GetTableID " +
+	    "GetTempFolder " +
+	    "IfThen " +
+	    "In " +
+	    "IndexOf " +
+	    "InputDialog " +
+	    "InputDialogEx " +
+	    "InteractiveMode " +
+	    "IsFileLocked " +
+	    "IsGraphicFile " +
+	    "IsNumeric " +
+	    "Length " +
+	    "LoadString " +
+	    "LoadStringFmt " +
+	    "LocalTimeToUTC " +
+	    "LowerCase " +
+	    "Max " +
+	    "MessageBox " +
+	    "MessageBoxEx " +
+	    "MimeDecodeBinary " +
+	    "MimeDecodeString " +
+	    "MimeEncodeBinary " +
+	    "MimeEncodeString " +
+	    "Min " +
+	    "MoneyInWords " +
+	    "MoveFile " +
+	    "NewID " +
+	    "Now " +
+	    "OpenFile " +
+	    "Ord " +
+	    "Precision " +
+	    "Raise " +
+	    "ReadCertificateFromFile " +
+	    "ReadFile " +
+	    "ReferenceCodeByID " +
+	    "ReferenceNumber " +
+	    "ReferenceRequisiteMode " +
+	    "ReferenceRequisiteValue " +
+	    "RegionDateSettings " +
+	    "RegionNumberSettings " +
+	    "RegionTimeSettings " +
+	    "RegRead " +
+	    "RegWrite " +
+	    "RenameFile " +
+	    "Replace " +
+	    "Round " +
+	    "SelectServerCode " +
+	    "SelectSQL " +
+	    "ServerDateTime " +
+	    "SetConstant " +
+	    "SetManagedFolderFieldsState " +
+	    "ShowConstantsInputDialog " +
+	    "ShowMessage " +
+	    "Sleep " +
+	    "Split " +
+	    "SQL " +
+	    "SQL2XLSTAB " +
+	    "SQLProfilingSendReport " +
+	    "StrToDate " +
+	    "SubString " +
+	    "SubStringCount " +
+	    "SystemSetting " +
+	    "Time " +
+	    "TimeDiff " +
+	    "Today " +
+	    "Transliterate " +
+	    "Trim " +
+	    "UpperCase " +
+	    "UserStatus " +
+	    "UTCToLocalTime " +
+	    "ValidateXML " +
+	    "VarIsClear " +
+	    "VarIsEmpty " +
+	    "VarIsNull " +
+	    "WorkTimeDiff " +
+	    "WriteFile " +
+	    "WriteFileEx " +
+	    "WriteObjectHistory " +
+	    "Анализ " +
+	    "БазаДанных " +
+	    "БлокЕсть " +
+	    "БлокЕстьРасш " +
+	    "БлокИнфо " +
+	    "БлокСнять " +
+	    "БлокСнятьРасш " +
+	    "БлокУстановить " +
+	    "Ввод " +
+	    "ВводМеню " +
+	    "ВедС " +
+	    "ВедСпр " +
+	    "ВерхняяГраницаМассива " +
+	    "ВнешПрогр " +
+	    "Восст " +
+	    "ВременнаяПапка " +
+	    "Время " +
+	    "ВыборSQL " +
+	    "ВыбратьЗапись " +
+	    "ВыделитьСтр " +
+	    "Вызвать " +
+	    "Выполнить " +
+	    "ВыпПрогр " +
+	    "ГрафическийФайл " +
+	    "ГруппаДополнительно " +
+	    "ДатаВремяСерв " +
+	    "ДеньНедели " +
+	    "ДиалогДаНет " +
+	    "ДлинаСтр " +
+	    "ДобПодстр " +
+	    "ЕПусто " +
+	    "ЕслиТо " +
+	    "ЕЧисло " +
+	    "ЗамПодстр " +
+	    "ЗаписьСправочника " +
+	    "ЗначПоляСпр " +
+	    "ИДТипСпр " +
+	    "ИзвлечьДиск " +
+	    "ИзвлечьИмяФайла " +
+	    "ИзвлечьПуть " +
+	    "ИзвлечьРасширение " +
+	    "ИзмДат " +
+	    "ИзменитьРазмерМассива " +
+	    "ИзмеренийМассива " +
+	    "ИмяОрг " +
+	    "ИмяПоляСпр " +
+	    "Индекс " +
+	    "ИндикаторЗакрыть " +
+	    "ИндикаторОткрыть " +
+	    "ИндикаторШаг " +
+	    "ИнтерактивныйРежим " +
+	    "ИтогТблСпр " +
+	    "КодВидВедСпр " +
+	    "КодВидСпрПоИД " +
+	    "КодПоAnalit " +
+	    "КодСимвола " +
+	    "КодСпр " +
+	    "КолПодстр " +
+	    "КолПроп " +
+	    "КонМес " +
+	    "Конст " +
+	    "КонстЕсть " +
+	    "КонстЗнач " +
+	    "КонТран " +
+	    "КопироватьФайл " +
+	    "КопияСтр " +
+	    "КПериод " +
+	    "КСтрТблСпр " +
+	    "Макс " +
+	    "МаксСтрТблСпр " +
+	    "Массив " +
+	    "Меню " +
+	    "МенюРасш " +
+	    "Мин " +
+	    "НаборДанныхНайтиРасш " +
+	    "НаимВидСпр " +
+	    "НаимПоAnalit " +
+	    "НаимСпр " +
+	    "НастроитьПереводыСтрок " +
+	    "НачМес " +
+	    "НачТран " +
+	    "НижняяГраницаМассива " +
+	    "НомерСпр " +
+	    "НПериод " +
+	    "Окно " +
+	    "Окр " +
+	    "Окружение " +
+	    "ОтлИнфДобавить " +
+	    "ОтлИнфУдалить " +
+	    "Отчет " +
+	    "ОтчетАнал " +
+	    "ОтчетИнт " +
+	    "ПапкаСуществует " +
+	    "Пауза " +
+	    "ПВыборSQL " +
+	    "ПереименоватьФайл " +
+	    "Переменные " +
+	    "ПереместитьФайл " +
+	    "Подстр " +
+	    "ПоискПодстр " +
+	    "ПоискСтр " +
+	    "ПолучитьИДТаблицы " +
+	    "ПользовательДополнительно " +
+	    "ПользовательИД " +
+	    "ПользовательИмя " +
+	    "ПользовательСтатус " +
+	    "Прервать " +
+	    "ПроверитьПараметр " +
+	    "ПроверитьПараметрЗнач " +
+	    "ПроверитьУсловие " +
+	    "РазбСтр " +
+	    "РазнВремя " +
+	    "РазнДат " +
+	    "РазнДатаВремя " +
+	    "РазнРабВремя " +
+	    "РегУстВрем " +
+	    "РегУстДат " +
+	    "РегУстЧсл " +
+	    "РедТекст " +
+	    "РеестрЗапись " +
+	    "РеестрСписокИменПарам " +
+	    "РеестрЧтение " +
+	    "РеквСпр " +
+	    "РеквСпрПр " +
+	    "Сегодня " +
+	    "Сейчас " +
+	    "Сервер " +
+	    "СерверПроцессИД " +
+	    "СертификатФайлСчитать " +
+	    "СжПроб " +
+	    "Символ " +
+	    "СистемаДиректумКод " +
+	    "СистемаИнформация " +
+	    "СистемаКод " +
+	    "Содержит " +
+	    "СоединениеЗакрыть " +
+	    "СоединениеОткрыть " +
+	    "СоздатьДиалог " +
+	    "СоздатьДиалогВыбораИзДвухСписков " +
+	    "СоздатьДиалогВыбораПапки " +
+	    "СоздатьДиалогОткрытияФайла " +
+	    "СоздатьДиалогСохраненияФайла " +
+	    "СоздатьЗапрос " +
+	    "СоздатьИндикатор " +
+	    "СоздатьИсключение " +
+	    "СоздатьКэшированныйСправочник " +
+	    "СоздатьМассив " +
+	    "СоздатьНаборДанных " +
+	    "СоздатьОбъект " +
+	    "СоздатьОтчет " +
+	    "СоздатьПапку " +
+	    "СоздатьРедактор " +
+	    "СоздатьСоединение " +
+	    "СоздатьСписок " +
+	    "СоздатьСписокСтрок " +
+	    "СоздатьСправочник " +
+	    "СоздатьСценарий " +
+	    "СоздСпр " +
+	    "СостСпр " +
+	    "Сохр " +
+	    "СохрСпр " +
+	    "СписокСистем " +
+	    "Спр " +
+	    "Справочник " +
+	    "СпрБлокЕсть " +
+	    "СпрБлокСнять " +
+	    "СпрБлокСнятьРасш " +
+	    "СпрБлокУстановить " +
+	    "СпрИзмНабДан " +
+	    "СпрКод " +
+	    "СпрНомер " +
+	    "СпрОбновить " +
+	    "СпрОткрыть " +
+	    "СпрОтменить " +
+	    "СпрПарам " +
+	    "СпрПолеЗнач " +
+	    "СпрПолеИмя " +
+	    "СпрРекв " +
+	    "СпрРеквВведЗн " +
+	    "СпрРеквНовые " +
+	    "СпрРеквПр " +
+	    "СпрРеквПредЗн " +
+	    "СпрРеквРежим " +
+	    "СпрРеквТипТекст " +
+	    "СпрСоздать " +
+	    "СпрСост " +
+	    "СпрСохранить " +
+	    "СпрТблИтог " +
+	    "СпрТблСтр " +
+	    "СпрТблСтрКол " +
+	    "СпрТблСтрМакс " +
+	    "СпрТблСтрМин " +
+	    "СпрТблСтрПред " +
+	    "СпрТблСтрСлед " +
+	    "СпрТблСтрСозд " +
+	    "СпрТблСтрУд " +
+	    "СпрТекПредст " +
+	    "СпрУдалить " +
+	    "СравнитьСтр " +
+	    "СтрВерхРегистр " +
+	    "СтрНижнРегистр " +
+	    "СтрТблСпр " +
+	    "СумПроп " +
+	    "Сценарий " +
+	    "СценарийПарам " +
+	    "ТекВерсия " +
+	    "ТекОрг " +
+	    "Точн " +
+	    "Тран " +
+	    "Транслитерация " +
+	    "УдалитьТаблицу " +
+	    "УдалитьФайл " +
+	    "УдСпр " +
+	    "УдСтрТблСпр " +
+	    "Уст " +
+	    "УстановкиКонстант " +
+	    "ФайлАтрибутСчитать " +
+	    "ФайлАтрибутУстановить " +
+	    "ФайлВремя " +
+	    "ФайлВремяУстановить " +
+	    "ФайлВыбрать " +
+	    "ФайлЗанят " +
+	    "ФайлЗаписать " +
+	    "ФайлИскать " +
+	    "ФайлКопировать " +
+	    "ФайлМожноЧитать " +
+	    "ФайлОткрыть " +
+	    "ФайлПереименовать " +
+	    "ФайлПерекодировать " +
+	    "ФайлПереместить " +
+	    "ФайлПросмотреть " +
+	    "ФайлРазмер " +
+	    "ФайлСоздать " +
+	    "ФайлСсылкаСоздать " +
+	    "ФайлСуществует " +
+	    "ФайлСчитать " +
+	    "ФайлУдалить " +
+	    "ФмтSQLДат " +
+	    "ФмтДат " +
+	    "ФмтСтр " +
+	    "ФмтЧсл " +
+	    "Формат " +
+	    "ЦМассивЭлемент " +
+	    "ЦНаборДанныхРеквизит " +
+	    "ЦПодстр ";
+	
+	  // Предопределенные переменные ==> built_in
+	  var predefined_variables =
+	    "AltState " +
+	    "Application " +
+	    "CallType " +
+	    "ComponentTokens " +
+	    "CreatedJobs " +
+	    "CreatedNotices " +
+	    "ControlState " +
+	    "DialogResult " +
+	    "Dialogs " +
+	    "EDocuments " +
+	    "EDocumentVersionSource " +
+	    "Folders " +
+	    "GlobalIDs " +
+	    "Job " +
+	    "Jobs " +
+	    "InputValue " +
+	    "LookUpReference " +
+	    "LookUpRequisiteNames " +
+	    "LookUpSearch " +
+	    "Object " +
+	    "ParentComponent " +
+	    "Processes " +
+	    "References " +
+	    "Requisite " +
+	    "ReportName " +
+	    "Reports " +
+	    "Result " +
+	    "Scripts " +
+	    "Searches " +
+	    "SelectedAttachments " +
+	    "SelectedItems " +
+	    "SelectMode " +
+	    "Sender " +
+	    "ServerEvents " +
+	    "ServiceFactory " +
+	    "ShiftState " +
+	    "SubTask " +
+	    "SystemDialogs " +
+	    "Tasks " +
+	    "Wizard " +
+	    "Wizards " +
+	    "Work " +
+	    "ВызовСпособ " +
+	    "ИмяОтчета " +
+	    "РеквЗнач ";
+	
+	  // Интерфейсы ==> type
+	  var interfaces =
+	    "IApplication " +
+	    "IAccessRights " +
+	    "IAccountRepository " +
+	    "IAccountSelectionRestrictions " +
+	    "IAction " +
+	    "IActionList " +
+	    "IAdministrationHistoryDescription " +
+	    "IAnchors " +
+	    "IApplication " +
+	    "IArchiveInfo " +
+	    "IAttachment " +
+	    "IAttachmentList " +
+	    "ICheckListBox " +
+	    "ICheckPointedList " +
+	    "IColumn " +
+	    "IComponent " +
+	    "IComponentDescription " +
+	    "IComponentToken " +
+	    "IComponentTokenFactory " +
+	    "IComponentTokenInfo " +
+	    "ICompRecordInfo " +
+	    "IConnection " +
+	    "IContents " +
+	    "IControl " +
+	    "IControlJob " +
+	    "IControlJobInfo " +
+	    "IControlList " +
+	    "ICrypto " +
+	    "ICrypto2 " +
+	    "ICustomJob " +
+	    "ICustomJobInfo " +
+	    "ICustomListBox " +
+	    "ICustomObjectWizardStep " +
+	    "ICustomWork " +
+	    "ICustomWorkInfo " +
+	    "IDataSet " +
+	    "IDataSetAccessInfo " +
+	    "IDataSigner " +
+	    "IDateCriterion " +
+	    "IDateRequisite " +
+	    "IDateRequisiteDescription " +
+	    "IDateValue " +
+	    "IDeaAccessRights " +
+	    "IDeaObjectInfo " +
+	    "IDevelopmentComponentLock " +
+	    "IDialog " +
+	    "IDialogFactory " +
+	    "IDialogPickRequisiteItems " +
+	    "IDialogsFactory " +
+	    "IDICSFactory " +
+	    "IDocRequisite " +
+	    "IDocumentInfo " +
+	    "IDualListDialog " +
+	    "IECertificate " +
+	    "IECertificateInfo " +
+	    "IECertificates " +
+	    "IEditControl " +
+	    "IEditorForm " +
+	    "IEdmsExplorer " +
+	    "IEdmsObject " +
+	    "IEdmsObjectDescription " +
+	    "IEdmsObjectFactory " +
+	    "IEdmsObjectInfo " +
+	    "IEDocument " +
+	    "IEDocumentAccessRights " +
+	    "IEDocumentDescription " +
+	    "IEDocumentEditor " +
+	    "IEDocumentFactory " +
+	    "IEDocumentInfo " +
+	    "IEDocumentStorage " +
+	    "IEDocumentVersion " +
+	    "IEDocumentVersionListDialog " +
+	    "IEDocumentVersionSource " +
+	    "IEDocumentWizardStep " +
+	    "IEDocVerSignature " +
+	    "IEDocVersionState " +
+	    "IEnabledMode " +
+	    "IEncodeProvider " +
+	    "IEncrypter " +
+	    "IEvent " +
+	    "IEventList " +
+	    "IException " +
+	    "IExternalEvents " +
+	    "IExternalHandler " +
+	    "IFactory " +
+	    "IField " +
+	    "IFileDialog " +
+	    "IFolder " +
+	    "IFolderDescription " +
+	    "IFolderDialog " +
+	    "IFolderFactory " +
+	    "IFolderInfo " +
+	    "IForEach " +
+	    "IForm " +
+	    "IFormTitle " +
+	    "IFormWizardStep " +
+	    "IGlobalIDFactory " +
+	    "IGlobalIDInfo " +
+	    "IGrid " +
+	    "IHasher " +
+	    "IHistoryDescription " +
+	    "IHyperLinkControl " +
+	    "IImageButton " +
+	    "IImageControl " +
+	    "IInnerPanel " +
+	    "IInplaceHint " +
+	    "IIntegerCriterion " +
+	    "IIntegerList " +
+	    "IIntegerRequisite " +
+	    "IIntegerValue " +
+	    "IISBLEditorForm " +
+	    "IJob " +
+	    "IJobDescription " +
+	    "IJobFactory " +
+	    "IJobForm " +
+	    "IJobInfo " +
+	    "ILabelControl " +
+	    "ILargeIntegerCriterion " +
+	    "ILargeIntegerRequisite " +
+	    "ILargeIntegerValue " +
+	    "ILicenseInfo " +
+	    "ILifeCycleStage " +
+	    "IList " +
+	    "IListBox " +
+	    "ILocalIDInfo " +
+	    "ILocalization " +
+	    "ILock " +
+	    "IMemoryDataSet " +
+	    "IMessagingFactory " +
+	    "IMetadataRepository " +
+	    "INotice " +
+	    "INoticeInfo " +
+	    "INumericCriterion " +
+	    "INumericRequisite " +
+	    "INumericValue " +
+	    "IObject " +
+	    "IObjectDescription " +
+	    "IObjectImporter " +
+	    "IObjectInfo " +
+	    "IObserver " +
+	    "IPanelGroup " +
+	    "IPickCriterion " +
+	    "IPickProperty " +
+	    "IPickRequisite " +
+	    "IPickRequisiteDescription " +
+	    "IPickRequisiteItem " +
+	    "IPickRequisiteItems " +
+	    "IPickValue " +
+	    "IPrivilege " +
+	    "IPrivilegeList " +
+	    "IProcess " +
+	    "IProcessFactory " +
+	    "IProcessMessage " +
+	    "IProgress " +
+	    "IProperty " +
+	    "IPropertyChangeEvent " +
+	    "IQuery " +
+	    "IReference " +
+	    "IReferenceCriterion " +
+	    "IReferenceEnabledMode " +
+	    "IReferenceFactory " +
+	    "IReferenceHistoryDescription " +
+	    "IReferenceInfo " +
+	    "IReferenceRecordCardWizardStep " +
+	    "IReferenceRequisiteDescription " +
+	    "IReferencesFactory " +
+	    "IReferenceValue " +
+	    "IRefRequisite " +
+	    "IReport " +
+	    "IReportFactory " +
+	    "IRequisite " +
+	    "IRequisiteDescription " +
+	    "IRequisiteDescriptionList " +
+	    "IRequisiteFactory " +
+	    "IRichEdit " +
+	    "IRouteStep " +
+	    "IRule " +
+	    "IRuleList " +
+	    "ISchemeBlock " +
+	    "IScript " +
+	    "IScriptFactory " +
+	    "ISearchCriteria " +
+	    "ISearchCriterion " +
+	    "ISearchDescription " +
+	    "ISearchFactory " +
+	    "ISearchFolderInfo " +
+	    "ISearchForObjectDescription " +
+	    "ISearchResultRestrictions " +
+	    "ISecuredContext " +
+	    "ISelectDialog " +
+	    "IServerEvent " +
+	    "IServerEventFactory " +
+	    "IServiceDialog " +
+	    "IServiceFactory " +
+	    "ISignature " +
+	    "ISignProvider " +
+	    "ISignProvider2 " +
+	    "ISignProvider3 " +
+	    "ISimpleCriterion " +
+	    "IStringCriterion " +
+	    "IStringList " +
+	    "IStringRequisite " +
+	    "IStringRequisiteDescription " +
+	    "IStringValue " +
+	    "ISystemDialogsFactory " +
+	    "ISystemInfo " +
+	    "ITabSheet " +
+	    "ITask " +
+	    "ITaskAbortReasonInfo " +
+	    "ITaskCardWizardStep " +
+	    "ITaskDescription " +
+	    "ITaskFactory " +
+	    "ITaskInfo " +
+	    "ITaskRoute " +
+	    "ITextCriterion " +
+	    "ITextRequisite " +
+	    "ITextValue " +
+	    "ITreeListSelectDialog " +
+	    "IUser " +
+	    "IUserList " +
+	    "IValue " +
+	    "IView " +
+	    "IWebBrowserControl " +
+	    "IWizard " +
+	    "IWizardAction " +
+	    "IWizardFactory " +
+	    "IWizardFormElement " +
+	    "IWizardParam " +
+	    "IWizardPickParam " +
+	    "IWizardReferenceParam " +
+	    "IWizardStep " +
+	    "IWorkAccessRights " +
+	    "IWorkDescription " +
+	    "IWorkflowAskableParam " +
+	    "IWorkflowAskableParams " +
+	    "IWorkflowBlock " +
+	    "IWorkflowBlockResult " +
+	    "IWorkflowEnabledMode " +
+	    "IWorkflowParam " +
+	    "IWorkflowPickParam " +
+	    "IWorkflowReferenceParam " +
+	    "IWorkState " +
+	    "IWorkTreeCustomNode " +
+	    "IWorkTreeJobNode " +
+	    "IWorkTreeTaskNode " +
+	    "IXMLEditorForm " +
+	    "SBCrypto ";
+	
+	  // built_in : встроенные или библиотечные объекты (константы, перечисления)
+	  var BUILTIN = CONSTANTS + ENUMS;
+	
+	  // class: встроенные наборы значений, системные объекты, фабрики
+	  var CLASS = predefined_variables;
+	
+	  // literal : примитивные типы
+	  var LITERAL = "null true false nil ";
+	
+	  // number : числа
+	  var NUMBERS = {
+	    className: "number",
+	    begin: hljs.NUMBER_RE,
+	    relevance: 0,
+	  };
+	
+	  // string : строки
+	  var STRINGS = {
+	    className: "string",
+	    variants: [{ begin: '"', end: '"' }, { begin: "'", end: "'" }],
+	  };
+	
+	  // Токены
+	  var DOCTAGS = {
+	    className: "doctag",
+	    begin: "\\b(?:TODO|DONE|BEGIN|END|STUB|CHG|FIXME|NOTE|BUG|XXX)\\b",
+	    relevance: 0,
+	  };
+	
+	  // Однострочный комментарий
+	  var ISBL_LINE_COMMENT_MODE = {
+	    className: "comment",
+	    begin: "//",
+	    end: "$",
+	    relevance: 0,
+	    contains: [hljs.PHRASAL_WORDS_MODE, DOCTAGS],
+	  };
+	
+	  // Многострочный комментарий
+	  var ISBL_BLOCK_COMMENT_MODE = {
+	    className: "comment",
+	    begin: "/\\*",
+	    end: "\\*/",
+	    relevance: 0,
+	    contains: [hljs.PHRASAL_WORDS_MODE, DOCTAGS],
+	  };
+	
+	  // comment : комментарии
+	  var COMMENTS = {
+	    variants: [ISBL_LINE_COMMENT_MODE, ISBL_BLOCK_COMMENT_MODE],
+	  };
+	
+	  // keywords : ключевые слова
+	  var KEYWORDS = {
+	    keyword: KEYWORD,
+	    built_in: BUILTIN,
+	    class: CLASS,
+	    literal: LITERAL,
+	  };
+	
+	  // methods : методы
+	  var METHODS = {
+	    begin: "\\.\\s*" + hljs.UNDERSCORE_IDENT_RE,
+	    keywords: KEYWORDS,
+	    relevance: 0,
+	  };
+	
+	  // type : встроенные типы
+	  var TYPES = {
+	    className: "type",
+	    begin: ":[ \\t]*(" + interfaces.trim().replace(/\s/g, "|") + ")",
+	    end: "[ \\t]*=",
+	    excludeEnd: true,
+	  };
+	
+	  // variables : переменные
+	  var VARIABLES = {
+	    className: "variable",
+	    lexemes: UNDERSCORE_IDENT_RE,
+	    keywords: KEYWORDS,
+	    begin: UNDERSCORE_IDENT_RE,
+	    relevance: 0,
+	    containts: [TYPES, METHODS],
+	  };
+	
+	  // Имена функций
+	  var FUNCTION_TITLE = FUNCTION_NAME_IDENT_RE + "\\(";
+	
+	  var TITLE_MODE = {
+	    className: "title",
+	    lexemes: UNDERSCORE_IDENT_RE,
+	    keywords: {
+	      built_in: system_functions,
+	    },
+	    begin: FUNCTION_TITLE,
+	    end: "\\(",
+	    returnBegin: true,
+	    excludeEnd: true,
+	  };
+	
+	  // function : функции
+	  var FUNCTIONS = {
+	    className: "function",
+	    begin: FUNCTION_TITLE,
+	    end: "\\)$",
+	    returnBegin: true,
+	    lexemes: UNDERSCORE_IDENT_RE,
+	    keywords: KEYWORDS,
+	    illegal: "[\\[\\]\\|\\$\\?%,~#@]",
+	    contains: [TITLE_MODE, METHODS, VARIABLES, STRINGS, NUMBERS, COMMENTS],
+	  };
+	
+	  return {
+	    aliases: ["isbl"],
+	    case_insensitive: true,
+	    lexemes: UNDERSCORE_IDENT_RE,
+	    keywords: KEYWORDS,
+	    illegal: "\\$|\\?|%|,|;$|~|#|@|</",
+	    contains: [
+	      FUNCTIONS,
+	      TYPES,
+	      METHODS,
+	      VARIABLES,
+	      STRINGS,
+	      NUMBERS,
+	      COMMENTS,
+	    ],
+	  };
+	};
+
+/***/ },
+/* 255 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
 	  var JAVA_IDENT_RE = '[\u00C0-\u02B8a-zA-Z_$][\u00C0-\u02B8a-zA-Z_$0-9]*';
 	  var GENERIC_IDENT_RE = JAVA_IDENT_RE + '(<' + JAVA_IDENT_RE + '(\\s*,\\s*' + JAVA_IDENT_RE + ')*>)?';
 	  var KEYWORDS =
-	    'false synchronized int abstract float private char boolean static null if const ' +
+	    'false synchronized int abstract float private char boolean var static null if const ' +
 	    'for true while long strictfp finally protected import native final void ' +
 	    'enum else break transient catch instanceof byte super volatile case assert short ' +
 	    'package default double public try this switch continue throws protected public private ' +
@@ -29289,7 +33907,7 @@
 	};
 
 /***/ },
-/* 249 */
+/* 256 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29314,7 +33932,6 @@
 	      'module console window document Symbol Set Map WeakSet WeakMap Proxy Reflect ' +
 	      'Promise'
 	  };
-	  var EXPRESSIONS;
 	  var NUMBER = {
 	    className: 'number',
 	    variants: [
@@ -29456,7 +34073,7 @@
 	        ]
 	      },
 	      {
-	        beginKeywords: 'constructor', end: /\{/, excludeEnd: true
+	        beginKeywords: 'constructor get set', end: /\{/, excludeEnd: true
 	      }
 	    ],
 	    illegal: /#(?!!)/
@@ -29464,7 +34081,7 @@
 	};
 
 /***/ },
-/* 250 */
+/* 257 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -29515,7 +34132,7 @@
 	};
 
 /***/ },
-/* 251 */
+/* 258 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29556,7 +34173,7 @@
 	};
 
 /***/ },
-/* 252 */
+/* 259 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29722,7 +34339,7 @@
 	};
 
 /***/ },
-/* 253 */
+/* 260 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29750,7 +34367,7 @@
 	};
 
 /***/ },
-/* 254 */
+/* 261 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -29758,8 +34375,9 @@
 	    keyword:
 	      'abstract as val var vararg get set class object open private protected public noinline ' +
 	      'crossinline dynamic final enum if else do while for when throw try catch finally ' +
-	      'import package is in fun override companion reified inline lateinit init' +
+	      'import package is in fun override companion reified inline lateinit init ' +
 	      'interface annotation data sealed internal infix operator out by constructor super ' +
+	      'tailrec where const inner suspend typealias external expect actual ' +
 	      // to be deleted soon
 	      'trait volatile transient native default',
 	    built_in:
@@ -29829,7 +34447,31 @@
 	    ]
 	  };
 	
+	  // https://kotlinlang.org/docs/reference/whatsnew11.html#underscores-in-numeric-literals
+	  // According to the doc above, the number mode of kotlin is the same as java 8,
+	  // so the code below is copied from java.js
+	  var KOTLIN_NUMBER_RE = '\\b' +
+	    '(' +
+	      '0[bB]([01]+[01_]+[01]+|[01]+)' + // 0b...
+	      '|' +
+	      '0[xX]([a-fA-F0-9]+[a-fA-F0-9_]+[a-fA-F0-9]+|[a-fA-F0-9]+)' + // 0x...
+	      '|' +
+	      '(' +
+	        '([\\d]+[\\d_]+[\\d]+|[\\d]+)(\\.([\\d]+[\\d_]+[\\d]+|[\\d]+))?' +
+	        '|' +
+	        '\\.([\\d]+[\\d_]+[\\d]+|[\\d]+)' +
+	      ')' +
+	      '([eE][-+]?\\d+)?' + // octal, decimal, float
+	    ')' +
+	    '[lLfF]?';
+	  var KOTLIN_NUMBER_MODE = {
+	    className: 'number',
+	    begin: KOTLIN_NUMBER_RE,
+	    relevance: 0
+	  };
+	
 	  return {
+	    aliases: ['kt'],
 	    keywords: KEYWORDS,
 	    contains : [
 	      hljs.COMMENT(
@@ -29922,13 +34564,13 @@
 	        begin: "^#!/usr/bin/env", end: '$',
 	        illegal: '\n'
 	      },
-	      hljs.C_NUMBER_MODE
+	      KOTLIN_NUMBER_MODE
 	    ]
 	  };
 	};
 
 /***/ },
-/* 255 */
+/* 262 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30095,7 +34737,7 @@
 	};
 
 /***/ },
-/* 256 */
+/* 263 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30122,7 +34764,7 @@
 	};
 
 /***/ },
-/* 257 */
+/* 264 */
 /***/ function(module, exports) {
 
 	module.exports = function (hljs) {
@@ -30166,7 +34808,7 @@
 	};
 
 /***/ },
-/* 258 */
+/* 265 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30310,7 +34952,7 @@
 	};
 
 /***/ },
-/* 259 */
+/* 266 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30417,7 +35059,7 @@
 	};
 
 /***/ },
-/* 260 */
+/* 267 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30578,7 +35220,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 268 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30731,7 +35373,7 @@
 	};
 
 /***/ },
-/* 262 */
+/* 269 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30824,7 +35466,7 @@
 	};
 
 /***/ },
-/* 263 */
+/* 270 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30911,7 +35553,7 @@
 	};
 
 /***/ },
-/* 264 */
+/* 271 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -30981,7 +35623,7 @@
 	};
 
 /***/ },
-/* 265 */
+/* 272 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -31066,7 +35708,7 @@
 	};
 
 /***/ },
-/* 266 */
+/* 273 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -31128,24 +35770,20 @@
 	};
 
 /***/ },
-/* 267 */
+/* 274 */
 /***/ function(module, exports) {
 
-	module.exports = function(hljs) {
-	  var COMMON_CONTAINS = [
-	    hljs.C_NUMBER_MODE,
-	    {
-	      className: 'string',
-	      begin: '\'', end: '\'',
-	      contains: [hljs.BACKSLASH_ESCAPE, {begin: '\'\''}]
-	    }
-	  ];
+	module.exports = /*
+	  Formal syntax is not published, helpful link:
+	  https://github.com/kornilova-l/matlab-IntelliJ-plugin/blob/master/src/main/grammar/Matlab.bnf
+	*/
+	function(hljs) {
+	
+	  var TRANSPOSE_RE = '(\'|\\.\')+';
 	  var TRANSPOSE = {
 	    relevance: 0,
 	    contains: [
-	      {
-	        begin: /'['\.]*/
-	      }
+	      { begin: TRANSPOSE_RE }
 	    ]
 	  };
 	
@@ -31168,7 +35806,9 @@
 	        'triu fliplr flipud flipdim rot90 find sub2ind ind2sub bsxfun ndgrid permute ipermute ' +
 	        'shiftdim circshift squeeze isscalar isvector ans eps realmax realmin pi i inf nan ' +
 	        'isnan isinf isfinite j why compan gallery hadamard hankel hilb invhilb magic pascal ' +
-	        'rosser toeplitz vander wilkinson'
+	        'rosser toeplitz vander wilkinson max min nanmax nanmin mean nanmean type table ' +
+	        'readtable writetable sortrows sort figure plot plot3 scatter scatter3 cellfun ' +
+	        'legend intersect ismember procrustes hold num2cell '
 	    },
 	    illegal: '(//|"|#|/\\*|\\s+/\\w+)',
 	    contains: [
@@ -31187,40 +35827,50 @@
 	        ]
 	      },
 	      {
-	        begin: /[a-zA-Z_][a-zA-Z_0-9]*'['\.]*/,
-	        returnBegin: true,
+	        className: 'built_in',
+	        begin: /true|false/,
 	        relevance: 0,
+	        starts: TRANSPOSE
+	      },
+	      {
+	        begin: '[a-zA-Z][a-zA-Z_0-9]*' + TRANSPOSE_RE,
+	        relevance: 0
+	      },
+	      {
+	        className: 'number',
+	        begin: hljs.C_NUMBER_RE,
+	        relevance: 0,
+	        starts: TRANSPOSE
+	      },
+	      {
+	        className: 'string',
+	        begin: '\'', end: '\'',
 	        contains: [
-	          {begin: /[a-zA-Z_][a-zA-Z_0-9]*/, relevance: 0},
-	          TRANSPOSE.contains[0]
-	        ]
+	          hljs.BACKSLASH_ESCAPE,
+	          {begin: '\'\''}]
 	      },
 	      {
-	        begin: '\\[', end: '\\]',
-	        contains: COMMON_CONTAINS,
+	        begin: /\]|}|\)/,
 	        relevance: 0,
 	        starts: TRANSPOSE
 	      },
 	      {
-	        begin: '\\{', end: /}/,
-	        contains: COMMON_CONTAINS,
-	        relevance: 0,
-	        starts: TRANSPOSE
-	      },
-	      {
-	        // transpose operators at the end of a function call
-	        begin: /\)/,
-	        relevance: 0,
+	        className: 'string',
+	        begin: '"', end: '"',
+	        contains: [
+	          hljs.BACKSLASH_ESCAPE,
+	          {begin: '""'}
+	        ],
 	        starts: TRANSPOSE
 	      },
 	      hljs.COMMENT('^\\s*\\%\\{\\s*$', '^\\s*\\%\\}\\s*$'),
 	      hljs.COMMENT('\\%', '$')
-	    ].concat(COMMON_CONTAINS)
+	    ]
 	  };
 	};
 
 /***/ },
-/* 268 */
+/* 275 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -31630,7 +36280,7 @@
 	};
 
 /***/ },
-/* 269 */
+/* 276 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -31859,7 +36509,7 @@
 	};
 
 /***/ },
-/* 270 */
+/* 277 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -31945,7 +36595,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 278 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32035,7 +36685,7 @@
 	};
 
 /***/ },
-/* 272 */
+/* 279 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32058,7 +36708,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 280 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32219,7 +36869,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 281 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32248,7 +36898,7 @@
 	};
 
 /***/ },
-/* 275 */
+/* 282 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32327,7 +36977,7 @@
 	};
 
 /***/ },
-/* 276 */
+/* 283 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32443,7 +37093,7 @@
 	};
 
 /***/ },
-/* 277 */
+/* 284 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32516,7 +37166,7 @@
 	};
 
 /***/ },
-/* 278 */
+/* 285 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32613,7 +37263,7 @@
 	};
 
 /***/ },
-/* 279 */
+/* 286 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32672,7 +37322,7 @@
 	};
 
 /***/ },
-/* 280 */
+/* 287 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32725,7 +37375,7 @@
 	};
 
 /***/ },
-/* 281 */
+/* 288 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32762,12 +37412,12 @@
 	  var COMPILER = {
 	    // !compiler_flags
 	    className: 'keyword',
-	    begin: /\!(addincludedir|addplugindir|appendfile|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversionsystem|ifdef|ifmacrodef|ifmacrondef|ifndef|if|include|insertmacro|macroend|macro|makensis|packhdr|searchparse|searchreplace|tempfile|undef|verbose|warning)/
+	    begin: /\!(addincludedir|addplugindir|appendfile|cd|define|delfile|echo|else|endif|error|execute|finalize|getdllversion|gettlbversion|if|ifdef|ifmacrodef|ifmacrondef|ifndef|include|insertmacro|macro|macroend|makensis|packhdr|searchparse|searchreplace|system|tempfile|undef|verbose|warning)/
 	  };
 	
 	  var METACHARS = {
 	    // $\n, $\r, $\t, $$
-	    className: 'subst',
+	    className: 'meta',
 	    begin: /\$(\\[nrt]|\$)/
 	  };
 	
@@ -32804,7 +37454,7 @@
 	    case_insensitive: false,
 	    keywords: {
 	      keyword:
-	      'Abort AddBrandingImage AddSize AllowRootDirInstall AllowSkipFiles AutoCloseWindow BGFont BGGradient BrandingText BringToFront Call CallInstDLL Caption ChangeUI CheckBitmap ClearErrors CompletedText ComponentText CopyFiles CRCCheck CreateDirectory CreateFont CreateShortCut Delete DeleteINISec DeleteINIStr DeleteRegKey DeleteRegValue DetailPrint DetailsButtonText DirText DirVar DirVerify EnableWindow EnumRegKey EnumRegValue Exch Exec ExecShell ExecWait ExpandEnvStrings File FileBufSize FileClose FileErrorText FileOpen FileRead FileReadByte FileReadUTF16LE FileReadWord FileSeek FileWrite FileWriteByte FileWriteUTF16LE FileWriteWord FindClose FindFirst FindNext FindWindow FlushINI FunctionEnd GetCurInstType GetCurrentAddress GetDlgItem GetDLLVersion GetDLLVersionLocal GetErrorLevel GetFileTime GetFileTimeLocal GetFullPathName GetFunctionAddress GetInstDirError GetLabelAddress GetTempFileName Goto HideWindow Icon IfAbort IfErrors IfFileExists IfRebootFlag IfSilent InitPluginsDir InstallButtonText InstallColors InstallDir InstallDirRegKey InstProgressFlags InstType InstTypeGetText InstTypeSetText IntCmp IntCmpU IntFmt IntOp IsWindow LangString LicenseBkColor LicenseData LicenseForceSelection LicenseLangString LicenseText LoadLanguageFile LockWindow LogSet LogText ManifestDPIAware ManifestSupportedOS MessageBox MiscButtonText Name Nop OutFile Page PageCallbacks PageExEnd Pop Push Quit ReadEnvStr ReadINIStr ReadRegDWORD ReadRegStr Reboot RegDLL Rename RequestExecutionLevel ReserveFile Return RMDir SearchPath SectionEnd SectionGetFlags SectionGetInstTypes SectionGetSize SectionGetText SectionGroupEnd SectionIn SectionSetFlags SectionSetInstTypes SectionSetSize SectionSetText SendMessage SetAutoClose SetBrandingImage SetCompress SetCompressor SetCompressorDictSize SetCtlColors SetCurInstType SetDatablockOptimize SetDateSave SetDetailsPrint SetDetailsView SetErrorLevel SetErrors SetFileAttributes SetFont SetOutPath SetOverwrite SetRebootFlag SetRegView SetShellVarContext SetSilent ShowInstDetails ShowUninstDetails ShowWindow SilentInstall SilentUnInstall Sleep SpaceTexts StrCmp StrCmpS StrCpy StrLen SubCaption Unicode UninstallButtonText UninstallCaption UninstallIcon UninstallSubCaption UninstallText UninstPage UnRegDLL Var VIAddVersionKey VIFileVersion VIProductVersion WindowIcon WriteINIStr WriteRegBin WriteRegDWORD WriteRegExpandStr WriteRegStr WriteUninstaller XPStyle',
+	      'Abort AddBrandingImage AddSize AllowRootDirInstall AllowSkipFiles AutoCloseWindow BGFont BGGradient BrandingText BringToFront Call CallInstDLL Caption ChangeUI CheckBitmap ClearErrors CompletedText ComponentText CopyFiles CRCCheck CreateDirectory CreateFont CreateShortCut Delete DeleteINISec DeleteINIStr DeleteRegKey DeleteRegValue DetailPrint DetailsButtonText DirText DirVar DirVerify EnableWindow EnumRegKey EnumRegValue Exch Exec ExecShell ExecShellWait ExecWait ExpandEnvStrings File FileBufSize FileClose FileErrorText FileOpen FileRead FileReadByte FileReadUTF16LE FileReadWord FileSeek FileWrite FileWriteByte FileWriteUTF16LE FileWriteWord FindClose FindFirst FindNext FindWindow FlushINI FunctionEnd GetCurInstType GetCurrentAddress GetDlgItem GetDLLVersion GetDLLVersionLocal GetErrorLevel GetFileTime GetFileTimeLocal GetFullPathName GetFunctionAddress GetInstDirError GetLabelAddress GetTempFileName Goto HideWindow Icon IfAbort IfErrors IfFileExists IfRebootFlag IfSilent InitPluginsDir InstallButtonText InstallColors InstallDir InstallDirRegKey InstProgressFlags InstType InstTypeGetText InstTypeSetText Int64Cmp Int64CmpU Int64Fmt IntCmp IntCmpU IntFmt IntOp IntPtrCmp IntPtrCmpU IntPtrOp IsWindow LangString LicenseBkColor LicenseData LicenseForceSelection LicenseLangString LicenseText LoadLanguageFile LockWindow LogSet LogText ManifestDPIAware ManifestSupportedOS MessageBox MiscButtonText Name Nop OutFile Page PageCallbacks PageExEnd Pop Push Quit ReadEnvStr ReadINIStr ReadRegDWORD ReadRegStr Reboot RegDLL Rename RequestExecutionLevel ReserveFile Return RMDir SearchPath SectionEnd SectionGetFlags SectionGetInstTypes SectionGetSize SectionGetText SectionGroupEnd SectionIn SectionSetFlags SectionSetInstTypes SectionSetSize SectionSetText SendMessage SetAutoClose SetBrandingImage SetCompress SetCompressor SetCompressorDictSize SetCtlColors SetCurInstType SetDatablockOptimize SetDateSave SetDetailsPrint SetDetailsView SetErrorLevel SetErrors SetFileAttributes SetFont SetOutPath SetOverwrite SetRebootFlag SetRegView SetShellVarContext SetSilent ShowInstDetails ShowUninstDetails ShowWindow SilentInstall SilentUnInstall Sleep SpaceTexts StrCmp StrCmpS StrCpy StrLen SubCaption Unicode UninstallButtonText UninstallCaption UninstallIcon UninstallSubCaption UninstallText UninstPage UnRegDLL Var VIAddVersionKey VIFileVersion VIProductVersion WindowIcon WriteINIStr WriteRegBin WriteRegDWORD WriteRegExpandStr WriteRegMultiStr WriteRegNone WriteRegStr WriteUninstaller XPStyle',
 	      literal:
 	      'admin all auto both bottom bzip2 colored components current custom directory false force hide highest ifdiff ifnewer instfiles lastused leave left license listonly lzma nevershow none normal notset off on open print right show silent silentlog smooth textonly top true try un.components un.custom un.directory un.instfiles un.license uninstConfirm user Win10 Win7 Win8 WinVista zlib'
 	    },
@@ -32835,7 +37485,7 @@
 	};
 
 /***/ },
-/* 282 */
+/* 289 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -32930,7 +37580,7 @@
 	};
 
 /***/ },
-/* 283 */
+/* 290 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33005,7 +37655,7 @@
 	};
 
 /***/ },
-/* 284 */
+/* 291 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33066,7 +37716,7 @@
 	};
 
 /***/ },
-/* 285 */
+/* 292 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33140,7 +37790,7 @@
 	};
 
 /***/ },
-/* 286 */
+/* 293 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33192,7 +37842,7 @@
 	};
 
 /***/ },
-/* 287 */
+/* 294 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33248,7 +37898,499 @@
 	};
 
 /***/ },
-/* 288 */
+/* 295 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  var COMMENT_MODE = hljs.COMMENT('--', '$');
+	  var UNQUOTED_IDENT = '[a-zA-Z_][a-zA-Z_0-9$]*';
+	  var DOLLAR_STRING = '\\$([a-zA-Z_]?|[a-zA-Z_][a-zA-Z_0-9]*)\\$';
+	  var LABEL = '<<\\s*' + UNQUOTED_IDENT + '\\s*>>';
+	
+	  var SQL_KW = 
+	    // https://www.postgresql.org/docs/11/static/sql-keywords-appendix.html
+	    // https://www.postgresql.org/docs/11/static/sql-commands.html
+	    // SQL commands (starting words)
+	    'ABORT ALTER ANALYZE BEGIN CALL CHECKPOINT|10 CLOSE CLUSTER COMMENT COMMIT COPY CREATE DEALLOCATE DECLARE ' +
+	    'DELETE DISCARD DO DROP END EXECUTE EXPLAIN FETCH GRANT IMPORT INSERT LISTEN LOAD LOCK MOVE NOTIFY ' +
+	    'PREPARE REASSIGN|10 REFRESH REINDEX RELEASE RESET REVOKE ROLLBACK SAVEPOINT SECURITY SELECT SET SHOW ' +
+	    'START TRUNCATE UNLISTEN|10 UPDATE VACUUM|10 VALUES ' +
+	    // SQL commands (others)
+	    'AGGREGATE COLLATION CONVERSION|10 DATABASE DEFAULT PRIVILEGES DOMAIN TRIGGER EXTENSION FOREIGN ' +
+	    'WRAPPER|10 TABLE FUNCTION GROUP LANGUAGE LARGE OBJECT MATERIALIZED VIEW OPERATOR CLASS ' +
+	    'FAMILY POLICY PUBLICATION|10 ROLE RULE SCHEMA SEQUENCE SERVER STATISTICS SUBSCRIPTION SYSTEM ' +
+	    'TABLESPACE CONFIGURATION DICTIONARY PARSER TEMPLATE TYPE USER MAPPING PREPARED ACCESS ' +
+	    'METHOD CAST AS TRANSFORM TRANSACTION OWNED TO INTO SESSION AUTHORIZATION ' +
+	    'INDEX PROCEDURE ASSERTION ' +
+	    // additional reserved key words
+	    'ALL ANALYSE AND ANY ARRAY ASC ASYMMETRIC|10 BOTH CASE CHECK ' +
+	    'COLLATE COLUMN CONCURRENTLY|10 CONSTRAINT CROSS ' +
+	    'DEFERRABLE RANGE ' +
+	    'DESC DISTINCT ELSE EXCEPT FOR FREEZE|10 FROM FULL HAVING ' +
+	    'ILIKE IN INITIALLY INNER INTERSECT IS ISNULL JOIN LATERAL LEADING LIKE LIMIT ' +
+	    'NATURAL NOT NOTNULL NULL OFFSET ON ONLY OR ORDER OUTER OVERLAPS PLACING PRIMARY ' +
+	    'REFERENCES RETURNING SIMILAR SOME SYMMETRIC TABLESAMPLE THEN ' +
+	    'TRAILING UNION UNIQUE USING VARIADIC|10 VERBOSE WHEN WHERE WINDOW WITH ' +
+	    // some of non-reserved (which are used in clauses or as PL/pgSQL keyword)
+	    'BY RETURNS INOUT OUT SETOF|10 IF STRICT CURRENT CONTINUE OWNER LOCATION OVER PARTITION WITHIN ' +
+	    'BETWEEN ESCAPE EXTERNAL INVOKER DEFINER WORK RENAME VERSION CONNECTION CONNECT ' +
+	    'TABLES TEMP TEMPORARY FUNCTIONS SEQUENCES TYPES SCHEMAS OPTION CASCADE RESTRICT ADD ADMIN ' +
+	    'EXISTS VALID VALIDATE ENABLE DISABLE REPLICA|10 ALWAYS PASSING COLUMNS PATH ' +
+	    'REF VALUE OVERRIDING IMMUTABLE STABLE VOLATILE BEFORE AFTER EACH ROW PROCEDURAL ' +
+	    'ROUTINE NO HANDLER VALIDATOR OPTIONS STORAGE OIDS|10 WITHOUT INHERIT DEPENDS CALLED ' +
+	    'INPUT LEAKPROOF|10 COST ROWS NOWAIT SEARCH UNTIL ENCRYPTED|10 PASSWORD CONFLICT|10 ' +
+	    'INSTEAD INHERITS CHARACTERISTICS WRITE CURSOR ALSO STATEMENT SHARE EXCLUSIVE INLINE ' +
+	    'ISOLATION REPEATABLE READ COMMITTED SERIALIZABLE UNCOMMITTED LOCAL GLOBAL SQL PROCEDURES ' +
+	    'RECURSIVE SNAPSHOT ROLLUP CUBE TRUSTED|10 INCLUDE FOLLOWING PRECEDING UNBOUNDED RANGE GROUPS ' +
+	    'UNENCRYPTED|10 SYSID FORMAT DELIMITER HEADER QUOTE ENCODING FILTER OFF ' +
+	    // some parameters of VACUUM/ANALYZE/EXPLAIN
+	    'FORCE_QUOTE FORCE_NOT_NULL FORCE_NULL COSTS BUFFERS TIMING SUMMARY DISABLE_PAGE_SKIPPING ' +
+	    //
+	    'RESTART CYCLE GENERATED IDENTITY DEFERRED IMMEDIATE LEVEL LOGGED UNLOGGED ' +
+	    'OF NOTHING NONE EXCLUDE ATTRIBUTE ' +
+	    // from GRANT (not keywords actually)
+	    'USAGE ROUTINES ' +
+	    // actually literals, but look better this way (due to IS TRUE, IS FALSE, ISNULL etc)
+	    'TRUE FALSE NAN INFINITY ';
+	
+	  var ROLE_ATTRS = // only those not in keywrods already
+	    'SUPERUSER NOSUPERUSER CREATEDB NOCREATEDB CREATEROLE NOCREATEROLE INHERIT NOINHERIT ' +
+	    'LOGIN NOLOGIN REPLICATION NOREPLICATION BYPASSRLS NOBYPASSRLS ';
+	
+	  var PLPGSQL_KW = 
+	    'ALIAS BEGIN CONSTANT DECLARE END EXCEPTION RETURN PERFORM|10 RAISE GET DIAGNOSTICS ' +
+	    'STACKED|10 FOREACH LOOP ELSIF EXIT WHILE REVERSE SLICE DEBUG LOG INFO NOTICE WARNING ASSERT ' +
+	    'OPEN ';
+	
+	  var TYPES =
+	    // https://www.postgresql.org/docs/11/static/datatype.html
+	    'BIGINT INT8 BIGSERIAL SERIAL8 BIT VARYING VARBIT BOOLEAN BOOL BOX BYTEA CHARACTER CHAR VARCHAR ' +
+	    'CIDR CIRCLE DATE DOUBLE PRECISION FLOAT8 FLOAT INET INTEGER INT INT4 INTERVAL JSON JSONB LINE LSEG|10 ' +
+	    'MACADDR MACADDR8 MONEY NUMERIC DEC DECIMAL PATH POINT POLYGON REAL FLOAT4 SMALLINT INT2 ' +
+	    'SMALLSERIAL|10 SERIAL2|10 SERIAL|10 SERIAL4|10 TEXT TIME ZONE TIMETZ|10 TIMESTAMP TIMESTAMPTZ|10 TSQUERY|10 TSVECTOR|10 ' +
+	    'TXID_SNAPSHOT|10 UUID XML NATIONAL NCHAR ' +
+	    'INT4RANGE|10 INT8RANGE|10 NUMRANGE|10 TSRANGE|10 TSTZRANGE|10 DATERANGE|10 ' +
+	    // pseudotypes
+	    'ANYELEMENT ANYARRAY ANYNONARRAY ANYENUM ANYRANGE CSTRING INTERNAL ' +
+	    'RECORD PG_DDL_COMMAND VOID UNKNOWN OPAQUE REFCURSOR ' +
+	    // spec. type
+	    'NAME ' +
+	    // OID-types
+	    'OID REGPROC|10 REGPROCEDURE|10 REGOPER|10 REGOPERATOR|10 REGCLASS|10 REGTYPE|10 REGROLE|10 ' +
+	    'REGNAMESPACE|10 REGCONFIG|10 REGDICTIONARY|10 ';// +
+	    // some types from standard extensions
+	    'HSTORE|10 LO LTREE|10 ';
+	    
+	  var TYPES_RE = 
+	    TYPES.trim()
+	         .split(' ')
+	         .map( function(val) { return val.split('|')[0]; } )
+	         .join('|');
+	
+	  var SQL_BI =
+	    'CURRENT_TIME CURRENT_TIMESTAMP CURRENT_USER CURRENT_CATALOG|10 CURRENT_DATE LOCALTIME LOCALTIMESTAMP ' +
+	    'CURRENT_ROLE|10 CURRENT_SCHEMA|10 SESSION_USER PUBLIC ';
+	
+	  var PLPGSQL_BI =
+	    'FOUND NEW OLD TG_NAME|10 TG_WHEN|10 TG_LEVEL|10 TG_OP|10 TG_RELID|10 TG_RELNAME|10 ' +
+	    'TG_TABLE_NAME|10 TG_TABLE_SCHEMA|10 TG_NARGS|10 TG_ARGV|10 TG_EVENT|10 TG_TAG|10 ' +
+	    // get diagnostics
+	    'ROW_COUNT RESULT_OID|10 PG_CONTEXT|10 RETURNED_SQLSTATE COLUMN_NAME CONSTRAINT_NAME ' +
+	    'PG_DATATYPE_NAME|10 MESSAGE_TEXT TABLE_NAME SCHEMA_NAME PG_EXCEPTION_DETAIL|10 ' +
+	    'PG_EXCEPTION_HINT|10 PG_EXCEPTION_CONTEXT|10 ';
+	
+	  var PLPGSQL_EXCEPTIONS =
+	    // exceptions https://www.postgresql.org/docs/current/static/errcodes-appendix.html
+	    'SQLSTATE SQLERRM|10 ' +
+	    'SUCCESSFUL_COMPLETION WARNING DYNAMIC_RESULT_SETS_RETURNED IMPLICIT_ZERO_BIT_PADDING ' +
+	    'NULL_VALUE_ELIMINATED_IN_SET_FUNCTION PRIVILEGE_NOT_GRANTED PRIVILEGE_NOT_REVOKED ' +
+	    'STRING_DATA_RIGHT_TRUNCATION DEPRECATED_FEATURE NO_DATA NO_ADDITIONAL_DYNAMIC_RESULT_SETS_RETURNED ' +
+	    'SQL_STATEMENT_NOT_YET_COMPLETE CONNECTION_EXCEPTION CONNECTION_DOES_NOT_EXIST CONNECTION_FAILURE ' +
+	    'SQLCLIENT_UNABLE_TO_ESTABLISH_SQLCONNECTION SQLSERVER_REJECTED_ESTABLISHMENT_OF_SQLCONNECTION ' +
+	    'TRANSACTION_RESOLUTION_UNKNOWN PROTOCOL_VIOLATION TRIGGERED_ACTION_EXCEPTION FEATURE_NOT_SUPPORTED ' +
+	    'INVALID_TRANSACTION_INITIATION LOCATOR_EXCEPTION INVALID_LOCATOR_SPECIFICATION INVALID_GRANTOR ' +
+	    'INVALID_GRANT_OPERATION INVALID_ROLE_SPECIFICATION DIAGNOSTICS_EXCEPTION ' +
+	    'STACKED_DIAGNOSTICS_ACCESSED_WITHOUT_ACTIVE_HANDLER CASE_NOT_FOUND CARDINALITY_VIOLATION ' +
+	    'DATA_EXCEPTION ARRAY_SUBSCRIPT_ERROR CHARACTER_NOT_IN_REPERTOIRE DATETIME_FIELD_OVERFLOW ' +
+	    'DIVISION_BY_ZERO ERROR_IN_ASSIGNMENT ESCAPE_CHARACTER_CONFLICT INDICATOR_OVERFLOW ' +
+	    'INTERVAL_FIELD_OVERFLOW INVALID_ARGUMENT_FOR_LOGARITHM INVALID_ARGUMENT_FOR_NTILE_FUNCTION ' +
+	    'INVALID_ARGUMENT_FOR_NTH_VALUE_FUNCTION INVALID_ARGUMENT_FOR_POWER_FUNCTION ' +
+	    'INVALID_ARGUMENT_FOR_WIDTH_BUCKET_FUNCTION INVALID_CHARACTER_VALUE_FOR_CAST ' +
+	    'INVALID_DATETIME_FORMAT INVALID_ESCAPE_CHARACTER INVALID_ESCAPE_OCTET INVALID_ESCAPE_SEQUENCE ' +
+	    'NONSTANDARD_USE_OF_ESCAPE_CHARACTER INVALID_INDICATOR_PARAMETER_VALUE INVALID_PARAMETER_VALUE ' +
+	    'INVALID_REGULAR_EXPRESSION INVALID_ROW_COUNT_IN_LIMIT_CLAUSE ' +
+	    'INVALID_ROW_COUNT_IN_RESULT_OFFSET_CLAUSE INVALID_TABLESAMPLE_ARGUMENT INVALID_TABLESAMPLE_REPEAT ' +
+	    'INVALID_TIME_ZONE_DISPLACEMENT_VALUE INVALID_USE_OF_ESCAPE_CHARACTER MOST_SPECIFIC_TYPE_MISMATCH ' +
+	    'NULL_VALUE_NOT_ALLOWED NULL_VALUE_NO_INDICATOR_PARAMETER NUMERIC_VALUE_OUT_OF_RANGE ' +
+	    'SEQUENCE_GENERATOR_LIMIT_EXCEEDED STRING_DATA_LENGTH_MISMATCH STRING_DATA_RIGHT_TRUNCATION ' +
+	    'SUBSTRING_ERROR TRIM_ERROR UNTERMINATED_C_STRING ZERO_LENGTH_CHARACTER_STRING ' +
+	    'FLOATING_POINT_EXCEPTION INVALID_TEXT_REPRESENTATION INVALID_BINARY_REPRESENTATION ' +
+	    'BAD_COPY_FILE_FORMAT UNTRANSLATABLE_CHARACTER NOT_AN_XML_DOCUMENT INVALID_XML_DOCUMENT ' +
+	    'INVALID_XML_CONTENT INVALID_XML_COMMENT INVALID_XML_PROCESSING_INSTRUCTION ' +
+	    'INTEGRITY_CONSTRAINT_VIOLATION RESTRICT_VIOLATION NOT_NULL_VIOLATION FOREIGN_KEY_VIOLATION ' +
+	    'UNIQUE_VIOLATION CHECK_VIOLATION EXCLUSION_VIOLATION INVALID_CURSOR_STATE ' +
+	    'INVALID_TRANSACTION_STATE ACTIVE_SQL_TRANSACTION BRANCH_TRANSACTION_ALREADY_ACTIVE ' +
+	    'HELD_CURSOR_REQUIRES_SAME_ISOLATION_LEVEL INAPPROPRIATE_ACCESS_MODE_FOR_BRANCH_TRANSACTION ' +
+	    'INAPPROPRIATE_ISOLATION_LEVEL_FOR_BRANCH_TRANSACTION ' +
+	    'NO_ACTIVE_SQL_TRANSACTION_FOR_BRANCH_TRANSACTION READ_ONLY_SQL_TRANSACTION ' +
+	    'SCHEMA_AND_DATA_STATEMENT_MIXING_NOT_SUPPORTED NO_ACTIVE_SQL_TRANSACTION ' +
+	    'IN_FAILED_SQL_TRANSACTION IDLE_IN_TRANSACTION_SESSION_TIMEOUT INVALID_SQL_STATEMENT_NAME ' +
+	    'TRIGGERED_DATA_CHANGE_VIOLATION INVALID_AUTHORIZATION_SPECIFICATION INVALID_PASSWORD ' +
+	    'DEPENDENT_PRIVILEGE_DESCRIPTORS_STILL_EXIST DEPENDENT_OBJECTS_STILL_EXIST ' +
+	    'INVALID_TRANSACTION_TERMINATION SQL_ROUTINE_EXCEPTION FUNCTION_EXECUTED_NO_RETURN_STATEMENT ' +
+	    'MODIFYING_SQL_DATA_NOT_PERMITTED PROHIBITED_SQL_STATEMENT_ATTEMPTED ' +
+	    'READING_SQL_DATA_NOT_PERMITTED INVALID_CURSOR_NAME EXTERNAL_ROUTINE_EXCEPTION ' +
+	    'CONTAINING_SQL_NOT_PERMITTED MODIFYING_SQL_DATA_NOT_PERMITTED ' +
+	    'PROHIBITED_SQL_STATEMENT_ATTEMPTED READING_SQL_DATA_NOT_PERMITTED ' +
+	    'EXTERNAL_ROUTINE_INVOCATION_EXCEPTION INVALID_SQLSTATE_RETURNED NULL_VALUE_NOT_ALLOWED ' +
+	    'TRIGGER_PROTOCOL_VIOLATED SRF_PROTOCOL_VIOLATED EVENT_TRIGGER_PROTOCOL_VIOLATED ' +
+	    'SAVEPOINT_EXCEPTION INVALID_SAVEPOINT_SPECIFICATION INVALID_CATALOG_NAME ' +
+	    'INVALID_SCHEMA_NAME TRANSACTION_ROLLBACK TRANSACTION_INTEGRITY_CONSTRAINT_VIOLATION ' +
+	    'SERIALIZATION_FAILURE STATEMENT_COMPLETION_UNKNOWN DEADLOCK_DETECTED ' +
+	    'SYNTAX_ERROR_OR_ACCESS_RULE_VIOLATION SYNTAX_ERROR INSUFFICIENT_PRIVILEGE CANNOT_COERCE ' +
+	    'GROUPING_ERROR WINDOWING_ERROR INVALID_RECURSION INVALID_FOREIGN_KEY INVALID_NAME ' +
+	    'NAME_TOO_LONG RESERVED_NAME DATATYPE_MISMATCH INDETERMINATE_DATATYPE COLLATION_MISMATCH ' +
+	    'INDETERMINATE_COLLATION WRONG_OBJECT_TYPE GENERATED_ALWAYS UNDEFINED_COLUMN ' +
+	    'UNDEFINED_FUNCTION UNDEFINED_TABLE UNDEFINED_PARAMETER UNDEFINED_OBJECT ' +
+	    'DUPLICATE_COLUMN DUPLICATE_CURSOR DUPLICATE_DATABASE DUPLICATE_FUNCTION ' +
+	    'DUPLICATE_PREPARED_STATEMENT DUPLICATE_SCHEMA DUPLICATE_TABLE DUPLICATE_ALIAS ' +
+	    'DUPLICATE_OBJECT AMBIGUOUS_COLUMN AMBIGUOUS_FUNCTION AMBIGUOUS_PARAMETER AMBIGUOUS_ALIAS ' +
+	    'INVALID_COLUMN_REFERENCE INVALID_COLUMN_DEFINITION INVALID_CURSOR_DEFINITION ' +
+	    'INVALID_DATABASE_DEFINITION INVALID_FUNCTION_DEFINITION ' +
+	    'INVALID_PREPARED_STATEMENT_DEFINITION INVALID_SCHEMA_DEFINITION INVALID_TABLE_DEFINITION ' +
+	    'INVALID_OBJECT_DEFINITION WITH_CHECK_OPTION_VIOLATION INSUFFICIENT_RESOURCES DISK_FULL ' +
+	    'OUT_OF_MEMORY TOO_MANY_CONNECTIONS CONFIGURATION_LIMIT_EXCEEDED PROGRAM_LIMIT_EXCEEDED ' +
+	    'STATEMENT_TOO_COMPLEX TOO_MANY_COLUMNS TOO_MANY_ARGUMENTS OBJECT_NOT_IN_PREREQUISITE_STATE ' +
+	    'OBJECT_IN_USE CANT_CHANGE_RUNTIME_PARAM LOCK_NOT_AVAILABLE OPERATOR_INTERVENTION ' +
+	    'QUERY_CANCELED ADMIN_SHUTDOWN CRASH_SHUTDOWN CANNOT_CONNECT_NOW DATABASE_DROPPED ' +
+	    'SYSTEM_ERROR IO_ERROR UNDEFINED_FILE DUPLICATE_FILE SNAPSHOT_TOO_OLD CONFIG_FILE_ERROR ' +
+	    'LOCK_FILE_EXISTS FDW_ERROR FDW_COLUMN_NAME_NOT_FOUND FDW_DYNAMIC_PARAMETER_VALUE_NEEDED ' +
+	    'FDW_FUNCTION_SEQUENCE_ERROR FDW_INCONSISTENT_DESCRIPTOR_INFORMATION ' +
+	    'FDW_INVALID_ATTRIBUTE_VALUE FDW_INVALID_COLUMN_NAME FDW_INVALID_COLUMN_NUMBER ' +
+	    'FDW_INVALID_DATA_TYPE FDW_INVALID_DATA_TYPE_DESCRIPTORS ' +
+	    'FDW_INVALID_DESCRIPTOR_FIELD_IDENTIFIER FDW_INVALID_HANDLE FDW_INVALID_OPTION_INDEX ' +
+	    'FDW_INVALID_OPTION_NAME FDW_INVALID_STRING_LENGTH_OR_BUFFER_LENGTH ' +
+	    'FDW_INVALID_STRING_FORMAT FDW_INVALID_USE_OF_NULL_POINTER FDW_TOO_MANY_HANDLES ' +
+	    'FDW_OUT_OF_MEMORY FDW_NO_SCHEMAS FDW_OPTION_NAME_NOT_FOUND FDW_REPLY_HANDLE ' +
+	    'FDW_SCHEMA_NOT_FOUND FDW_TABLE_NOT_FOUND FDW_UNABLE_TO_CREATE_EXECUTION ' +
+	    'FDW_UNABLE_TO_CREATE_REPLY FDW_UNABLE_TO_ESTABLISH_CONNECTION PLPGSQL_ERROR ' +
+	    'RAISE_EXCEPTION NO_DATA_FOUND TOO_MANY_ROWS ASSERT_FAILURE INTERNAL_ERROR DATA_CORRUPTED ' +
+	    'INDEX_CORRUPTED ';
+	
+	  var FUNCTIONS =
+	    // https://www.postgresql.org/docs/11/static/functions-aggregate.html
+	    'ARRAY_AGG AVG BIT_AND BIT_OR BOOL_AND BOOL_OR COUNT EVERY JSON_AGG JSONB_AGG JSON_OBJECT_AGG ' +
+	    'JSONB_OBJECT_AGG MAX MIN MODE STRING_AGG SUM XMLAGG ' +
+	    'CORR COVAR_POP COVAR_SAMP REGR_AVGX REGR_AVGY REGR_COUNT REGR_INTERCEPT REGR_R2 REGR_SLOPE ' +
+	    'REGR_SXX REGR_SXY REGR_SYY STDDEV STDDEV_POP STDDEV_SAMP VARIANCE VAR_POP VAR_SAMP ' +
+	    'PERCENTILE_CONT PERCENTILE_DISC ' +
+	    // https://www.postgresql.org/docs/11/static/functions-window.html
+	    'ROW_NUMBER RANK DENSE_RANK PERCENT_RANK CUME_DIST NTILE LAG LEAD FIRST_VALUE LAST_VALUE NTH_VALUE ' +
+	    // https://www.postgresql.org/docs/11/static/functions-comparison.html
+	    'NUM_NONNULLS NUM_NULLS ' +
+	    // https://www.postgresql.org/docs/11/static/functions-math.html
+	    'ABS CBRT CEIL CEILING DEGREES DIV EXP FLOOR LN LOG MOD PI POWER RADIANS ROUND SCALE SIGN SQRT ' +
+	    'TRUNC WIDTH_BUCKET ' +
+	    'RANDOM SETSEED ' +
+	    'ACOS ACOSD ASIN ASIND ATAN ATAND ATAN2 ATAN2D COS COSD COT COTD SIN SIND TAN TAND ' +
+	    // https://www.postgresql.org/docs/11/static/functions-string.html
+	    'BIT_LENGTH CHAR_LENGTH CHARACTER_LENGTH LOWER OCTET_LENGTH OVERLAY POSITION SUBSTRING TREAT TRIM UPPER ' +
+	    'ASCII BTRIM CHR CONCAT CONCAT_WS CONVERT CONVERT_FROM CONVERT_TO DECODE ENCODE INITCAP' +
+	    'LEFT LENGTH LPAD LTRIM MD5 PARSE_IDENT PG_CLIENT_ENCODING QUOTE_IDENT|10 QUOTE_LITERAL|10 ' +
+	    'QUOTE_NULLABLE|10 REGEXP_MATCH REGEXP_MATCHES REGEXP_REPLACE REGEXP_SPLIT_TO_ARRAY ' +
+	    'REGEXP_SPLIT_TO_TABLE REPEAT REPLACE REVERSE RIGHT RPAD RTRIM SPLIT_PART STRPOS SUBSTR ' +
+	    'TO_ASCII TO_HEX TRANSLATE ' +
+	    // https://www.postgresql.org/docs/11/static/functions-binarystring.html
+	    'OCTET_LENGTH GET_BIT GET_BYTE SET_BIT SET_BYTE ' +
+	    // https://www.postgresql.org/docs/11/static/functions-formatting.html
+	    'TO_CHAR TO_DATE TO_NUMBER TO_TIMESTAMP ' +
+	    // https://www.postgresql.org/docs/11/static/functions-datetime.html
+	    'AGE CLOCK_TIMESTAMP|10 DATE_PART DATE_TRUNC ISFINITE JUSTIFY_DAYS JUSTIFY_HOURS JUSTIFY_INTERVAL ' +
+	    'MAKE_DATE MAKE_INTERVAL|10 MAKE_TIME MAKE_TIMESTAMP|10 MAKE_TIMESTAMPTZ|10 NOW STATEMENT_TIMESTAMP|10 ' +
+	    'TIMEOFDAY TRANSACTION_TIMESTAMP|10 ' +
+	    // https://www.postgresql.org/docs/11/static/functions-enum.html
+	    'ENUM_FIRST ENUM_LAST ENUM_RANGE ' +
+	    // https://www.postgresql.org/docs/11/static/functions-geometry.html
+	    'AREA CENTER DIAMETER HEIGHT ISCLOSED ISOPEN NPOINTS PCLOSE POPEN RADIUS WIDTH ' +
+	    'BOX BOUND_BOX CIRCLE LINE LSEG PATH POLYGON ' +
+	    // https://www.postgresql.org/docs/11/static/functions-net.html
+	    'ABBREV BROADCAST HOST HOSTMASK MASKLEN NETMASK NETWORK SET_MASKLEN TEXT INET_SAME_FAMILY' +
+	    'INET_MERGE MACADDR8_SET7BIT ' +
+	    // https://www.postgresql.org/docs/11/static/functions-textsearch.html
+	    'ARRAY_TO_TSVECTOR GET_CURRENT_TS_CONFIG NUMNODE PLAINTO_TSQUERY PHRASETO_TSQUERY WEBSEARCH_TO_TSQUERY ' +
+	    'QUERYTREE SETWEIGHT STRIP TO_TSQUERY TO_TSVECTOR JSON_TO_TSVECTOR JSONB_TO_TSVECTOR TS_DELETE ' +
+	    'TS_FILTER TS_HEADLINE TS_RANK TS_RANK_CD TS_REWRITE TSQUERY_PHRASE TSVECTOR_TO_ARRAY ' +
+	    'TSVECTOR_UPDATE_TRIGGER TSVECTOR_UPDATE_TRIGGER_COLUMN ' +
+	    // https://www.postgresql.org/docs/11/static/functions-xml.html
+	    'XMLCOMMENT XMLCONCAT XMLELEMENT XMLFOREST XMLPI XMLROOT ' +
+	    'XMLEXISTS XML_IS_WELL_FORMED XML_IS_WELL_FORMED_DOCUMENT XML_IS_WELL_FORMED_CONTENT ' +
+	    'XPATH XPATH_EXISTS XMLTABLE XMLNAMESPACES ' +
+	    'TABLE_TO_XML TABLE_TO_XMLSCHEMA TABLE_TO_XML_AND_XMLSCHEMA ' +
+	    'QUERY_TO_XML QUERY_TO_XMLSCHEMA QUERY_TO_XML_AND_XMLSCHEMA ' +
+	    'CURSOR_TO_XML CURSOR_TO_XMLSCHEMA ' +
+	    'SCHEMA_TO_XML SCHEMA_TO_XMLSCHEMA SCHEMA_TO_XML_AND_XMLSCHEMA ' +
+	    'DATABASE_TO_XML DATABASE_TO_XMLSCHEMA DATABASE_TO_XML_AND_XMLSCHEMA ' +
+	    'XMLATTRIBUTES ' +
+	    // https://www.postgresql.org/docs/11/static/functions-json.html
+	    'TO_JSON TO_JSONB ARRAY_TO_JSON ROW_TO_JSON JSON_BUILD_ARRAY JSONB_BUILD_ARRAY JSON_BUILD_OBJECT ' +
+	    'JSONB_BUILD_OBJECT JSON_OBJECT JSONB_OBJECT JSON_ARRAY_LENGTH JSONB_ARRAY_LENGTH JSON_EACH ' +
+	    'JSONB_EACH JSON_EACH_TEXT JSONB_EACH_TEXT JSON_EXTRACT_PATH JSONB_EXTRACT_PATH ' +
+	    'JSON_OBJECT_KEYS JSONB_OBJECT_KEYS JSON_POPULATE_RECORD JSONB_POPULATE_RECORD JSON_POPULATE_RECORDSET ' +
+	    'JSONB_POPULATE_RECORDSET JSON_ARRAY_ELEMENTS JSONB_ARRAY_ELEMENTS JSON_ARRAY_ELEMENTS_TEXT ' +
+	    'JSONB_ARRAY_ELEMENTS_TEXT JSON_TYPEOF JSONB_TYPEOF JSON_TO_RECORD JSONB_TO_RECORD JSON_TO_RECORDSET ' +
+	    'JSONB_TO_RECORDSET JSON_STRIP_NULLS JSONB_STRIP_NULLS JSONB_SET JSONB_INSERT JSONB_PRETTY ' +
+	    // https://www.postgresql.org/docs/11/static/functions-sequence.html
+	    'CURRVAL LASTVAL NEXTVAL SETVAL ' +
+	    // https://www.postgresql.org/docs/11/static/functions-conditional.html
+	    'COALESCE NULLIF GREATEST LEAST ' +
+	    // https://www.postgresql.org/docs/11/static/functions-array.html
+	    'ARRAY_APPEND ARRAY_CAT ARRAY_NDIMS ARRAY_DIMS ARRAY_FILL ARRAY_LENGTH ARRAY_LOWER ARRAY_POSITION ' +
+	    'ARRAY_POSITIONS ARRAY_PREPEND ARRAY_REMOVE ARRAY_REPLACE ARRAY_TO_STRING ARRAY_UPPER CARDINALITY ' +
+	    'STRING_TO_ARRAY UNNEST ' +
+	    // https://www.postgresql.org/docs/11/static/functions-range.html
+	    'ISEMPTY LOWER_INC UPPER_INC LOWER_INF UPPER_INF RANGE_MERGE ' +
+	    // https://www.postgresql.org/docs/11/static/functions-srf.html
+	    'GENERATE_SERIES GENERATE_SUBSCRIPTS ' +
+	    // https://www.postgresql.org/docs/11/static/functions-info.html
+	    'CURRENT_DATABASE CURRENT_QUERY CURRENT_SCHEMA|10 CURRENT_SCHEMAS|10 INET_CLIENT_ADDR INET_CLIENT_PORT ' +
+	    'INET_SERVER_ADDR INET_SERVER_PORT ROW_SECURITY_ACTIVE FORMAT_TYPE ' +
+	    'TO_REGCLASS TO_REGPROC TO_REGPROCEDURE TO_REGOPER TO_REGOPERATOR TO_REGTYPE TO_REGNAMESPACE TO_REGROLE ' +
+	    'COL_DESCRIPTION OBJ_DESCRIPTION SHOBJ_DESCRIPTION ' +
+	    'TXID_CURRENT TXID_CURRENT_IF_ASSIGNED TXID_CURRENT_SNAPSHOT TXID_SNAPSHOT_XIP TXID_SNAPSHOT_XMAX ' +
+	    'TXID_SNAPSHOT_XMIN TXID_VISIBLE_IN_SNAPSHOT TXID_STATUS ' +
+	    // https://www.postgresql.org/docs/11/static/functions-admin.html
+	    'CURRENT_SETTING SET_CONFIG BRIN_SUMMARIZE_NEW_VALUES BRIN_SUMMARIZE_RANGE BRIN_DESUMMARIZE_RANGE ' +
+	    'GIN_CLEAN_PENDING_LIST ' +
+	    // https://www.postgresql.org/docs/11/static/functions-trigger.html
+	    'SUPPRESS_REDUNDANT_UPDATES_TRIGGER ' +
+	    // ihttps://www.postgresql.org/docs/devel/static/lo-funcs.html
+	    'LO_FROM_BYTEA LO_PUT LO_GET LO_CREAT LO_CREATE LO_UNLINK LO_IMPORT LO_EXPORT LOREAD LOWRITE ' +
+	    //
+	    'GROUPING CAST ';
+	
+	    var FUNCTIONS_RE = 
+	      FUNCTIONS.trim()
+	               .split(' ')
+	               .map( function(val) { return val.split('|')[0]; } )
+	               .join('|');
+	
+	    return {
+	        aliases: ['postgres','postgresql'],
+	        case_insensitive: true,
+	        keywords: {
+	          keyword:
+	            SQL_KW + PLPGSQL_KW + ROLE_ATTRS,
+	          built_in:
+	            SQL_BI + PLPGSQL_BI + PLPGSQL_EXCEPTIONS,
+	        },
+	        // Forbid some cunstructs from other languages to improve autodetect. In fact
+	        // "[a-z]:" is legal (as part of array slice), but improbabal.
+	        illegal: /:==|\W\s*\(\*|(^|\s)\$[a-z]|{{|[a-z]:\s*$|\.\.\.|TO:|DO:/,
+	        contains: [
+	          // special handling of some words, which are reserved only in some contexts
+	          {
+	            className: 'keyword',
+	            variants: [
+	              { begin: /\bTEXT\s*SEARCH\b/ },
+	              { begin: /\b(PRIMARY|FOREIGN|FOR(\s+NO)?)\s+KEY\b/ },
+	              { begin: /\bPARALLEL\s+(UNSAFE|RESTRICTED|SAFE)\b/ },
+	              { begin: /\bSTORAGE\s+(PLAIN|EXTERNAL|EXTENDED|MAIN)\b/ },
+	              { begin: /\bMATCH\s+(FULL|PARTIAL|SIMPLE)\b/ },
+	              { begin: /\bNULLS\s+(FIRST|LAST)\b/ },
+	              { begin: /\bEVENT\s+TRIGGER\b/ },
+	              { begin: /\b(MAPPING|OR)\s+REPLACE\b/ },
+	              { begin: /\b(FROM|TO)\s+(PROGRAM|STDIN|STDOUT)\b/ },
+	              { begin: /\b(SHARE|EXCLUSIVE)\s+MODE\b/ },
+	              { begin: /\b(LEFT|RIGHT)\s+(OUTER\s+)?JOIN\b/ },
+	              { begin: /\b(FETCH|MOVE)\s+(NEXT|PRIOR|FIRST|LAST|ABSOLUTE|RELATIVE|FORWARD|BACKWARD)\b/ },
+	              { begin: /\bPRESERVE\s+ROWS\b/ },
+	              { begin: /\bDISCARD\s+PLANS\b/ },
+	              { begin: /\bREFERENCING\s+(OLD|NEW)\b/ },
+	              { begin: /\bSKIP\s+LOCKED\b/ },
+	              { begin: /\bGROUPING\s+SETS\b/ },
+	              { begin: /\b(BINARY|INSENSITIVE|SCROLL|NO\s+SCROLL)\s+(CURSOR|FOR)\b/ },
+	              { begin: /\b(WITH|WITHOUT)\s+HOLD\b/ },
+	              { begin: /\bWITH\s+(CASCADED|LOCAL)\s+CHECK\s+OPTION\b/ },
+	              { begin: /\bEXCLUDE\s+(TIES|NO\s+OTHERS)\b/ },
+	              { begin: /\bFORMAT\s+(TEXT|XML|JSON|YAML)\b/ },
+	              { begin: /\bSET\s+((SESSION|LOCAL)\s+)?NAMES\b/ },
+	              { begin: /\bIS\s+(NOT\s+)?UNKNOWN\b/ },
+	              { begin: /\bSECURITY\s+LABEL\b/ },
+	              { begin: /\bSTANDALONE\s+(YES|NO|NO\s+VALUE)\b/ },
+	              { begin: /\bWITH\s+(NO\s+)?DATA\b/ },
+	              { begin: /\b(FOREIGN|SET)\s+DATA\b/ },
+	              { begin: /\bSET\s+(CATALOG|CONSTRAINTS)\b/ },
+	              { begin: /\b(WITH|FOR)\s+ORDINALITY\b/ },
+	              { begin: /\bIS\s+(NOT\s+)?DOCUMENT\b/ },
+	              { begin: /\bXML\s+OPTION\s+(DOCUMENT|CONTENT)\b/ },
+	              { begin: /\b(STRIP|PRESERVE)\s+WHITESPACE\b/ },
+	              { begin: /\bNO\s+(ACTION|MAXVALUE|MINVALUE)\b/ },
+	              { begin: /\bPARTITION\s+BY\s+(RANGE|LIST|HASH)\b/ },
+	              { begin: /\bAT\s+TIME\s+ZONE\b/ },
+	              { begin: /\bGRANTED\s+BY\b/ },
+	              { begin: /\bRETURN\s+(QUERY|NEXT)\b/ },
+	              { begin: /\b(ATTACH|DETACH)\s+PARTITION\b/ },
+	              { begin: /\bFORCE\s+ROW\s+LEVEL\s+SECURITY\b/ },
+	              { begin: /\b(INCLUDING|EXCLUDING)\s+(COMMENTS|CONSTRAINTS|DEFAULTS|IDENTITY|INDEXES|STATISTICS|STORAGE|ALL)\b/ },
+	              { begin: /\bAS\s+(ASSIGNMENT|IMPLICIT|PERMISSIVE|RESTRICTIVE|ENUM|RANGE)\b/ }
+	            ]
+	          },
+	          // functions named as keywords, followed by '('
+	          {
+	            begin: /\b(FORMAT|FAMILY|VERSION)\s*\(/,
+	            //keywords: { built_in: 'FORMAT FAMILY VERSION' }
+	          },
+	          // INCLUDE ( ... ) in index_parameters in CREATE TABLE
+	          {
+	            begin: /\bINCLUDE\s*\(/,
+	            keywords: 'INCLUDE'
+	          },
+	          // not highlight RANGE if not in frame_clause (not 100% correct, but seems satisfactory)
+	          {
+	            begin: /\bRANGE(?!\s*(BETWEEN|UNBOUNDED|CURRENT|[-0-9]+))/
+	          },
+	          // disable highlighting in commands CREATE AGGREGATE/COLLATION/DATABASE/OPERTOR/TEXT SEARCH .../TYPE
+	          // and in PL/pgSQL RAISE ... USING
+	          {
+	            begin: /\b(VERSION|OWNER|TEMPLATE|TABLESPACE|CONNECTION\s+LIMIT|PROCEDURE|RESTRICT|JOIN|PARSER|COPY|START|END|COLLATION|INPUT|ANALYZE|STORAGE|LIKE|DEFAULT|DELIMITER|ENCODING|COLUMN|CONSTRAINT|TABLE|SCHEMA)\s*=/
+	          },
+	          // PG_smth; HAS_some_PRIVILEGE
+	          {
+	            //className: 'built_in',
+	            begin: /\b(PG_\w+?|HAS_[A-Z_]+_PRIVILEGE)\b/,
+	            relevance: 10
+	          },
+	          // extract
+	          {
+	            begin: /\bEXTRACT\s*\(/,
+	            end: /\bFROM\b/,
+	            returnEnd: true,
+	            keywords: {
+	              //built_in: 'EXTRACT',
+	              type:     'CENTURY DAY DECADE DOW DOY EPOCH HOUR ISODOW ISOYEAR MICROSECONDS ' +
+	                        'MILLENNIUM MILLISECONDS MINUTE MONTH QUARTER SECOND TIMEZONE TIMEZONE_HOUR ' +
+	                        'TIMEZONE_MINUTE WEEK YEAR'
+	            }
+	          },
+	          // xmlelement, xmlpi - special NAME
+	          {
+	            begin: /\b(XMLELEMENT|XMLPI)\s*\(\s*NAME/,
+	            keywords: {
+	              //built_in: 'XMLELEMENT XMLPI',
+	              keyword:  'NAME'
+	            }
+	          },
+	          // xmlparse, xmlserialize
+	          {
+	            begin: /\b(XMLPARSE|XMLSERIALIZE)\s*\(\s*(DOCUMENT|CONTENT)/,
+	            keywords: {
+	              //built_in: 'XMLPARSE XMLSERIALIZE',
+	              keyword:  'DOCUMENT CONTENT'
+	            }
+	          },
+	          // Sequences. We actually skip everything between CACHE|INCREMENT|MAXVALUE|MINVALUE and
+	          // nearest following numeric constant. Without with trick we find a lot of "keywords"
+	          // in 'avrasm' autodetection test...
+	          {
+	            beginKeywords: 'CACHE INCREMENT MAXVALUE MINVALUE',
+	            end: hljs.C_NUMBER_RE,
+	            returnEnd: true,
+	            keywords: 'BY CACHE INCREMENT MAXVALUE MINVALUE'
+	          },
+	          // WITH|WITHOUT TIME ZONE as part of datatype
+	          {
+	            className: 'type',
+	            begin: /\b(WITH|WITHOUT)\s+TIME\s+ZONE\b/
+	          },
+	          // INTERVAL optional fields
+	          {
+	            className: 'type',
+	            begin: /\bINTERVAL\s+(YEAR|MONTH|DAY|HOUR|MINUTE|SECOND)(\s+TO\s+(MONTH|HOUR|MINUTE|SECOND))?\b/
+	          },
+	          // Pseudo-types which allowed only as return type
+	          {
+	            begin: /\bRETURNS\s+(LANGUAGE_HANDLER|TRIGGER|EVENT_TRIGGER|FDW_HANDLER|INDEX_AM_HANDLER|TSM_HANDLER)\b/,
+	            keywords: {
+	              keyword: 'RETURNS',
+	              type: 'LANGUAGE_HANDLER TRIGGER EVENT_TRIGGER FDW_HANDLER INDEX_AM_HANDLER TSM_HANDLER'
+	            }
+	          },
+	          // Known functions - only when followed by '('
+	          {
+	            begin: '\\b(' + FUNCTIONS_RE + ')\\s*\\('
+	            //keywords: { built_in: FUNCTIONS }
+	          },
+	          // Types
+	          {
+	            begin: '\\.(' + TYPES_RE + ')\\b' // prevent highlight as type, say, 'oid' in 'pgclass.oid'
+	          },
+	          {
+	            begin: '\\b(' + TYPES_RE + ')\\s+PATH\\b', // in XMLTABLE
+	            keywords: {
+	              keyword: 'PATH', // hopefully no one would use PATH type in XMLTABLE...
+	              type: TYPES.replace('PATH ','')
+	            }
+	          },
+	          {
+	            className: 'type',
+	            begin: '\\b(' + TYPES_RE + ')\\b'
+	          },
+	          // Strings, see https://www.postgresql.org/docs/11/static/sql-syntax-lexical.html#SQL-SYNTAX-CONSTANTS
+	          {
+	            className: 'string',
+	            begin: '\'', end: '\'',
+	            contains: [{begin: '\'\''}]
+	          },
+	          {
+	            className: 'string',
+	            begin: '(e|E|u&|U&)\'', end: '\'',
+	            contains: [{begin: '\\\\.'}],
+	            relevance: 10
+	          },
+	          {
+	            begin: DOLLAR_STRING,
+	            endSameAsBegin: true,
+	            contains: [
+	              {
+	                // actually we want them all except SQL; listed are those with known implementations
+	                // and XML + JSON just in case
+	                subLanguage: ['pgsql','perl','python','tcl','r','lua','java','php','ruby','bash','scheme','xml','json'],
+	                endsWithParent: true
+	              }
+	            ]
+	          },
+	          // identifiers in quotes
+	          {
+	            begin: '"', end: '"',
+	            contains: [{begin: '""'}]
+	          },
+	          // numbers
+	          hljs.C_NUMBER_MODE,
+	          // comments
+	          hljs.C_BLOCK_COMMENT_MODE,
+	          COMMENT_MODE,
+	          // PL/pgSQL staff
+	          // %ROWTYPE, %TYPE, $n
+	          {
+	            className: 'meta',
+	            variants: [
+	              {begin: '%(ROW)?TYPE', relevance: 10}, // %TYPE, %ROWTYPE
+	              {begin: '\\$\\d+'},                    // $n
+	              {begin: '^#\\w', end: '$'}             // #compiler option
+	            ]
+	          },
+	          // <<labeles>>
+	          {
+	            className: 'symbol',
+	            begin: LABEL,
+	            relevance: 10
+	          }
+	        ]
+	  };
+	};
+
+/***/ },
+/* 296 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33274,7 +38416,7 @@
 	  };
 	  var NUMBER = {variants: [hljs.BINARY_NUMBER_MODE, hljs.C_NUMBER_MODE]};
 	  return {
-	    aliases: ['php3', 'php4', 'php5', 'php6'],
+	    aliases: ['php', 'php3', 'php4', 'php5', 'php6', 'php7'],
 	    case_insensitive: true,
 	    keywords:
 	      'and include_once list abstract global private echo interface as static endswitch ' +
@@ -33379,7 +38521,17 @@
 	};
 
 /***/ },
-/* 289 */
+/* 297 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	    return {
+	        disableAutodetect: true
+	    };
+	};
+
+/***/ },
+/* 298 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33427,8 +38579,13 @@
 	
 	  var CLASS = {
 	    className: 'class',
-	    beginKeywords: 'class actor', end: '$',
+	    beginKeywords: 'class actor object primitive', end: '$',
 	    contains: [
+	      {
+	        className: 'keyword',
+	        begin: 'is'
+	      },
+	      TYPE_NAME,
 	      hljs.TITLE_MODE,
 	      hljs.C_LINE_COMMENT_MODE
 	    ]
@@ -33436,7 +38593,7 @@
 	
 	  var FUNCTION = {
 	    className: 'function',
-	    beginKeywords: 'new fun', end: '=>',
+	    beginKeywords: 'new fun be', end: '=>',
 	    contains: [
 	      hljs.TITLE_MODE,
 	      {
@@ -33474,7 +38631,7 @@
 	};
 
 /***/ },
-/* 290 */
+/* 299 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33559,7 +38716,7 @@
 	};
 
 /***/ },
-/* 291 */
+/* 300 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33611,7 +38768,7 @@
 	};
 
 /***/ },
-/* 292 */
+/* 301 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33645,7 +38802,7 @@
 	};
 
 /***/ },
-/* 293 */
+/* 302 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33737,13 +38894,87 @@
 	};
 
 /***/ },
-/* 294 */
+/* 303 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	
+	  // whitespaces: space, tab, formfeed
+	  var WS0 = '[ \\t\\f]*';
+	  var WS1 = '[ \\t\\f]+';
+	  // delimiter
+	  var DELIM = '(' + WS0+'[:=]'+WS0+ '|' + WS1 + ')';
+	  var KEY_ALPHANUM = '([^\\\\\\W:= \\t\\f\\n]|\\\\.)+';
+	  var KEY_OTHER = '([^\\\\:= \\t\\f\\n]|\\\\.)+';
+	
+	  var DELIM_AND_VALUE = {
+	          // skip DELIM
+	          end: DELIM,
+	          relevance: 0,
+	          starts: {
+	            // value: everything until end of line (again, taking into account backslashes)
+	            className: 'string',
+	            end: /$/,
+	            relevance: 0,
+	            contains: [
+	              { begin: '\\\\\\n' }
+	            ]
+	          }
+	        };
+	
+	  return {
+	    case_insensitive: true,
+	    illegal: /\S/,
+	    contains: [
+	      hljs.COMMENT('^\\s*[!#]', '$'),
+	      // key: everything until whitespace or = or : (taking into account backslashes)
+	      // case of a "normal" key
+	      {
+	        begin: KEY_ALPHANUM + DELIM,
+	        returnBegin: true,
+	        contains: [
+	          {
+	            className: 'attr',
+	            begin: KEY_ALPHANUM,
+	            endsParent: true,
+	            relevance: 0
+	          }
+	        ],
+	        starts: DELIM_AND_VALUE
+	      },
+	      // case of key containing non-alphanumeric chars => relevance = 0
+	      {
+	        begin: KEY_OTHER + DELIM,
+	        returnBegin: true,
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'meta',
+	            begin: KEY_OTHER,
+	            endsParent: true,
+	            relevance: 0
+	          }
+	        ],
+	        starts: DELIM_AND_VALUE
+	      },
+	      // case of an empty key
+	      {
+	        className: 'attr',
+	        relevance: 0,
+	        begin: KEY_OTHER + WS0 + '$'
+	      }
+	    ]
+	  };
+	};
+
+/***/ },
+/* 304 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
 	  return {
 	    keywords: {
-	      keyword: 'package import option optional required repeated group',
+	      keyword: 'package import option optional required repeated group oneof',
 	      built_in: 'double float int32 int64 uint32 uint64 sint32 sint64 ' +
 	        'fixed32 fixed64 sfixed32 sfixed64 bool string bytes',
 	      literal: 'true false'
@@ -33777,7 +39008,7 @@
 	};
 
 /***/ },
-/* 295 */
+/* 305 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33896,7 +39127,7 @@
 	};
 
 /***/ },
-/* 296 */
+/* 306 */
 /***/ function(module, exports) {
 
 	module.exports = // Base deafult colors in PB IDE: background: #FFFFDF; foreground: #000000;
@@ -33958,7 +39189,7 @@
 	};
 
 /***/ },
-/* 297 */
+/* 307 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -33985,21 +39216,21 @@
 	    variants: [
 	      {
 	        begin: /(u|b)?r?'''/, end: /'''/,
-	        contains: [PROMPT],
+	        contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
 	        relevance: 10
 	      },
 	      {
 	        begin: /(u|b)?r?"""/, end: /"""/,
-	        contains: [PROMPT],
+	        contains: [hljs.BACKSLASH_ESCAPE, PROMPT],
 	        relevance: 10
 	      },
 	      {
 	        begin: /(fr|rf|f)'''/, end: /'''/,
-	        contains: [PROMPT, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, PROMPT, SUBST]
 	      },
 	      {
 	        begin: /(fr|rf|f)"""/, end: /"""/,
-	        contains: [PROMPT, SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, PROMPT, SUBST]
 	      },
 	      {
 	        begin: /(u|r|ur)'/, end: /'/,
@@ -34017,11 +39248,11 @@
 	      },
 	      {
 	        begin: /(fr|rf|f)'/, end: /'/,
-	        contains: [SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
 	      },
 	      {
 	        begin: /(fr|rf|f)"/, end: /"/,
-	        contains: [SUBST]
+	        contains: [hljs.BACKSLASH_ESCAPE, SUBST]
 	      },
 	      hljs.APOS_STRING_MODE,
 	      hljs.QUOTE_STRING_MODE
@@ -34042,7 +39273,7 @@
 	  };
 	  SUBST.contains = [STRING, NUMBER, PROMPT];
 	  return {
-	    aliases: ['py', 'gyp'],
+	    aliases: ['py', 'gyp', 'ipython'],
 	    keywords: KEYWORDS,
 	    illegal: /(<\/|->|\?)|=>/,
 	    contains: [
@@ -34078,7 +39309,7 @@
 	};
 
 /***/ },
-/* 298 */
+/* 308 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34105,7 +39336,7 @@
 	};
 
 /***/ },
-/* 299 */
+/* 309 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34278,7 +39509,7 @@
 	};
 
 /***/ },
-/* 300 */
+/* 310 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34352,7 +39583,311 @@
 	};
 
 /***/ },
-/* 301 */
+/* 311 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	  function orReValues(ops){
+	    return ops
+	    .map(function(op) {
+	      return op
+	        .split('')
+	        .map(function(char) {
+	          return '\\' + char;
+	        })
+	        .join('');
+	    })
+	    .join('|');
+	  }
+	
+	  var RE_IDENT = '~?[a-z$_][0-9a-zA-Z$_]*';
+	  var RE_MODULE_IDENT = '`?[A-Z$_][0-9a-zA-Z$_]*';
+	
+	  var RE_PARAM_TYPEPARAM = '\'?[a-z$_][0-9a-z$_]*';
+	  var RE_PARAM_TYPE = '\s*:\s*[a-z$_][0-9a-z$_]*(\(\s*(' + RE_PARAM_TYPEPARAM + '\s*(,' + RE_PARAM_TYPEPARAM + ')*)?\s*\))?';
+	  var RE_PARAM = RE_IDENT + '(' + RE_PARAM_TYPE + ')?(' + RE_PARAM_TYPE + ')?';
+	  var RE_OPERATOR = "(" + orReValues(['||', '&&', '++', '**', '+.', '*', '/', '*.', '/.', '...', '|>']) + "|==|===)";
+	  var RE_OPERATOR_SPACED = "\\s+" + RE_OPERATOR + "\\s+";
+	
+	  var KEYWORDS = {
+	    keyword:
+	      'and as asr assert begin class constraint do done downto else end exception external' +
+	      'for fun function functor if in include inherit initializer' +
+	      'land lazy let lor lsl lsr lxor match method mod module mutable new nonrec' +
+	      'object of open or private rec sig struct then to try type val virtual when while with',
+	    built_in:
+	      'array bool bytes char exn|5 float int int32 int64 list lazy_t|5 nativeint|5 ref string unit ',
+	    literal:
+	      'true false'
+	  };
+	
+	  var RE_NUMBER = '\\b(0[xX][a-fA-F0-9_]+[Lln]?|' +
+	    '0[oO][0-7_]+[Lln]?|' +
+	    '0[bB][01_]+[Lln]?|' +
+	    '[0-9][0-9_]*([Lln]|(\\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)';
+	
+	  var NUMBER_MODE = {
+	    className: 'number',
+	    relevance: 0,
+	    variants: [
+	      {
+	        begin: RE_NUMBER
+	      },
+	      {
+	        begin: '\\(\\-' + RE_NUMBER + '\\)'
+	      }
+	    ]
+	  };
+	
+	  var OPERATOR_MODE = {
+	    className: 'operator',
+	    relevance: 0,
+	    begin: RE_OPERATOR
+	  };
+	  var LIST_CONTENTS_MODES = [
+	    {
+	      className: 'identifier',
+	      relevance: 0,
+	      begin: RE_IDENT
+	    },
+	    OPERATOR_MODE,
+	    NUMBER_MODE
+	  ];
+	
+	  var MODULE_ACCESS_CONTENTS = [
+	    hljs.QUOTE_STRING_MODE,
+	    OPERATOR_MODE,
+	    {
+	      className: 'module',
+	      begin: "\\b" + RE_MODULE_IDENT, returnBegin: true,
+	      end: "\.",
+	      contains: [
+	        {
+	          className: 'identifier',
+	          begin: RE_MODULE_IDENT,
+	          relevance: 0
+	        }
+	      ]
+	    }
+	  ];
+	
+	  var PARAMS_CONTENTS = [
+	    {
+	      className: 'module',
+	      begin: "\\b" + RE_MODULE_IDENT, returnBegin: true,
+	      end: "\.",
+	      relevance: 0,
+	      contains: [
+	        {
+	          className: 'identifier',
+	          begin: RE_MODULE_IDENT,
+	          relevance: 0
+	        }
+	      ]
+	    }
+	  ];
+	
+	  var PARAMS_MODE = {
+	    begin: RE_IDENT,
+	    end: '(,|\\n|\\))',
+	    relevance: 0,
+	    contains: [
+	      OPERATOR_MODE,
+	      {
+	        className: 'typing',
+	        begin: ':',
+	        end: '(,|\\n)',
+	        returnBegin: true,
+	        relevance: 0,
+	        contains: PARAMS_CONTENTS
+	      }
+	    ]
+	  };
+	
+	  var FUNCTION_BLOCK_MODE = {
+	    className: 'function',
+	    relevance: 0,
+	    keywords: KEYWORDS,
+	    variants: [
+	      {
+	        begin: '\\s(\\(\\.?.*?\\)|' + RE_IDENT + ')\\s*=>',
+	        end: '\\s*=>',
+	        returnBegin: true,
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'params',
+	            variants: [
+	              {
+	                begin: RE_IDENT
+	              },
+	              {
+	                begin: RE_PARAM
+	              },
+	              {
+	                begin: /\(\s*\)/,
+	              }
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        begin: '\\s\\(\\.?[^;\\|]*\\)\\s*=>',
+	        end: '\\s=>',
+	        returnBegin: true,
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'params',
+	            relevance: 0,
+	            variants: [
+	              PARAMS_MODE
+	            ]
+	          }
+	        ]
+	      },
+	      {
+	        begin: '\\(\\.\\s' + RE_IDENT + '\\)\\s*=>'
+	      }
+	    ]
+	  };
+	  MODULE_ACCESS_CONTENTS.push(FUNCTION_BLOCK_MODE);
+	
+	  var CONSTRUCTOR_MODE = {
+	    className: 'constructor',
+	    begin: RE_MODULE_IDENT + '\\(',
+	    end: '\\)',
+	    illegal: '\\n',
+	    keywords: KEYWORDS,
+	    contains: [
+	      hljs.QUOTE_STRING_MODE,
+	      OPERATOR_MODE,
+	      {
+	        className: 'params',
+	        begin: '\\b' + RE_IDENT
+	      }
+	    ]
+	  };
+	
+	  var PATTERN_MATCH_BLOCK_MODE = {
+	    className: 'pattern-match',
+	    begin: '\\|',
+	    returnBegin: true,
+	    keywords: KEYWORDS,
+	    end: '=>',
+	    relevance: 0,
+	    contains: [
+	      CONSTRUCTOR_MODE,
+	      OPERATOR_MODE,
+	      {
+	        relevance: 0,
+	        className: 'constructor',
+	        begin: RE_MODULE_IDENT
+	      }
+	    ]
+	  };
+	
+	  var MODULE_ACCESS_MODE = {
+	    className: 'module-access',
+	    keywords: KEYWORDS,
+	    returnBegin: true,
+	    variants: [
+	      {
+	        begin: "\\b(" + RE_MODULE_IDENT + "\\.)+" + RE_IDENT
+	      },
+	      {
+	        begin: "\\b(" + RE_MODULE_IDENT + "\\.)+\\(",
+	        end: "\\)",
+	        returnBegin: true,
+	        contains: [
+	          FUNCTION_BLOCK_MODE,
+	          {
+	            begin: '\\(',
+	            end: '\\)',
+	            skip: true
+	          }
+	        ].concat(MODULE_ACCESS_CONTENTS)
+	      },
+	      {
+	        begin: "\\b(" + RE_MODULE_IDENT + "\\.)+{",
+	        end: "}"
+	      }
+	    ],
+	    contains: MODULE_ACCESS_CONTENTS
+	  };
+	
+	  PARAMS_CONTENTS.push(MODULE_ACCESS_MODE);
+	
+	  return {
+	    aliases: ['re'],
+	    keywords: KEYWORDS,
+	    illegal: '(:\\-|:=|\\${|\\+=)',
+	    contains: [
+	      hljs.COMMENT('/\\*', '\\*/', { illegal: '^(\\#,\\/\\/)' }),
+	      {
+	        className: 'character',
+	        begin: '\'(\\\\[^\']+|[^\'])\'',
+	        illegal: '\\n',
+	        relevance: 0
+	      },
+	      hljs.QUOTE_STRING_MODE,
+	      {
+	        className: 'literal',
+	        begin: '\\(\\)',
+	        relevance: 0
+	      },
+	      {
+	        className: 'literal',
+	        begin: '\\[\\|',
+	        end: '\\|\\]',
+	        relevance:  0,
+	        contains: LIST_CONTENTS_MODES
+	      },
+	      {
+	        className: 'literal',
+	        begin: '\\[',
+	        end: '\\]',
+	        relevance: 0,
+	        contains: LIST_CONTENTS_MODES
+	      },
+	      CONSTRUCTOR_MODE,
+	      {
+	        className: 'operator',
+	        begin: RE_OPERATOR_SPACED,
+	        illegal: '\\-\\->',
+	        relevance: 0
+	      },
+	      NUMBER_MODE,
+	      hljs.C_LINE_COMMENT_MODE,
+	      PATTERN_MATCH_BLOCK_MODE,
+	      FUNCTION_BLOCK_MODE,
+	      {
+	        className: 'module-def',
+	        begin: "\\bmodule\\s+" + RE_IDENT + "\\s+" + RE_MODULE_IDENT + "\\s+=\\s+{",
+	        end: "}",
+	        returnBegin: true,
+	        keywords: KEYWORDS,
+	        relevance: 0,
+	        contains: [
+	          {
+	            className: 'module',
+	            relevance: 0,
+	            begin: RE_MODULE_IDENT
+	          },
+	          {
+	            begin: '{',
+	            end: '}',
+	            skip: true
+	          }
+	        ].concat(MODULE_ACCESS_CONTENTS)
+	      },
+	      MODULE_ACCESS_MODE
+	    ]
+	  };
+	};
+
+/***/ },
+/* 312 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34383,7 +39918,7 @@
 	};
 
 /***/ },
-/* 302 */
+/* 313 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34454,7 +39989,7 @@
 	};
 
 /***/ },
-/* 303 */
+/* 314 */
 /***/ function(module, exports) {
 
 	module.exports = // Colors from RouterOS terminal:
@@ -34617,7 +40152,7 @@
 	};
 
 /***/ },
-/* 304 */
+/* 315 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34657,7 +40192,7 @@
 	};
 
 /***/ },
-/* 305 */
+/* 316 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34722,7 +40257,7 @@
 	};
 
 /***/ },
-/* 306 */
+/* 317 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34834,7 +40369,137 @@
 	};
 
 /***/ },
-/* 307 */
+/* 318 */
+/***/ function(module, exports) {
+
+	module.exports = function(hljs) {
+	
+	    // Data step and PROC SQL statements
+	    var SAS_KEYWORDS = ''+
+	        'do if then else end until while '+
+	        ''+
+	        'abort array attrib by call cards cards4 catname continue '+
+	        'datalines datalines4 delete delim delimiter display dm drop '+
+	        'endsas error file filename footnote format goto in infile '+
+	        'informat input keep label leave length libname link list '+
+	        'lostcard merge missing modify options output out page put '+
+	        'redirect remove rename replace retain return select set skip '+
+	        'startsas stop title update waitsas where window x systask '+
+	        ''+
+	        'add and alter as cascade check create delete describe '+
+	        'distinct drop foreign from group having index insert into in '+
+	        'key like message modify msgtype not null on or order primary '+
+	        'references reset restrict select set table unique update '+
+	        'validate view where';
+	
+	    // Built-in SAS functions
+	    var SAS_FUN = ''+
+	        'abs|addr|airy|arcos|arsin|atan|attrc|attrn|band|'+
+	        'betainv|blshift|bnot|bor|brshift|bxor|byte|cdf|ceil|'+
+	        'cexist|cinv|close|cnonct|collate|compbl|compound|'+
+	        'compress|cos|cosh|css|curobs|cv|daccdb|daccdbsl|'+
+	        'daccsl|daccsyd|dacctab|dairy|date|datejul|datepart|'+
+	        'datetime|day|dclose|depdb|depdbsl|depdbsl|depsl|'+
+	        'depsl|depsyd|depsyd|deptab|deptab|dequote|dhms|dif|'+
+	        'digamma|dim|dinfo|dnum|dopen|doptname|doptnum|dread|'+
+	        'dropnote|dsname|erf|erfc|exist|exp|fappend|fclose|'+
+	        'fcol|fdelete|fetch|fetchobs|fexist|fget|fileexist|'+
+	        'filename|fileref|finfo|finv|fipname|fipnamel|'+
+	        'fipstate|floor|fnonct|fnote|fopen|foptname|foptnum|'+
+	        'fpoint|fpos|fput|fread|frewind|frlen|fsep|fuzz|'+
+	        'fwrite|gaminv|gamma|getoption|getvarc|getvarn|hbound|'+
+	        'hms|hosthelp|hour|ibessel|index|indexc|indexw|input|'+
+	        'inputc|inputn|int|intck|intnx|intrr|irr|jbessel|'+
+	        'juldate|kurtosis|lag|lbound|left|length|lgamma|'+
+	        'libname|libref|log|log10|log2|logpdf|logpmf|logsdf|'+
+	        'lowcase|max|mdy|mean|min|minute|mod|month|mopen|'+
+	        'mort|n|netpv|nmiss|normal|note|npv|open|ordinal|'+
+	        'pathname|pdf|peek|peekc|pmf|point|poisson|poke|'+
+	        'probbeta|probbnml|probchi|probf|probgam|probhypr|'+
+	        'probit|probnegb|probnorm|probt|put|putc|putn|qtr|'+
+	        'quote|ranbin|rancau|ranexp|rangam|range|rank|rannor|'+
+	        'ranpoi|rantbl|rantri|ranuni|repeat|resolve|reverse|'+
+	        'rewind|right|round|saving|scan|sdf|second|sign|'+
+	        'sin|sinh|skewness|soundex|spedis|sqrt|std|stderr|'+
+	        'stfips|stname|stnamel|substr|sum|symget|sysget|'+
+	        'sysmsg|sysprod|sysrc|system|tan|tanh|time|timepart|'+
+	        'tinv|tnonct|today|translate|tranwrd|trigamma|'+
+	        'trim|trimn|trunc|uniform|upcase|uss|var|varfmt|'+
+	        'varinfmt|varlabel|varlen|varname|varnum|varray|'+
+	        'varrayx|vartype|verify|vformat|vformatd|vformatdx|'+
+	        'vformatn|vformatnx|vformatw|vformatwx|vformatx|'+
+	        'vinarray|vinarrayx|vinformat|vinformatd|vinformatdx|'+
+	        'vinformatn|vinformatnx|vinformatw|vinformatwx|'+
+	        'vinformatx|vlabel|vlabelx|vlength|vlengthx|vname|'+
+	        'vnamex|vtype|vtypex|weekday|year|yyq|zipfips|zipname|'+
+	        'zipnamel|zipstate';
+	
+	    // Built-in macro functions
+	    var SAS_MACRO_FUN = 'bquote|nrbquote|cmpres|qcmpres|compstor|'+
+	        'datatyp|display|do|else|end|eval|global|goto|'+
+	        'if|index|input|keydef|label|left|length|let|'+
+	        'local|lowcase|macro|mend|nrbquote|nrquote|'+
+	        'nrstr|put|qcmpres|qleft|qlowcase|qscan|'+
+	        'qsubstr|qsysfunc|qtrim|quote|qupcase|scan|str|'+
+	        'substr|superq|syscall|sysevalf|sysexec|sysfunc|'+
+	        'sysget|syslput|sysprod|sysrc|sysrput|then|to|'+
+	        'trim|unquote|until|upcase|verify|while|window';
+	
+	    return {
+	        aliases: ['sas', 'SAS'],
+	        case_insensitive: true, // SAS is case-insensitive
+	        keywords: {
+	            literal:
+	                'null missing _all_ _automatic_ _character_ _infile_ '+
+	                '_n_ _name_ _null_ _numeric_ _user_ _webout_',
+	            meta:
+	                SAS_KEYWORDS
+	        },
+	        contains: [
+	            {
+	                // Distinct highlight for proc <proc>, data, run, quit
+	                className: 'keyword',
+	                begin: /^\s*(proc [\w\d_]+|data|run|quit)[\s\;]/
+	            },
+	            {
+	                // Macro variables
+	                className: 'variable',
+	                begin: /\&[a-zA-Z_\&][a-zA-Z0-9_]*\.?/
+	            },
+	            {
+	                // Special emphasis for datalines|cards
+	                className: 'emphasis',
+	                begin: /^\s*datalines|cards.*;/,
+	                end: /^\s*;\s*$/
+	            },
+	            {   // Built-in macro variables take precedence
+	                className: 'built_in',
+	                begin: '%(' + SAS_MACRO_FUN + ')'
+	            },
+	            {
+	                // User-defined macro functions highlighted after
+	                className: 'name',
+	                begin: /%[a-zA-Z_][a-zA-Z_0-9]*/
+	            },
+	            {
+	                className: 'meta',
+	                begin: '[^%](' + SAS_FUN + ')[\(]'
+	            },
+	            {
+	                className: 'string',
+	                variants: [
+	                    hljs.APOS_STRING_MODE,
+	                    hljs.QUOTE_STRING_MODE
+	                ]
+	            },
+	            hljs.COMMENT('\\*', ';'),
+	            hljs.C_BLOCK_COMMENT_MODE
+	        ]
+	    };
+	};
+
+/***/ },
+/* 319 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -34953,7 +40618,7 @@
 	};
 
 /***/ },
-/* 308 */
+/* 320 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35101,7 +40766,7 @@
 	};
 
 /***/ },
-/* 309 */
+/* 321 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35159,7 +40824,7 @@
 	};
 
 /***/ },
-/* 310 */
+/* 322 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35261,7 +40926,7 @@
 	};
 
 /***/ },
-/* 311 */
+/* 323 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35274,13 +40939,13 @@
 	        starts: {
 	          end: '$', subLanguage: 'bash'
 	        }
-	      },
+	      }
 	    ]
 	  }
 	};
 
 /***/ },
-/* 312 */
+/* 324 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35340,7 +41005,7 @@
 	};
 
 /***/ },
-/* 313 */
+/* 325 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35394,7 +41059,7 @@
 	};
 
 /***/ },
-/* 314 */
+/* 326 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35464,7 +41129,7 @@
 	};
 
 /***/ },
-/* 315 */
+/* 327 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -35507,60 +41172,63 @@
 	    keywords: {
 	      keyword:
 	        'case catch default do else exit exitWith for forEach from if ' +
-	        'switch then throw to try waitUntil while with',
+	        'private switch then throw to try waitUntil while with',
 	      built_in:
 	        'abs accTime acos action actionIDs actionKeys actionKeysImages actionKeysNames ' +
 	        'actionKeysNamesArray actionName actionParams activateAddons activatedAddons activateKey ' +
 	        'add3DENConnection add3DENEventHandler add3DENLayer addAction addBackpack addBackpackCargo ' +
 	        'addBackpackCargoGlobal addBackpackGlobal addCamShake addCuratorAddons addCuratorCameraArea ' +
 	        'addCuratorEditableObjects addCuratorEditingArea addCuratorPoints addEditorObject addEventHandler ' +
-	        'addGoggles addGroupIcon addHandgunItem addHeadgear addItem addItemCargo addItemCargoGlobal ' +
-	        'addItemPool addItemToBackpack addItemToUniform addItemToVest addLiveStats addMagazine ' +
-	        'addMagazineAmmoCargo addMagazineCargo addMagazineCargoGlobal addMagazineGlobal addMagazinePool ' +
-	        'addMagazines addMagazineTurret addMenu addMenuItem addMissionEventHandler addMPEventHandler ' +
-	        'addMusicEventHandler addOwnedMine addPlayerScores addPrimaryWeaponItem ' +
+	        'addForce addGoggles addGroupIcon addHandgunItem addHeadgear addItem addItemCargo ' +
+	        'addItemCargoGlobal addItemPool addItemToBackpack addItemToUniform addItemToVest addLiveStats ' +
+	        'addMagazine addMagazineAmmoCargo addMagazineCargo addMagazineCargoGlobal addMagazineGlobal ' +
+	        'addMagazinePool addMagazines addMagazineTurret addMenu addMenuItem addMissionEventHandler ' +
+	        'addMPEventHandler addMusicEventHandler addOwnedMine addPlayerScores addPrimaryWeaponItem ' +
 	        'addPublicVariableEventHandler addRating addResources addScore addScoreSide addSecondaryWeaponItem ' +
-	        'addSwitchableUnit addTeamMember addToRemainsCollector addUniform addVehicle addVest addWaypoint ' +
-	        'addWeapon addWeaponCargo addWeaponCargoGlobal addWeaponGlobal addWeaponItem addWeaponPool ' +
-	        'addWeaponTurret agent agents AGLToASL aimedAtTarget aimPos airDensityRTD airportSide ' +
-	        'AISFinishHeal alive all3DENEntities allControls allCurators allCutLayers allDead allDeadMen ' +
-	        'allDisplays allGroups allMapMarkers allMines allMissionObjects allow3DMode allowCrewInImmobile ' +
-	        'allowCuratorLogicIgnoreAreas allowDamage allowDammage allowFileOperations allowFleeing allowGetIn ' +
-	        'allowSprint allPlayers allSites allTurrets allUnits allUnitsUAV allVariables ammo and animate ' +
-	        'animateDoor animateSource animationNames animationPhase animationSourcePhase animationState ' +
-	        'append apply armoryPoints arrayIntersect asin ASLToAGL ASLToATL assert assignAsCargo ' +
-	        'assignAsCargoIndex assignAsCommander assignAsDriver assignAsGunner assignAsTurret assignCurator ' +
-	        'assignedCargo assignedCommander assignedDriver assignedGunner assignedItems assignedTarget ' +
-	        'assignedTeam assignedVehicle assignedVehicleRole assignItem assignTeam assignToAirport atan atan2 ' +
-	        'atg ATLToASL attachedObject attachedObjects attachedTo attachObject attachTo attackEnabled ' +
-	        'backpack backpackCargo backpackContainer backpackItems backpackMagazines backpackSpaceFor ' +
-	        'behaviour benchmark binocular blufor boundingBox boundingBoxReal boundingCenter breakOut breakTo ' +
-	        'briefingName buildingExit buildingPos buttonAction buttonSetAction cadetMode call callExtension ' +
-	        'camCommand camCommit camCommitPrepared camCommitted camConstuctionSetParams camCreate camDestroy ' +
-	        'cameraEffect cameraEffectEnableHUD cameraInterest cameraOn cameraView campaignConfigFile ' +
-	        'camPreload camPreloaded camPrepareBank camPrepareDir camPrepareDive camPrepareFocus camPrepareFov ' +
-	        'camPrepareFovRange camPreparePos camPrepareRelPos camPrepareTarget camSetBank camSetDir ' +
-	        'camSetDive camSetFocus camSetFov camSetFovRange camSetPos camSetRelPos camSetTarget camTarget ' +
-	        'camUseNVG canAdd canAddItemToBackpack canAddItemToUniform canAddItemToVest ' +
-	        'cancelSimpleTaskDestination canFire canMove canSlingLoad canStand canSuspend canUnloadInCombat ' +
-	        'canVehicleCargo captive captiveNum cbChecked cbSetChecked ceil channelEnabled cheatsEnabled ' +
-	        'checkAIFeature checkVisibility civilian className clearAllItemsFromBackpack clearBackpackCargo ' +
-	        'clearBackpackCargoGlobal clearGroupIcons clearItemCargo clearItemCargoGlobal clearItemPool ' +
-	        'clearMagazineCargo clearMagazineCargoGlobal clearMagazinePool clearOverlay clearRadio ' +
-	        'clearWeaponCargo clearWeaponCargoGlobal clearWeaponPool clientOwner closeDialog closeDisplay ' +
-	        'closeOverlay collapseObjectTree collect3DENHistory combatMode commandArtilleryFire commandChat ' +
-	        'commander commandFire commandFollow commandFSM commandGetOut commandingMenu commandMove ' +
-	        'commandRadio commandStop commandSuppressiveFire commandTarget commandWatch comment commitOverlay ' +
-	        'compile compileFinal completedFSM composeText configClasses configFile configHierarchy configName ' +
-	        'configNull configProperties configSourceAddonList configSourceMod configSourceModList ' +
-	        'connectTerminalToUAV controlNull controlsGroupCtrl copyFromClipboard copyToClipboard ' +
-	        'copyWaypoints cos count countEnemy countFriendly countSide countType countUnknown ' +
-	        'create3DENComposition create3DENEntity createAgent createCenter createDialog createDiaryLink ' +
-	        'createDiaryRecord createDiarySubject createDisplay createGearDialog createGroup ' +
-	        'createGuardedPoint createLocation createMarker createMarkerLocal createMenu createMine ' +
-	        'createMissionDisplay createMPCampaignDisplay createSimpleObject createSimpleTask createSite ' +
-	        'createSoundSource createTask createTeam createTrigger createUnit createVehicle createVehicleCrew ' +
-	        'createVehicleLocal crew ctrlActivate ctrlAddEventHandler ctrlAngle ctrlAutoScrollDelay ' +
+	        'addSwitchableUnit addTeamMember addToRemainsCollector addTorque addUniform addVehicle addVest ' +
+	        'addWaypoint addWeapon addWeaponCargo addWeaponCargoGlobal addWeaponGlobal addWeaponItem ' +
+	        'addWeaponPool addWeaponTurret admin agent agents AGLToASL aimedAtTarget aimPos airDensityRTD ' +
+	        'airplaneThrottle airportSide AISFinishHeal alive all3DENEntities allAirports allControls ' +
+	        'allCurators allCutLayers allDead allDeadMen allDisplays allGroups allMapMarkers allMines ' +
+	        'allMissionObjects allow3DMode allowCrewInImmobile allowCuratorLogicIgnoreAreas allowDamage ' +
+	        'allowDammage allowFileOperations allowFleeing allowGetIn allowSprint allPlayers allSimpleObjects ' +
+	        'allSites allTurrets allUnits allUnitsUAV allVariables ammo ammoOnPylon and animate animateBay ' +
+	        'animateDoor animatePylon animateSource animationNames animationPhase animationSourcePhase ' +
+	        'animationState append apply armoryPoints arrayIntersect asin ASLToAGL ASLToATL assert ' +
+	        'assignAsCargo assignAsCargoIndex assignAsCommander assignAsDriver assignAsGunner assignAsTurret ' +
+	        'assignCurator assignedCargo assignedCommander assignedDriver assignedGunner assignedItems ' +
+	        'assignedTarget assignedTeam assignedVehicle assignedVehicleRole assignItem assignTeam ' +
+	        'assignToAirport atan atan2 atg ATLToASL attachedObject attachedObjects attachedTo attachObject ' +
+	        'attachTo attackEnabled backpack backpackCargo backpackContainer backpackItems backpackMagazines ' +
+	        'backpackSpaceFor behaviour benchmark binocular boundingBox boundingBoxReal boundingCenter ' +
+	        'breakOut breakTo briefingName buildingExit buildingPos buttonAction buttonSetAction cadetMode ' +
+	        'call callExtension camCommand camCommit camCommitPrepared camCommitted camConstuctionSetParams ' +
+	        'camCreate camDestroy cameraEffect cameraEffectEnableHUD cameraInterest cameraOn cameraView ' +
+	        'campaignConfigFile camPreload camPreloaded camPrepareBank camPrepareDir camPrepareDive ' +
+	        'camPrepareFocus camPrepareFov camPrepareFovRange camPreparePos camPrepareRelPos camPrepareTarget ' +
+	        'camSetBank camSetDir camSetDive camSetFocus camSetFov camSetFovRange camSetPos camSetRelPos ' +
+	        'camSetTarget camTarget camUseNVG canAdd canAddItemToBackpack canAddItemToUniform canAddItemToVest ' +
+	        'cancelSimpleTaskDestination canFire canMove canSlingLoad canStand canSuspend ' +
+	        'canTriggerDynamicSimulation canUnloadInCombat canVehicleCargo captive captiveNum cbChecked ' +
+	        'cbSetChecked ceil channelEnabled cheatsEnabled checkAIFeature checkVisibility className ' +
+	        'clearAllItemsFromBackpack clearBackpackCargo clearBackpackCargoGlobal clearGroupIcons ' +
+	        'clearItemCargo clearItemCargoGlobal clearItemPool clearMagazineCargo clearMagazineCargoGlobal ' +
+	        'clearMagazinePool clearOverlay clearRadio clearWeaponCargo clearWeaponCargoGlobal clearWeaponPool ' +
+	        'clientOwner closeDialog closeDisplay closeOverlay collapseObjectTree collect3DENHistory ' +
+	        'collectiveRTD combatMode commandArtilleryFire commandChat commander commandFire commandFollow ' +
+	        'commandFSM commandGetOut commandingMenu commandMove commandRadio commandStop ' +
+	        'commandSuppressiveFire commandTarget commandWatch comment commitOverlay compile compileFinal ' +
+	        'completedFSM composeText configClasses configFile configHierarchy configName configProperties ' +
+	        'configSourceAddonList configSourceMod configSourceModList confirmSensorTarget ' +
+	        'connectTerminalToUAV controlsGroupCtrl copyFromClipboard copyToClipboard copyWaypoints cos count ' +
+	        'countEnemy countFriendly countSide countType countUnknown create3DENComposition create3DENEntity ' +
+	        'createAgent createCenter createDialog createDiaryLink createDiaryRecord createDiarySubject ' +
+	        'createDisplay createGearDialog createGroup createGuardedPoint createLocation createMarker ' +
+	        'createMarkerLocal createMenu createMine createMissionDisplay createMPCampaignDisplay ' +
+	        'createSimpleObject createSimpleTask createSite createSoundSource createTask createTeam ' +
+	        'createTrigger createUnit createVehicle createVehicleCrew createVehicleLocal crew ctAddHeader ' +
+	        'ctAddRow ctClear ctCurSel ctData ctFindHeaderRows ctFindRowHeader ctHeaderControls ctHeaderCount ' +
+	        'ctRemoveHeaders ctRemoveRows ctrlActivate ctrlAddEventHandler ctrlAngle ctrlAutoScrollDelay ' +
 	        'ctrlAutoScrollRewind ctrlAutoScrollSpeed ctrlChecked ctrlClassName ctrlCommit ctrlCommitted ' +
 	        'ctrlCreate ctrlDelete ctrlEnable ctrlEnabled ctrlFade ctrlHTMLLoaded ctrlIDC ctrlIDD ' +
 	        'ctrlMapAnimAdd ctrlMapAnimClear ctrlMapAnimCommit ctrlMapAnimDone ctrlMapCursor ctrlMapMouseOver ' +
@@ -35573,141 +41241,160 @@
 	        'ctrlSetFontH6B ctrlSetFontHeight ctrlSetFontHeightH1 ctrlSetFontHeightH2 ctrlSetFontHeightH3 ' +
 	        'ctrlSetFontHeightH4 ctrlSetFontHeightH5 ctrlSetFontHeightH6 ctrlSetFontHeightSecondary ' +
 	        'ctrlSetFontP ctrlSetFontPB ctrlSetFontSecondary ctrlSetForegroundColor ctrlSetModel ' +
-	        'ctrlSetModelDirAndUp ctrlSetModelScale ctrlSetPosition ctrlSetScale ctrlSetStructuredText ' +
-	        'ctrlSetText ctrlSetTextColor ctrlSetTooltip ctrlSetTooltipColorBox ctrlSetTooltipColorShade ' +
-	        'ctrlSetTooltipColorText ctrlShow ctrlShown ctrlText ctrlTextHeight ctrlType ctrlVisible ' +
-	        'curatorAddons curatorCamera curatorCameraArea curatorCameraAreaCeiling curatorCoef ' +
-	        'curatorEditableObjects curatorEditingArea curatorEditingAreaType curatorMouseOver curatorPoints ' +
-	        'curatorRegisteredObjects curatorSelected curatorWaypointCost current3DENOperation currentChannel ' +
-	        'currentCommand currentMagazine currentMagazineDetail currentMagazineDetailTurret ' +
-	        'currentMagazineTurret currentMuzzle currentNamespace currentTask currentTasks currentThrowable ' +
-	        'currentVisionMode currentWaypoint currentWeapon currentWeaponMode currentWeaponTurret ' +
-	        'currentZeroing cursorObject cursorTarget customChat customRadio cutFadeOut cutObj cutRsc cutText ' +
-	        'damage date dateToNumber daytime deActivateKey debriefingText debugFSM debugLog deg ' +
-	        'delete3DENEntities deleteAt deleteCenter deleteCollection deleteEditorObject deleteGroup ' +
-	        'deleteIdentity deleteLocation deleteMarker deleteMarkerLocal deleteRange deleteResources ' +
-	        'deleteSite deleteStatus deleteTeam deleteVehicle deleteVehicleCrew deleteWaypoint detach ' +
-	        'detectedMines diag_activeMissionFSMs diag_activeScripts diag_activeSQFScripts ' +
-	        'diag_activeSQSScripts diag_captureFrame diag_captureSlowFrame diag_codePerformance diag_drawMode ' +
-	        'diag_enable diag_enabled diag_fps diag_fpsMin diag_frameNo diag_list diag_log diag_logSlowFrame ' +
-	        'diag_mergeConfigFile diag_recordTurretLimits diag_tickTime diag_toggle dialog diarySubjectExists ' +
-	        'didJIP didJIPOwner difficulty difficultyEnabled difficultyEnabledRTD difficultyOption direction ' +
-	        'directSay disableAI disableCollisionWith disableConversation disableDebriefingStats ' +
+	        'ctrlSetModelDirAndUp ctrlSetModelScale ctrlSetPixelPrecision ctrlSetPosition ctrlSetScale ' +
+	        'ctrlSetStructuredText ctrlSetText ctrlSetTextColor ctrlSetTooltip ctrlSetTooltipColorBox ' +
+	        'ctrlSetTooltipColorShade ctrlSetTooltipColorText ctrlShow ctrlShown ctrlText ctrlTextHeight ' +
+	        'ctrlTextWidth ctrlType ctrlVisible ctRowControls ctRowCount ctSetCurSel ctSetData ' +
+	        'ctSetHeaderTemplate ctSetRowTemplate ctSetValue ctValue curatorAddons curatorCamera ' +
+	        'curatorCameraArea curatorCameraAreaCeiling curatorCoef curatorEditableObjects curatorEditingArea ' +
+	        'curatorEditingAreaType curatorMouseOver curatorPoints curatorRegisteredObjects curatorSelected ' +
+	        'curatorWaypointCost current3DENOperation currentChannel currentCommand currentMagazine ' +
+	        'currentMagazineDetail currentMagazineDetailTurret currentMagazineTurret currentMuzzle ' +
+	        'currentNamespace currentTask currentTasks currentThrowable currentVisionMode currentWaypoint ' +
+	        'currentWeapon currentWeaponMode currentWeaponTurret currentZeroing cursorObject cursorTarget ' +
+	        'customChat customRadio cutFadeOut cutObj cutRsc cutText damage date dateToNumber daytime ' +
+	        'deActivateKey debriefingText debugFSM debugLog deg delete3DENEntities deleteAt deleteCenter ' +
+	        'deleteCollection deleteEditorObject deleteGroup deleteGroupWhenEmpty deleteIdentity ' +
+	        'deleteLocation deleteMarker deleteMarkerLocal deleteRange deleteResources deleteSite deleteStatus ' +
+	        'deleteTeam deleteVehicle deleteVehicleCrew deleteWaypoint detach detectedMines ' +
+	        'diag_activeMissionFSMs diag_activeScripts diag_activeSQFScripts diag_activeSQSScripts ' +
+	        'diag_captureFrame diag_captureFrameToFile diag_captureSlowFrame diag_codePerformance ' +
+	        'diag_drawMode diag_enable diag_enabled diag_fps diag_fpsMin diag_frameNo diag_lightNewLoad ' +
+	        'diag_list diag_log diag_logSlowFrame diag_mergeConfigFile diag_recordTurretLimits ' +
+	        'diag_setLightNew diag_tickTime diag_toggle dialog diarySubjectExists didJIP didJIPOwner ' +
+	        'difficulty difficultyEnabled difficultyEnabledRTD difficultyOption direction directSay disableAI ' +
+	        'disableCollisionWith disableConversation disableDebriefingStats disableMapIndicators ' +
 	        'disableNVGEquipment disableRemoteSensors disableSerialization disableTIEquipment ' +
-	        'disableUAVConnectability disableUserInput displayAddEventHandler displayCtrl displayNull ' +
-	        'displayParent displayRemoveAllEventHandlers displayRemoveEventHandler displaySetEventHandler ' +
-	        'dissolveTeam distance distance2D distanceSqr distributionRegion do3DENAction doArtilleryFire ' +
-	        'doFire doFollow doFSM doGetOut doMove doorPhase doStop doSuppressiveFire doTarget doWatch ' +
-	        'drawArrow drawEllipse drawIcon drawIcon3D drawLine drawLine3D drawLink drawLocation drawPolygon ' +
-	        'drawRectangle driver drop east echo edit3DENMissionAttributes editObject editorSetEventHandler ' +
-	        'effectiveCommander emptyPositions enableAI enableAIFeature enableAimPrecision enableAttack ' +
-	        'enableAudioFeature enableCamShake enableCaustics enableChannel enableCollisionWith enableCopilot ' +
-	        'enableDebriefingStats enableDiagLegend enableEndDialog enableEngineArtillery enableEnvironment ' +
-	        'enableFatigue enableGunLights enableIRLasers enableMimics enablePersonTurret enableRadio ' +
-	        'enableReload enableRopeAttach enableSatNormalOnDetail enableSaving enableSentences ' +
-	        'enableSimulation enableSimulationGlobal enableStamina enableTeamSwitch enableUAVConnectability ' +
-	        'enableUAVWaypoints enableVehicleCargo endLoadingScreen endMission engineOn enginesIsOnRTD ' +
-	        'enginesRpmRTD enginesTorqueRTD entities estimatedEndServerTime estimatedTimeLeft ' +
-	        'evalObjectArgument everyBackpack everyContainer exec execEditorScript execFSM execVM exp ' +
-	        'expectedDestination exportJIPMessages eyeDirection eyePos face faction fadeMusic fadeRadio ' +
-	        'fadeSound fadeSpeech failMission fillWeaponsFromPool find findCover findDisplay findEditorObject ' +
-	        'findEmptyPosition findEmptyPositionReady findNearestEnemy finishMissionInit finite fire ' +
-	        'fireAtTarget firstBackpack flag flagOwner flagSide flagTexture fleeing floor flyInHeight ' +
-	        'flyInHeightASL fog fogForecast fogParams forceAddUniform forcedMap forceEnd forceMap forceRespawn ' +
-	        'forceSpeed forceWalk forceWeaponFire forceWeatherChange forEachMember forEachMemberAgent ' +
-	        'forEachMemberTeam format formation formationDirection formationLeader formationMembers ' +
-	        'formationPosition formationTask formatText formLeader freeLook fromEditor fuel fullCrew ' +
-	        'gearIDCAmmoCount gearSlotAmmoCount gearSlotData get3DENActionState get3DENAttribute get3DENCamera ' +
-	        'get3DENConnections get3DENEntity get3DENEntityID get3DENGrid get3DENIconsVisible ' +
-	        'get3DENLayerEntities get3DENLinesVisible get3DENMissionAttribute get3DENMouseOver get3DENSelected ' +
-	        'getAimingCoef getAllHitPointsDamage getAllOwnedMines getAmmoCargo getAnimAimPrecision ' +
+	        'disableUAVConnectability disableUserInput displayAddEventHandler displayCtrl displayParent ' +
+	        'displayRemoveAllEventHandlers displayRemoveEventHandler displaySetEventHandler dissolveTeam ' +
+	        'distance distance2D distanceSqr distributionRegion do3DENAction doArtilleryFire doFire doFollow ' +
+	        'doFSM doGetOut doMove doorPhase doStop doSuppressiveFire doTarget doWatch drawArrow drawEllipse ' +
+	        'drawIcon drawIcon3D drawLine drawLine3D drawLink drawLocation drawPolygon drawRectangle ' +
+	        'drawTriangle driver drop dynamicSimulationDistance dynamicSimulationDistanceCoef ' +
+	        'dynamicSimulationEnabled dynamicSimulationSystemEnabled echo edit3DENMissionAttributes editObject ' +
+	        'editorSetEventHandler effectiveCommander emptyPositions enableAI enableAIFeature ' +
+	        'enableAimPrecision enableAttack enableAudioFeature enableAutoStartUpRTD enableAutoTrimRTD ' +
+	        'enableCamShake enableCaustics enableChannel enableCollisionWith enableCopilot ' +
+	        'enableDebriefingStats enableDiagLegend enableDynamicSimulation enableDynamicSimulationSystem ' +
+	        'enableEndDialog enableEngineArtillery enableEnvironment enableFatigue enableGunLights ' +
+	        'enableInfoPanelComponent enableIRLasers enableMimics enablePersonTurret enableRadio enableReload ' +
+	        'enableRopeAttach enableSatNormalOnDetail enableSaving enableSentences enableSimulation ' +
+	        'enableSimulationGlobal enableStamina enableTeamSwitch enableTraffic enableUAVConnectability ' +
+	        'enableUAVWaypoints enableVehicleCargo enableVehicleSensor enableWeaponDisassembly ' +
+	        'endLoadingScreen endMission engineOn enginesIsOnRTD enginesRpmRTD enginesTorqueRTD entities ' +
+	        'environmentEnabled estimatedEndServerTime estimatedTimeLeft evalObjectArgument everyBackpack ' +
+	        'everyContainer exec execEditorScript execFSM execVM exp expectedDestination exportJIPMessages ' +
+	        'eyeDirection eyePos face faction fadeMusic fadeRadio fadeSound fadeSpeech failMission ' +
+	        'fillWeaponsFromPool find findCover findDisplay findEditorObject findEmptyPosition ' +
+	        'findEmptyPositionReady findIf findNearestEnemy finishMissionInit finite fire fireAtTarget ' +
+	        'firstBackpack flag flagAnimationPhase flagOwner flagSide flagTexture fleeing floor flyInHeight ' +
+	        'flyInHeightASL fog fogForecast fogParams forceAddUniform forcedMap forceEnd forceFlagTexture ' +
+	        'forceFollowRoad forceMap forceRespawn forceSpeed forceWalk forceWeaponFire forceWeatherChange ' +
+	        'forEachMember forEachMemberAgent forEachMemberTeam forgetTarget format formation ' +
+	        'formationDirection formationLeader formationMembers formationPosition formationTask formatText ' +
+	        'formLeader freeLook fromEditor fuel fullCrew gearIDCAmmoCount gearSlotAmmoCount gearSlotData ' +
+	        'get3DENActionState get3DENAttribute get3DENCamera get3DENConnections get3DENEntity ' +
+	        'get3DENEntityID get3DENGrid get3DENIconsVisible get3DENLayerEntities get3DENLinesVisible ' +
+	        'get3DENMissionAttribute get3DENMouseOver get3DENSelected getAimingCoef getAllEnvSoundControllers ' +
+	        'getAllHitPointsDamage getAllOwnedMines getAllSoundControllers getAmmoCargo getAnimAimPrecision ' +
 	        'getAnimSpeedCoef getArray getArtilleryAmmo getArtilleryComputerSettings getArtilleryETA ' +
 	        'getAssignedCuratorLogic getAssignedCuratorUnit getBackpackCargo getBleedingRemaining ' +
 	        'getBurningValue getCameraViewDirection getCargoIndex getCenterOfMass getClientState ' +
-	        'getClientStateNumber getConnectedUAV getCustomAimingCoef getDammage getDescription getDir ' +
-	        'getDirVisual getDLCs getEditorCamera getEditorMode getEditorObjectScope getElevationOffset ' +
-	        'getFatigue getFriend getFSMVariable getFuelCargo getGroupIcon getGroupIconParams getGroupIcons ' +
-	        'getHideFrom getHit getHitIndex getHitPointDamage getItemCargo getMagazineCargo getMarkerColor ' +
-	        'getMarkerPos getMarkerSize getMarkerType getMass getMissionConfig getMissionConfigValue ' +
-	        'getMissionDLCs getMissionLayerEntities getModelInfo getMousePosition getNumber getObjectArgument ' +
-	        'getObjectChildren getObjectDLC getObjectMaterials getObjectProxy getObjectTextures getObjectType ' +
-	        'getObjectViewDistance getOxygenRemaining getPersonUsedDLCs getPilotCameraDirection ' +
-	        'getPilotCameraPosition getPilotCameraRotation getPilotCameraTarget getPlayerChannel ' +
-	        'getPlayerScores getPlayerUID getPos getPosASL getPosASLVisual getPosASLW getPosATL ' +
-	        'getPosATLVisual getPosVisual getPosWorld getRelDir getRelPos getRemoteSensorsDisabled ' +
-	        'getRepairCargo getResolution getShadowDistance getShotParents getSlingLoad getSpeed getStamina ' +
-	        'getStatValue getSuppression getTerrainHeightASL getText getUnitLoadout getUnitTrait getVariable ' +
-	        'getVehicleCargo getWeaponCargo getWeaponSway getWPPos glanceAt globalChat globalRadio goggles ' +
-	        'goto group groupChat groupFromNetId groupIconSelectable groupIconsVisible groupId groupOwner ' +
-	        'groupRadio groupSelectedUnits groupSelectUnit grpNull gunner gusts halt handgunItems ' +
+	        'getClientStateNumber getCompatiblePylonMagazines getConnectedUAV getContainerMaxLoad ' +
+	        'getCursorObjectParams getCustomAimCoef getDammage getDescription getDir getDirVisual ' +
+	        'getDLCAssetsUsage getDLCAssetsUsageByName getDLCs getEditorCamera getEditorMode ' +
+	        'getEditorObjectScope getElevationOffset getEnvSoundController getFatigue getForcedFlagTexture ' +
+	        'getFriend getFSMVariable getFuelCargo getGroupIcon getGroupIconParams getGroupIcons getHideFrom ' +
+	        'getHit getHitIndex getHitPointDamage getItemCargo getMagazineCargo getMarkerColor getMarkerPos ' +
+	        'getMarkerSize getMarkerType getMass getMissionConfig getMissionConfigValue getMissionDLCs ' +
+	        'getMissionLayerEntities getModelInfo getMousePosition getMusicPlayedTime getNumber ' +
+	        'getObjectArgument getObjectChildren getObjectDLC getObjectMaterials getObjectProxy ' +
+	        'getObjectTextures getObjectType getObjectViewDistance getOxygenRemaining getPersonUsedDLCs ' +
+	        'getPilotCameraDirection getPilotCameraPosition getPilotCameraRotation getPilotCameraTarget ' +
+	        'getPlateNumber getPlayerChannel getPlayerScores getPlayerUID getPos getPosASL getPosASLVisual ' +
+	        'getPosASLW getPosATL getPosATLVisual getPosVisual getPosWorld getPylonMagazines getRelDir ' +
+	        'getRelPos getRemoteSensorsDisabled getRepairCargo getResolution getShadowDistance getShotParents ' +
+	        'getSlingLoad getSoundController getSoundControllerResult getSpeed getStamina getStatValue ' +
+	        'getSuppression getTerrainGrid getTerrainHeightASL getText getTotalDLCUsageTime getUnitLoadout ' +
+	        'getUnitTrait getUserMFDText getUserMFDvalue getVariable getVehicleCargo getWeaponCargo ' +
+	        'getWeaponSway getWingsOrientationRTD getWingsPositionRTD getWPPos glanceAt globalChat globalRadio ' +
+	        'goggles goto group groupChat groupFromNetId groupIconSelectable groupIconsVisible groupId ' +
+	        'groupOwner groupRadio groupSelectedUnits groupSelectUnit gunner gusts halt handgunItems ' +
 	        'handgunMagazine handgunWeapon handsHit hasInterface hasPilotCamera hasWeapon hcAllGroups ' +
 	        'hcGroupParams hcLeader hcRemoveAllGroups hcRemoveGroup hcSelected hcSelectGroup hcSetGroup ' +
 	        'hcShowBar hcShownBar headgear hideBody hideObject hideObjectGlobal hideSelection hint hintC ' +
 	        'hintCadet hintSilent hmd hostMission htmlLoad HUDMovementLevels humidity image importAllGroups ' +
-	        'importance in inArea inAreaArray incapacitatedState independent inflame inflamed ' +
-	        'inGameUISetEventHandler inheritsFrom initAmbientLife inPolygon inputAction inRangeOfArtillery ' +
-	        'insertEditorObject intersect is3DEN is3DENMultiplayer isAbleToBreathe isAgent isArray ' +
-	        'isAutoHoverOn isAutonomous isAutotest isBleeding isBurning isClass isCollisionLightOn ' +
-	        'isCopilotEnabled isDedicated isDLCAvailable isEngineOn isEqualTo isEqualType isEqualTypeAll ' +
-	        'isEqualTypeAny isEqualTypeArray isEqualTypeParams isFilePatchingEnabled isFlashlightOn ' +
-	        'isFlatEmpty isForcedWalk isFormationLeader isHidden isInRemainsCollector ' +
-	        'isInstructorFigureEnabled isIRLaserOn isKeyActive isKindOf isLightOn isLocalized isManualFire ' +
-	        'isMarkedForCollection isMultiplayer isMultiplayerSolo isNil isNull isNumber isObjectHidden ' +
-	        'isObjectRTD isOnRoad isPipEnabled isPlayer isRealTime isRemoteExecuted isRemoteExecutedJIP ' +
-	        'isServer isShowing3DIcons isSprintAllowed isStaminaEnabled isSteamMission ' +
-	        'isStreamFriendlyUIEnabled isText isTouchingGround isTurnedOut isTutHintsEnabled isUAVConnectable ' +
-	        'isUAVConnected isUniformAllowed isVehicleCargo isWalking isWeaponDeployed isWeaponRested ' +
-	        'itemCargo items itemsWithMagazines join joinAs joinAsSilent joinSilent joinString kbAddDatabase ' +
-	        'kbAddDatabaseTargets kbAddTopic kbHasTopic kbReact kbRemoveTopic kbTell kbWasSaid keyImage ' +
-	        'keyName knowsAbout land landAt landResult language laserTarget lbAdd lbClear lbColor lbCurSel ' +
-	        'lbData lbDelete lbIsSelected lbPicture lbSelection lbSetColor lbSetCurSel lbSetData lbSetPicture ' +
-	        'lbSetPictureColor lbSetPictureColorDisabled lbSetPictureColorSelected lbSetSelectColor ' +
-	        'lbSetSelectColorRight lbSetSelected lbSetTooltip lbSetValue lbSize lbSort lbSortByValue lbText ' +
-	        'lbValue leader leaderboardDeInit leaderboardGetRows leaderboardInit leaveVehicle libraryCredits ' +
+	        'importance in inArea inAreaArray incapacitatedState inflame inflamed infoPanel ' +
+	        'infoPanelComponentEnabled infoPanelComponents infoPanels inGameUISetEventHandler inheritsFrom ' +
+	        'initAmbientLife inPolygon inputAction inRangeOfArtillery insertEditorObject intersect is3DEN ' +
+	        'is3DENMultiplayer isAbleToBreathe isAgent isArray isAutoHoverOn isAutonomous isAutotest ' +
+	        'isBleeding isBurning isClass isCollisionLightOn isCopilotEnabled isDamageAllowed isDedicated ' +
+	        'isDLCAvailable isEngineOn isEqualTo isEqualType isEqualTypeAll isEqualTypeAny isEqualTypeArray ' +
+	        'isEqualTypeParams isFilePatchingEnabled isFlashlightOn isFlatEmpty isForcedWalk isFormationLeader ' +
+	        'isGroupDeletedWhenEmpty isHidden isInRemainsCollector isInstructorFigureEnabled isIRLaserOn ' +
+	        'isKeyActive isKindOf isLaserOn isLightOn isLocalized isManualFire isMarkedForCollection ' +
+	        'isMultiplayer isMultiplayerSolo isNil isNull isNumber isObjectHidden isObjectRTD isOnRoad ' +
+	        'isPipEnabled isPlayer isRealTime isRemoteExecuted isRemoteExecutedJIP isServer isShowing3DIcons ' +
+	        'isSimpleObject isSprintAllowed isStaminaEnabled isSteamMission isStreamFriendlyUIEnabled isText ' +
+	        'isTouchingGround isTurnedOut isTutHintsEnabled isUAVConnectable isUAVConnected isUIContext ' +
+	        'isUniformAllowed isVehicleCargo isVehicleRadarOn isVehicleSensorEnabled isWalking ' +
+	        'isWeaponDeployed isWeaponRested itemCargo items itemsWithMagazines join joinAs joinAsSilent ' +
+	        'joinSilent joinString kbAddDatabase kbAddDatabaseTargets kbAddTopic kbHasTopic kbReact ' +
+	        'kbRemoveTopic kbTell kbWasSaid keyImage keyName knowsAbout land landAt landResult language ' +
+	        'laserTarget lbAdd lbClear lbColor lbColorRight lbCurSel lbData lbDelete lbIsSelected lbPicture ' +
+	        'lbPictureRight lbSelection lbSetColor lbSetColorRight lbSetCurSel lbSetData lbSetPicture ' +
+	        'lbSetPictureColor lbSetPictureColorDisabled lbSetPictureColorSelected lbSetPictureRight ' +
+	        'lbSetPictureRightColor lbSetPictureRightColorDisabled lbSetPictureRightColorSelected ' +
+	        'lbSetSelectColor lbSetSelectColorRight lbSetSelected lbSetText lbSetTextRight lbSetTooltip ' +
+	        'lbSetValue lbSize lbSort lbSortByValue lbText lbTextRight lbValue leader leaderboardDeInit ' +
+	        'leaderboardGetRows leaderboardInit leaderboardRequestRowsFriends leaderboardsRequestUploadScore ' +
+	        'leaderboardsRequestUploadScoreKeepBest leaderboardState leaveVehicle libraryCredits ' +
 	        'libraryDisclaimers lifeState lightAttachObject lightDetachObject lightIsOn lightnings limitSpeed ' +
-	        'linearConversion lineBreak lineIntersects lineIntersectsObjs lineIntersectsSurfaces ' +
-	        'lineIntersectsWith linkItem list listObjects ln lnbAddArray lnbAddColumn lnbAddRow lnbClear ' +
-	        'lnbColor lnbCurSelRow lnbData lnbDeleteColumn lnbDeleteRow lnbGetColumnsPosition lnbPicture ' +
-	        'lnbSetColor lnbSetColumnsPos lnbSetCurSelRow lnbSetData lnbSetPicture lnbSetText lnbSetValue ' +
-	        'lnbSize lnbText lnbValue load loadAbs loadBackpack loadFile loadGame loadIdentity loadMagazine ' +
-	        'loadOverlay loadStatus loadUniform loadVest local localize locationNull locationPosition lock ' +
-	        'lockCameraTo lockCargo lockDriver locked lockedCargo lockedDriver lockedTurret lockIdentity ' +
-	        'lockTurret lockWP log logEntities logNetwork logNetworkTerminate lookAt lookAtPos magazineCargo ' +
-	        'magazines magazinesAllTurrets magazinesAmmo magazinesAmmoCargo magazinesAmmoFull magazinesDetail ' +
-	        'magazinesDetailBackpack magazinesDetailUniform magazinesDetailVest magazinesTurret ' +
-	        'magazineTurretAmmo mapAnimAdd mapAnimClear mapAnimCommit mapAnimDone mapCenterOnCamera ' +
-	        'mapGridPosition markAsFinishedOnSteam markerAlpha markerBrush markerColor markerDir markerPos ' +
-	        'markerShape markerSize markerText markerType max members menuAction menuAdd menuChecked menuClear ' +
-	        'menuCollapse menuData menuDelete menuEnable menuEnabled menuExpand menuHover menuPicture ' +
-	        'menuSetAction menuSetCheck menuSetData menuSetPicture menuSetValue menuShortcut menuShortcutText ' +
-	        'menuSize menuSort menuText menuURL menuValue min mineActive mineDetectedBy missionConfigFile ' +
-	        'missionDifficulty missionName missionNamespace missionStart missionVersion mod modelToWorld ' +
-	        'modelToWorldVisual modParams moonIntensity moonPhase morale move move3DENCamera moveInAny ' +
-	        'moveInCargo moveInCommander moveInDriver moveInGunner moveInTurret moveObjectToEnd moveOut ' +
-	        'moveTime moveTo moveToCompleted moveToFailed musicVolume name nameSound nearEntities ' +
-	        'nearestBuilding nearestLocation nearestLocations nearestLocationWithDubbing nearestObject ' +
-	        'nearestObjects nearestTerrainObjects nearObjects nearObjectsReady nearRoads nearSupplies ' +
-	        'nearTargets needReload netId netObjNull newOverlay nextMenuItemIndex nextWeatherChange nMenuItems ' +
-	        'not numberToDate objectCurators objectFromNetId objectParent objNull objStatus onBriefingGroup ' +
-	        'onBriefingNotes onBriefingPlan onBriefingTeamSwitch onCommandModeChanged onDoubleClick ' +
-	        'onEachFrame onGroupIconClick onGroupIconOverEnter onGroupIconOverLeave onHCGroupSelectionChanged ' +
-	        'onMapSingleClick onPlayerConnected onPlayerDisconnected onPreloadFinished onPreloadStarted ' +
-	        'onShowNewObject onTeamSwitch openCuratorInterface openDLCPage openMap openYoutubeVideo opfor or ' +
-	        'orderGetIn overcast overcastForecast owner param params parseNumber parseText parsingNamespace ' +
-	        'particlesQuality pi pickWeaponPool pitch pixelGrid pixelGridBase pixelGridNoUIScale pixelH pixelW ' +
+	        'linearConversion lineIntersects lineIntersectsObjs lineIntersectsSurfaces lineIntersectsWith ' +
+	        'linkItem list listObjects listRemoteTargets listVehicleSensors ln lnbAddArray lnbAddColumn ' +
+	        'lnbAddRow lnbClear lnbColor lnbCurSelRow lnbData lnbDeleteColumn lnbDeleteRow ' +
+	        'lnbGetColumnsPosition lnbPicture lnbSetColor lnbSetColumnsPos lnbSetCurSelRow lnbSetData ' +
+	        'lnbSetPicture lnbSetText lnbSetValue lnbSize lnbSort lnbSortByValue lnbText lnbValue load loadAbs ' +
+	        'loadBackpack loadFile loadGame loadIdentity loadMagazine loadOverlay loadStatus loadUniform ' +
+	        'loadVest local localize locationPosition lock lockCameraTo lockCargo lockDriver locked ' +
+	        'lockedCargo lockedDriver lockedTurret lockIdentity lockTurret lockWP log logEntities logNetwork ' +
+	        'logNetworkTerminate lookAt lookAtPos magazineCargo magazines magazinesAllTurrets magazinesAmmo ' +
+	        'magazinesAmmoCargo magazinesAmmoFull magazinesDetail magazinesDetailBackpack ' +
+	        'magazinesDetailUniform magazinesDetailVest magazinesTurret magazineTurretAmmo mapAnimAdd ' +
+	        'mapAnimClear mapAnimCommit mapAnimDone mapCenterOnCamera mapGridPosition markAsFinishedOnSteam ' +
+	        'markerAlpha markerBrush markerColor markerDir markerPos markerShape markerSize markerText ' +
+	        'markerType max members menuAction menuAdd menuChecked menuClear menuCollapse menuData menuDelete ' +
+	        'menuEnable menuEnabled menuExpand menuHover menuPicture menuSetAction menuSetCheck menuSetData ' +
+	        'menuSetPicture menuSetValue menuShortcut menuShortcutText menuSize menuSort menuText menuURL ' +
+	        'menuValue min mineActive mineDetectedBy missionConfigFile missionDifficulty missionName ' +
+	        'missionNamespace missionStart missionVersion mod modelToWorld modelToWorldVisual ' +
+	        'modelToWorldVisualWorld modelToWorldWorld modParams moonIntensity moonPhase morale move ' +
+	        'move3DENCamera moveInAny moveInCargo moveInCommander moveInDriver moveInGunner moveInTurret ' +
+	        'moveObjectToEnd moveOut moveTime moveTo moveToCompleted moveToFailed musicVolume name nameSound ' +
+	        'nearEntities nearestBuilding nearestLocation nearestLocations nearestLocationWithDubbing ' +
+	        'nearestObject nearestObjects nearestTerrainObjects nearObjects nearObjectsReady nearRoads ' +
+	        'nearSupplies nearTargets needReload netId netObjNull newOverlay nextMenuItemIndex ' +
+	        'nextWeatherChange nMenuItems not numberOfEnginesRTD numberToDate objectCurators objectFromNetId ' +
+	        'objectParent objStatus onBriefingGroup onBriefingNotes onBriefingPlan onBriefingTeamSwitch ' +
+	        'onCommandModeChanged onDoubleClick onEachFrame onGroupIconClick onGroupIconOverEnter ' +
+	        'onGroupIconOverLeave onHCGroupSelectionChanged onMapSingleClick onPlayerConnected ' +
+	        'onPlayerDisconnected onPreloadFinished onPreloadStarted onShowNewObject onTeamSwitch ' +
+	        'openCuratorInterface openDLCPage openMap openSteamApp openYoutubeVideo or orderGetIn overcast ' +
+	        'overcastForecast owner param params parseNumber parseSimpleArray parseText parsingNamespace ' +
+	        'particlesQuality pickWeaponPool pitch pixelGrid pixelGridBase pixelGridNoUIScale pixelH pixelW ' +
 	        'playableSlotsNumber playableUnits playAction playActionNow player playerRespawnTime playerSide ' +
 	        'playersNumber playGesture playMission playMove playMoveNow playMusic playScriptedMission ' +
 	        'playSound playSound3D position positionCameraToWorld posScreenToWorld posWorldToScreen ' +
 	        'ppEffectAdjust ppEffectCommit ppEffectCommitted ppEffectCreate ppEffectDestroy ppEffectEnable ' +
 	        'ppEffectEnabled ppEffectForceInNVG precision preloadCamera preloadObject preloadSound ' +
 	        'preloadTitleObj preloadTitleRsc preprocessFile preprocessFileLineNumbers primaryWeapon ' +
-	        'primaryWeaponItems primaryWeaponMagazine priority private processDiaryLink productVersion ' +
-	        'profileName profileNamespace profileNameSteam progressLoadingScreen progressPosition ' +
-	        'progressSetPosition publicVariable publicVariableClient publicVariableServer pushBack ' +
-	        'pushBackUnique putWeaponPool queryItemsPool queryMagazinePool queryWeaponPool rad radioChannelAdd ' +
-	        'radioChannelCreate radioChannelRemove radioChannelSetCallSign radioChannelSetLabel radioVolume ' +
-	        'rain rainbow random rank rankId rating rectangular registeredTasks registerTask reload ' +
-	        'reloadEnabled remoteControl remoteExec remoteExecCall remove3DENConnection remove3DENEventHandler ' +
+	        'primaryWeaponItems primaryWeaponMagazine priority processDiaryLink productVersion profileName ' +
+	        'profileNamespace profileNameSteam progressLoadingScreen progressPosition progressSetPosition ' +
+	        'publicVariable publicVariableClient publicVariableServer pushBack pushBackUnique putWeaponPool ' +
+	        'queryItemsPool queryMagazinePool queryWeaponPool rad radioChannelAdd radioChannelCreate ' +
+	        'radioChannelRemove radioChannelSetCallSign radioChannelSetLabel radioVolume rain rainbow random ' +
+	        'rank rankId rating rectangular registeredTasks registerTask reload reloadEnabled remoteControl ' +
+	        'remoteExec remoteExecCall remoteExecutedOwner remove3DENConnection remove3DENEventHandler ' +
 	        'remove3DENLayer removeAction removeAll3DENEventHandlers removeAllActions removeAllAssignedItems ' +
 	        'removeAllContainers removeAllCuratorAddons removeAllCuratorCameraAreas ' +
 	        'removeAllCuratorEditingAreas removeAllEventHandlers removeAllHandgunItems removeAllItems ' +
@@ -35721,69 +41408,77 @@
 	        'removeMagazineTurret removeMenuItem removeMissionEventHandler removeMPEventHandler ' +
 	        'removeMusicEventHandler removeOwnedMine removePrimaryWeaponItem removeSecondaryWeaponItem ' +
 	        'removeSimpleTask removeSwitchableUnit removeTeamMember removeUniform removeVest removeWeapon ' +
-	        'removeWeaponGlobal removeWeaponTurret requiredVersion resetCamShake resetSubgroupDirection ' +
-	        'resistance resize resources respawnVehicle restartEditorCamera reveal revealMine reverse ' +
-	        'reversedMouseY roadAt roadsConnectedTo roleDescription ropeAttachedObjects ropeAttachedTo ' +
-	        'ropeAttachEnabled ropeAttachTo ropeCreate ropeCut ropeDestroy ropeDetach ropeEndPosition ' +
-	        'ropeLength ropes ropeUnwind ropeUnwound rotorsForcesRTD rotorsRpmRTD round runInitScript ' +
-	        'safeZoneH safeZoneW safeZoneWAbs safeZoneX safeZoneXAbs safeZoneY save3DENInventory saveGame ' +
-	        'saveIdentity saveJoysticks saveOverlay saveProfileNamespace saveStatus saveVar savingEnabled say ' +
-	        'say2D say3D scopeName score scoreSide screenshot screenToWorld scriptDone scriptName scriptNull ' +
-	        'scudState secondaryWeapon secondaryWeaponItems secondaryWeaponMagazine select selectBestPlaces ' +
+	        'removeWeaponAttachmentCargo removeWeaponCargo removeWeaponGlobal removeWeaponTurret ' +
+	        'reportRemoteTarget requiredVersion resetCamShake resetSubgroupDirection resize resources ' +
+	        'respawnVehicle restartEditorCamera reveal revealMine reverse reversedMouseY roadAt ' +
+	        'roadsConnectedTo roleDescription ropeAttachedObjects ropeAttachedTo ropeAttachEnabled ' +
+	        'ropeAttachTo ropeCreate ropeCut ropeDestroy ropeDetach ropeEndPosition ropeLength ropes ' +
+	        'ropeUnwind ropeUnwound rotorsForcesRTD rotorsRpmRTD round runInitScript safeZoneH safeZoneW ' +
+	        'safeZoneWAbs safeZoneX safeZoneXAbs safeZoneY save3DENInventory saveGame saveIdentity ' +
+	        'saveJoysticks saveOverlay saveProfileNamespace saveStatus saveVar savingEnabled say say2D say3D ' +
+	        'scopeName score scoreSide screenshot screenToWorld scriptDone scriptName scudState ' +
+	        'secondaryWeapon secondaryWeaponItems secondaryWeaponMagazine select selectBestPlaces ' +
 	        'selectDiarySubject selectedEditorObjects selectEditorObject selectionNames selectionPosition ' +
-	        'selectLeader selectMax selectMin selectNoPlayer selectPlayer selectRandom selectWeapon ' +
-	        'selectWeaponTurret sendAUMessage sendSimpleCommand sendTask sendTaskResult sendUDPMessage ' +
-	        'serverCommand serverCommandAvailable serverCommandExecutable serverName serverTime set ' +
-	        'set3DENAttribute set3DENAttributes set3DENGrid set3DENIconsVisible set3DENLayer ' +
-	        'set3DENLinesVisible set3DENMissionAttributes set3DENModelsVisible set3DENObjectType ' +
-	        'set3DENSelected setAccTime setAirportSide setAmmo setAmmoCargo setAnimSpeedCoef setAperture ' +
-	        'setApertureNew setArmoryPoints setAttributes setAutonomous setBehaviour setBleedingRemaining ' +
-	        'setCameraInterest setCamShakeDefParams setCamShakeParams setCamUseTi setCaptive setCenterOfMass ' +
-	        'setCollisionLight setCombatMode setCompassOscillation setCuratorCameraAreaCeiling setCuratorCoef ' +
-	        'setCuratorEditingAreaType setCuratorWaypointCost setCurrentChannel setCurrentTask ' +
-	        'setCurrentWaypoint setCustomAimCoef setDamage setDammage setDate setDebriefingText ' +
-	        'setDefaultCamera setDestination setDetailMapBlendPars setDir setDirection setDrawIcon ' +
-	        'setDropInterval setEditorMode setEditorObjectScope setEffectCondition setFace setFaceAnimation ' +
-	        'setFatigue setFlagOwner setFlagSide setFlagTexture setFog setFormation setFormationTask ' +
-	        'setFormDir setFriend setFromEditor setFSMVariable setFuel setFuelCargo setGroupIcon ' +
-	        'setGroupIconParams setGroupIconsSelectable setGroupIconsVisible setGroupId setGroupIdGlobal ' +
-	        'setGroupOwner setGusts setHideBehind setHit setHitIndex setHitPointDamage setHorizonParallaxCoef ' +
-	        'setHUDMovementLevels setIdentity setImportance setLeader setLightAmbient setLightAttenuation ' +
-	        'setLightBrightness setLightColor setLightDayLight setLightFlareMaxDistance setLightFlareSize ' +
-	        'setLightIntensity setLightnings setLightUseFlare setLocalWindParams setMagazineTurretAmmo ' +
-	        'setMarkerAlpha setMarkerAlphaLocal setMarkerBrush setMarkerBrushLocal setMarkerColor ' +
-	        'setMarkerColorLocal setMarkerDir setMarkerDirLocal setMarkerPos setMarkerPosLocal setMarkerShape ' +
-	        'setMarkerShapeLocal setMarkerSize setMarkerSizeLocal setMarkerText setMarkerTextLocal ' +
-	        'setMarkerType setMarkerTypeLocal setMass setMimic setMousePosition setMusicEffect ' +
-	        'setMusicEventHandler setName setNameSound setObjectArguments setObjectMaterial ' +
-	        'setObjectMaterialGlobal setObjectProxy setObjectTexture setObjectTextureGlobal ' +
-	        'setObjectViewDistance setOvercast setOwner setOxygenRemaining setParticleCircle setParticleClass ' +
-	        'setParticleFire setParticleParams setParticleRandom setPilotCameraDirection ' +
-	        'setPilotCameraRotation setPilotCameraTarget setPilotLight setPiPEffect setPitch setPlayable ' +
-	        'setPlayerRespawnTime setPos setPosASL setPosASL2 setPosASLW setPosATL setPosition setPosWorld ' +
-	        'setRadioMsg setRain setRainbow setRandomLip setRank setRectangular setRepairCargo ' +
-	        'setShadowDistance setShotParents setSide setSimpleTaskAlwaysVisible setSimpleTaskCustomData ' +
+	        'selectLeader selectMax selectMin selectNoPlayer selectPlayer selectRandom selectRandomWeighted ' +
+	        'selectWeapon selectWeaponTurret sendAUMessage sendSimpleCommand sendTask sendTaskResult ' +
+	        'sendUDPMessage serverCommand serverCommandAvailable serverCommandExecutable serverName serverTime ' +
+	        'set set3DENAttribute set3DENAttributes set3DENGrid set3DENIconsVisible set3DENLayer ' +
+	        'set3DENLinesVisible set3DENLogicType set3DENMissionAttribute set3DENMissionAttributes ' +
+	        'set3DENModelsVisible set3DENObjectType set3DENSelected setAccTime setActualCollectiveRTD ' +
+	        'setAirplaneThrottle setAirportSide setAmmo setAmmoCargo setAmmoOnPylon setAnimSpeedCoef ' +
+	        'setAperture setApertureNew setArmoryPoints setAttributes setAutonomous setBehaviour ' +
+	        'setBleedingRemaining setBrakesRTD setCameraInterest setCamShakeDefParams setCamShakeParams ' +
+	        'setCamUseTI setCaptive setCenterOfMass setCollisionLight setCombatMode setCompassOscillation ' +
+	        'setConvoySeparation setCuratorCameraAreaCeiling setCuratorCoef setCuratorEditingAreaType ' +
+	        'setCuratorWaypointCost setCurrentChannel setCurrentTask setCurrentWaypoint setCustomAimCoef ' +
+	        'setCustomWeightRTD setDamage setDammage setDate setDebriefingText setDefaultCamera setDestination ' +
+	        'setDetailMapBlendPars setDir setDirection setDrawIcon setDriveOnPath setDropInterval ' +
+	        'setDynamicSimulationDistance setDynamicSimulationDistanceCoef setEditorMode setEditorObjectScope ' +
+	        'setEffectCondition setEngineRPMRTD setFace setFaceAnimation setFatigue setFeatureType ' +
+	        'setFlagAnimationPhase setFlagOwner setFlagSide setFlagTexture setFog setFormation ' +
+	        'setFormationTask setFormDir setFriend setFromEditor setFSMVariable setFuel setFuelCargo ' +
+	        'setGroupIcon setGroupIconParams setGroupIconsSelectable setGroupIconsVisible setGroupId ' +
+	        'setGroupIdGlobal setGroupOwner setGusts setHideBehind setHit setHitIndex setHitPointDamage ' +
+	        'setHorizonParallaxCoef setHUDMovementLevels setIdentity setImportance setInfoPanel setLeader ' +
+	        'setLightAmbient setLightAttenuation setLightBrightness setLightColor setLightDayLight ' +
+	        'setLightFlareMaxDistance setLightFlareSize setLightIntensity setLightnings setLightUseFlare ' +
+	        'setLocalWindParams setMagazineTurretAmmo setMarkerAlpha setMarkerAlphaLocal setMarkerBrush ' +
+	        'setMarkerBrushLocal setMarkerColor setMarkerColorLocal setMarkerDir setMarkerDirLocal ' +
+	        'setMarkerPos setMarkerPosLocal setMarkerShape setMarkerShapeLocal setMarkerSize ' +
+	        'setMarkerSizeLocal setMarkerText setMarkerTextLocal setMarkerType setMarkerTypeLocal setMass ' +
+	        'setMimic setMousePosition setMusicEffect setMusicEventHandler setName setNameSound ' +
+	        'setObjectArguments setObjectMaterial setObjectMaterialGlobal setObjectProxy setObjectTexture ' +
+	        'setObjectTextureGlobal setObjectViewDistance setOvercast setOwner setOxygenRemaining ' +
+	        'setParticleCircle setParticleClass setParticleFire setParticleParams setParticleRandom ' +
+	        'setPilotCameraDirection setPilotCameraRotation setPilotCameraTarget setPilotLight setPiPEffect ' +
+	        'setPitch setPlateNumber setPlayable setPlayerRespawnTime setPos setPosASL setPosASL2 setPosASLW ' +
+	        'setPosATL setPosition setPosWorld setPylonLoadOut setPylonsPriority setRadioMsg setRain ' +
+	        'setRainbow setRandomLip setRank setRectangular setRepairCargo setRotorBrakeRTD setShadowDistance ' +
+	        'setShotParents setSide setSimpleTaskAlwaysVisible setSimpleTaskCustomData ' +
 	        'setSimpleTaskDescription setSimpleTaskDestination setSimpleTaskTarget setSimpleTaskType ' +
 	        'setSimulWeatherLayers setSize setSkill setSlingLoad setSoundEffect setSpeaker setSpeech ' +
 	        'setSpeedMode setStamina setStaminaScheme setStatValue setSuppression setSystemOfUnits ' +
-	        'setTargetAge setTaskResult setTaskState setTerrainGrid setText setTimeMultiplier setTitleEffect ' +
-	        'setTriggerActivation setTriggerArea setTriggerStatements setTriggerText setTriggerTimeout ' +
-	        'setTriggerType setType setUnconscious setUnitAbility setUnitLoadout setUnitPos setUnitPosWeak ' +
-	        'setUnitRank setUnitRecoilCoefficient setUnitTrait setUnloadInCombat setUserActionText setVariable ' +
-	        'setVectorDir setVectorDirAndUp setVectorUp setVehicleAmmo setVehicleAmmoDef setVehicleArmor ' +
-	        'setVehicleCargo setVehicleId setVehicleLock setVehiclePosition setVehicleTiPars setVehicleVarName ' +
-	        'setVelocity setVelocityTransformation setViewDistance setVisibleIfTreeCollapsed setWaves ' +
-	        'setWaypointBehaviour setWaypointCombatMode setWaypointCompletionRadius setWaypointDescription ' +
-	        'setWaypointForceBehaviour setWaypointFormation setWaypointHousePosition setWaypointLoiterRadius ' +
-	        'setWaypointLoiterType setWaypointName setWaypointPosition setWaypointScript setWaypointSpeed ' +
-	        'setWaypointStatements setWaypointTimeout setWaypointType setWaypointVisible ' +
-	        'setWeaponReloadingTime setWind setWindDir setWindForce setWindStr setWPPos show3DIcons showChat ' +
-	        'showCinemaBorder showCommandingMenu showCompass showCuratorCompass showGPS showHUD showLegend ' +
-	        'showMap shownArtilleryComputer shownChat shownCompass shownCuratorCompass showNewEditorObject ' +
-	        'shownGPS shownHUD shownMap shownPad shownRadio shownScoretable shownUAVFeed shownWarrant ' +
-	        'shownWatch showPad showRadio showScoretable showSubtitles showUAVFeed showWarrant showWatch ' +
-	        'showWaypoint showWaypoints side sideAmbientLife sideChat sideEmpty sideEnemy sideFriendly ' +
-	        'sideLogic sideRadio sideUnknown simpleTasks simulationEnabled simulCloudDensity ' +
+	        'setTargetAge setTaskMarkerOffset setTaskResult setTaskState setTerrainGrid setText ' +
+	        'setTimeMultiplier setTitleEffect setTrafficDensity setTrafficDistance setTrafficGap ' +
+	        'setTrafficSpeed setTriggerActivation setTriggerArea setTriggerStatements setTriggerText ' +
+	        'setTriggerTimeout setTriggerType setType setUnconscious setUnitAbility setUnitLoadout setUnitPos ' +
+	        'setUnitPosWeak setUnitRank setUnitRecoilCoefficient setUnitTrait setUnloadInCombat ' +
+	        'setUserActionText setUserMFDText setUserMFDvalue setVariable setVectorDir setVectorDirAndUp ' +
+	        'setVectorUp setVehicleAmmo setVehicleAmmoDef setVehicleArmor setVehicleCargo setVehicleId ' +
+	        'setVehicleLock setVehiclePosition setVehicleRadar setVehicleReceiveRemoteTargets ' +
+	        'setVehicleReportOwnPosition setVehicleReportRemoteTargets setVehicleTIPars setVehicleVarName ' +
+	        'setVelocity setVelocityModelSpace setVelocityTransformation setViewDistance ' +
+	        'setVisibleIfTreeCollapsed setWantedRPMRTD setWaves setWaypointBehaviour setWaypointCombatMode ' +
+	        'setWaypointCompletionRadius setWaypointDescription setWaypointForceBehaviour setWaypointFormation ' +
+	        'setWaypointHousePosition setWaypointLoiterRadius setWaypointLoiterType setWaypointName ' +
+	        'setWaypointPosition setWaypointScript setWaypointSpeed setWaypointStatements setWaypointTimeout ' +
+	        'setWaypointType setWaypointVisible setWeaponReloadingTime setWind setWindDir setWindForce ' +
+	        'setWindStr setWingForceScaleRTD setWPPos show3DIcons showChat showCinemaBorder showCommandingMenu ' +
+	        'showCompass showCuratorCompass showGPS showHUD showLegend showMap shownArtilleryComputer ' +
+	        'shownChat shownCompass shownCuratorCompass showNewEditorObject shownGPS shownHUD shownMap ' +
+	        'shownPad shownRadio shownScoretable shownUAVFeed shownWarrant shownWatch showPad showRadio ' +
+	        'showScoretable showSubtitles showUAVFeed showWarrant showWatch showWaypoint showWaypoints side ' +
+	        'sideChat sideEnemy sideFriendly sideRadio simpleTasks simulationEnabled simulCloudDensity ' +
 	        'simulCloudOcclusion simulInClouds simulWeatherSync sin size sizeOf skill skillFinal skipTime ' +
 	        'sleep sliderPosition sliderRange sliderSetPosition sliderSetRange sliderSetSpeed sliderSpeed ' +
 	        'slingLoadAssistantShown soldierMagazines someAmmo sort soundVolume spawn speaker speed speedMode ' +
@@ -35792,38 +41487,42 @@
 	        'switchableUnits switchAction switchCamera switchGesture switchLight switchMove ' +
 	        'synchronizedObjects synchronizedTriggers synchronizedWaypoints synchronizeObjectsAdd ' +
 	        'synchronizeObjectsRemove synchronizeTrigger synchronizeWaypoint systemChat systemOfUnits tan ' +
-	        'targetKnowledge targetsAggregate targetsQuery taskAlwaysVisible taskChildren taskCompleted ' +
-	        'taskCustomData taskDescription taskDestination taskHint taskMarkerOffset taskNull taskParent ' +
-	        'taskResult taskState taskType teamMember teamMemberNull teamName teams teamSwitch ' +
-	        'teamSwitchEnabled teamType terminate terrainIntersect terrainIntersectASL text textLog ' +
-	        'textLogFormat tg time timeMultiplier titleCut titleFadeOut titleObj titleRsc titleText toArray ' +
-	        'toFixed toLower toString toUpper triggerActivated triggerActivation triggerArea ' +
-	        'triggerAttachedVehicle triggerAttachObject triggerAttachVehicle triggerStatements triggerText ' +
+	        'targetKnowledge targets targetsAggregate targetsQuery taskAlwaysVisible taskChildren ' +
+	        'taskCompleted taskCustomData taskDescription taskDestination taskHint taskMarkerOffset taskParent ' +
+	        'taskResult taskState taskType teamMember teamName teams teamSwitch teamSwitchEnabled teamType ' +
+	        'terminate terrainIntersect terrainIntersectASL terrainIntersectAtASL text textLog textLogFormat ' +
+	        'tg time timeMultiplier titleCut titleFadeOut titleObj titleRsc titleText toArray toFixed toLower ' +
+	        'toString toUpper triggerActivated triggerActivation triggerArea triggerAttachedVehicle ' +
+	        'triggerAttachObject triggerAttachVehicle triggerDynamicSimulation triggerStatements triggerText ' +
 	        'triggerTimeout triggerTimeoutCurrent triggerType turretLocal turretOwner turretUnit tvAdd tvClear ' +
-	        'tvCollapse tvCount tvCurSel tvData tvDelete tvExpand tvPicture tvSetCurSel tvSetData tvSetPicture ' +
-	        'tvSetPictureColor tvSetPictureColorDisabled tvSetPictureColorSelected tvSetPictureRight ' +
-	        'tvSetPictureRightColor tvSetPictureRightColorDisabled tvSetPictureRightColorSelected tvSetText ' +
-	        'tvSetTooltip tvSetValue tvSort tvSortByValue tvText tvTooltip tvValue type typeName typeOf ' +
-	        'UAVControl uiNamespace uiSleep unassignCurator unassignItem unassignTeam unassignVehicle ' +
-	        'underwater uniform uniformContainer uniformItems uniformMagazines unitAddons unitAimPosition ' +
-	        'unitAimPositionVisual unitBackpack unitIsUAV unitPos unitReady unitRecoilCoefficient units ' +
-	        'unitsBelowHeight unlinkItem unlockAchievement unregisterTask updateDrawIcon updateMenuItem ' +
-	        'updateObjectTree useAISteeringComponent useAudioTimeForMoves vectorAdd vectorCos ' +
-	        'vectorCrossProduct vectorDiff vectorDir vectorDirVisual vectorDistance vectorDistanceSqr ' +
-	        'vectorDotProduct vectorFromTo vectorMagnitude vectorMagnitudeSqr vectorMultiply vectorNormalized ' +
-	        'vectorUp vectorUpVisual vehicle vehicleCargoEnabled vehicleChat vehicleRadio vehicles ' +
-	        'vehicleVarName velocity velocityModelSpace verifySignature vest vestContainer vestItems ' +
-	        'vestMagazines viewDistance visibleCompass visibleGPS visibleMap visiblePosition ' +
-	        'visiblePositionASL visibleScoretable visibleWatch waves waypointAttachedObject ' +
+	        'tvCollapse tvCollapseAll tvCount tvCurSel tvData tvDelete tvExpand tvExpandAll tvPicture ' +
+	        'tvSetColor tvSetCurSel tvSetData tvSetPicture tvSetPictureColor tvSetPictureColorDisabled ' +
+	        'tvSetPictureColorSelected tvSetPictureRight tvSetPictureRightColor tvSetPictureRightColorDisabled ' +
+	        'tvSetPictureRightColorSelected tvSetText tvSetTooltip tvSetValue tvSort tvSortByValue tvText ' +
+	        'tvTooltip tvValue type typeName typeOf UAVControl uiNamespace uiSleep unassignCurator ' +
+	        'unassignItem unassignTeam unassignVehicle underwater uniform uniformContainer uniformItems ' +
+	        'uniformMagazines unitAddons unitAimPosition unitAimPositionVisual unitBackpack unitIsUAV unitPos ' +
+	        'unitReady unitRecoilCoefficient units unitsBelowHeight unlinkItem unlockAchievement ' +
+	        'unregisterTask updateDrawIcon updateMenuItem updateObjectTree useAISteeringComponent ' +
+	        'useAudioTimeForMoves userInputDisabled vectorAdd vectorCos vectorCrossProduct vectorDiff ' +
+	        'vectorDir vectorDirVisual vectorDistance vectorDistanceSqr vectorDotProduct vectorFromTo ' +
+	        'vectorMagnitude vectorMagnitudeSqr vectorModelToWorld vectorModelToWorldVisual vectorMultiply ' +
+	        'vectorNormalized vectorUp vectorUpVisual vectorWorldToModel vectorWorldToModelVisual vehicle ' +
+	        'vehicleCargoEnabled vehicleChat vehicleRadio vehicleReceiveRemoteTargets vehicleReportOwnPosition ' +
+	        'vehicleReportRemoteTargets vehicles vehicleVarName velocity velocityModelSpace verifySignature ' +
+	        'vest vestContainer vestItems vestMagazines viewDistance visibleCompass visibleGPS visibleMap ' +
+	        'visiblePosition visiblePositionASL visibleScoretable visibleWatch waves waypointAttachedObject ' +
 	        'waypointAttachedVehicle waypointAttachObject waypointAttachVehicle waypointBehaviour ' +
 	        'waypointCombatMode waypointCompletionRadius waypointDescription waypointForceBehaviour ' +
 	        'waypointFormation waypointHousePosition waypointLoiterRadius waypointLoiterType waypointName ' +
 	        'waypointPosition waypoints waypointScript waypointsEnabledUAV waypointShow waypointSpeed ' +
 	        'waypointStatements waypointTimeout waypointTimeoutCurrent waypointType waypointVisible ' +
 	        'weaponAccessories weaponAccessoriesCargo weaponCargo weaponDirection weaponInertia weaponLowered ' +
-	        'weapons weaponsItems weaponsItemsCargo weaponState weaponsTurret weightRTD west WFSideText wind',
+	        'weapons weaponsItems weaponsItemsCargo weaponState weaponsTurret weightRTD WFSideText wind ',
 	      literal:
-	        'true false nil'
+	        'blufor civilian configNull controlNull displayNull east endl false grpNull independent lineBreak ' +
+	        'locationNull nil objNull opfor pi resistance scriptNull sideAmbientLife sideEmpty sideLogic ' +
+	        'sideUnknown taskNull teamMemberNull true west',
 	    },
 	    contains: [
 	      hljs.C_LINE_COMMENT_MODE,
@@ -35834,19 +41533,19 @@
 	      STRINGS,
 	      CPP.preprocessor
 	    ],
-	    illegal: /#/
+	    illegal: /#|^\$ /
 	  };
 	};
 
 /***/ },
-/* 316 */
+/* 328 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
 	  var COMMENT_MODE = hljs.COMMENT('--', '$');
 	  return {
 	    case_insensitive: true,
-	    illegal: /[<>{}*#]/,
+	    illegal: /[<>{}*]/,
 	    contains: [
 	      {
 	        beginKeywords:
@@ -35854,20 +41553,20 @@
 	          'delete do handler insert load replace select truncate update set show pragma grant ' +
 	          'merge describe use explain help declare prepare execute deallocate release ' +
 	          'unlock purge reset change stop analyze cache flush optimize repair kill ' +
-	          'install uninstall checksum restore check backup revoke comment',
+	          'install uninstall checksum restore check backup revoke comment values with',
 	        end: /;/, endsWithParent: true,
 	        lexemes: /[\w\.]+/,
 	        keywords: {
 	          keyword:
-	            'abort abs absolute acc acce accep accept access accessed accessible account acos action activate add ' +
+	            'as abort abs absolute acc acce accep accept access accessed accessible account acos action activate add ' +
 	            'addtime admin administer advanced advise aes_decrypt aes_encrypt after agent aggregate ali alia alias ' +
-	            'allocate allow alter always analyze ancillary and any anydata anydataset anyschema anytype apply ' +
+	            'all allocate allow alter always analyze ancillary and anti any anydata anydataset anyschema anytype apply ' +
 	            'archive archived archivelog are as asc ascii asin assembly assertion associate asynchronous at atan ' +
 	            'atn2 attr attri attrib attribu attribut attribute attributes audit authenticated authentication authid ' +
 	            'authors auto autoallocate autodblink autoextend automatic availability avg backup badfile basicfile ' +
 	            'before begin beginning benchmark between bfile bfile_base big bigfile bin binary_double binary_float ' +
 	            'binlog bit_and bit_count bit_length bit_or bit_xor bitmap blob_base block blocksize body both bound ' +
-	            'buffer_cache buffer_pool build bulk by byte byteordermark bytes cache caching call calling cancel ' +
+	            'bucket buffer_cache buffer_pool build bulk by byte byteordermark bytes cache caching call calling cancel ' +
 	            'capacity cascade cascaded case cast catalog category ceil ceiling chain change changed char_base ' +
 	            'char_length character_length characters characterset charindex charset charsetform charsetid check ' +
 	            'checksum checksum_agg child choose chr chunk class cleanup clear client clob clob_base clone close ' +
@@ -35891,21 +41590,21 @@
 	            'editions element ellipsis else elsif elt empty enable enable_all enclosed encode encoding encrypt ' +
 	            'end end-exec endian enforced engine engines enqueue enterprise entityescaping eomonth error errors ' +
 	            'escaped evalname evaluate event eventdata events except exception exceptions exchange exclude excluding ' +
-	            'execu execut execute exempt exists exit exp expire explain export export_set extended extent external ' +
+	            'execu execut execute exempt exists exit exp expire explain explode export export_set extended extent external ' +
 	            'external_1 external_2 externally extract failed failed_login_attempts failover failure far fast ' +
 	            'feature_set feature_value fetch field fields file file_name_convert filesystem_like_logging final ' +
-	            'finish first first_value fixed flash_cache flashback floor flush following follows for forall force ' +
+	            'finish first first_value fixed flash_cache flashback floor flush following follows for forall force foreign ' +
 	            'form forma format found found_rows freelist freelists freepools fresh from from_base64 from_days ' +
 	            'ftp full function general generated get get_format get_lock getdate getutcdate global global_name ' +
 	            'globally go goto grant grants greatest group group_concat group_id grouping grouping_id groups ' +
 	            'gtid_subtract guarantee guard handler hash hashkeys having hea head headi headin heading heap help hex ' +
-	            'hierarchy high high_priority hosts hour http id ident_current ident_incr ident_seed identified ' +
+	            'hierarchy high high_priority hosts hour hours http id ident_current ident_incr ident_seed identified ' +
 	            'identity idle_time if ifnull ignore iif ilike ilm immediate import in include including increment ' +
 	            'index indexes indexing indextype indicator indices inet6_aton inet6_ntoa inet_aton inet_ntoa infile ' +
 	            'initial initialized initially initrans inmemory inner innodb input insert install instance instantiable ' +
 	            'instr interface interleaved intersect into invalidate invisible is is_free_lock is_ipv4 is_ipv4_compat ' +
 	            'is_not is_not_null is_used_lock isdate isnull isolation iterate java join json json_exists ' +
-	            'keep keep_duplicates key keys kill language large last last_day last_insert_id last_value lax lcase ' +
+	            'keep keep_duplicates key keys kill language large last last_day last_insert_id last_value lateral lax lcase ' +
 	            'lead leading least leaves left len lenght length less level levels library like like2 like4 likec limit ' +
 	            'lines link list listagg little ln load load_file lob lobs local localtime localtimestamp locate ' +
 	            'locator lock locked log log10 log2 logfile logfiles logging logical logical_reads_per_call ' +
@@ -35913,13 +41612,13 @@
 	            'managed management manual map mapping mask master master_pos_wait match matched materialized max ' +
 	            'maxextents maximize maxinstances maxlen maxlogfiles maxloghistory maxlogmembers maxsize maxtrans ' +
 	            'md5 measures median medium member memcompress memory merge microsecond mid migration min minextents ' +
-	            'minimum mining minus minute minvalue missing mod mode model modification modify module monitoring month ' +
+	            'minimum mining minus minute minutes minvalue missing mod mode model modification modify module monitoring month ' +
 	            'months mount move movement multiset mutex name name_const names nan national native natural nav nchar ' +
 	            'nclob nested never new newline next nextval no no_write_to_binlog noarchivelog noaudit nobadfile ' +
 	            'nocheck nocompress nocopy nocycle nodelay nodiscardfile noentityescaping noguarantee nokeep nologfile ' +
 	            'nomapping nomaxvalue nominimize nominvalue nomonitoring none noneditionable nonschema noorder ' +
 	            'nopr nopro noprom nopromp noprompt norely noresetlogs noreverse normal norowdependencies noschemacheck ' +
-	            'noswitch not nothing notice notrim novalidate now nowait nth_value nullif nulls num numb numbe ' +
+	            'noswitch not nothing notice notnull notrim novalidate now nowait nth_value nullif nulls num numb numbe ' +
 	            'nvarchar nvarchar2 object ocicoll ocidate ocidatetime ociduration ociinterval ociloblocator ocinumber ' +
 	            'ociref ocirefcursor ocirowid ocistring ocitype oct octet_length of off offline offset oid oidindex old ' +
 	            'on online only opaque open operations operator optimal optimize option optionally or oracle oracle_date ' +
@@ -35941,8 +41640,8 @@
 	            'restricted result result_cache resumable resume retention return returning returns reuse reverse revoke ' +
 	            'right rlike role roles rollback rolling rollup round row row_count rowdependencies rowid rownum rows ' +
 	            'rtrim rules safe salt sample save savepoint sb1 sb2 sb4 scan schema schemacheck scn scope scroll ' +
-	            'sdo_georaster sdo_topo_geometry search sec_to_time second section securefile security seed segment select ' +
-	            'self sequence sequential serializable server servererror session session_user sessions_per_user set ' +
+	            'sdo_georaster sdo_topo_geometry search sec_to_time second seconds section securefile security seed segment select ' +
+	            'self semi sequence sequential serializable server servererror session session_user sessions_per_user set ' +
 	            'sets settings sha sha1 sha2 share shared shared_pool short show shrink shutdown si_averagecolor ' +
 	            'si_colorhistogram si_featurelist si_positionalcolor si_stillimage si_texture siblings sid sign sin ' +
 	            'size size_t sizes skip slave sleep smalldatetimefromparts smallfile snapshot some soname sort soundex ' +
@@ -35954,26 +41653,26 @@
 	            'stop storage store stored str str_to_date straight_join strcmp strict string struct stuff style subdate ' +
 	            'subpartition subpartitions substitutable substr substring subtime subtring_index subtype success sum ' +
 	            'suspend switch switchoffset switchover sync synchronous synonym sys sys_xmlagg sysasm sysaux sysdate ' +
-	            'sysdatetimeoffset sysdba sysoper system system_user sysutcdatetime table tables tablespace tan tdo ' +
+	            'sysdatetimeoffset sysdba sysoper system system_user sysutcdatetime table tables tablespace tablesample tan tdo ' +
 	            'template temporary terminated tertiary_weights test than then thread through tier ties time time_format ' +
 	            'time_zone timediff timefromparts timeout timestamp timestampadd timestampdiff timezone_abbr ' +
 	            'timezone_minute timezone_region to to_base64 to_date to_days to_seconds todatetimeoffset trace tracking ' +
 	            'transaction transactional translate translation treat trigger trigger_nestlevel triggers trim truncate ' +
 	            'try_cast try_convert try_parse type ub1 ub2 ub4 ucase unarchived unbounded uncompress ' +
-	            'under undo unhex unicode uniform uninstall union unique unix_timestamp unknown unlimited unlock unpivot ' +
+	            'under undo unhex unicode uniform uninstall union unique unix_timestamp unknown unlimited unlock unnest unpivot ' +
 	            'unrecoverable unsafe unsigned until untrusted unusable unused update updated upgrade upped upper upsert ' +
 	            'url urowid usable usage use use_stored_outlines user user_data user_resources users using utc_date ' +
 	            'utc_timestamp uuid uuid_short validate validate_password_strength validation valist value values var ' +
 	            'var_samp varcharc vari varia variab variabl variable variables variance varp varraw varrawc varray ' +
 	            'verify version versions view virtual visible void wait wallet warning warnings week weekday weekofyear ' +
-	            'wellformed when whene whenev wheneve whenever where while whitespace with within without work wrapped ' +
+	            'wellformed when whene whenev wheneve whenever where while whitespace window with within without work wrapped ' +
 	            'xdb xml xmlagg xmlattributes xmlcast xmlcolattval xmlelement xmlexists xmlforest xmlindex xmlnamespaces ' +
 	            'xmlpi xmlquery xmlroot xmlschema xmlserialize xmltable xmltype xor year year_to_month years yearweek',
 	          literal:
-	            'true false null',
+	            'true false null unknown',
 	          built_in:
-	            'array bigint binary bit blob boolean char character date dec decimal float int int8 integer interval number ' +
-	            'numeric real record serial serial8 smallint text varchar varying void'
+	            'array bigint binary bit blob bool boolean char character date dec decimal float int int8 integer interval number ' +
+	            'numeric real record serial serial8 smallint text time timestamp tinyint varchar varying void'
 	        },
 	        contains: [
 	          {
@@ -35993,17 +41692,19 @@
 	          },
 	          hljs.C_NUMBER_MODE,
 	          hljs.C_BLOCK_COMMENT_MODE,
-	          COMMENT_MODE
+	          COMMENT_MODE,
+	          hljs.HASH_COMMENT_MODE
 	        ]
 	      },
 	      hljs.C_BLOCK_COMMENT_MODE,
-	      COMMENT_MODE
+	      COMMENT_MODE,
+	      hljs.HASH_COMMENT_MODE
 	    ]
 	  };
 	};
 
 /***/ },
-/* 317 */
+/* 329 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36090,7 +41791,7 @@
 	};
 
 /***/ },
-/* 318 */
+/* 330 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36132,7 +41833,7 @@
 	};
 
 /***/ },
-/* 319 */
+/* 331 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36183,7 +41884,7 @@
 	};
 
 /***/ },
-/* 320 */
+/* 332 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36641,7 +42342,7 @@
 	};
 
 /***/ },
-/* 321 */
+/* 333 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36679,13 +42380,15 @@
 	};
 
 /***/ },
-/* 322 */
+/* 334 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
 	  var SWIFT_KEYWORDS = {
-	      keyword: '__COLUMN__ __FILE__ __FUNCTION__ __LINE__ as as! as? associativity ' +
-	        'break case catch class continue convenience default defer deinit didSet do ' +
+	      keyword: '#available #colorLiteral #column #else #elseif #endif #file ' +
+	        '#fileLiteral #function #if #imageLiteral #line #selector #sourceLocation ' +
+	        '_ __COLUMN__ __FILE__ __FUNCTION__ __LINE__ Any as as! as? associatedtype ' +
+	        'associativity break case catch class continue convenience default defer deinit didSet do ' +
 	        'dynamic dynamicType else enum extension fallthrough false fileprivate final for func ' +
 	        'get guard if import in indirect infix init inout internal is lazy left let ' +
 	        'mutating nil none nonmutating open operator optional override postfix precedence ' +
@@ -36715,6 +42418,11 @@
 	    begin: '\\b[A-Z][\\w\u00C0-\u02B8\']*',
 	    relevance: 0
 	  };
+	  // slightly more special to swift
+	  var OPTIONAL_USING_TYPE = {
+	    className: 'type',
+	    begin: '\\b[A-Z][\\w\u00C0-\u02B8\']*[!?]'
+	  }
 	  var BLOCK_COMMENT = hljs.COMMENT(
 	    '/\\*',
 	    '\\*/',
@@ -36728,22 +42436,28 @@
 	    keywords: SWIFT_KEYWORDS,
 	    contains: [] // assigned later
 	  };
+	  var STRING = {
+	    className: 'string',
+	    contains: [hljs.BACKSLASH_ESCAPE, SUBST],
+	    variants: [
+	      {begin: /"""/, end: /"""/},
+	      {begin: /"/, end: /"/},
+	    ]
+	  };
 	  var NUMBERS = {
 	      className: 'number',
 	      begin: '\\b([\\d_]+(\\.[\\deE_]+)?|0x[a-fA-F0-9_]+(\\.[a-fA-F0-9p_]+)?|0b[01_]+|0o[0-7_]+)\\b',
 	      relevance: 0
 	  };
-	  var QUOTE_STRING_MODE = hljs.inherit(hljs.QUOTE_STRING_MODE, {
-	    contains: [SUBST, hljs.BACKSLASH_ESCAPE]
-	  });
 	  SUBST.contains = [NUMBERS];
 	
 	  return {
 	    keywords: SWIFT_KEYWORDS,
 	    contains: [
-	      QUOTE_STRING_MODE,
+	      STRING,
 	      hljs.C_LINE_COMMENT_MODE,
 	      BLOCK_COMMENT,
+	      OPTIONAL_USING_TYPE,
 	      TYPE,
 	      NUMBERS,
 	      {
@@ -36763,7 +42477,7 @@
 	            contains: [
 	              'self',
 	              NUMBERS,
-	              QUOTE_STRING_MODE,
+	              STRING,
 	              hljs.C_BLOCK_COMMENT_MODE,
 	              {begin: ':'} // relevance booster
 	            ],
@@ -36784,8 +42498,8 @@
 	      },
 	      {
 	        className: 'meta', // @attributes
-	        begin: '(@warn_unused_result|@exported|@lazy|@noescape|' +
-	                  '@NSCopying|@NSManaged|@objc|@convention|@required|' +
+	        begin: '(@discardableResult|@warn_unused_result|@exported|@lazy|@noescape|' +
+	                  '@NSCopying|@NSManaged|@objc|@objcMembers|@convention|@required|' +
 	                  '@noreturn|@IBAction|@IBDesignable|@IBInspectable|@IBOutlet|' +
 	                  '@infix|@prefix|@postfix|@autoclosure|@testable|@available|' +
 	                  '@nonobjc|@NSApplicationMain|@UIApplicationMain)'
@@ -36800,7 +42514,7 @@
 	};
 
 /***/ },
-/* 323 */
+/* 335 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36848,7 +42562,7 @@
 	};
 
 /***/ },
-/* 324 */
+/* 336 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36911,6 +42625,10 @@
 	        excludeEnd: true,
 	        relevance: 0
 	      },
+	      { // local tags
+	        className: 'type',
+	        begin: '!' + hljs.UNDERSCORE_IDENT_RE,
+	      },
 	      { // data type
 	        className: 'type',
 	        begin: '!!' + hljs.UNDERSCORE_IDENT_RE,
@@ -36940,7 +42658,7 @@
 	};
 
 /***/ },
-/* 325 */
+/* 337 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -36980,7 +42698,7 @@
 	};
 
 /***/ },
-/* 326 */
+/* 338 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37032,7 +42750,6 @@
 	        className: 'string',
 	        contains: [hljs.BACKSLASH_ESCAPE],
 	        variants: [
-	          hljs.inherit(hljs.APOS_STRING_MODE, {illegal: null}),
 	          hljs.inherit(hljs.QUOTE_STRING_MODE, {illegal: null})
 	        ]
 	      },
@@ -37045,7 +42762,7 @@
 	};
 
 /***/ },
-/* 327 */
+/* 339 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37057,8 +42774,8 @@
 	      {
 	        className: 'name',
 	        variants: [
-	          {begin: /[a-zA-Zа-яА-я]+[*]?/},
-	          {begin: /[^a-zA-Zа-яА-я0-9]/}
+	          {begin: /[a-zA-Z\u0430-\u044f\u0410-\u042f]+[*]?/},
+	          {begin: /[^a-zA-Z\u0430-\u044f\u0410-\u042f0-9]/}
 	        ],
 	        starts: {
 	          endsWithParent: true,
@@ -37111,7 +42828,7 @@
 	};
 
 /***/ },
-/* 328 */
+/* 340 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37150,7 +42867,7 @@
 	};
 
 /***/ },
-/* 329 */
+/* 341 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37165,8 +42882,8 @@
 	  };
 	  var TPDATA = {
 	    className: 'built_in',
-	    begin: '(AR|P|PAYLOAD|PR|R|SR|RSR|LBL|VR|UALM|MESSAGE|UTOOL|UFRAME|TIMER|\
-	    TIMER_OVERFLOW|JOINT_MAX_SPEED|RESUME_PROG|DIAG_REC)\\[', end: '\\]',
+	    begin: '(AR|P|PAYLOAD|PR|R|SR|RSR|LBL|VR|UALM|MESSAGE|UTOOL|UFRAME|TIMER|' +
+	    'TIMER_OVERFLOW|JOINT_MAX_SPEED|RESUME_PROG|DIAG_REC)\\[', end: '\\]',
 	    contains: [
 	      'self',
 	      TPID,
@@ -37238,7 +42955,7 @@
 	};
 
 /***/ },
-/* 330 */
+/* 342 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37308,10 +43025,11 @@
 	};
 
 /***/ },
-/* 331 */
+/* 343 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
+	  var JS_IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
 	  var KEYWORDS = {
 	    keyword:
 	      'in if for while finally var new function do return void else break catch ' +
@@ -37329,6 +43047,38 @@
 	      'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' +
 	      'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' +
 	      'module console window document any number boolean string void Promise'
+	  };
+	
+	  var DECORATOR = {
+	    className: 'meta',
+	    begin: '@' + JS_IDENT_RE,
+	  };
+	
+	  var ARGS =
+	  {
+	    begin: '\\(',
+	    end: /\)/,
+	    keywords: KEYWORDS,
+	    contains: [
+	      'self',
+	      hljs.QUOTE_STRING_MODE,
+	      hljs.APOS_STRING_MODE,
+	      hljs.NUMBER_MODE
+	    ]
+	  };
+	
+	  var PARAMS = {
+	    className: 'params',
+	    begin: /\(/, end: /\)/,
+	    excludeBegin: true,
+	    excludeEnd: true,
+	    keywords: KEYWORDS,
+	    contains: [
+	      hljs.C_LINE_COMMENT_MODE,
+	      hljs.C_BLOCK_COMMENT_MODE,
+	      DECORATOR,
+	      ARGS
+	    ]
 	  };
 	
 	  return {
@@ -37407,19 +43157,8 @@
 	        keywords: KEYWORDS,
 	        contains: [
 	          'self',
-	          hljs.inherit(hljs.TITLE_MODE, {begin: /[A-Za-z$_][0-9A-Za-z$_]*/}),
-	          {
-	            className: 'params',
-	            begin: /\(/, end: /\)/,
-	            excludeBegin: true,
-	            excludeEnd: true,
-	            keywords: KEYWORDS,
-	            contains: [
-	              hljs.C_LINE_COMMENT_MODE,
-	              hljs.C_BLOCK_COMMENT_MODE
-	            ],
-	            illegal: /["'\(]/
-	          }
+	          hljs.inherit(hljs.TITLE_MODE, { begin: JS_IDENT_RE }),
+	          PARAMS
 	        ],
 	        illegal: /%/,
 	        relevance: 0 // () => {} is more typical in TypeScript
@@ -37428,23 +43167,12 @@
 	        beginKeywords: 'constructor', end: /\{/, excludeEnd: true,
 	        contains: [
 	          'self',
-	          {
-	            className: 'params',
-	            begin: /\(/, end: /\)/,
-	            excludeBegin: true,
-	            excludeEnd: true,
-	            keywords: KEYWORDS,
-	            contains: [
-	              hljs.C_LINE_COMMENT_MODE,
-	              hljs.C_BLOCK_COMMENT_MODE
-	            ],
-	            illegal: /["'\(]/
-	          }
+	          PARAMS
 	        ]
 	      },
 	      { // prevent references like module.id from being higlighted as module definitions
 	        begin: /module\./,
-	        keywords: {built_in: 'module'},
+	        keywords: { built_in: 'module' },
 	        relevance: 0
 	      },
 	      {
@@ -37460,15 +43188,14 @@
 	      {
 	        begin: '\\.' + hljs.IDENT_RE, relevance: 0 // hack: prevents detection of keywords after dots
 	      },
-	      {
-	        className: 'meta', begin: '@[A-Za-z]+'
-	      }
+	      DECORATOR,
+	      ARGS
 	    ]
 	  };
 	};
 
 /***/ },
-/* 332 */
+/* 344 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37522,7 +43249,7 @@
 	};
 
 /***/ },
-/* 333 */
+/* 345 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37549,7 +43276,7 @@
 	      literal:
 	        'true false nothing'
 	    },
-	    illegal: '//|{|}|endif|gosub|variant|wend', /* reserved deprecated keywords */
+	    illegal: '//|{|}|endif|gosub|variant|wend|^\\$ ', /* reserved deprecated keywords */
 	    contains: [
 	      hljs.inherit(hljs.QUOTE_STRING_MODE, {contains: [{begin: '""'}]}),
 	      hljs.COMMENT(
@@ -37582,7 +43309,7 @@
 	};
 
 /***/ },
-/* 334 */
+/* 346 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37625,7 +43352,7 @@
 	};
 
 /***/ },
-/* 335 */
+/* 347 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37641,7 +43368,7 @@
 	};
 
 /***/ },
-/* 336 */
+/* 348 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37744,7 +43471,7 @@
 	};
 
 /***/ },
-/* 337 */
+/* 349 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37768,17 +43495,17 @@
 	        'begin block body buffer bus case component configuration constant context cover disconnect ' +
 	        'downto default else elsif end entity exit fairness file for force function generate ' +
 	        'generic group guarded if impure in inertial inout is label library linkage literal ' +
-	        'loop map mod nand new next nor not null of on open or others out package port ' +
+	        'loop map mod nand new next nor not null of on open or others out package parameter port ' +
 	        'postponed procedure process property protected pure range record register reject ' +
 	        'release rem report restrict restrict_guarantee return rol ror select sequence ' +
 	        'severity shared signal sla sll sra srl strong subtype then to transport type ' +
-	        'unaffected units until use variable vmode vprop vunit wait when while with xnor xor',
+	        'unaffected units until use variable view vmode vprop vunit wait when while with xnor xor',
 	      built_in:
 	        'boolean bit character ' +
 	        'integer time delay_length natural positive ' +
 	        'string bit_vector file_open_kind file_open_status ' +
 	        'std_logic std_logic_vector unsigned signed boolean_vector integer_vector ' +
-	        'std_ulogic std_ulogic_vector unresolved_unsigned u_unsigned unresolved_signed u_signed' +
+	        'std_ulogic std_ulogic_vector unresolved_unsigned u_unsigned unresolved_signed u_signed ' +
 	        'real_vector time_vector',
 	      literal:
 	        'false true note warning error failure ' +  // severity_level
@@ -37809,7 +43536,7 @@
 	};
 
 /***/ },
-/* 338 */
+/* 350 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -37876,7 +43603,11 @@
 	    illegal: /;/,
 	    contains: [
 	      hljs.NUMBER_MODE,
-	      hljs.APOS_STRING_MODE,
+	      {
+	        className: 'string',
+	        begin: '\'', end: '\'',
+	        illegal: '\\n'
+	      },
 	
 	      /*
 	      A double quote can start either a string or a line comment. Strings are
@@ -37919,7 +43650,7 @@
 	};
 
 /***/ },
-/* 339 */
+/* 351 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -38059,7 +43790,7 @@
 	};
 
 /***/ },
-/* 340 */
+/* 352 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -38136,20 +43867,76 @@
 	};
 
 /***/ },
-/* 341 */
+/* 353 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
-	  var KEYWORDS = 'for let if while then else return where group by xquery encoding version' +
-	    'module namespace boundary-space preserve strip default collation base-uri ordering' +
-	    'copy-namespaces order declare import schema namespace function option in allowing empty' +
-	    'at tumbling window sliding window start when only end when previous next stable ascending' +
-	    'descending empty greatest least some every satisfies switch case typeswitch try catch and' +
-	    'or to union intersect instance of treat as castable cast map array delete insert into' +
-	    'replace value rename copy modify update';
-	  var LITERAL = 'false true xs:string xs:integer element item xs:date xs:datetime xs:float xs:double xs:decimal QName xs:anyURI xs:long xs:int xs:short xs:byte attribute';
+	  // see https://www.w3.org/TR/xquery/#id-terminal-delimitation
+	  var KEYWORDS = 'module schema namespace boundary-space preserve no-preserve strip default collation base-uri ordering context decimal-format decimal-separator copy-namespaces empty-sequence except exponent-separator external grouping-separator inherit no-inherit lax minus-sign per-mille percent schema-attribute schema-element strict unordered zero-digit ' +
+	  'declare import option function validate variable ' +
+	  'for at in let where order group by return if then else ' +
+	  'tumbling sliding window start when only end previous next stable ' +
+	  'ascending descending allowing empty greatest least some every satisfies switch case typeswitch try catch ' +
+	  'and or to union intersect instance of treat as castable cast map array ' +
+	  'delete insert into replace value rename copy modify update';
+	
+	  // Node Types (sorted by inheritance)
+	  // atomic types (sorted by inheritance)
+	  var TYPE = 'item document-node node attribute document element comment namespace namespace-node processing-instruction text construction ' +
+	  'xs:anyAtomicType xs:untypedAtomic xs:duration xs:time xs:decimal xs:float xs:double xs:gYearMonth xs:gYear xs:gMonthDay xs:gMonth xs:gDay xs:boolean xs:base64Binary xs:hexBinary xs:anyURI xs:QName xs:NOTATION xs:dateTime xs:dateTimeStamp xs:date xs:string xs:normalizedString xs:token xs:language xs:NMTOKEN xs:Name xs:NCName xs:ID xs:IDREF xs:ENTITY xs:integer xs:nonPositiveInteger xs:negativeInteger xs:long xs:int xs:short xs:byte xs:nonNegativeInteger xs:unisignedLong xs:unsignedInt xs:unsignedShort xs:unsignedByte xs:positiveInteger xs:yearMonthDuration xs:dayTimeDuration';
+	
+	  var LITERAL = 'eq ne lt le gt ge is ' +
+	    'self:: child:: descendant:: descendant-or-self:: attribute:: following:: following-sibling:: parent:: ancestor:: ancestor-or-self:: preceding:: preceding-sibling:: ' +
+	    'NaN';
+	
+	  // functions (TODO: find regex for op: without breaking build)
+	  var BUILT_IN = {
+	    className: 'built_in',
+	    variants: [{
+	      begin: /\barray\:/,
+	      end: /(?:append|filter|flatten|fold\-(?:left|right)|for-each(?:\-pair)?|get|head|insert\-before|join|put|remove|reverse|size|sort|subarray|tail)\b/
+	    }, {
+	      begin: /\bmap\:/,
+	      end: /(?:contains|entry|find|for\-each|get|keys|merge|put|remove|size)\b/
+	    }, {
+	      begin: /\bmath\:/,
+	      end: /(?:a(?:cos|sin|tan[2]?)|cos|exp(?:10)?|log(?:10)?|pi|pow|sin|sqrt|tan)\b/
+	    }, {
+	      begin: /\bop\:/,
+	      end: /\(/,
+	      excludeEnd: true
+	    }, {
+	      begin: /\bfn\:/,
+	      end: /\(/,
+	      excludeEnd: true
+	    },
+	// do not highlight inbuilt strings as variable or xml element names
+	    {
+	      begin: /[^<\/\$\:'"-]\b(?:abs|accumulator\-(?:after|before)|adjust\-(?:date(?:Time)?|time)\-to\-timezone|analyze\-string|apply|available\-(?:environment\-variables|system\-properties)|avg|base\-uri|boolean|ceiling|codepoints?\-(?:equal|to\-string)|collation\-key|collection|compare|concat|contains(?:\-token)?|copy\-of|count|current(?:\-)?(?:date(?:Time)?|time|group(?:ing\-key)?|output\-uri|merge\-(?:group|key))?data|dateTime|days?\-from\-(?:date(?:Time)?|duration)|deep\-equal|default\-(?:collation|language)|distinct\-values|document(?:\-uri)?|doc(?:\-available)?|element\-(?:available|with\-id)|empty|encode\-for\-uri|ends\-with|environment\-variable|error|escape\-html\-uri|exactly\-one|exists|false|filter|floor|fold\-(?:left|right)|for\-each(?:\-pair)?|format\-(?:date(?:Time)?|time|integer|number)|function\-(?:arity|available|lookup|name)|generate\-id|has\-children|head|hours\-from\-(?:dateTime|duration|time)|id(?:ref)?|implicit\-timezone|in\-scope\-prefixes|index\-of|innermost|insert\-before|iri\-to\-uri|json\-(?:doc|to\-xml)|key|lang|last|load\-xquery\-module|local\-name(?:\-from\-QName)?|(?:lower|upper)\-case|matches|max|minutes\-from\-(?:dateTime|duration|time)|min|months?\-from\-(?:date(?:Time)?|duration)|name(?:space\-uri\-?(?:for\-prefix|from\-QName)?)?|nilled|node\-name|normalize\-(?:space|unicode)|not|number|one\-or\-more|outermost|parse\-(?:ietf\-date|json)|path|position|(?:prefix\-from\-)?QName|random\-number\-generator|regex\-group|remove|replace|resolve\-(?:QName|uri)|reverse|root|round(?:\-half\-to\-even)?|seconds\-from\-(?:dateTime|duration|time)|snapshot|sort|starts\-with|static\-base\-uri|stream\-available|string\-?(?:join|length|to\-codepoints)?|subsequence|substring\-?(?:after|before)?|sum|system\-property|tail|timezone\-from\-(?:date(?:Time)?|time)|tokenize|trace|trans(?:form|late)|true|type\-available|unordered|unparsed\-(?:entity|text)?\-?(?:public\-id|uri|available|lines)?|uri\-collection|xml\-to\-json|years?\-from\-(?:date(?:Time)?|duration)|zero\-or\-one)\b/,
+	    }, {
+	      begin: /\blocal\:/,
+	      end: /\(/,
+	      excludeEnd: true
+	    }, {
+	      begin: /\bzip\:/,
+	      end: /(?:zip\-file|(?:xml|html|text|binary)\-entry| (?:update\-)?entries)\b/
+	    }, {
+	      begin: /\b(?:util|db|functx|app|xdmp|xmldb)\:/,
+	      end: /\(/,
+	      excludeEnd: true
+	    }
+	  ]
+	  };
+	
+	  var TITLE = {
+	    className: 'title',
+	    begin: /\bxquery version "[13]\.[01]"\s?(?:encoding ".+")?/,
+	    end: /;/
+	  };
+	
 	  var VAR = {
-	    begin: /\$[a-zA-Z0-9\-]+/
+	    className: 'variable',
+	    begin: /[\$][\w-:]+/
 	  };
 	
 	  var NUMBER = {
@@ -38160,41 +43947,83 @@
 	
 	  var STRING = {
 	    className: 'string',
-	    variants: [
-	      {begin: /"/, end: /"/, contains: [{begin: /""/, relevance: 0}]},
-	      {begin: /'/, end: /'/, contains: [{begin: /''/, relevance: 0}]}
+	    variants: [{
+	        begin: /"/,
+	        end: /"/,
+	        contains: [{
+	          begin: /""/,
+	          relevance: 0
+	        }]
+	      },
+	      {
+	        begin: /'/,
+	        end: /'/,
+	        contains: [{
+	          begin: /''/,
+	          relevance: 0
+	        }]
+	      }
 	    ]
 	  };
 	
 	  var ANNOTATION = {
 	    className: 'meta',
-	    begin: '%\\w+'
+	    begin: /%[\w-:]+/
 	  };
 	
 	  var COMMENT = {
 	    className: 'comment',
-	    begin: '\\(:', end: ':\\)',
+	    begin: '\\(:',
+	    end: ':\\)',
 	    relevance: 10,
-	    contains: [
-	      {
-	        className: 'doctag', begin: '@\\w+'
-	      }
-	    ]
+	    contains: [{
+	      className: 'doctag',
+	      begin: '@\\w+'
+	    }]
 	  };
 	
-	  var METHOD = {
-	    begin: '{', end: '}'
+	  // see https://www.w3.org/TR/xquery/#id-computedConstructors
+	  // mocha: computed_inbuilt
+	  // see https://www.regexpal.com/?fam=99749
+	  var COMPUTED = {
+	    beginKeywords: 'element attribute comment document processing-instruction',
+	    end: '{',
+	    excludeEnd: true
 	  };
+	
+	  // mocha: direct_method
+	    var DIRECT = {
+	      begin: /<([\w\._:\-]+)((\s*.*)=('|").*('|"))?>/,
+	      end: /(\/[\w\._:\-]+>)/,
+	      subLanguage: 'xml',
+	      contains: [{
+	        begin: '{',
+	        end: '}',
+	        subLanguage: 'xquery'
+	      }, 'self']
+	    };
+	
 	
 	  var CONTAINS = [
 	    VAR,
+	    BUILT_IN,
 	    STRING,
 	    NUMBER,
 	    COMMENT,
 	    ANNOTATION,
-	    METHOD
+	    TITLE,
+	    COMPUTED,
+	    DIRECT
 	  ];
-	  METHOD.contains = CONTAINS;
+	
+	
+	
+	    var METHOD = {
+	      begin: '{',
+	      end: '}',
+	      contains: CONTAINS
+	    };
+	
 	
 	
 	  return {
@@ -38204,6 +44033,7 @@
 	    illegal: /(proc)|(abstract)|(extends)|(until)|(#)/,
 	    keywords: {
 	      keyword: KEYWORDS,
+	      type: TYPE,
 	      literal: LITERAL
 	    },
 	    contains: CONTAINS
@@ -38211,7 +44041,7 @@
 	};
 
 /***/ },
-/* 342 */
+/* 354 */
 /***/ function(module, exports) {
 
 	module.exports = function(hljs) {
@@ -38322,7 +44152,7 @@
 	};
 
 /***/ },
-/* 343 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -38338,8 +44168,8 @@
 	
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(30);
-	var ReactPropTypes = __webpack_require__(344);
-	var createClass = __webpack_require__(347);
+	var ReactPropTypes = __webpack_require__(164);
+	var createClass = __webpack_require__(356);
 	
 	module.exports = createClass({
 	  displayName: 'ReactFitText',
@@ -38396,128 +44226,7 @@
 
 
 /***/ },
-/* 344 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-	
-	if (false) {
-	  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-	    Symbol.for &&
-	    Symbol.for('react.element')) ||
-	    0xeac7;
-	
-	  var isValidElement = function(object) {
-	    return typeof object === 'object' &&
-	      object !== null &&
-	      object.$$typeof === REACT_ELEMENT_TYPE;
-	  };
-	
-	  // By explicitly using `prop-types` you are opting into new development behavior.
-	  // http://fb.me/prop-types-in-prod
-	  var throwOnDirectAccess = true;
-	  module.exports = require('./factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
-	} else {
-	  // By explicitly using `prop-types` you are opting into new production behavior.
-	  // http://fb.me/prop-types-in-prod
-	  module.exports = __webpack_require__(345)();
-	}
-
-
-/***/ },
-/* 345 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-	
-	'use strict';
-	
-	var emptyFunction = __webpack_require__(11);
-	var invariant = __webpack_require__(7);
-	var ReactPropTypesSecret = __webpack_require__(346);
-	
-	module.exports = function() {
-	  function shim(props, propName, componentName, location, propFullName, secret) {
-	    if (secret === ReactPropTypesSecret) {
-	      // It is still safe when called from React.
-	      return;
-	    }
-	    invariant(
-	      false,
-	      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-	      'Use PropTypes.checkPropTypes() to call them. ' +
-	      'Read more at http://fb.me/use-check-prop-types'
-	    );
-	  };
-	  shim.isRequired = shim;
-	  function getShim() {
-	    return shim;
-	  };
-	  // Important!
-	  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-	  var ReactPropTypes = {
-	    array: shim,
-	    bool: shim,
-	    func: shim,
-	    number: shim,
-	    object: shim,
-	    string: shim,
-	    symbol: shim,
-	
-	    any: shim,
-	    arrayOf: getShim,
-	    element: shim,
-	    instanceOf: getShim,
-	    node: shim,
-	    objectOf: getShim,
-	    oneOf: getShim,
-	    oneOfType: getShim,
-	    shape: getShim
-	  };
-	
-	  ReactPropTypes.checkPropTypes = emptyFunction;
-	  ReactPropTypes.PropTypes = ReactPropTypes;
-	
-	  return ReactPropTypes;
-	};
-
-
-/***/ },
-/* 346 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-present, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 */
-	
-	'use strict';
-	
-	var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-	
-	module.exports = ReactPropTypesSecret;
-
-
-/***/ },
-/* 347 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -38531,7 +44240,7 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var factory = __webpack_require__(348);
+	var factory = __webpack_require__(357);
 	
 	if (typeof React === 'undefined') {
 	  throw Error(
@@ -38551,7 +44260,7 @@
 
 
 /***/ },
-/* 348 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -39483,19 +45192,19 @@
 
 
 /***/ },
-/* 349 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	// Babel6 does not hack the default behaviour of ES Modules anymore, so we should export
 	
-	var ReactLiveClock = __webpack_require__(350).default;
+	var ReactLiveClock = __webpack_require__(359).default;
 	
 	module.exports = ReactLiveClock;
 
 /***/ },
-/* 350 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39510,17 +45219,15 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _propTypes = __webpack_require__(344);
+	var _propTypes = __webpack_require__(164);
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _momentTimezone = __webpack_require__(351);
+	var _momentTimezone = __webpack_require__(360);
 	
 	var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -39539,14 +45246,15 @@
 	    var _this = _possibleConstructorReturn(this, (ReactLiveClock.__proto__ || Object.getPrototypeOf(ReactLiveClock)).call(this, props));
 	
 	    var date = props.date || props.children || null;
-	    var timesatmp = (0, _momentTimezone2.default)();
-	    var baseTime = date ? (0, _momentTimezone2.default)(new Date(date).getTime()) : timesatmp;
+	    var timestamp = (0, _momentTimezone2.default)();
+	    var baseTime = date ? (0, _momentTimezone2.default)(new Date(date).getTime()) : timestamp;
 	
 	    _this.state = {
 	      realTime: !date,
 	      now: baseTime,
 	      baseTime: baseTime,
-	      startTime: timesatmp
+	      startTime: timestamp,
+	      formattedString: ''
 	    };
 	    return _this;
 	  }
@@ -39575,57 +45283,80 @@
 	      }
 	    }
 	  }, {
+	    key: 'formatTime',
+	    value: function formatTime(time) {
+	      var _props2 = this.props,
+	          filter = _props2.filter,
+	          format = _props2.format,
+	          timezone = _props2.timezone;
+	
+	
+	      if (timezone) {
+	        time.tz(timezone);
+	      }
+	
+	      var formattedTime = time.format(format);
+	      var filteredTime = filter(formattedTime);
+	
+	      return filteredTime;
+	    }
+	  }, {
 	    key: 'updateClock',
 	    value: function updateClock() {
-	      var realTime = this.state.realTime;
+	      var _state = this.state,
+	          realTime = _state.realTime,
+	          formattedString = _state.formattedString;
+	      var onChange = this.props.onChange;
 	
+	      var now = void 0;
 	
 	      if (realTime) {
-	        this.setState({
-	          now: (0, _momentTimezone2.default)()
-	        });
+	        now = (0, _momentTimezone2.default)();
 	      } else {
-	        var _state = this.state,
-	            baseTime = _state.baseTime,
-	            startTime = _state.startTime;
+	        var _state2 = this.state,
+	            baseTime = _state2.baseTime,
+	            startTime = _state2.startTime;
 	
 	        var newTime = (0, _momentTimezone2.default)();
 	        var diff = newTime.diff(startTime, BASE_UNIT);
 	
-	        this.setState({
-	          now: baseTime.clone().add(diff, BASE_UNIT)
+	        now = baseTime.clone().add(diff, BASE_UNIT);
+	      }
+	
+	      var formattedTime = this.formatTime(now);
+	
+	      if (formattedTime !== formattedString) {
+	        onChange({
+	          moment: now,
+	          output: formattedTime,
+	          previousOutput: formattedString
 	        });
 	      }
+	
+	      this.setState({
+	        now: now,
+	        formattedString: formattedTime
+	      });
 	    }
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      var _props2 = this.props,
-	          format = _props2.format,
-	          timezone = _props2.timezone,
-	          restProps = _objectWithoutProperties(_props2, ['format', 'timezone']);
+	      var _this3 = this;
 	
-	      var now = this.state.now;
+	      var formattedString = this.state.formattedString;
 	
-	      var localizedTime = now;
 	
-	      if (timezone) {
-	        localizedTime.tz(timezone);
-	      }
-	
-	      var formattedTime = localizedTime.format(format);
-	
-	      var childProps = Object.keys(restProps).filter(function (key) {
-	        return !['date', 'interval', 'ticking'].includes(key);
+	      var childProps = Object.keys(this.props).filter(function (key) {
+	        return !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key);
 	      }).reduce(function (acc, key) {
-	        acc[key] = restProps[key];
+	        acc[key] = _this3.props[key];
 	        return acc;
 	      }, {});
 	
 	      return _react2.default.createElement(
 	        'time',
 	        childProps,
-	        formattedTime
+	        formattedString
 	      );
 	    }
 	  }]);
@@ -39642,7 +45373,9 @@
 	  format: _propTypes2.default.string,
 	  interval: _propTypes2.default.number,
 	  ticking: _propTypes2.default.bool,
-	  timezone: _propTypes2.default.string
+	  timezone: _propTypes2.default.string,
+	  filter: _propTypes2.default.func,
+	  onChange: _propTypes2.default.func
 	};
 	
 	ReactLiveClock.defaultProps = {
@@ -39650,19 +45383,25 @@
 	  format: 'HH:mm',
 	  interval: 1000,
 	  ticking: false,
-	  timezone: null
+	  timezone: null,
+	  filter: function filter(date) {
+	    return date;
+	  },
+	  onChange: function onChange(date) {
+	    return date;
+	  }
 	};
 
 /***/ },
-/* 351 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var moment = module.exports = __webpack_require__(352);
-	moment.tz.load(__webpack_require__(474));
+	var moment = module.exports = __webpack_require__(361);
+	moment.tz.load(__webpack_require__(483));
 
 
 /***/ },
-/* 352 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//! moment-timezone.js
@@ -39676,7 +45415,7 @@
 	
 		/*global define*/
 		if (true) {
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(353)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));                 // AMD
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(362)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));                 // AMD
 		} else if (typeof module === 'object' && module.exports) {
 			module.exports = factory(require('moment')); // Node
 		} else {
@@ -40269,7 +46008,7 @@
 
 
 /***/ },
-/* 353 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var require;/* WEBPACK VAR INJECTION */(function(module) {//! moment.js
@@ -42116,7 +47855,7 @@
 	        try {
 	            oldLocale = globalLocale._abbr;
 	            var aliasedRequire = require;
-	            __webpack_require__(355)("./" + name);
+	            __webpack_require__(364)("./" + name);
 	            getSetGlobalLocale(oldLocale);
 	        } catch (e) {}
 	    }
@@ -44788,10 +50527,10 @@
 	
 	})));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(354)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(363)(module)))
 
 /***/ },
-/* 354 */
+/* 363 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -44807,246 +50546,246 @@
 
 
 /***/ },
-/* 355 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./af": 356,
-		"./af.js": 356,
-		"./ar": 357,
-		"./ar-dz": 358,
-		"./ar-dz.js": 358,
-		"./ar-kw": 359,
-		"./ar-kw.js": 359,
-		"./ar-ly": 360,
-		"./ar-ly.js": 360,
-		"./ar-ma": 361,
-		"./ar-ma.js": 361,
-		"./ar-sa": 362,
-		"./ar-sa.js": 362,
-		"./ar-tn": 363,
-		"./ar-tn.js": 363,
-		"./ar.js": 357,
-		"./az": 364,
-		"./az.js": 364,
-		"./be": 365,
-		"./be.js": 365,
-		"./bg": 366,
-		"./bg.js": 366,
-		"./bm": 367,
-		"./bm.js": 367,
-		"./bn": 368,
-		"./bn.js": 368,
-		"./bo": 369,
-		"./bo.js": 369,
-		"./br": 370,
-		"./br.js": 370,
-		"./bs": 371,
-		"./bs.js": 371,
-		"./ca": 372,
-		"./ca.js": 372,
-		"./cs": 373,
-		"./cs.js": 373,
-		"./cv": 374,
-		"./cv.js": 374,
-		"./cy": 375,
-		"./cy.js": 375,
-		"./da": 376,
-		"./da.js": 376,
-		"./de": 377,
-		"./de-at": 378,
-		"./de-at.js": 378,
-		"./de-ch": 379,
-		"./de-ch.js": 379,
-		"./de.js": 377,
-		"./dv": 380,
-		"./dv.js": 380,
-		"./el": 381,
-		"./el.js": 381,
-		"./en-au": 382,
-		"./en-au.js": 382,
-		"./en-ca": 383,
-		"./en-ca.js": 383,
-		"./en-gb": 384,
-		"./en-gb.js": 384,
-		"./en-ie": 385,
-		"./en-ie.js": 385,
-		"./en-nz": 386,
-		"./en-nz.js": 386,
-		"./eo": 387,
-		"./eo.js": 387,
-		"./es": 388,
-		"./es-do": 389,
-		"./es-do.js": 389,
-		"./es-us": 390,
-		"./es-us.js": 390,
-		"./es.js": 388,
-		"./et": 391,
-		"./et.js": 391,
-		"./eu": 392,
-		"./eu.js": 392,
-		"./fa": 393,
-		"./fa.js": 393,
-		"./fi": 394,
-		"./fi.js": 394,
-		"./fo": 395,
-		"./fo.js": 395,
-		"./fr": 396,
-		"./fr-ca": 397,
-		"./fr-ca.js": 397,
-		"./fr-ch": 398,
-		"./fr-ch.js": 398,
-		"./fr.js": 396,
-		"./fy": 399,
-		"./fy.js": 399,
-		"./gd": 400,
-		"./gd.js": 400,
-		"./gl": 401,
-		"./gl.js": 401,
-		"./gom-latn": 402,
-		"./gom-latn.js": 402,
-		"./gu": 403,
-		"./gu.js": 403,
-		"./he": 404,
-		"./he.js": 404,
-		"./hi": 405,
-		"./hi.js": 405,
-		"./hr": 406,
-		"./hr.js": 406,
-		"./hu": 407,
-		"./hu.js": 407,
-		"./hy-am": 408,
-		"./hy-am.js": 408,
-		"./id": 409,
-		"./id.js": 409,
-		"./is": 410,
-		"./is.js": 410,
-		"./it": 411,
-		"./it.js": 411,
-		"./ja": 412,
-		"./ja.js": 412,
-		"./jv": 413,
-		"./jv.js": 413,
-		"./ka": 414,
-		"./ka.js": 414,
-		"./kk": 415,
-		"./kk.js": 415,
-		"./km": 416,
-		"./km.js": 416,
-		"./kn": 417,
-		"./kn.js": 417,
-		"./ko": 418,
-		"./ko.js": 418,
-		"./ky": 419,
-		"./ky.js": 419,
-		"./lb": 420,
-		"./lb.js": 420,
-		"./lo": 421,
-		"./lo.js": 421,
-		"./lt": 422,
-		"./lt.js": 422,
-		"./lv": 423,
-		"./lv.js": 423,
-		"./me": 424,
-		"./me.js": 424,
-		"./mi": 425,
-		"./mi.js": 425,
-		"./mk": 426,
-		"./mk.js": 426,
-		"./ml": 427,
-		"./ml.js": 427,
-		"./mr": 428,
-		"./mr.js": 428,
-		"./ms": 429,
-		"./ms-my": 430,
-		"./ms-my.js": 430,
-		"./ms.js": 429,
-		"./my": 431,
-		"./my.js": 431,
-		"./nb": 432,
-		"./nb.js": 432,
-		"./ne": 433,
-		"./ne.js": 433,
-		"./nl": 434,
-		"./nl-be": 435,
-		"./nl-be.js": 435,
-		"./nl.js": 434,
-		"./nn": 436,
-		"./nn.js": 436,
-		"./pa-in": 437,
-		"./pa-in.js": 437,
-		"./pl": 438,
-		"./pl.js": 438,
-		"./pt": 439,
-		"./pt-br": 440,
-		"./pt-br.js": 440,
-		"./pt.js": 439,
-		"./ro": 441,
-		"./ro.js": 441,
-		"./ru": 442,
-		"./ru.js": 442,
-		"./sd": 443,
-		"./sd.js": 443,
-		"./se": 444,
-		"./se.js": 444,
-		"./si": 445,
-		"./si.js": 445,
-		"./sk": 446,
-		"./sk.js": 446,
-		"./sl": 447,
-		"./sl.js": 447,
-		"./sq": 448,
-		"./sq.js": 448,
-		"./sr": 449,
-		"./sr-cyrl": 450,
-		"./sr-cyrl.js": 450,
-		"./sr.js": 449,
-		"./ss": 451,
-		"./ss.js": 451,
-		"./sv": 452,
-		"./sv.js": 452,
-		"./sw": 453,
-		"./sw.js": 453,
-		"./ta": 454,
-		"./ta.js": 454,
-		"./te": 455,
-		"./te.js": 455,
-		"./tet": 456,
-		"./tet.js": 456,
-		"./th": 457,
-		"./th.js": 457,
-		"./tl-ph": 458,
-		"./tl-ph.js": 458,
-		"./tlh": 459,
-		"./tlh.js": 459,
-		"./tr": 460,
-		"./tr.js": 460,
-		"./tzl": 461,
-		"./tzl.js": 461,
-		"./tzm": 462,
-		"./tzm-latn": 463,
-		"./tzm-latn.js": 463,
-		"./tzm.js": 462,
-		"./uk": 464,
-		"./uk.js": 464,
-		"./ur": 465,
-		"./ur.js": 465,
-		"./uz": 466,
-		"./uz-latn": 467,
-		"./uz-latn.js": 467,
-		"./uz.js": 466,
-		"./vi": 468,
-		"./vi.js": 468,
-		"./x-pseudo": 469,
-		"./x-pseudo.js": 469,
-		"./yo": 470,
-		"./yo.js": 470,
-		"./zh-cn": 471,
-		"./zh-cn.js": 471,
-		"./zh-hk": 472,
-		"./zh-hk.js": 472,
-		"./zh-tw": 473,
-		"./zh-tw.js": 473
+		"./af": 365,
+		"./af.js": 365,
+		"./ar": 366,
+		"./ar-dz": 367,
+		"./ar-dz.js": 367,
+		"./ar-kw": 368,
+		"./ar-kw.js": 368,
+		"./ar-ly": 369,
+		"./ar-ly.js": 369,
+		"./ar-ma": 370,
+		"./ar-ma.js": 370,
+		"./ar-sa": 371,
+		"./ar-sa.js": 371,
+		"./ar-tn": 372,
+		"./ar-tn.js": 372,
+		"./ar.js": 366,
+		"./az": 373,
+		"./az.js": 373,
+		"./be": 374,
+		"./be.js": 374,
+		"./bg": 375,
+		"./bg.js": 375,
+		"./bm": 376,
+		"./bm.js": 376,
+		"./bn": 377,
+		"./bn.js": 377,
+		"./bo": 378,
+		"./bo.js": 378,
+		"./br": 379,
+		"./br.js": 379,
+		"./bs": 380,
+		"./bs.js": 380,
+		"./ca": 381,
+		"./ca.js": 381,
+		"./cs": 382,
+		"./cs.js": 382,
+		"./cv": 383,
+		"./cv.js": 383,
+		"./cy": 384,
+		"./cy.js": 384,
+		"./da": 385,
+		"./da.js": 385,
+		"./de": 386,
+		"./de-at": 387,
+		"./de-at.js": 387,
+		"./de-ch": 388,
+		"./de-ch.js": 388,
+		"./de.js": 386,
+		"./dv": 389,
+		"./dv.js": 389,
+		"./el": 390,
+		"./el.js": 390,
+		"./en-au": 391,
+		"./en-au.js": 391,
+		"./en-ca": 392,
+		"./en-ca.js": 392,
+		"./en-gb": 393,
+		"./en-gb.js": 393,
+		"./en-ie": 394,
+		"./en-ie.js": 394,
+		"./en-nz": 395,
+		"./en-nz.js": 395,
+		"./eo": 396,
+		"./eo.js": 396,
+		"./es": 397,
+		"./es-do": 398,
+		"./es-do.js": 398,
+		"./es-us": 399,
+		"./es-us.js": 399,
+		"./es.js": 397,
+		"./et": 400,
+		"./et.js": 400,
+		"./eu": 401,
+		"./eu.js": 401,
+		"./fa": 402,
+		"./fa.js": 402,
+		"./fi": 403,
+		"./fi.js": 403,
+		"./fo": 404,
+		"./fo.js": 404,
+		"./fr": 405,
+		"./fr-ca": 406,
+		"./fr-ca.js": 406,
+		"./fr-ch": 407,
+		"./fr-ch.js": 407,
+		"./fr.js": 405,
+		"./fy": 408,
+		"./fy.js": 408,
+		"./gd": 409,
+		"./gd.js": 409,
+		"./gl": 410,
+		"./gl.js": 410,
+		"./gom-latn": 411,
+		"./gom-latn.js": 411,
+		"./gu": 412,
+		"./gu.js": 412,
+		"./he": 413,
+		"./he.js": 413,
+		"./hi": 414,
+		"./hi.js": 414,
+		"./hr": 415,
+		"./hr.js": 415,
+		"./hu": 416,
+		"./hu.js": 416,
+		"./hy-am": 417,
+		"./hy-am.js": 417,
+		"./id": 418,
+		"./id.js": 418,
+		"./is": 419,
+		"./is.js": 419,
+		"./it": 420,
+		"./it.js": 420,
+		"./ja": 421,
+		"./ja.js": 421,
+		"./jv": 422,
+		"./jv.js": 422,
+		"./ka": 423,
+		"./ka.js": 423,
+		"./kk": 424,
+		"./kk.js": 424,
+		"./km": 425,
+		"./km.js": 425,
+		"./kn": 426,
+		"./kn.js": 426,
+		"./ko": 427,
+		"./ko.js": 427,
+		"./ky": 428,
+		"./ky.js": 428,
+		"./lb": 429,
+		"./lb.js": 429,
+		"./lo": 430,
+		"./lo.js": 430,
+		"./lt": 431,
+		"./lt.js": 431,
+		"./lv": 432,
+		"./lv.js": 432,
+		"./me": 433,
+		"./me.js": 433,
+		"./mi": 434,
+		"./mi.js": 434,
+		"./mk": 435,
+		"./mk.js": 435,
+		"./ml": 436,
+		"./ml.js": 436,
+		"./mr": 437,
+		"./mr.js": 437,
+		"./ms": 438,
+		"./ms-my": 439,
+		"./ms-my.js": 439,
+		"./ms.js": 438,
+		"./my": 440,
+		"./my.js": 440,
+		"./nb": 441,
+		"./nb.js": 441,
+		"./ne": 442,
+		"./ne.js": 442,
+		"./nl": 443,
+		"./nl-be": 444,
+		"./nl-be.js": 444,
+		"./nl.js": 443,
+		"./nn": 445,
+		"./nn.js": 445,
+		"./pa-in": 446,
+		"./pa-in.js": 446,
+		"./pl": 447,
+		"./pl.js": 447,
+		"./pt": 448,
+		"./pt-br": 449,
+		"./pt-br.js": 449,
+		"./pt.js": 448,
+		"./ro": 450,
+		"./ro.js": 450,
+		"./ru": 451,
+		"./ru.js": 451,
+		"./sd": 452,
+		"./sd.js": 452,
+		"./se": 453,
+		"./se.js": 453,
+		"./si": 454,
+		"./si.js": 454,
+		"./sk": 455,
+		"./sk.js": 455,
+		"./sl": 456,
+		"./sl.js": 456,
+		"./sq": 457,
+		"./sq.js": 457,
+		"./sr": 458,
+		"./sr-cyrl": 459,
+		"./sr-cyrl.js": 459,
+		"./sr.js": 458,
+		"./ss": 460,
+		"./ss.js": 460,
+		"./sv": 461,
+		"./sv.js": 461,
+		"./sw": 462,
+		"./sw.js": 462,
+		"./ta": 463,
+		"./ta.js": 463,
+		"./te": 464,
+		"./te.js": 464,
+		"./tet": 465,
+		"./tet.js": 465,
+		"./th": 466,
+		"./th.js": 466,
+		"./tl-ph": 467,
+		"./tl-ph.js": 467,
+		"./tlh": 468,
+		"./tlh.js": 468,
+		"./tr": 469,
+		"./tr.js": 469,
+		"./tzl": 470,
+		"./tzl.js": 470,
+		"./tzm": 471,
+		"./tzm-latn": 472,
+		"./tzm-latn.js": 472,
+		"./tzm.js": 471,
+		"./uk": 473,
+		"./uk.js": 473,
+		"./ur": 474,
+		"./ur.js": 474,
+		"./uz": 475,
+		"./uz-latn": 476,
+		"./uz-latn.js": 476,
+		"./uz.js": 475,
+		"./vi": 477,
+		"./vi.js": 477,
+		"./x-pseudo": 478,
+		"./x-pseudo.js": 478,
+		"./yo": 479,
+		"./yo.js": 479,
+		"./zh-cn": 480,
+		"./zh-cn.js": 480,
+		"./zh-hk": 481,
+		"./zh-hk.js": 481,
+		"./zh-tw": 482,
+		"./zh-tw.js": 482
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -45059,11 +50798,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 355;
+	webpackContext.id = 364;
 
 
 /***/ },
-/* 356 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45071,7 +50810,7 @@
 	//! author : Werner Mollentze : https://github.com/wernerm
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45141,7 +50880,7 @@
 
 
 /***/ },
-/* 357 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45151,7 +50890,7 @@
 	//! author : forabi https://github.com/forabi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45288,7 +51027,7 @@
 
 
 /***/ },
-/* 358 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45296,7 +51035,7 @@
 	//! author : Noureddine LOUAHEDJ : https://github.com/noureddineme
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45352,7 +51091,7 @@
 
 
 /***/ },
-/* 359 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45360,7 +51099,7 @@
 	//! author : Nusret Parlak: https://github.com/nusretparlak
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45416,7 +51155,7 @@
 
 
 /***/ },
-/* 360 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45424,7 +51163,7 @@
 	//! author : Ali Hmer: https://github.com/kikoanis
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45547,7 +51286,7 @@
 
 
 /***/ },
-/* 361 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45556,7 +51295,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45612,7 +51351,7 @@
 
 
 /***/ },
-/* 362 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45620,7 +51359,7 @@
 	//! author : Suhail Alkowaileet : https://github.com/xsoh
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45722,7 +51461,7 @@
 
 
 /***/ },
-/* 363 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45730,7 +51469,7 @@
 	//! author : Nader Toukabri : https://github.com/naderio
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45786,7 +51525,7 @@
 
 
 /***/ },
-/* 364 */
+/* 373 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45794,7 +51533,7 @@
 	//! author : topchiyev : https://github.com/topchiyev
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -45896,7 +51635,7 @@
 
 
 /***/ },
-/* 365 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -45906,7 +51645,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46035,7 +51774,7 @@
 
 
 /***/ },
-/* 366 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46043,7 +51782,7 @@
 	//! author : Krasen Borisov : https://github.com/kraz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46130,7 +51869,7 @@
 
 
 /***/ },
-/* 367 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46138,7 +51877,7 @@
 	//! author : Estelle Comment : https://github.com/estellecomment
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46194,7 +51933,7 @@
 
 
 /***/ },
-/* 368 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46202,7 +51941,7 @@
 	//! author : Kaushik Gandhi : https://github.com/kaushikgandhi
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46318,7 +52057,7 @@
 
 
 /***/ },
-/* 369 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46326,7 +52065,7 @@
 	//! author : Thupten N. Chakrishar : https://github.com/vajradog
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46442,7 +52181,7 @@
 
 
 /***/ },
-/* 370 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46450,7 +52189,7 @@
 	//! author : Jean-Baptiste Le Duigou : https://github.com/jbleduigou
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46555,7 +52294,7 @@
 
 
 /***/ },
-/* 371 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46564,7 +52303,7 @@
 	//! based on (hr) translation by Bojan Marković
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46703,7 +52442,7 @@
 
 
 /***/ },
-/* 372 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46711,7 +52450,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46796,7 +52535,7 @@
 
 
 /***/ },
-/* 373 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46804,7 +52543,7 @@
 	//! author : petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -46973,7 +52712,7 @@
 
 
 /***/ },
-/* 374 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -46981,7 +52720,7 @@
 	//! author : Anatoly Mironov : https://github.com/mirontoli
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47041,7 +52780,7 @@
 
 
 /***/ },
-/* 375 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47050,7 +52789,7 @@
 	//! author : https://github.com/ryangreaves
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47127,7 +52866,7 @@
 
 
 /***/ },
-/* 376 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47135,7 +52874,7 @@
 	//! author : Ulrik Nielsen : https://github.com/mrbase
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47192,7 +52931,7 @@
 
 
 /***/ },
-/* 377 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47202,7 +52941,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47275,7 +53014,7 @@
 
 
 /***/ },
-/* 378 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47286,7 +53025,7 @@
 	//! author : Mikolaj Dadela : https://github.com/mik01aj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47359,7 +53098,7 @@
 
 
 /***/ },
-/* 379 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47367,7 +53106,7 @@
 	//! author : sschueller : https://github.com/sschueller
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47442,7 +53181,7 @@
 
 
 /***/ },
-/* 380 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47450,7 +53189,7 @@
 	//! author : Jawish Hameed : https://github.com/jawish
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47547,7 +53286,7 @@
 
 
 /***/ },
-/* 381 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47555,7 +53294,7 @@
 	//! author : Aggelos Karalias : https://github.com/mehiel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47652,7 +53391,7 @@
 
 
 /***/ },
-/* 382 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47660,7 +53399,7 @@
 	//! author : Jared Morse : https://github.com/jarcoal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47724,7 +53463,7 @@
 
 
 /***/ },
-/* 383 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47732,7 +53471,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47792,7 +53531,7 @@
 
 
 /***/ },
-/* 384 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47800,7 +53539,7 @@
 	//! author : Chris Gedrim : https://github.com/chrisgedrim
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47864,7 +53603,7 @@
 
 
 /***/ },
-/* 385 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47872,7 +53611,7 @@
 	//! author : Chris Cartlidge : https://github.com/chriscartlidge
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -47936,7 +53675,7 @@
 
 
 /***/ },
-/* 386 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -47944,7 +53683,7 @@
 	//! author : Luke McGregor : https://github.com/lukemcgregor
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48008,7 +53747,7 @@
 
 
 /***/ },
-/* 387 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48018,7 +53757,7 @@
 	//! comment : miestasmia corrected the translation by colindean
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48086,7 +53825,7 @@
 
 
 /***/ },
-/* 388 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48094,7 +53833,7 @@
 	//! author : Julio Napurí : https://github.com/julionc
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48183,14 +53922,14 @@
 
 
 /***/ },
-/* 389 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
 	//! locale : Spanish (Dominican Republic) [es-do]
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48279,7 +54018,7 @@
 
 
 /***/ },
-/* 390 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48287,7 +54026,7 @@
 	//! author : bustta : https://github.com/bustta
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48367,7 +54106,7 @@
 
 
 /***/ },
-/* 391 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48376,7 +54115,7 @@
 	//! improvements : Illimar Tambek : https://github.com/ragulka
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48452,7 +54191,7 @@
 
 
 /***/ },
-/* 392 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48460,7 +54199,7 @@
 	//! author : Eneko Illarramendi : https://github.com/eillarra
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48523,7 +54262,7 @@
 
 
 /***/ },
-/* 393 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48531,7 +54270,7 @@
 	//! author : Ebrahim Byagowi : https://github.com/ebraminio
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48635,7 +54374,7 @@
 
 
 /***/ },
-/* 394 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48643,7 +54382,7 @@
 	//! author : Tarmo Aidantausta : https://github.com/bleadof
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48747,7 +54486,7 @@
 
 
 /***/ },
-/* 395 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48755,7 +54494,7 @@
 	//! author : Ragnar Johannesen : https://github.com/ragnar123
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48812,7 +54551,7 @@
 
 
 /***/ },
-/* 396 */
+/* 405 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48820,7 +54559,7 @@
 	//! author : John Fischer : https://github.com/jfroffice
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48900,7 +54639,7 @@
 
 
 /***/ },
-/* 397 */
+/* 406 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48908,7 +54647,7 @@
 	//! author : Jonathan Abourbih : https://github.com/jonbca
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -48979,7 +54718,7 @@
 
 
 /***/ },
-/* 398 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -48987,7 +54726,7 @@
 	//! author : Gaspard Bucher : https://github.com/gaspard
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49062,7 +54801,7 @@
 
 
 /***/ },
-/* 399 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49070,7 +54809,7 @@
 	//! author : Robin van der Vliet : https://github.com/robin0van0der0v
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49142,7 +54881,7 @@
 
 
 /***/ },
-/* 400 */
+/* 409 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49150,7 +54889,7 @@
 	//! author : Jon Ashdown : https://github.com/jonashdown
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49223,7 +54962,7 @@
 
 
 /***/ },
-/* 401 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49231,7 +54970,7 @@
 	//! author : Juan G. Hurtado : https://github.com/juanghurtado
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49305,7 +55044,7 @@
 
 
 /***/ },
-/* 402 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49313,7 +55052,7 @@
 	//! author : The Discoverer : https://github.com/WikiDiscoverer
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49432,7 +55171,7 @@
 
 
 /***/ },
-/* 403 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49440,7 +55179,7 @@
 	//! author : Kaushik Thanki : https://github.com/Kaushik1987
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49561,7 +55300,7 @@
 
 
 /***/ },
-/* 404 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49571,7 +55310,7 @@
 	//! author : Tal Ater : https://github.com/TalAter
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49665,7 +55404,7 @@
 
 
 /***/ },
-/* 405 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49673,7 +55412,7 @@
 	//! author : Mayank Singhal : https://github.com/mayanksinghal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49794,7 +55533,7 @@
 
 
 /***/ },
-/* 406 */
+/* 415 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49802,7 +55541,7 @@
 	//! author : Bojan Marković : https://github.com/bmarkovic
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -49944,7 +55683,7 @@
 
 
 /***/ },
-/* 407 */
+/* 416 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -49952,7 +55691,7 @@
 	//! author : Adam Brunner : https://github.com/adambrunner
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50057,7 +55796,7 @@
 
 
 /***/ },
-/* 408 */
+/* 417 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50065,7 +55804,7 @@
 	//! author : Armendarabyan : https://github.com/armendarabyan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50157,7 +55896,7 @@
 
 
 /***/ },
-/* 409 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50166,7 +55905,7 @@
 	//! reference: http://id.wikisource.org/wiki/Pedoman_Umum_Ejaan_Bahasa_Indonesia_yang_Disempurnakan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50245,7 +55984,7 @@
 
 
 /***/ },
-/* 410 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50253,7 +55992,7 @@
 	//! author : Hinrik Örn Sigurðsson : https://github.com/hinrik
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50377,7 +56116,7 @@
 
 
 /***/ },
-/* 411 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50386,7 +56125,7 @@
 	//! author: Mattia Larentis: https://github.com/nostalgiaz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50452,7 +56191,7 @@
 
 
 /***/ },
-/* 412 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50460,7 +56199,7 @@
 	//! author : LI Long : https://github.com/baryon
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50537,7 +56276,7 @@
 
 
 /***/ },
-/* 413 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50546,7 +56285,7 @@
 	//! reference: http://jv.wikipedia.org/wiki/Basa_Jawa
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50625,7 +56364,7 @@
 
 
 /***/ },
-/* 414 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50633,7 +56372,7 @@
 	//! author : Irakli Janiashvili : https://github.com/irakli-janiashvili
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50719,7 +56458,7 @@
 
 
 /***/ },
-/* 415 */
+/* 424 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50727,7 +56466,7 @@
 	//! authors : Nurlan Rakhimzhanov : https://github.com/nurlan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50811,7 +56550,7 @@
 
 
 /***/ },
-/* 416 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50819,7 +56558,7 @@
 	//! author : Kruy Vanna : https://github.com/kruyvanna
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -50874,7 +56613,7 @@
 
 
 /***/ },
-/* 417 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -50882,7 +56621,7 @@
 	//! author : Rajeev Naik : https://github.com/rajeevnaikte
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51005,7 +56744,7 @@
 
 
 /***/ },
-/* 418 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51014,7 +56753,7 @@
 	//! author : Jeeeyul Lee <jeeeyul@gmail.com>
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51093,7 +56832,7 @@
 
 
 /***/ },
-/* 419 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51101,7 +56840,7 @@
 	//! author : Chyngyz Arystan uulu : https://github.com/chyngyz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51186,7 +56925,7 @@
 
 
 /***/ },
-/* 420 */
+/* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51195,7 +56934,7 @@
 	//! author : David Raison : https://github.com/kwisatz
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51328,7 +57067,7 @@
 
 
 /***/ },
-/* 421 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51336,7 +57075,7 @@
 	//! author : Ryan Hart : https://github.com/ryanhart2
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51403,7 +57142,7 @@
 
 
 /***/ },
-/* 422 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51411,7 +57150,7 @@
 	//! author : Mindaugas Mozūras : https://github.com/mmozuras
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51525,7 +57264,7 @@
 
 
 /***/ },
-/* 423 */
+/* 432 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51534,7 +57273,7 @@
 	//! author : Jānis Elmeris : https://github.com/JanisE
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51627,7 +57366,7 @@
 
 
 /***/ },
-/* 424 */
+/* 433 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51635,7 +57374,7 @@
 	//! author : Miodrag Nikač <miodrag@restartit.me> : https://github.com/miodragnikac
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51743,7 +57482,7 @@
 
 
 /***/ },
-/* 425 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51751,7 +57490,7 @@
 	//! author : John Corrigan <robbiecloset@gmail.com> : https://github.com/johnideal
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51812,7 +57551,7 @@
 
 
 /***/ },
-/* 426 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51820,7 +57559,7 @@
 	//! author : Borislav Mickov : https://github.com/B0k0
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51907,7 +57646,7 @@
 
 
 /***/ },
-/* 427 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -51915,7 +57654,7 @@
 	//! author : Floyd Pink : https://github.com/floydpink
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -51993,7 +57732,7 @@
 
 
 /***/ },
-/* 428 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52002,7 +57741,7 @@
 	//! author : Vivek Athalye : https://github.com/vnathalye
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52157,7 +57896,7 @@
 
 
 /***/ },
-/* 429 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52165,7 +57904,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52244,7 +57983,7 @@
 
 
 /***/ },
-/* 430 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52253,7 +57992,7 @@
 	//! author : Weldan Jamili : https://github.com/weldan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52332,7 +58071,7 @@
 
 
 /***/ },
-/* 431 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52342,7 +58081,7 @@
 	//! author : Tin Aung Lin : https://github.com/thanyawzinmin
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52433,7 +58172,7 @@
 
 
 /***/ },
-/* 432 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52442,7 +58181,7 @@
 	//!           Sigurd Gartmann : https://github.com/sigurdga
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52501,7 +58240,7 @@
 
 
 /***/ },
-/* 433 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52509,7 +58248,7 @@
 	//! author : suvash : https://github.com/suvash
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52629,7 +58368,7 @@
 
 
 /***/ },
-/* 434 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52638,7 +58377,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52722,7 +58461,7 @@
 
 
 /***/ },
-/* 435 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52731,7 +58470,7 @@
 	//! author : Jacob Middag : https://github.com/middagj
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52815,7 +58554,7 @@
 
 
 /***/ },
-/* 436 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52823,7 +58562,7 @@
 	//! author : https://github.com/mechuwind
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -52880,7 +58619,7 @@
 
 
 /***/ },
-/* 437 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -52888,7 +58627,7 @@
 	//! author : Harpreet Singh : https://github.com/harpreetkhalsagtbit
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53009,7 +58748,7 @@
 
 
 /***/ },
-/* 438 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53017,7 +58756,7 @@
 	//! author : Rafal Hirsz : https://github.com/evoL
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53138,7 +58877,7 @@
 
 
 /***/ },
-/* 439 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53146,7 +58885,7 @@
 	//! author : Jefferson : https://github.com/jalex79
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53208,7 +58947,7 @@
 
 
 /***/ },
-/* 440 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53216,7 +58955,7 @@
 	//! author : Caio Ribeiro Pereira : https://github.com/caio-ribeiro-pereira
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53275,7 +59014,7 @@
 
 
 /***/ },
-/* 441 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53284,7 +59023,7 @@
 	//! author : Valentin Agachi : https://github.com/avaly
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53355,7 +59094,7 @@
 
 
 /***/ },
-/* 442 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53365,7 +59104,7 @@
 	//! author : Коренберг Марк : https://github.com/socketpair
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53543,7 +59282,7 @@
 
 
 /***/ },
-/* 443 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53551,7 +59290,7 @@
 	//! author : Narain Sagar : https://github.com/narainsagar
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53646,7 +59385,7 @@
 
 
 /***/ },
-/* 444 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53654,7 +59393,7 @@
 	//! authors : Bård Rolstad Henriksen : https://github.com/karamell
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53712,7 +59451,7 @@
 
 
 /***/ },
-/* 445 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53720,7 +59459,7 @@
 	//! author : Sampath Sitinamaluwa : https://github.com/sampathsris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53788,7 +59527,7 @@
 
 
 /***/ },
-/* 446 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53797,7 +59536,7 @@
 	//! based on work of petrbela : https://github.com/petrbela
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -53943,7 +59682,7 @@
 
 
 /***/ },
-/* 447 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -53951,7 +59690,7 @@
 	//! author : Robert Sedovšek : https://github.com/sedovsek
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54110,7 +59849,7 @@
 
 
 /***/ },
-/* 448 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54120,7 +59859,7 @@
 	//! author : Oerd Cukalla : https://github.com/oerd
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54185,7 +59924,7 @@
 
 
 /***/ },
-/* 449 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54193,7 +59932,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54300,7 +60039,7 @@
 
 
 /***/ },
-/* 450 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54308,7 +60047,7 @@
 	//! author : Milan Janačković<milanjanackovic@gmail.com> : https://github.com/milan-j
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54415,7 +60154,7 @@
 
 
 /***/ },
-/* 451 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54423,7 +60162,7 @@
 	//! author : Nicolai Davies<mail@nicolai.io> : https://github.com/nicolaidavies
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54509,7 +60248,7 @@
 
 
 /***/ },
-/* 452 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54517,7 +60256,7 @@
 	//! author : Jens Alm : https://github.com/ulmus
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54583,7 +60322,7 @@
 
 
 /***/ },
-/* 453 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54591,7 +60330,7 @@
 	//! author : Fahad Kassim : https://github.com/fadsel
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54647,7 +60386,7 @@
 
 
 /***/ },
-/* 454 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54655,7 +60394,7 @@
 	//! author : Arjunkumar Krishnamoorthy : https://github.com/tk120404
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54782,7 +60521,7 @@
 
 
 /***/ },
-/* 455 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54790,7 +60529,7 @@
 	//! author : Krishna Chaitanya Thota : https://github.com/kcthota
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54876,7 +60615,7 @@
 
 
 /***/ },
-/* 456 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54885,7 +60624,7 @@
 	//! author : Onorio De J. Afonso : https://github.com/marobo
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -54949,7 +60688,7 @@
 
 
 /***/ },
-/* 457 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -54957,7 +60696,7 @@
 	//! author : Kridsada Thanabulpong : https://github.com/sirn
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55021,7 +60760,7 @@
 
 
 /***/ },
-/* 458 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55029,7 +60768,7 @@
 	//! author : Dan Hagman : https://github.com/hagmandan
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55088,7 +60827,7 @@
 
 
 /***/ },
-/* 459 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55096,7 +60835,7 @@
 	//! author : Dominika Kruk : https://github.com/amaranthrose
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55213,7 +60952,7 @@
 
 
 /***/ },
-/* 460 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55222,7 +60961,7 @@
 	//!           Burak Yiğit Kaya: https://github.com/BYK
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55308,7 +61047,7 @@
 
 
 /***/ },
-/* 461 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55317,7 +61056,7 @@
 	//! author : Iustì Canun
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55404,7 +61143,7 @@
 
 
 /***/ },
-/* 462 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55412,7 +61151,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55467,7 +61206,7 @@
 
 
 /***/ },
-/* 463 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55475,7 +61214,7 @@
 	//! author : Abdel Said : https://github.com/abdelsaid
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55530,7 +61269,7 @@
 
 
 /***/ },
-/* 464 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55539,7 +61278,7 @@
 	//! Author : Menelion Elensúle : https://github.com/Oire
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55686,7 +61425,7 @@
 
 
 /***/ },
-/* 465 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55695,7 +61434,7 @@
 	//! author : Zack : https://github.com/ZackVision
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55790,7 +61529,7 @@
 
 
 /***/ },
-/* 466 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55798,7 +61537,7 @@
 	//! author : Sardor Muminov : https://github.com/muminoff
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55853,7 +61592,7 @@
 
 
 /***/ },
-/* 467 */
+/* 476 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55861,7 +61600,7 @@
 	//! author : Rasulbek Mirzayev : github.com/Rasulbeeek
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -55916,7 +61655,7 @@
 
 
 /***/ },
-/* 468 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -55924,7 +61663,7 @@
 	//! author : Bang Nguyen : https://github.com/bangnk
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56000,7 +61739,7 @@
 
 
 /***/ },
-/* 469 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56008,7 +61747,7 @@
 	//! author : Andrew Hood : https://github.com/andrewhood125
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56073,7 +61812,7 @@
 
 
 /***/ },
-/* 470 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56081,7 +61820,7 @@
 	//! author : Atolagbe Abisoye : https://github.com/andela-batolagbe
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56138,7 +61877,7 @@
 
 
 /***/ },
-/* 471 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56147,7 +61886,7 @@
 	//! author : Zeno Zeng : https://github.com/zenozeng
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56254,7 +61993,7 @@
 
 
 /***/ },
-/* 472 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56264,7 +62003,7 @@
 	//! author : Konstantin : https://github.com/skfd
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56364,7 +62103,7 @@
 
 
 /***/ },
-/* 473 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//! moment.js locale configuration
@@ -56373,7 +62112,7 @@
 	//! author : Chris Lam : https://github.com/hehachris
 	
 	;(function (global, factory) {
-	    true ? factory(__webpack_require__(353)) :
+	    true ? factory(__webpack_require__(362)) :
 	   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
 	   factory(global.moment)
 	}(this, (function (moment) { 'use strict';
@@ -56473,7 +62212,7 @@
 
 
 /***/ },
-/* 474 */
+/* 483 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -57078,16 +62817,16 @@
 	};
 
 /***/ },
-/* 475 */
+/* 484 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(476);
+	var content = __webpack_require__(485);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(478)(content, {});
+	var update = __webpack_require__(487)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -57104,15 +62843,15 @@
 	}
 
 /***/ },
-/* 476 */
+/* 485 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(477)();
+	exports = module.exports = __webpack_require__(486)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".src-example-App-App---app {\r\n    padding: 2em;\r\n}\r\n\r\n.src-example-App-App---ukFormat {\r\n    color: blue;\r\n    transform: rotate(-5deg);\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n", "", {"version":3,"sources":["/./src/example/App/App.css"],"names":[],"mappings":"AAAA;IACI,aAAa;CAChB;;AAED;IACI,YAAY;IACZ,yBAAyB;IACzB,mBAAmB;IACnB,sBAAsB;CACzB","file":"App.css","sourcesContent":[".app {\r\n    padding: 2em;\r\n}\r\n\r\n.ukFormat {\r\n    color: blue;\r\n    transform: rotate(-5deg);\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, ".src-example-App-App---app {\n    padding: 2em;\n}\n\n.src-example-App-App---ukFormat {\n    color: blue;\n    transform: rotate(-5deg);\n    position: relative;\n    display: inline-block;\n}\n", "", {"version":3,"sources":["/./src/example/App/App.css"],"names":[],"mappings":"AAAA;IACI,aAAa;CAChB;;AAED;IACI,YAAY;IACZ,yBAAyB;IACzB,mBAAmB;IACnB,sBAAsB;CACzB","file":"App.css","sourcesContent":[".app {\n    padding: 2em;\n}\n\n.ukFormat {\n    color: blue;\n    transform: rotate(-5deg);\n    position: relative;\n    display: inline-block;\n}\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 	exports.locals = {
@@ -57121,7 +62860,7 @@
 	};
 
 /***/ },
-/* 477 */
+/* 486 */
 /***/ function(module, exports) {
 
 	/*
@@ -57177,7 +62916,7 @@
 
 
 /***/ },
-/* 478 */
+/* 487 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*

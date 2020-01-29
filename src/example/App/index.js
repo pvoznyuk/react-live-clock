@@ -6,6 +6,7 @@ import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';
 
+// eslint-disable-next-line newline-after-var
 const Panel = ({title, code, children}) =>
   <div className="panel panel-default">
     <div className="panel-heading">

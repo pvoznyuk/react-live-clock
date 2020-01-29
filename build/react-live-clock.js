@@ -16915,7 +16915,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var BASE_UNIT = 'milliseconds';
 
 function ReactLiveClock(props) {
-
   var formatTime = function formatTime(time) {
     var filter = props.filter,
         format = props.format,
@@ -16936,40 +16935,25 @@ function ReactLiveClock(props) {
   var timestamp = (0, _momentTimezone2.default)();
   var InitialBaseTime = date ? (0, _momentTimezone2.default)(new Date(date).getTime()) : timestamp;
 
-  var _useState = (0, _react.useState)(!date),
+  var realTime = !date;
+  var now = InitialBaseTime;
+  var baseTime = InitialBaseTime;
+  var startTime = timestamp;
+
+  var _useState = (0, _react.useState)(formatTime(now)),
       _useState2 = _slicedToArray(_useState, 2),
-      realTime = _useState2[0],
-      SetRealTime = _useState2[1];
+      formattedString = _useState2[0],
+      setFormattedString = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(InitialBaseTime),
+  var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      now = _useState4[0],
-      setNow = _useState4[1];
+      tickTimer = _useState4[0],
+      setTickTimer = _useState4[1];
 
-  var _useState5 = (0, _react.useState)(InitialBaseTime),
+  var _useState5 = (0, _react.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
-      baseTime = _useState6[0],
-      setBaseTime = _useState6[1];
-
-  var _useState7 = (0, _react.useState)(timestamp),
-      _useState8 = _slicedToArray(_useState7, 2),
-      startTime = _useState8[0],
-      setStartTime = _useState8[1];
-
-  var _useState9 = (0, _react.useState)(formatTime(now)),
-      _useState10 = _slicedToArray(_useState9, 2),
-      formattedString = _useState10[0],
-      setFormattedString = _useState10[1];
-
-  var _useState11 = (0, _react.useState)(false),
-      _useState12 = _slicedToArray(_useState11, 2),
-      tickTimer = _useState12[0],
-      setTickTimer = _useState12[1];
-
-  var _useState13 = (0, _react.useState)(false),
-      _useState14 = _slicedToArray(_useState13, 2),
-      mounted = _useState14[0],
-      setMounted = _useState14[1];
+      mounted = _useState6[0],
+      setMounted = _useState6[1];
 
   var childProps = Object.keys(props).filter(function (key) {
     return !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key);
@@ -16992,18 +16976,19 @@ function ReactLiveClock(props) {
       newNow = baseTime.clone().add(diff, BASE_UNIT);
     }
 
-    var formattedTime = formatTime(newNow);
+    var newFormattedTime = formatTime(newNow);
+    var formattedTime = formatTime(now);
 
-    if (formattedTime !== formattedString) {
+    if (newFormattedTime !== formattedTime) {
       onChange({
         moment: newNow,
         output: formattedTime,
         previousOutput: formattedString
       });
+      setFormattedString(newFormattedTime);
     }
 
-    setNow(newNow);
-    setFormattedString(formattedTime);
+    now = newNow;
   };
 
   (0, _react.useEffect)(function () {
@@ -17024,7 +17009,7 @@ function ReactLiveClock(props) {
     return function () {
       return tickTimer && clearInterval(tickTimer);
     };
-  }, [_react.useState]);
+  }, []);
 
   return _react2.default.createElement(
     'time',

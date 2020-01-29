@@ -3,6 +3,7 @@
   "version": "4.0.0-beta",
   "description": "React Live Clock",
   "main": "lib/index.js",
+  "types": "index.d.ts",
   "config": {
     "component": "ReactLiveClock"
   },

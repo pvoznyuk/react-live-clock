@@ -15,4 +15,6 @@ pids
 /reports/
 
 /.eslintcache
+
+# Filesystem Files
 .DS_Store

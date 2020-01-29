@@ -37,11 +37,11 @@
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
-    "react-component-template": "0.1.10",
-    "react-fittext": "1.0.0",
-    "react-highlight.js": "1.0.7",
     "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react-component-template": "0.1.10",
+    "react-dom": "16.12.0",
+    "react-fittext": "1.0.0",
+    "react-highlight.js": "1.0.7"
   },
   "dependencies": {
     "moment": "2.24.0",

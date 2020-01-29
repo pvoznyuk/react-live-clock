@@ -39,7 +39,7 @@ Outputs:
 <time>10:15:34</time>
 ```
 
- ** Shows current time for 'US/Pacific' timezone and updats every second
+ ** Shows current time for 'US/Pacific' timezone and updates every second
 
 
 ### Formatting
@@ -50,7 +50,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 
 | Propertie  | Type                | Default Value | Description |
 |------------|---------------------|---------------|-------------|
-| `date`     | timestamp or string | currrent date | Date to output, If nothing is set then it take current date. |
+| `date`     | timestamp or string | current date | Date to output, If nothing is set then it take current date. |
 | `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.
 | `filter`   | function            | (date: String) => date      | Filtering the value before the output .
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
@@ -95,3 +95,4 @@ This software is released under the MIT license. See LICENSE for more details.
 ### Contributors
 
 * [pvoznyuk](https://github.com/pvoznyuk)
+* [anthony0030](https://github.com/anthony0030)

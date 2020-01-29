@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
 import ReactFitText from 'react-fittext';
+import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';
 
@@ -160,6 +161,20 @@ const App = () =>
         }
         ticking={true} />
     </Panel>
+
+
+    <Panel
+      code="
+        <Clock format={'HH:mm:ss a'} />
+        <br />
+        <button onClick={() => moment.locale('el')}>Make Greek</button>
+      "
+      title="Change the language on the fly">
+      <Clock format={'HH:mm:ss a'} />
+      <br />
+      <button onClick={() => moment.locale('el')}>Make it Greek!</button>
+    </Panel>
+
 
   </div>;
 

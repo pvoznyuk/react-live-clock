@@ -61,7 +61,9 @@ export default function ReactLiveClock(props) {
         output: formattedTime,
         previousOutput: formattedString
       });
-      setFormattedString(newFormattedTime);
+      if (mounted) {
+        setFormattedString(newFormattedTime);
+      }
     }
 
     now = newNow;

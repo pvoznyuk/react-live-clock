@@ -5,8 +5,12 @@ import ReactFitText from 'react-fittext';
 import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
-// eslint-disable-next-line newline-after-var
 const Panel = ({title, code, children}) =>
   <div className="panel panel-default">
     <div className="panel-heading">
@@ -22,8 +26,7 @@ const Panel = ({title, code, children}) =>
       <h6>Output:</h6>
       {children}
     </div>
-  </div>
-;
+  </div>;
 
 Panel.propTypes = {
   title: PropTypes.string,
@@ -56,6 +59,19 @@ const App = () =>
       title="Default clock. Shows current time (hours and minutes) in user's timezone.">
       <Clock />
     </Panel>
+
+    <Router>
+      <Link to="/">Home</Link>
+      <br />
+      <Link to="/test">Test</Link>
+      <Route exact={true} path="/" >
+        <Panel
+          code="<Clock format={'h:mm:ssa'} ticking={true} />"
+          title="This is to test the components Cleanup function">
+          <Clock format={'h:mm:ssa'} ticking={true} />
+        </Panel>
+      </Route>
+    </Router>
 
     <Panel
       code={`

@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.5] - 2020-03-16
+
+Fixes
+* Fixes ticking stoping caused in 4.0.4
+
+Adds
+*  Nothing
+
+Removes
+*  Nothing
+
 ## [4.0.4] - 2020-03-11
 
 Fixes

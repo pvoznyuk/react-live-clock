@@ -38,6 +38,11 @@ export default function ReactLiveClock(props) {
     return acc;
   }, {});
 
+  const clearMyInterval = interval => {
+    if (interval) {
+      clearInterval(tickTimer);
+    }
+  };
 
   const updateClock = () => {
     const {onChange} = props;
@@ -69,20 +74,24 @@ export default function ReactLiveClock(props) {
     now = newNow;
   };
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const {ticking, interval} = props;
 
     if (ticking || interval) {
-      if (!mounted) {
-        const intervalId = setInterval(() => updateClock(), interval);
-
-        setTickTimer(intervalId);
-        setMounted(true);
+      if (tickTimer) {
+        clearMyInterval(tickTimer);
       }
+      const intervalId = setInterval(() => updateClock(), interval);
+
+      setTickTimer(intervalId);
     }
-    return () => tickTimer && clearInterval(tickTimer);
-  }, []);
+    return () => clearMyInterval(tickTimer);
+  }, [mounted]);
+
 
   return (
     <time {...childProps} >

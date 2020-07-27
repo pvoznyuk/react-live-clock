@@ -20557,7 +20557,7 @@ ReactLiveClock.propTypes = {
   interval: _propTypes2.default.number,
   ticking: _propTypes2.default.bool,
   timezone: _propTypes2.default.string,
-  onChange: _propTypes2.default.func
+  onChange: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func])
 };
 
 ReactLiveClock.defaultProps = {

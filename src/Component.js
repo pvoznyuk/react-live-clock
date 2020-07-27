@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
+import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
   const {timezone, date, format, interval, ticking, onChange, blinking} = props;
@@ -57,8 +58,7 @@ export default function ReactLiveClock(props) {
     <Moment
       date={date}
       format={formatToUse}
-      tz={timezone}
-    >
+      tz={timezone}>
       {currentTime}
     </Moment>
   );

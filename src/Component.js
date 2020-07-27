@@ -3,15 +3,43 @@ import PropTypes from 'prop-types';
 import Moment from 'react-moment';
 
 export default function ReactLiveClock(props) {
-  const {timezone, date, format, interval, ticking, onChange} = props;
+  const {timezone, date, format, interval, ticking, onChange, blinking} = props;
   const [currentTime, setCurrentTime] = useState(Date.now());
+  const [formatToUse, setFormatToUse] = useState(format);
+  let colonOn = true;
+
+
+  function reverseString(str) {
+    const splitString = str.split('');
+    const reverseArray = splitString.reverse();
+    const joinArray = reverseArray.join('');
+
+    return joinArray;
+  }
 
   useEffect(() => {
-    if (ticking) {
+    if (ticking || blinking) {
       const tick = setInterval(() => {
         const now = Date.now();
 
-        setCurrentTime(now);
+        if (blinking) {
+          if (colonOn) {
+            let newFormat = reverseString(format);
+
+            newFormat = newFormat.replace(':', ' ');
+            newFormat = reverseString(newFormat);
+
+            colonOn = false;
+            setFormatToUse(newFormat);
+          } else {
+            setFormatToUse(format);
+            colonOn = true;
+          }
+        }
+
+        if (ticking) {
+          setCurrentTime(now);
+        }
 
         if (typeof onChange === 'function') {
           onChange(now);
@@ -28,7 +56,7 @@ export default function ReactLiveClock(props) {
   return (
     <Moment
       date={date}
-      format={format}
+      format={formatToUse}
       tz={timezone}
     >
       {currentTime}
@@ -41,6 +69,7 @@ ReactLiveClock.propTypes = {
     PropTypes.number,
     PropTypes.string
   ]),
+  blinking: PropTypes.bool,
   format: PropTypes.string,
   interval: PropTypes.number,
   ticking: PropTypes.bool,
@@ -50,6 +79,7 @@ ReactLiveClock.propTypes = {
 
 ReactLiveClock.defaultProps = {
   date: null,
+  blinking: false,
   format: 'HH:mm',
   interval: 1000,
   ticking: false,

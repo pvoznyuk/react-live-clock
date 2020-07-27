@@ -20477,19 +20477,52 @@ function ReactLiveClock(props) {
       format = props.format,
       interval = props.interval,
       ticking = props.ticking,
-      onChange = props.onChange;
+      onChange = props.onChange,
+      blinking = props.blinking;
 
   var _useState = (0, _react.useState)(Date.now()),
       _useState2 = _slicedToArray(_useState, 2),
       currentTime = _useState2[0],
       setCurrentTime = _useState2[1];
 
+  var _useState3 = (0, _react.useState)(format),
+      _useState4 = _slicedToArray(_useState3, 2),
+      formatToUse = _useState4[0],
+      setFormatToUse = _useState4[1];
+
+  var colonOn = true;
+
+  function reverseString(str) {
+    var splitString = str.split('');
+    var reverseArray = splitString.reverse();
+    var joinArray = reverseArray.join('');
+
+    return joinArray;
+  }
+
   (0, _react.useEffect)(function () {
-    if (ticking) {
+    if (ticking || blinking) {
       var tick = setInterval(function () {
         var now = Date.now();
 
-        setCurrentTime(now);
+        if (blinking) {
+          if (colonOn) {
+            var newFormat = reverseString(format);
+
+            newFormat = newFormat.replace(':', ' ');
+            newFormat = reverseString(newFormat);
+
+            colonOn = false;
+            setFormatToUse(newFormat);
+          } else {
+            setFormatToUse(format);
+            colonOn = true;
+          }
+        }
+
+        if (ticking) {
+          setCurrentTime(now);
+        }
 
         if (typeof onChange === 'function') {
           onChange(now);
@@ -20510,7 +20543,7 @@ function ReactLiveClock(props) {
     _reactMoment2.default,
     {
       date: date,
-      format: format,
+      format: formatToUse,
       tz: timezone
     },
     currentTime
@@ -20519,6 +20552,7 @@ function ReactLiveClock(props) {
 
 ReactLiveClock.propTypes = {
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+  blinking: _propTypes2.default.bool,
   format: _propTypes2.default.string,
   interval: _propTypes2.default.number,
   ticking: _propTypes2.default.bool,
@@ -20528,6 +20562,7 @@ ReactLiveClock.propTypes = {
 
 ReactLiveClock.defaultProps = {
   date: null,
+  blinking: false,
   format: 'HH:mm',
   interval: 1000,
   ticking: false,

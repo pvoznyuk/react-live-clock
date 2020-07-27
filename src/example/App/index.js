@@ -182,6 +182,21 @@ const App = () =>
 
     <Panel
       code="
+        <Clock blinking={true} format={'HH:mm:ss'} />
+        <Clock blinking={true} format={'HH:mm'} />
+      "
+      title="Blinking">
+      <Clock
+        blinking={true}
+        format={'HH:mm:ss'} />
+      <br />
+      <Clock
+        blinking={true}
+        format={'HH:mm'} />
+    </Panel>
+
+    <Panel
+      code="
         <Clock format={'HH:mm:ss a'} ticking={true} />
         <br />
         <button onClick={() => moment.locale('el')}>Make Greek</button>

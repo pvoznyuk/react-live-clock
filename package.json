@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/pvoznyuk/react-live-clock",
   "peerDependencies": {
-    "react-moment": "0.9.7",
-    "react": "^16.8"
+    "react": "^16.8",
+    "react-moment": "0.9.7"
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",

@@ -74,7 +74,10 @@ ReactLiveClock.propTypes = {
   interval: PropTypes.number,
   ticking: PropTypes.bool,
   timezone: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.func
+  ])
 };
 
 ReactLiveClock.defaultProps = {

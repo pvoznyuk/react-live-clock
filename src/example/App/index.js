@@ -146,7 +146,7 @@ const App = () =>
         timezone={'Australia/Sydney'} />
     </Panel>
 
-    <Panel
+    {/* <Panel
       code={`
         <Clock
           date={'1997-12-31T14:15:23+01:00'}
@@ -160,13 +160,13 @@ const App = () =>
         format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
         ticking={true}
         timezone={'Australia/Sydney'} />
-    </Panel>
+    </Panel> */}
 
-    <Panel
+    {/* <Panel
       code="<Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />"
       title="Filter the value before output.">
       <Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />
-    </Panel>
+    </Panel> */}
 
     <Panel
       code="<Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date)} />"
@@ -174,7 +174,7 @@ const App = () =>
       <Clock
         format={'HH:mm:ss'}
         onChange={date =>
-          console.log(date.output) // eslint-disable-line no-console
+          console.log(date) // eslint-disable-line no-console
         }
         ticking={true} />
     </Panel>
@@ -182,12 +182,12 @@ const App = () =>
 
     <Panel
       code="
-        <Clock format={'HH:mm:ss a'} />
+        <Clock format={'HH:mm:ss a'} ticking={true} />
         <br />
         <button onClick={() => moment.locale('el')}>Make Greek</button>
       "
       title="Change the language on the fly">
-      <Clock format={'HH:mm:ss a'} />
+      <Clock format={'HH:mm:ss a'} ticking={true} />
       <br />
       <button onClick={() => moment.locale('el')}>Make it Greek!</button>
     </Panel>

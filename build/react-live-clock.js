@@ -20546,8 +20546,7 @@ function ReactLiveClock(props) {
     {
       date: date,
       format: formatToUse,
-      tz: timezone
-    },
+      tz: timezone },
     currentTime
   );
 }

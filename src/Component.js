@@ -1,125 +1,91 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment-timezone';
-
-const BASE_UNIT = 'milliseconds';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
-  const formatTime = time => {
-    const {filter, format, timezone} = props;
-
-    if (timezone) {
-      time.tz(timezone);
-    }
-
-    const formattedTime = time.format(format);
-    const filteredTime = filter(formattedTime);
-
-    return filteredTime;
-  };
+  const {timezone, date, format, interval, ticking, onChange, blinking} = props;
+  const [currentTime, setCurrentTime] = useState(Date.now());
+  const [formatToUse, setFormatToUse] = useState(format);
+  let colonOn = true;
 
 
-  const date = props.date || props.children || null;
-  const timestamp = moment();
-  const InitialBaseTime = date ? moment(new Date(date).getTime()) : timestamp;
+  function reverseString(str) {
+    const splitString = str.split('');
+    const reverseArray = splitString.reverse();
+    const joinArray = reverseArray.join('');
 
-  const realTime = !date;
-  let now = InitialBaseTime;
-  const baseTime = InitialBaseTime;
-  const startTime = timestamp;
-  const [formattedString, setFormattedString] = useState(formatTime(now));
-  const [tickTimer, setTickTimer] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  const childProps = Object.keys(props)
-  .filter(key => !['date', 'interval', 'ticking', 'filter', 'format', 'timezone'].includes(key))
-  .reduce((acc, key) => {
-    acc[key] = props[key];
-    return acc;
-  }, {});
-
-  const clearMyInterval = interval => {
-    if (interval) {
-      clearInterval(tickTimer);
-    }
-  };
-
-  const updateClock = () => {
-    const {onChange} = props;
-    let newNow;
-
-    if (realTime) {
-      newNow = moment();
-    } else {
-      const newTime = moment();
-      const diff = newTime.diff(startTime, BASE_UNIT);
-
-      newNow = baseTime.clone().add(diff, BASE_UNIT);
-    }
-
-    const newFormattedTime = formatTime(newNow);
-    const formattedTime = formatTime(now);
-
-    if (newFormattedTime !== formattedTime) {
-      onChange({
-        moment: newNow,
-        output: formattedTime,
-        previousOutput: formattedString
-      });
-      if (mounted) {
-        setFormattedString(newFormattedTime);
-      }
-    }
-
-    now = newNow;
-  };
+    return joinArray;
+  }
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    if (ticking || blinking) {
+      const tick = setInterval(() => {
+        const now = Date.now();
 
-  useEffect(() => {
-    const {ticking, interval} = props;
+        if (blinking) {
+          if (colonOn) {
+            let newFormat = reverseString(format);
 
-    if (ticking || interval) {
-      if (tickTimer) {
-        clearMyInterval(tickTimer);
-      }
-      const intervalId = setInterval(() => updateClock(), interval);
+            newFormat = newFormat.replace(':', ' ');
+            newFormat = reverseString(newFormat);
 
-      setTickTimer(intervalId);
+            colonOn = false;
+            setFormatToUse(newFormat);
+          } else {
+            setFormatToUse(format);
+            colonOn = true;
+          }
+        }
+
+        if (ticking) {
+          setCurrentTime(now);
+        }
+
+        if (typeof onChange === 'function') {
+          onChange(now);
+        }
+      }, interval);
+
+      return () => clearInterval(tick);
     }
-    return () => clearMyInterval(tickTimer);
-  }, [mounted]);
+
+    return () => true;
+  }, [...props]);
 
 
   return (
-    <time {...childProps} >
-      { formattedString }
-    </time>
+    <Moment
+      date={date}
+      format={formatToUse}
+      tz={timezone}>
+      {currentTime}
+    </Moment>
   );
 }
 
 ReactLiveClock.propTypes = {
-  children: PropTypes.string,
   date: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]),
+  blinking: PropTypes.bool,
   format: PropTypes.string,
   interval: PropTypes.number,
   ticking: PropTypes.bool,
   timezone: PropTypes.string,
-  filter: PropTypes.func,
-  onChange: PropTypes.func
+  onChange: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.func
+  ])
 };
 
 ReactLiveClock.defaultProps = {
   date: null,
+  blinking: false,
   format: 'HH:mm',
   interval: 1000,
   ticking: false,
   timezone: null,
-  filter: date => date,
-  onChange: date => date
+  onChange: false
 };

@@ -51,7 +51,7 @@
     "react-dom": "16.13.1",
     "react-fittext": "1.0.0",
     "react-highlight.js": "1.0.7",
-    "react-moment": "0.9.7",
+    "react-moment": "1.0.0",
     "react-router-dom": "5.2.0"
   }
 }

@@ -1,5 +1,5 @@
 import test from 'tape';
-import ReactLiveClock from '../src/ReactLiveClock';
+import ReactLiveClock from '../src/Component';
 
 
 test('ReactLiveClock', t => {

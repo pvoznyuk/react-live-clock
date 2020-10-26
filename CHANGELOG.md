@@ -1,5 +1,14 @@
 # Changelog
 
+## [5.0.10]
+
+Bump eslint from 7.11.0 to 7.12.0
+Bump eslint-plugin-react from 7.21.4 to 7.21.5
+
+## [5.x.x]
+
+This was a a rewrite of the program to use react hooks
+
 ## [4.0.5] - 2020-03-16
 
 Fixes

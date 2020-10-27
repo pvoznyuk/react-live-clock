@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.0.11]
+
+Bump eslint from 7.12.0 to 7.12.1
+
 ## [5.0.10]
 
 Bump eslint from 7.11.0 to 7.12.0

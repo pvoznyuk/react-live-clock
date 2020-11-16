@@ -1,5 +1,10 @@
 # Changelog
 
+## [5.0.12]
+
+Bump eslint from 7.12.1 to 7.13.0
+Bump moment-timezone from 0.5.31 to 0.5.32
+
 ## [5.0.11]
 
 Bump eslint from 7.12.0 to 7.12.1
@@ -11,7 +16,7 @@ Bump eslint-plugin-react from 7.21.4 to 7.21.5
 
 ## [5.x.x]
 
-This was a a rewrite of the program to use react hooks
+This was a rewrite of the program to use react hooks
 
 ## [4.0.5] - 2020-03-16
 

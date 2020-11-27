@@ -1,6 +1,6 @@
 # Changelog
 
-## [5.0.12]
+## [5.0.13]
 Bumps .nvmrc version from 7 to 15.2.1
 Corects Cspell words order
 Adds suport for react 17

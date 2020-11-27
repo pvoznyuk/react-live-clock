@@ -1,6 +1,11 @@
 # Changelog
 
 ## [5.0.12]
+Bumps .nvmrc version from 7 to 15.2.1
+Corects Cspell words order
+Adds suport for react 17
+
+## [5.0.12]
 
 Bump eslint from 7.12.1 to 7.13.0
 Bump moment-timezone from 0.5.31 to 0.5.32

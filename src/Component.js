@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
-  const {timezone, date, format, interval, ticking, onChange, blinking} = props;
+  const {timezone, date, format, interval, ticking, onChange, blinking, className, style} = props;
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [formatToUse, setFormatToUse] = useState(format);
   let colonOn = true;
@@ -56,8 +56,10 @@ export default function ReactLiveClock(props) {
 
   return (
     <Moment
+      className={className}
       date={date}
       format={formatToUse}
+      style={style}
       tz={timezone}>
       {currentTime}
     </Moment>
@@ -65,12 +67,14 @@ export default function ReactLiveClock(props) {
 }
 
 ReactLiveClock.propTypes = {
+  className: PropTypes.string,
   date: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string
   ]),
   blinking: PropTypes.bool,
   format: PropTypes.string,
+  style: PropTypes.object,
   interval: PropTypes.number,
   ticking: PropTypes.bool,
   timezone: PropTypes.string,

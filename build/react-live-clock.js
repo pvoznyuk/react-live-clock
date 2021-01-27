@@ -20847,7 +20847,9 @@ function ReactLiveClock(props) {
       interval = props.interval,
       ticking = props.ticking,
       onChange = props.onChange,
-      blinking = props.blinking;
+      blinking = props.blinking,
+      className = props.className,
+      style = props.style;
 
   var _useState = (0, _react.useState)(Date.now()),
       _useState2 = _slicedToArray(_useState, 2),
@@ -20911,17 +20913,21 @@ function ReactLiveClock(props) {
   return _react2.default.createElement(
     _reactMoment2.default,
     {
+      className: className,
       date: date,
       format: formatToUse,
+      style: style,
       tz: timezone },
     currentTime
   );
 }
 
 ReactLiveClock.propTypes = {
+  className: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   blinking: _propTypes2.default.bool,
   format: _propTypes2.default.string,
+  style: _propTypes2.default.object,
   interval: _propTypes2.default.number,
   ticking: _propTypes2.default.bool,
   timezone: _propTypes2.default.string,

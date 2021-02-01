@@ -207,6 +207,17 @@ const App = () =>
       <button onClick={() => moment.locale('el')}>Make it Greek!</button>
     </Panel>
 
+    <Panel
+      code="<Clock style={{color: 'red'}} />"
+      title="custom style">
+      <Clock style={{color: "red"}} />
+    </Panel>
+
+    <Panel
+      code="<Clock className='text-info' />"
+      title="custom class">
+      <Clock className="text-info" />
+    </Panel>
 
   </div>;
 

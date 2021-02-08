@@ -64,7 +64,7 @@ const App = () =>
       <Link to="/">Home</Link>
       <br />
       <Link to="/test">Test</Link>
-      <Route exact={true} path="/" >
+      <Route exact={true} path="/">
         <Panel
           code="<Clock format={'h:mm:ssa'} ticking={true} />"
           title="This is to test the components Cleanup function">
@@ -210,7 +210,7 @@ const App = () =>
     <Panel
       code="<Clock style={{color: 'red'}} />"
       title="custom style">
-      <Clock style={{color: "red"}} />
+      <Clock style={{color: 'red'}} />
     </Panel>
 
     <Panel

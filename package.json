@@ -11,7 +11,6 @@
     "start": "react-component-template",
     "test": "npm start test",
     "template": "cf-react-component-template",
-    "preinstall": "npx npm-force-resolutions",
     "precommit": "npm start precommit",
     "prepush": "npm start prepush",
     "postversion": "npm start postversion",
@@ -53,9 +52,5 @@
     "react-highlight.js": "1.0.7",
     "react-moment": "1.1.1",
     "react-router-dom": "5.2.0"
-  },
-  "resolutions": {
-    "react": "^16.14.0 || ^17.0.0",
-    "react-dom": "16.14.0 || ^17.0.0"
   }
 }

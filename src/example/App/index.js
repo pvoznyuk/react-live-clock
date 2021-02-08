@@ -11,7 +11,7 @@ import {
   Link
 } from 'react-router-dom';
 
-const Panel = ({title, code, children}) =>
+const Panel = ({title, code, children}) => (
   <div className="panel panel-default">
     <div className="panel-heading">
       <h4 className="panel-title" role="presentation">
@@ -26,7 +26,7 @@ const Panel = ({title, code, children}) =>
       <h6>Output:</h6>
       {children}
     </div>
-  </div>;
+  </div>);
 
 Panel.propTypes = {
   title: PropTypes.string,
@@ -34,7 +34,7 @@ Panel.propTypes = {
   children: PropTypes.node
 };
 
-const App = () =>
+const App = () => (
   <div className={css.app}>
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"
@@ -218,7 +218,6 @@ const App = () =>
       title="custom class">
       <Clock className="text-info" />
     </Panel>
-
-  </div>;
+  </div>);
 
 export default App;

@@ -34,22 +34,21 @@
   },
   "homepage": "https://github.com/pvoznyuk/react-live-clock",
   "peerDependencies": {
-    "moment": "^2.24.0",
-    "moment-timezone": "^0.5.31",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "react": "^16.8 || ^17",
-    "react-moment": "^0.9.7"
+    "react-moment": "1.1.1"
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
     "eslint": "7.19.0",
     "eslint-plugin-react": "7.22.0",
-    "moment": "2.29.1",
-    "moment-timezone": "0.5.33",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "prop-types": "15.7.2",
     "react": "16.14.0 || ^17",
     "react-component-template": "0.1.10",
     "react-dom": "16.14.0 || ^17",
-    "react-fittext": "1.0.0",
     "react-highlight.js": "1.0.7",
     "react-moment": "1.1.1",
     "react-router-dom": "5.2.0"

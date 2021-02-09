@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
-import ReactFitText from 'react-fittext';
 import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';
@@ -87,23 +86,6 @@ const App = () => (
         format={'h:mm:ssa'}
         style={{fontSize: '1.5em'}}
         ticking={true} />
-    </Panel>
-
-
-    <Panel
-      code={`
-        <ReactFitText compressor={0.4}>
-          <h1>
-            <Clock format="HH:mm:ss" interval={1000} ticking={true} />
-          </h1>
-        </ReactFitText>
-      `}
-      title="<Clock> inside <ReactFitText>">
-      <ReactFitText compressor={0.4}>
-        <h1>
-          <Clock format="HH:mm:ss" interval={1000} ticking={true} />
-        </h1>
-      </ReactFitText>
     </Panel>
 
     <Panel

@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
-    "eslint": "7.21.0",
+    "eslint": "7.22.0",
     "eslint-plugin-react": "7.22.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",

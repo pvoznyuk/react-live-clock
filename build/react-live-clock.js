@@ -20916,6 +20916,7 @@ function ReactLiveClock(props) {
     {
       className: className,
       date: date,
+      filter: filter,
       format: formatToUse,
       style: style,
       tz: timezone },
@@ -20928,6 +20929,7 @@ ReactLiveClock.propTypes = {
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   blinking: _propTypes2.default.bool,
   format: _propTypes2.default.string,
+  filter: _propTypes2.default.func,
   style: _propTypes2.default.object,
   interval: _propTypes2.default.number,
   ticking: _propTypes2.default.bool,

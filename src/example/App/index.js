@@ -144,11 +144,11 @@ const App = () => (
         timezone={'Australia/Sydney'} />
     </Panel> */}
 
-    {/* <Panel
+    <Panel
       code="<Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />"
       title="Filter the value before output.">
       <Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />
-    </Panel> */}
+    </Panel>
 
     <Panel
       code="<Clock format={'HH:mm:ss'} ticking={true} onChange={date => console.log(date)} />"

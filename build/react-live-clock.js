@@ -20849,7 +20849,8 @@ function ReactLiveClock(props) {
       onChange = props.onChange,
       blinking = props.blinking,
       className = props.className,
-      style = props.style;
+      style = props.style,
+      filter = props.filter;
 
   var _useState = (0, _react.useState)(Date.now()),
       _useState2 = _slicedToArray(_useState, 2),

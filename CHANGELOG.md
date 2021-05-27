@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.2.0]
+Adds locale prop
+
+## [5.1.0]
+Adds Filter Prop
+Changes from NPM to YARN
+
 ## [5.0.13]
 Bumps .nvmrc version from 7 to 15.2.1
 Corects Cspell words order

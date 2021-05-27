@@ -20841,7 +20841,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function ReactLiveClock(props) {
-  var timezone = props.timezone,
+  var locale = props.locale,
+      timezone = props.timezone,
       date = props.date,
       format = props.format,
       interval = props.interval,
@@ -20918,6 +20919,7 @@ function ReactLiveClock(props) {
       date: date,
       filter: filter,
       format: formatToUse,
+      locale: locale,
       style: style,
       tz: timezone },
     currentTime
@@ -20928,6 +20930,7 @@ ReactLiveClock.propTypes = {
   className: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   blinking: _propTypes2.default.bool,
+  locale: _propTypes2.default.string,
   format: _propTypes2.default.string,
   filter: _propTypes2.default.func,
   style: _propTypes2.default.object,

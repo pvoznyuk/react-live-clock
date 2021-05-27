@@ -5,6 +5,7 @@ import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
   const {
+    locale,
     timezone,
     date,
     format,
@@ -71,6 +72,7 @@ export default function ReactLiveClock(props) {
       date={date}
       filter={filter}
       format={formatToUse}
+      locale={locale}
       style={style}
       tz={timezone}>
       {currentTime}
@@ -85,6 +87,7 @@ ReactLiveClock.propTypes = {
     PropTypes.string
   ]),
   blinking: PropTypes.bool,
+  locale: PropTypes.string,
   format: PropTypes.string,
   filter: PropTypes.func,
   style: PropTypes.object,

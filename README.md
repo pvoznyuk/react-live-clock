@@ -52,6 +52,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 |------------|---------------------|---------------|-------------|
 | `date`     | timestamp or string | current date | Date to output, If nothing is set then it take current date. |
 | `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.
+| `locale`   | string              | null          | Changes the language of the component via prop
 | `filter`   | function            | (date: String) => date      | Filtering the value before the output .
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
 | `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `interval` seconds.

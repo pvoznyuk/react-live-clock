@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.3.1]
+Updates typescript index
+
 ## [5.3.0]
 Adds Class name to typescript
 Updates Dependencies

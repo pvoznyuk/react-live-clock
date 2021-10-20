@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.3.0]
+Adds Class name to typescript
+Updates Dependencies
+
 ## [5.2.0]
 Adds locale prop
 

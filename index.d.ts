@@ -9,6 +9,7 @@ interface Props {
   readonly timezone?: string;
   readonly filter?: () => void;
   readonly onChange?: () => void;
+  readonly className?: string;
 }
 
 declare class SimpleSelect extends Component<Props, any> {}

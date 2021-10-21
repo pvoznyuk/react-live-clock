@@ -190,6 +190,13 @@ const App = () => (
     </Panel>
 
     <Panel
+      code="<Clock format={'HH:mm:ss a'} ticking={true} locale={'fr'} />"
+      title="Set the display language"
+    >
+      <Clock format={"HH:mm:ss a"} locale={"fr"} ticking={true} />
+    </Panel>
+
+    <Panel
       code="<Clock style={{color: 'red'}} />"
       title="custom style">
       <Clock style={{color: 'red'}} />

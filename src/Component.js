@@ -5,17 +5,17 @@ import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
   const {
-    locale,
-    timezone,
-    date,
-    format,
-    interval,
-    ticking,
-    onChange,
     blinking,
     className,
+    date,
+    filter,
+    format,
+    interval,
+    locale,
+    onChange,
     style,
-    filter
+    ticking,
+    timezone
   } = props;
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [formatToUse, setFormatToUse] = useState(format);

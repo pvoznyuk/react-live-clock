@@ -1,5 +1,11 @@
 # Changelog
 
+## [5.4.1]
+Bumps prop-types from 15.7.2 to 15.8.1 #146
+Bumps eslint from 8.0.1 to 8.6.0 #145
+Bumps eslint-plugin-react from 7.26.1 to 7.28.0 #144
+Bumps moment-timezone from 0.5.33 to 0.5.34 #130
+
 ## [5.4.0]
 Adds onReady Prop
 

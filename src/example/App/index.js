@@ -132,7 +132,7 @@ const App = () => (
         timezone={'Australia/Sydney'} />
     </Panel>
 
-    {/* <Panel
+    <Panel
       code={`
         <Clock
           date={'1997-12-31T14:15:23+01:00'}
@@ -146,7 +146,25 @@ const App = () => (
         format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
         ticking={true}
         timezone={'Australia/Sydney'} />
-    </Panel> */}
+    </Panel>
+
+
+    <Panel
+      code={`
+        <Clock
+          date={'2222-12-31T14:15:23+01:00'}
+          format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
+          ticking={true}
+          timezone={'Australia/Sydney'} />
+      `}
+      title="Date in the future that ticking">
+      <Clock
+        date={'2222-12-31T14:15:23+01:00'}
+        format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
+        ticking={true}
+        timezone={'Australia/Sydney'} />
+    </Panel>
+
 
     <Panel
       code="<Clock filter={date => date.replace('8', '7a')} format={'HH:mm:ss'} ticking={true} />"

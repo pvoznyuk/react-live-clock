@@ -18,7 +18,10 @@ export default function ReactLiveClock(props) {
     ticking,
     timezone
   } = props;
-  const [currentTime, setCurrentTime] = useState(Date.now());
+
+
+  const [startTime, setStartTime] = useState(Date.now());
+  const [currentTime, setCurrentTime] = useState(date ? new Date(date).getTime() : Date.now());
   const [formatToUse, setFormatToUse] = useState(format);
   let colonOn = true;
 
@@ -42,7 +45,13 @@ export default function ReactLiveClock(props) {
   useEffect(() => {
     if (ticking || blinking) {
       const tick = setInterval(() => {
-        const now = Date.now();
+        let now = Date.now();
+
+        if (date) {
+          const difference = Date.now() - startTime;
+
+          now = new Date(date).getTime() + difference;
+        }
 
         if (blinking) {
           if (colonOn) {
@@ -78,7 +87,7 @@ export default function ReactLiveClock(props) {
   return (
     <Moment
       className={className}
-      date={date}
+      date={ticking ? '' : date}
       filter={filter}
       format={formatToUse}
       locale={locale}

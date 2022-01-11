@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.5.0]
+Adds suport back for custom Date in the past or future that ticks
+
 ## [5.4.2]
 Bump react-router-dom from 5.3.0 to 6.2.1 #141
 

@@ -1,14 +1,20 @@
 {
   "cSpell.words": [
-    "Pavlo",
-    "Vozniuk",
     "codecov",
+    "cond",
+    "cyclomatic",
+    "eqeqeq",
+    "iife",
+    "isnan",
     "lcov",
     "nvmrc",
     "nyan",
+    "paren",
+    "Pavlo",
     "pids",
     "pvoznyuk",
-    "unmount"
+    "unmount",
+    "Vozniuk"
   ],
   "cSpell.ignorePaths": [
     "**/package-lock.json",

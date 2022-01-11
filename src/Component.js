@@ -20,7 +20,7 @@ export default function ReactLiveClock(props) {
   } = props;
 
 
-  const [startTime, setStartTime] = useState(Date.now());
+  const [startTime, setStartTime] = useState(Date.now()); // eslint-disable-line no-unused-vars
   const [currentTime, setCurrentTime] = useState(date ? new Date(date).getTime() : Date.now());
   const [formatToUse, setFormatToUse] = useState(format);
   let colonOn = true;

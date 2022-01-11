@@ -20857,7 +20857,8 @@ function ReactLiveClock(props) {
   var _useState = (0, _react.useState)(Date.now()),
       _useState2 = _slicedToArray(_useState, 2),
       startTime = _useState2[0],
-      setStartTime = _useState2[1];
+      setStartTime = _useState2[1]; // eslint-disable-line no-unused-vars
+
 
   var _useState3 = (0, _react.useState)(date ? new Date(date).getTime() : Date.now()),
       _useState4 = _slicedToArray(_useState3, 2),

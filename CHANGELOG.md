@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.5.1]
+Rebuilds to insure proper updates
+
 ## [5.5.0]
 Adds suport back for custom Date in the past or future that ticks
 

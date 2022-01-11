@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.4.2]
+Bump react-router-dom from 5.3.0 to 6.2.1 #141
+
 ## [5.4.1]
 Bumps prop-types from 15.7.2 to 15.8.1 #146
 Bumps eslint from 8.0.1 to 8.6.0 #145

@@ -7,6 +7,7 @@ import css from './App.css';
 import {
   BrowserRouter as Router,
   Route,
+  Routes,
   Link
 } from 'react-router-dom';
 
@@ -63,13 +64,16 @@ const App = () => (
       <Link to="/">Home</Link>
       <br />
       <Link to="/test">Test</Link>
-      <Route exact={true} path="/">
-        <Panel
-          code="<Clock format={'h:mm:ssa'} ticking={true} />"
-          title="This is to test the components Cleanup function">
-          <Clock format={'h:mm:ssa'} ticking={true} />
-        </Panel>
-      </Route>
+
+      <Routes>
+        <Route element={
+          <Panel
+            code="<Clock format={'h:mm:ssa'} ticking={true} />"
+            title="This is to test the components Cleanup function">
+            <Clock format={'h:mm:ssa'} ticking={true} />
+          </Panel>
+        } exact={true} path="/" />
+      </Routes>
     </Router>
 
     <Panel

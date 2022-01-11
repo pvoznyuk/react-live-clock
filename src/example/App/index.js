@@ -106,25 +106,25 @@ const App = () => (
       code={`
         <Clock
           date={'1997-12-31T14:15:23+01:00'}
-          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
+          format={'dddd, MMMM Do, YYYY, h:mm:ss A'} />
       `}
       title="Output specific date">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'} />
+        format={'dddd, MMMM Do, YYYY, h:mm:ss A'} />
     </Panel>
 
     <Panel
       code={`
         <Clock
           date={'1997-12-31T14:15:23+01:00'}
-          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
           timezone={'Australia/Sydney'} />
       `}
       title="The same date in timezone Australia/Sydney">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
         timezone={'Australia/Sydney'} />
     </Panel>
 
@@ -132,14 +132,14 @@ const App = () => (
       code={`
         <Clock
           date={'1997-12-31T14:15:23+01:00'}
-          format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+          format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
           ticking={true}
           timezone={'Australia/Sydney'} />
       `}
       title="Date in the past that ticking">
       <Clock
         date={'1997-12-31T14:15:23+01:00'}
-        format={'dddd, MMMM Mo, YYYY, h:mm:ss A'}
+        format={'dddd, MMMM Do, YYYY, h:mm:ss A'}
         ticking={true}
         timezone={'Australia/Sydney'} />
     </Panel> */}

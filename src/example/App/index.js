@@ -200,9 +200,8 @@ const App = () => (
 
     <Panel
       code="<Clock format={'HH:mm:ss a'} ticking={true} locale={'fr'} />"
-      title="Set the display language"
-    >
-      <Clock format={"HH:mm:ss a"} locale={"fr"} ticking={true} />
+      title="Set the display language">
+      <Clock format={'HH:mm:ss a'} locale={'fr'} ticking={true} />
     </Panel>
 
     <Panel

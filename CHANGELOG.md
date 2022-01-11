@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.3.2]
+Update the example page to show how to set a language + sort props destruction asc in Component.js (#123)
+
 ## [5.3.1]
 Updates typescript index
 

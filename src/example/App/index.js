@@ -163,6 +163,15 @@ const App = () => (
 
 
     <Panel
+      code="<Clock onReady={() => console.log('READY')} />"
+      title="onReady event">
+      <Clock
+        onReady={() =>
+          console.log('READY') // eslint-disable-line no-console
+        } />
+    </Panel>
+
+    <Panel
       code="
         <Clock blinking={true} format={'HH:mm:ss'} />
         <Clock blinking={true} format={'HH:mm'} />

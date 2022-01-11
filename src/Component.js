@@ -13,6 +13,7 @@ export default function ReactLiveClock(props) {
     interval,
     locale,
     onChange,
+    onReady,
     style,
     ticking,
     timezone
@@ -29,6 +30,14 @@ export default function ReactLiveClock(props) {
 
     return joinArray;
   }
+
+
+  useEffect(() => {
+    if (typeof onReady === 'function') {
+      onReady();
+    }
+  }, []);
+
 
   useEffect(() => {
     if (ticking || blinking) {
@@ -97,6 +106,10 @@ ReactLiveClock.propTypes = {
   onChange: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
+  ]),
+  onReady: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.func
   ])
 };
 
@@ -107,5 +120,6 @@ ReactLiveClock.defaultProps = {
   interval: 1000,
   ticking: false,
   timezone: null,
-  onChange: false
+  onChange: false,
+  onReady: false
 };

@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.4.0]
+Adds onReady Prop
+
 ## [5.3.3]
 Corrects Documentation #129
 

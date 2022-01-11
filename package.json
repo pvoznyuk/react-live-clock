@@ -45,7 +45,7 @@
     "eslint-plugin-react": "7.26.1",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
-    "prop-types": "15.7.2",
+    "prop-types": "15.8.1",
     "react": "16.14.0 || ^17",
     "react-component-template": "0.1.10",
     "react-dom": "16.14.0 || ^17",

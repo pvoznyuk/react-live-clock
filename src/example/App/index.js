@@ -237,6 +237,12 @@ const App = () => (
       title="custom class">
       <Clock className="text-info" />
     </Panel>
+    <Panel
+      code="<Clock element='h1' />"
+      title="custom element">
+      <Clock element="h1" />
+    </Panel>
+
   </div>);
 
 export default App;

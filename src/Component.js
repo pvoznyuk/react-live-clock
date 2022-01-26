@@ -8,6 +8,7 @@ export default function ReactLiveClock(props) {
     blinking,
     className,
     date,
+    element,
     filter,
     format,
     interval,
@@ -88,6 +89,7 @@ export default function ReactLiveClock(props) {
     <Moment
       className={className}
       date={ticking ? '' : date}
+      element={element}
       filter={filter}
       format={formatToUse}
       locale={locale}
@@ -102,6 +104,11 @@ ReactLiveClock.propTypes = {
   className: PropTypes.string,
   date: PropTypes.oneOfType([
     PropTypes.number,
+    PropTypes.string
+  ]),
+  element: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.node,
     PropTypes.string
   ]),
   blinking: PropTypes.bool,
@@ -124,6 +131,7 @@ ReactLiveClock.propTypes = {
 
 ReactLiveClock.defaultProps = {
   date: null,
+  element: 'time',
   blinking: false,
   format: 'HH:mm',
   interval: 1000,

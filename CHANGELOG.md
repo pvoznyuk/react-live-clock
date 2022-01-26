@@ -1,5 +1,10 @@
 # Changelog
 
+## [5.6.0]
+Adds Element passthrough prop
+Bumps eslint from 8.6.0 to 8.7.0 #149
+Bumps follow-redirects from 1.13.3 to 1.14.7 #148
+
 ## [5.5.1]
 Rebuilds to insure proper updates
 

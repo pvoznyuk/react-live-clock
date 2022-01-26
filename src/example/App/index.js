@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import {vscDarkPlus} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';

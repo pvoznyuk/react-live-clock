@@ -20844,6 +20844,7 @@ function ReactLiveClock(props) {
   var blinking = props.blinking,
       className = props.className,
       date = props.date,
+      element = props.element,
       filter = props.filter,
       format = props.format,
       interval = props.interval,
@@ -20936,6 +20937,7 @@ function ReactLiveClock(props) {
     {
       className: className,
       date: ticking ? '' : date,
+      element: element,
       filter: filter,
       format: formatToUse,
       locale: locale,
@@ -20948,6 +20950,7 @@ function ReactLiveClock(props) {
 ReactLiveClock.propTypes = {
   className: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+  element: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.node, _propTypes2.default.string]),
   blinking: _propTypes2.default.bool,
   locale: _propTypes2.default.string,
   format: _propTypes2.default.string,
@@ -20962,6 +20965,7 @@ ReactLiveClock.propTypes = {
 
 ReactLiveClock.defaultProps = {
   date: null,
+  element: 'time',
   blinking: false,
   format: 'HH:mm',
   interval: 1000,

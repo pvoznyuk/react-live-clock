@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Highlight from 'react-highlight.js';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import moment from 'moment-timezone';
 import Clock from '../..';
 import css from './App.css';
@@ -20,9 +21,9 @@ const Panel = ({title, code, children}) => (
     </div>
     <div className="panel-body">
       <h6>Code:</h6>
-      <Highlight language={'jsx'}>
+      <SyntaxHighlighter language={'jsx'} style={vscDarkPlus}>
         {code}
-      </Highlight>
+      </SyntaxHighlighter>
       <h6>Output:</h6>
       {children}
     </div>

@@ -109,7 +109,8 @@ ReactLiveClock.propTypes = {
   element: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.node,
-    PropTypes.string
+    PropTypes.string,
+    PropTypes.func
   ]),
   blinking: PropTypes.bool,
   locale: PropTypes.string,

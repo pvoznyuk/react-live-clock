@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.6.1]
+Fixes proptype validation
+
 ## [5.6.0]
 Adds Element passthrough prop
 Bumps eslint from 8.6.0 to 8.7.0 #149

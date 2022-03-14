@@ -53,6 +53,6 @@
     "react-highlight.js": "1.0.7",
     "react-moment": "1.1.1",
     "react-router-dom": "6.2.1",
-    "react-syntax-highlighter": "15.4.5"
+    "react-syntax-highlighter": "15.5.0"
   }
 }

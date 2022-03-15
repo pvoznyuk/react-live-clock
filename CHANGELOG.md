@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.7.0]
+Bumps eslint from 8.10.0 to 8.11.0 #163
+Bumps react-syntax-highlighter from 15.4.5 to 15.5.0 #162
+Bumps react-router-dom from 6.2.1 to 6.2.2 #159
+Bumps eslint-plugin-react from 7.29.2 to 7.29.4 #161
+Bumps react-router-dom from 6.2.1 to 6.2.2 #159
+
 ## [5.6.1]
 Fixes proptype validation
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.8.1]
+Allows Installation on React V18
+
 ## [5.8.0]
 Bumps eslint from 8.11.0 to 8.13.0 (#171)
 Bumps moment from 2.29.1 to 2.29.2 (#170)

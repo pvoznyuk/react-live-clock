@@ -1,5 +1,12 @@
 # Changelog
 
+## [5.8.0]
+Bumps eslint from 8.11.0 to 8.13.0 (#171)
+Bumps moment from 2.29.1 to 2.29.2 (#170)
+Bumps react-moment from 1.1.1 to 1.1.2 (#169)
+Bumps moment from 2.29.1 to 2.29.2 (#168)
+Bumps react-router-dom from 6.2.2 to 6.3.0 (#166)
+
 ## [5.7.0]
 Bumps eslint from 8.10.0 to 8.11.0 #163
 Bumps react-syntax-highlighter from 15.4.5 to 15.5.0 #162

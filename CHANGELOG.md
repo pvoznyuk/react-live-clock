@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.8.2]
+Bumps moment from 2.29.2 to 2.29.3 (#172)
+
 ## [5.8.1]
 Allows Installation on React V18
 

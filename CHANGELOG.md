@@ -1,5 +1,10 @@
 # Changelog
 
+## [5.9.0]
+Bumps eslint from 8.14.0 to 8.15.0 (#176)
+Bumps react from 18.0.0 to 18.1.0 (#174)
+Bumps react-dom from 18.0.0 to 18.1.0 (#175)
+
 ## [5.8.2]
 Bumps moment from 2.29.2 to 2.29.3 (#172)
 

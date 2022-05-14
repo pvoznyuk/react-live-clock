@@ -27,15 +27,6 @@ export default function ReactLiveClock(props) {
   let colonOn = true;
 
 
-  function reverseString(str) {
-    const splitString = str.split('');
-    const reverseArray = splitString.reverse();
-    const joinArray = reverseArray.join('');
-
-    return joinArray;
-  }
-
-
   useEffect(() => {
     if (typeof onReady === 'function') {
       onReady();
@@ -56,10 +47,7 @@ export default function ReactLiveClock(props) {
 
         if (blinking) {
           if (colonOn) {
-            let newFormat = reverseString(format);
-
-            newFormat = newFormat.replace(':', ' ');
-            newFormat = reverseString(newFormat);
+            let newFormat = format.replaceAll(':', ' ');
 
             colonOn = false;
             setFormatToUse(newFormat);

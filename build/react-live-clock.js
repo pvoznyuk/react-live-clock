@@ -21058,7 +21058,7 @@ function ReactLiveClock(props) {
           if (colonOn) {
             var newFormat = reverseString(format);
 
-            newFormat = newFormat.replace(':', ' ');
+            newFormat = newFormat.replace(/:$/, ' ');
             newFormat = reverseString(newFormat);
 
             colonOn = false;

@@ -196,10 +196,15 @@ const App = () => (
 
     <Panel
       code="
+        <Clock blinking='all' format={'HH:mm:ss'} />
         <Clock blinking={true} format={'HH:mm:ss'} />
         <Clock blinking={true} format={'HH:mm'} />
       "
       title="Blinking">
+      <Clock
+        blinking="all"
+        format={'HH:mm:ss'} />
+      <br />
       <Clock
         blinking={true}
         format={'HH:mm:ss'} />

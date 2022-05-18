@@ -56,10 +56,16 @@ export default function ReactLiveClock(props) {
 
         if (blinking) {
           if (colonOn) {
-            let newFormat = reverseString(format);
+            let newFormat = format;
 
-            newFormat = newFormat.replace(':', ' ');
-            newFormat = reverseString(newFormat);
+            if (blinking === 'all') {
+              newFormat = newFormat.replaceAll(':', ' ');
+            } else {
+              newFormat = reverseString(format);
+              newFormat = newFormat.replace(':', ' ');
+              newFormat = reverseString(newFormat);
+            }
+
 
             colonOn = false;
             setFormatToUse(newFormat);
@@ -112,7 +118,10 @@ ReactLiveClock.propTypes = {
     PropTypes.string,
     PropTypes.func
   ]),
-  blinking: PropTypes.bool,
+  blinking: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.oneOf(['all'])
+  ]),
   locale: PropTypes.string,
   format: PropTypes.string,
   filter: PropTypes.func,

@@ -1,5 +1,9 @@
 # Changelog
 
+## [5.10.0]
+Adds documentation about blinking
+Adds ```all``` option to the blinking
+
 ## [5.9.0]
 Fixes wrong deploy
 

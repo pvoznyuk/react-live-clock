@@ -57,6 +57,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 | `timezone` | string              | null          | If timezone is set, the date is show in this timezone. You can find the list. [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), the TZ column.
 | `ticking`  | boolean             | false         | If you want the clock to be auto-updated every `interval` seconds.
 | `blinking` | boolean, string     | false         | If you want the clock's last colon to blink. Set it to `all` to make them all blink.
+| `noSsr`    | boolean             | false         | Makes the component not render on the server to fix mismatch.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.
 | `className`| string              | null          | Extra class.
 | `children` | string              | null          | `date` can be set as a children prop.

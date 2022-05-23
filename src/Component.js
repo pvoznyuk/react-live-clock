@@ -24,6 +24,7 @@ export default function ReactLiveClock(props) {
   const [startTime, setStartTime] = useState(Date.now()); // eslint-disable-line no-unused-vars
   const [currentTime, setCurrentTime] = useState(date ? new Date(date).getTime() : Date.now());
   const [formatToUse, setFormatToUse] = useState(format);
+  const [noSsr, setNoSsr] = useState(props.noSsr);
   let colonOn = true;
 
 
@@ -37,6 +38,9 @@ export default function ReactLiveClock(props) {
 
 
   useEffect(() => {
+    if (noSsr && document) {
+      setNoSsr(false);
+    }
     if (typeof onReady === 'function') {
       onReady();
     }
@@ -91,6 +95,10 @@ export default function ReactLiveClock(props) {
   }, [...props]);
 
 
+  if (noSsr) {
+    return false;
+  }
+
   return (
     <Moment
       className={className}
@@ -136,7 +144,8 @@ ReactLiveClock.propTypes = {
   onReady: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func
-  ])
+  ]),
+  noSsr: PropTypes.bool
 };
 
 ReactLiveClock.defaultProps = {
@@ -148,5 +157,6 @@ ReactLiveClock.defaultProps = {
   ticking: false,
   timezone: null,
   onChange: false,
-  onReady: false
+  onReady: false,
+  noSsr: false
 };

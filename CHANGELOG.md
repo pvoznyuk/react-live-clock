@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.0.0]
+Updates node version from 15.2.1 to 16.15.0
+Bumps eslint-plugin-react from 7.29.4 to 7.30.0 (#179)
+Adds ```noSsr``` option to fix prop missmatch
+
 ## [5.10.0]
 Adds documentation about blinking
 Adds ```all``` option to the blinking

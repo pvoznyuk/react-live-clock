@@ -21027,6 +21027,11 @@ function ReactLiveClock(props) {
       formatToUse = _useState6[0],
       setFormatToUse = _useState6[1];
 
+  var _useState7 = (0, _react.useState)(props.noSsr),
+      _useState8 = _slicedToArray(_useState7, 2),
+      noSsr = _useState8[0],
+      setNoSsr = _useState8[1];
+
   var colonOn = true;
 
   function reverseString(str) {
@@ -21038,6 +21043,9 @@ function ReactLiveClock(props) {
   }
 
   (0, _react.useEffect)(function () {
+    if (noSsr && document) {
+      setNoSsr(false);
+    }
     if (typeof onReady === 'function') {
       onReady();
     }
@@ -21056,10 +21064,15 @@ function ReactLiveClock(props) {
 
         if (blinking) {
           if (colonOn) {
-            var newFormat = reverseString(format);
+            var newFormat = format;
 
-            newFormat = newFormat.replace(/:$/, ' ');
-            newFormat = reverseString(newFormat);
+            if (blinking === 'all') {
+              newFormat = newFormat.replaceAll(':', ' ');
+            } else {
+              newFormat = reverseString(format);
+              newFormat = newFormat.replace(':', ' ');
+              newFormat = reverseString(newFormat);
+            }
 
             colonOn = false;
             setFormatToUse(newFormat);
@@ -21088,6 +21101,10 @@ function ReactLiveClock(props) {
     };
   }, [].concat(_toConsumableArray(props)));
 
+  if (noSsr) {
+    return false;
+  }
+
   return _react2.default.createElement(
     _reactMoment2.default,
     {
@@ -21107,7 +21124,7 @@ ReactLiveClock.propTypes = {
   className: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
   element: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.node, _propTypes2.default.string, _propTypes2.default.func]),
-  blinking: _propTypes2.default.bool,
+  blinking: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['all'])]),
   locale: _propTypes2.default.string,
   format: _propTypes2.default.string,
   filter: _propTypes2.default.func,
@@ -21116,7 +21133,8 @@ ReactLiveClock.propTypes = {
   ticking: _propTypes2.default.bool,
   timezone: _propTypes2.default.string,
   onChange: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func]),
-  onReady: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func])
+  onReady: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func]),
+  noSsr: _propTypes2.default.bool
 };
 
 ReactLiveClock.defaultProps = {
@@ -21128,7 +21146,8 @@ ReactLiveClock.defaultProps = {
   ticking: false,
   timezone: null,
   onChange: false,
-  onReady: false
+  onReady: false,
+  noSsr: false
 };
 
 /***/ }),

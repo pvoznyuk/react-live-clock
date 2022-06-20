@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.0.1]
+Bumps react from 18.1.0 to 18.2.0 (#183)
+
 ## [6.0.0]
 Updates node version from 15.2.1 to 16.15.0
 Bumps eslint-plugin-react from 7.29.4 to 7.30.0 (#179)

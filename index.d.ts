@@ -7,6 +7,7 @@ interface Props {
   readonly filter?: () => void;
   readonly format?: string;
   readonly interval?: number;
+  readonly blinking?: boolean | string;
   readonly locale?: string;
   readonly onChange?: () => void;
   readonly style?: CSSProperties;

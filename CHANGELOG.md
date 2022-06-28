@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.0.4]
+Bumps eslint from 8.17.0 to 8.18.0 #185
+
+## [6.0.3]
+Bumps eslint-plugin-react from 7.30.0 to 7.30.1 #187
+Bumps react-dom from 18.1.0 to 18.2.0 #186
+
 ## [6.0.2]
 fix: missing blinking in type definition. #188
 

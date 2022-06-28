@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.0.2]
+fix: missing blinking in type definition. #188
+
 ## [6.0.1]
 Bumps react from 18.1.0 to 18.2.0 (#183)
 

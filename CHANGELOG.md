@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.0.6]
+Bump eslint from 8.20.0 to 8.21.0 (#194)
+
 ## [6.0.5]
 Bump eslint from 8.18.0 to 8.20.0 (#192)
 Bump moment from 2.29.3 to 2.29.4 (#190)

@@ -1,5 +1,25 @@
 # Changelog
 
+## [6.0.7]
+***Bump eslint from 8.21.0 to 8.27.0***
+Bump eslint from 8.21.0 to 8.22.0 (#195)
+Bump eslint from 8.22.0 to 8.23.0 (#200)
+Bump eslint from 8.23.0 to 8.23.1 (#205)
+Bump eslint from 8.23.1 to 8.27.0 (#216)
+
+***Bump eslint-plugin-react from 7.30.1 to 7.31.10***
+Bump eslint-plugin-react from 7.30.1 to 7.31.1 (#199)
+Bump eslint-plugin-react from 7.31.1 to 7.31.6 (#201)
+Bump eslint-plugin-react from 7.31.6 to 7.31.8 (#203)
+Bump eslint-plugin-react from 7.31.8 to 7.31.10 (#212)
+
+***Bump moment-timezone from 0.5.34 to 0.5.38***
+Bump moment-timezone from 0.5.34 to 0.5.37 (#198)
+Bump moment-timezone from 0.5.37 to 0.5.38 (#213)
+
+***Bump react-router-dom from 6.3.0 to 6.4.3***
+Bump react-router-dom from 6.3.0 to 6.4.3 (#215)
+
 ## [6.0.6]
 Bump eslint from 8.20.0 to 8.21.0 (#194)
 

@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.0.8]
+Bump eslint from 8.27.0 to 8.28.0 (#219)
+Bump moment-timezone from 0.5.38 to 0.5.39 (#217)
+Bump eslint-plugin-react from 7.31.10 to 7.31.11
+
 ## [6.0.7]
 ***Bump eslint from 8.21.0 to 8.27.0***
 Bump eslint from 8.21.0 to 8.22.0 (#195)

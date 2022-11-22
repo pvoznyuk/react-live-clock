@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.0]
+Moves some dependencies around to solve #77
+
 ## [6.0.8]
 Bump eslint from 8.27.0 to 8.28.0 (#219)
 Bump moment-timezone from 0.5.38 to 0.5.39 (#217)

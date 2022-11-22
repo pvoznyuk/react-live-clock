@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "6.0.8",
+  "version": "6.1.0",
   "description": "React Live Clock",
   "main": "lib/index.js",
   "types": "index.d.ts",
@@ -34,9 +34,11 @@
     "url": "https://github.com/pvoznyuk/react-live-clock/issues"
   },
   "homepage": "https://github.com/pvoznyuk/react-live-clock",
-  "peerDependencies": {
+  "dependencies": {
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.33"
+  },
+  "peerDependencies": {
     "react": "^16.14.0 || ^17 || ^18",
     "react-moment": "1.1.2"
   },
@@ -44,8 +46,6 @@
     "cf-react-component-template": "0.1.8",
     "eslint": "8.28.0",
     "eslint-plugin-react": "7.31.11",
-    "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
     "prop-types": "15.8.1",
     "react": "^16.8 || ^17 || ^18",
     "react-component-template": "0.1.10",

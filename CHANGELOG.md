@@ -1,5 +1,9 @@
 # Changelog
 
+## [6.1.1]
+Bump decode-uri-component from 0.2.0 to 0.2.2 (#223)
+Bump react-router-dom from 6.4.3 to 6.4.4 (#221)
+
 ## [6.1.0]
 Moves some dependencies around to solve #77
 

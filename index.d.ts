@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
 interface Props {
   readonly children?: string;
@@ -13,6 +13,7 @@ interface Props {
   readonly style?: CSSProperties;
   readonly ticking?: boolean;
   readonly timezone?: string;
+  readonly noSsr?: boolean;
 }
 
 declare class SimpleSelect extends Component<Props, any> {}

@@ -60,6 +60,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 | `noSsr`    | boolean             | false         | Makes the component not render on the server to fix mismatch.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.
 | `className`| string              | null          | Extra class.
+| `style`    | CSSProperties       | null          | CSSProperties Customized inline style .
 | `children` | string              | null          | `date` can be set as a children prop.
 | `onChange` | function            | ({output, previousOutput, moment}) => {}         | callback function on each output update
 

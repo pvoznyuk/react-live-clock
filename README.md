@@ -48,7 +48,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 
 ### Properties
 
-| Propertie  | Type                | Default Value | Description |
+| Property  | Type                | Default Value | Description |
 |------------|---------------------|---------------|-------------|
 | `date`     | timestamp or string | current date | Date to output, If nothing is set then it take current date. |
 | `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.

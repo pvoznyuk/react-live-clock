@@ -48,7 +48,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 
 ### Properties
 
-| Propertie  | Type                | Default Value | Description |
+| Property  | Type                | Default Value | Description |
 |------------|---------------------|---------------|-------------|
 | `date`     | timestamp or string | current date | Date to output, If nothing is set then it take current date. |
 | `format`   | string              | 'HH:MM'       | Formatting from [moment.js](https://momentjs.com/docs/#/displaying/format/) library.
@@ -60,6 +60,7 @@ you can use any formatting from [moment.js](https://momentjs.com/docs/#/displayi
 | `noSsr`    | boolean             | false         | Makes the component not render on the server to fix mismatch.
 | `interval` | integer             | 1000          | Auto-updating period for the clock. 1 second is a default value.
 | `className`| string              | null          | Extra class.
+| `style`    | CSSProperties       | null          | CSSProperties Customized inline style .
 | `children` | string              | null          | `date` can be set as a children prop.
 | `onChange` | function            | ({output, previousOutput, moment}) => {}         | callback function on each output update
 

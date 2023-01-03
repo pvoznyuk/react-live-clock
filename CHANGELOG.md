@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.2]
+Bump eslint from 8.29.0 to 8.31.0 (#233)
+Bump react-router-dom from 6.4.4 to 6.6.1 (#231)
+Bump moment-timezone from 0.5.39 to 0.5.40 (#225)
+Bump express from 4.17.1 to 4.18.2 (#226)
+update type declaration (#232)
+
 ## [6.1.1]
 Bump decode-uri-component from 0.2.0 to 0.2.2 (#223)
 Bump react-router-dom from 6.4.3 to 6.4.4 (#221)

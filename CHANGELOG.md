@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.4]
+Bump react-router-dom from 6.6.1 to 6.7.0 (#240)
+Bump eslint-plugin-react from 7.31.11 to 7.32.1 (#239)
+Bump react-moment from 1.1.2 to 1.1.3 (#237)
+Bump react-moment from 1.1.2 to 1.1.3 (#237)
+
 ## [6.1.3]
 Allow PropTypes.object for element prop
 

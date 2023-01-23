@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.3]
+Allow PropTypes.object for element prop
+
 ## [6.1.2]
 Bump eslint from 8.29.0 to 8.31.0 (#233)
 Bump react-router-dom from 6.4.4 to 6.6.1 (#231)

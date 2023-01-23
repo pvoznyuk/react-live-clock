@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.5]
+Fix Deprication warning about Support for defaultProps (#235)
+
 ## [6.1.4]
 Bump react-router-dom from 6.6.1 to 6.7.0 (#240)
 Bump eslint-plugin-react from 7.31.11 to 7.32.1 (#239)

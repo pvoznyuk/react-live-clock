@@ -5,26 +5,26 @@ import 'moment-timezone';
 
 export default function ReactLiveClock(props) {
   const {
-    blinking,
+    blinking = false,
     className,
-    date,
-    element,
+    date = null,
+    element = 'time',
     filter,
-    format,
-    interval,
+    format = 'HH:mm',
+    interval = 1000,
     locale,
-    onChange,
-    onReady,
+    onChange = false,
+    onReady = false,
     style,
-    ticking,
-    timezone
+    ticking = false,
+    timezone = null
   } = props;
 
 
   const [startTime, setStartTime] = useState(Date.now()); // eslint-disable-line no-unused-vars
   const [currentTime, setCurrentTime] = useState(date ? new Date(date).getTime() : Date.now());
   const [formatToUse, setFormatToUse] = useState(format);
-  const [noSsr, setNoSsr] = useState(props.noSsr);
+  const [noSsr, setNoSsr] = useState(props.noSsr || false);
   let colonOn = true;
 
 
@@ -147,17 +147,4 @@ ReactLiveClock.propTypes = {
     PropTypes.func
   ]),
   noSsr: PropTypes.bool
-};
-
-ReactLiveClock.defaultProps = {
-  date: null,
-  element: 'time',
-  blinking: false,
-  format: 'HH:mm',
-  interval: 1000,
-  ticking: false,
-  timezone: null,
-  onChange: false,
-  onReady: false,
-  noSsr: false
 };

@@ -20997,19 +20997,28 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function ReactLiveClock(props) {
-  var blinking = props.blinking,
+  var _props$blinking = props.blinking,
+      blinking = _props$blinking === undefined ? false : _props$blinking,
       className = props.className,
-      date = props.date,
-      element = props.element,
+      _props$date = props.date,
+      date = _props$date === undefined ? null : _props$date,
+      _props$element = props.element,
+      element = _props$element === undefined ? 'time' : _props$element,
       filter = props.filter,
-      format = props.format,
-      interval = props.interval,
+      _props$format = props.format,
+      format = _props$format === undefined ? 'HH:mm' : _props$format,
+      _props$interval = props.interval,
+      interval = _props$interval === undefined ? 1000 : _props$interval,
       locale = props.locale,
-      onChange = props.onChange,
-      onReady = props.onReady,
+      _props$onChange = props.onChange,
+      onChange = _props$onChange === undefined ? false : _props$onChange,
+      _props$onReady = props.onReady,
+      onReady = _props$onReady === undefined ? false : _props$onReady,
       style = props.style,
-      ticking = props.ticking,
-      timezone = props.timezone;
+      _props$ticking = props.ticking,
+      ticking = _props$ticking === undefined ? false : _props$ticking,
+      _props$timezone = props.timezone,
+      timezone = _props$timezone === undefined ? null : _props$timezone;
 
   var _useState = (0, _react.useState)(Date.now()),
       _useState2 = _slicedToArray(_useState, 2),
@@ -21027,7 +21036,7 @@ function ReactLiveClock(props) {
       formatToUse = _useState6[0],
       setFormatToUse = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(props.noSsr),
+  var _useState7 = (0, _react.useState)(props.noSsr || false),
       _useState8 = _slicedToArray(_useState7, 2),
       noSsr = _useState8[0],
       setNoSsr = _useState8[1];
@@ -21123,7 +21132,7 @@ function ReactLiveClock(props) {
 ReactLiveClock.propTypes = {
   className: _propTypes2.default.string,
   date: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
-  element: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.node, _propTypes2.default.string, _propTypes2.default.func]),
+  element: _propTypes2.default.oneOfType([_propTypes2.default.element, _propTypes2.default.node, _propTypes2.default.string, _propTypes2.default.object, _propTypes2.default.func]),
   blinking: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.oneOf(['all'])]),
   locale: _propTypes2.default.string,
   format: _propTypes2.default.string,
@@ -21135,19 +21144,6 @@ ReactLiveClock.propTypes = {
   onChange: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func]),
   onReady: _propTypes2.default.oneOfType([_propTypes2.default.bool, _propTypes2.default.func]),
   noSsr: _propTypes2.default.bool
-};
-
-ReactLiveClock.defaultProps = {
-  date: null,
-  element: 'time',
-  blinking: false,
-  format: 'HH:mm',
-  interval: 1000,
-  ticking: false,
-  timezone: null,
-  onChange: false,
-  onReady: false,
-  noSsr: false
 };
 
 /***/ }),

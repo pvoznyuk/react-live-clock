@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.1.6]
+Bump eslint from 8.32.0 to 8.33.0 (#244)
+Bump react-router-dom from 6.7.0 to 6.8.0 (#241)
+Bump ua-parser-js from 0.7.28 to 0.7.33 (#242)
+Bump eslint-plugin-react from 7.32.1 to 7.32.2 (#243)
+
 ## [6.1.5]
 Fix Deprication warning about Support for defaultProps (#235)
 

@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.7]
+Add Missing Typescript thingies
+
 ## [6.1.6]
 Bump eslint from 8.32.0 to 8.33.0 (#244)
 Bump react-router-dom from 6.7.0 to 6.8.0 (#241)

@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.8]
+Bump react-router-dom from 6.8.0 to 6.8.1 #245
+
 ## [6.1.7]
 Add Missing Typescript thingies
 

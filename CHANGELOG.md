@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.10]
+Updates TypeScript thingies
+
 ## [6.1.9]
 Bump react-router-dom from 6.8.0 to 6.8.1 #245
 

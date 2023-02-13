@@ -4,7 +4,7 @@ interface Props {
   readonly blinking?: boolean | string;
   readonly className?: string;
   readonly date?: number | string;
-  readonly element?: string | React.ReactElement;
+  readonly element?: string | React.ReactElement | object;
   readonly filter?: () => void;
   readonly format?: string;
   readonly interval?: number;

@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.11]
+Updates TypeScript thingies
+
 ## [6.1.10]
 Updates TypeScript thingies
 

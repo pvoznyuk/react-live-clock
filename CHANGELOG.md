@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.12]
+Bump eslint from 8.33.0 to 8.34.0 #246
+
 ## [6.1.11]
 Updates TypeScript thingies
 

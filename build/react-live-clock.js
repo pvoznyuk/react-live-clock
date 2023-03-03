@@ -21178,7 +21178,7 @@ moment.tz.load(__webpack_require__(139));
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//! moment-timezone.js
-//! version : 0.5.40
+//! version : 0.5.41
 //! Copyright (c) JS Foundation and other contributors
 //! license : MIT
 //! github.com/moment/moment-timezone
@@ -21211,7 +21211,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 	// 	return moment;
 	// }
 
-	var VERSION = "0.5.40",
+	var VERSION = "0.5.41",
 		zones = {},
 		links = {},
 		countries = {},

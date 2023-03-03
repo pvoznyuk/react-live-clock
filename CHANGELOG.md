@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.1.13]
+Bump react-router-dom from 6.8.1 to 6.8.2 (#249)
+Bump eslint from 8.34.0 to 8.35.0 (#247)
+Bump moment-timezone from 0.5.40 to 0.5.41 (#248)
+
 ## [6.1.12]
 Bump eslint from 8.33.0 to 8.34.0 #246
 

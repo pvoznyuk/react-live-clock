@@ -41,6 +41,25 @@ Outputs:
 
  ** Shows current time for 'US/Pacific' timezone and updates every second
 
+### React Native
+
+React Native requires that you wrap text in a ```<Text>``` like this:
+```JSX
+import { Text, View } from "react-native";
+import Clock from "react-live-clock";
+
+export default function ClockPage() {
+  return (
+    <View>
+      <Text>Clock page</Text>
+      <Clock element={Text} />
+    </View>
+  );
+}
+```
+If you don't you will get the error ```Invariant Violation: Text strings must be rendered within a <Text> component.```
+
+
 
 ### Formatting
 

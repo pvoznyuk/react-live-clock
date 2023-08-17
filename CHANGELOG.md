@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.15]
+Bump word-wrap from 1.2.3 to 1.2.4 #273
+Bump react-router-dom from 6.13.0 to 6.15.0 #279
+Bump eslint from 8.42.0 to 8.47.0 #280
+Bump eslint-plugin-react from 7.32.2 to 7.33.2 #281
+Fix onChange event. Date param was missing in the index.d.ts file. #282
+
 ## [6.1.14]
 Bump eslint from 8.35.0 to 8.42.0 (#253, #256, #257, #263)
 Bump react-router-dom from 6.8.2 to 6.13.0 (#254, #266)

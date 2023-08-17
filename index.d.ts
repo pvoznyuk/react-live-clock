@@ -9,7 +9,7 @@ interface Props {
   readonly format?: string;
   readonly interval?: number;
   readonly locale?: string;
-  readonly onChange?: () => void;
+  readonly onChange?: (date: number) => void;
   readonly onReady?: () => void;
   readonly style?: React.CSSProperties;
   readonly ticking?: boolean;

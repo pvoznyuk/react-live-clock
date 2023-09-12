@@ -20969,6 +20969,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_136__;
 
 "use strict";
 
+'use client';
 
 Object.defineProperty(exports, "__esModule", {
   value: true

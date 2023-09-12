@@ -1,5 +1,10 @@
 # Changelog
 
+## [6.1.16]
+now was a number not a date object. #283 (updates typescript definition)
+Bump eslint from 8.47.0 to 8.49.0 #286
+Adds 'use client' Directive to component #284
+
 ## [6.1.15]
 Bump word-wrap from 1.2.3 to 1.2.4 #273
 Bump react-router-dom from 6.13.0 to 6.15.0 #279

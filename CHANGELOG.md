@@ -4,6 +4,7 @@
 Bump react-router-dom from 6.15.0 to 6.18.0 (#293)
 Bump eslint from 8.49.0 to 8.52.0 (#291)
 Bump browserify-sign from 4.2.1 to 4.2.2 (#292)
+Adds remark dev dep
 
 ## [6.1.16]
 now was a number not a date object. #283 (updates typescript definition)

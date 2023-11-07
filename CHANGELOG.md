@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.18]
+Bump eslint from 8.52.0 to 8.53.0
+
 ## [6.1.17]
 Bump react-router-dom from 6.15.0 to 6.18.0 (#293)
 Bump eslint from 8.49.0 to 8.52.0 (#291)

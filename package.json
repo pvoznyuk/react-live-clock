@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "cf-react-component-template": "0.1.8",
-    "eslint": "8.53.0",
+    "eslint": "8.55.0",
     "eslint-plugin-react": "7.33.2",
     "prop-types": "15.8.1",
     "react": "^16.8 || ^17 || ^18",

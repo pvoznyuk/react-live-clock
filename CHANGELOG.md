@@ -1,5 +1,14 @@
 # Changelog
 
+## [6.1.20]
+Bump eslint-plugin-react from 7.33.2 to 7.34.0
+Bump es5-ext from 0.10.62 to 0.10.64 (#313)
+Bump react-router-dom from 6.21.1 to 6.22.2 (#314)
+Bump eslint from 8.56.0 to 8.57.0 (#312)
+Bump moment-timezone from 0.5.43 to 0.5.45 (#310)
+Bump follow-redirects from 1.15.3 to 1.15.4 (#306)
+Bump moment from 2.29.4 to 2.30.1 (#304)
+
 ## [6.1.19]
 Bump eslint from 8.53.0 to 8.56.0 (#301)
 Bump react-router-dom from 6.18.0 to 6.21.1 (#302)

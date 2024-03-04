@@ -1,6 +1,6 @@
 {
   "name": "react-live-clock",
-  "version": "6.1.19",
+  "version": "6.1.20",
   "description": "React Live Clock",
   "main": "lib/index.js",
   "types": "index.d.ts",

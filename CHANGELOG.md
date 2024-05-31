@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.22]
+Fixes problem with react-syntax-highlighter
+
 ## [6.1.21]
 Bump react-router-dom from 6.22.2 to 6.22.3 (#315)
 Bump follow-redirects from 1.15.4 to 1.15.6 (#316)

@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.21]
+Bump react-router-dom from 6.22.2 to 6.22.3 (#315)
+Bump follow-redirects from 1.15.4 to 1.15.6 (#316)
+Bump eslint-plugin-react from 7.34.0 to 7.34.1 (#317)
+Bump express from 4.18.2 to 4.19.2 (#318)
+
+
 ## [6.1.20]
 Bump eslint-plugin-react from 7.33.2 to 7.34.0
 Bump es5-ext from 0.10.62 to 0.10.64 (#313)

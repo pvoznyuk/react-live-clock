@@ -233,6 +233,12 @@ const App = () => (
     </Panel>
 
     <Panel
+      code="<Clock format={'ddd DD MMM HH:mm'} locale={'de'} />"
+      title="Set the display language and format">
+      <Clock format={'ddd DD MMM HH:mm'} locale={'de'} />
+    </Panel>
+
+    <Panel
       code="<Clock style={{color: 'red'}} />"
       title="custom style">
       <Clock style={{color: 'red'}} />

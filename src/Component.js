@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'react-moment';
-import 'moment-timezone';
+import momentTimezone from 'moment-timezone';
 
 export default function ReactLiveClock(props) {
   const {
@@ -38,6 +38,10 @@ export default function ReactLiveClock(props) {
     return joinArray;
   }
 
+
+  useEffect(() => {
+    momentTimezone.locale('locale');
+  }, [locale]);
 
   useEffect(() => {
     if (noSsr && document) {

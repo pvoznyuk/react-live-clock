@@ -21263,7 +21263,9 @@ var _reactMoment = __webpack_require__(148);
 
 var _reactMoment2 = _interopRequireDefault(_reactMoment);
 
-__webpack_require__(142);
+var _momentTimezone = __webpack_require__(142);
+
+var _momentTimezone2 = _interopRequireDefault(_momentTimezone);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21323,6 +21325,10 @@ function ReactLiveClock(props) {
 
     return joinArray;
   }
+
+  (0, _react.useEffect)(function () {
+    _momentTimezone2.default.locale('locale');
+  }, [locale]);
 
   (0, _react.useEffect)(function () {
     if (noSsr && document) {

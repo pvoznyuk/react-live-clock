@@ -1,5 +1,12 @@
 # Changelog
 
+## [6.1.24]
+Bump elliptic from 6.5.4 to 6.5.7 (#322)
+Bump express from 4.19.2 to 4.21.0 (#321)
+
+## [6.1.23-beta]
+Adds code to fix changing locale on the fly
+
 ## [6.1.22]
 Fixes problem with react-syntax-highlighter
 

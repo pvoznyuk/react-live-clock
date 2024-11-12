@@ -1,5 +1,8 @@
 # Changelog
 
+## [6.1.25]
+Bump elliptic from 6.5.7 to 6.6.0 #323
+
 ## [6.1.24]
 Bump elliptic from 6.5.4 to 6.5.7 (#322)
 Bump express from 4.19.2 to 4.21.0 (#321)
